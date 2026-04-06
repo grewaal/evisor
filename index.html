@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <!-- SEO & META TAGS -->
+    <title>Evisor — Proposals, E-Signatures &amp; Payments for Bookkeepers</title>
+    <meta
+        content="Evisor helps solo bookkeepers automate proposals, e-signatures, and payments. Stop chasing signatures and get paid faster."
+        name="description" />
+    <meta content="bookkeeping, proposals, e-signature, payments, automation, solo bookkeeper" name="keywords" />
+    <meta content="Evisor" name="author" />
+    <meta content="index, follow" name="robots" />
+    <link href="https://evisor.app" rel="canonical" />
+    <!-- Open Graph / Facebook -->
+    <meta content="website" property="og:type" />
+    <meta content="https://evisor.app" property="og:url" />
+    <meta content="Evisor — Proposals, E-Signatures &amp; Payments for Bookkeepers" property="og:title" />
+    <meta content="Evisor handles the part of getting a new client that takes the most time and pays you nothing."
+        property="og:description" />
+    <meta content="https://evisor.app/og-image.png" property="og:image" />
+    <!-- FAVICONS -->
+    <link href="/favicon.ico" rel="icon" sizes="any" />
+    <link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" />
+    <link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" />
+    <link href="/apple-touch-icon.png" rel="apple-touch-icon" />
+    <link href="/site.webmanifest" rel="manifest" />
+    <!-- Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-B4347EDBV9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-B4347EDBV9');
+    </script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#004f54",
+                        "primary-container": "#01696F",
+                        "on-primary": "#ffffff",
+                        "background": "#F7F6F2",
+                        "surface": "#F7F6F2",
+                        "surface-container": "#f0eee7",
+                        "surface-container-low": "#f6f3ed",
+                        "on-surface": "#28251D",
+                        "on-surface-variant": "#3f4949",
+                        "outline-variant": "#bec8c9",
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 72px;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F7F6F2;
+            color: #28251D;
+        }
+
+        .section-animate {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .section-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes pulse-gentle {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.8;
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes gentle-pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.02);
+            }
+        }
+
+        @keyframes live-pulse {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+            }
+
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 6px rgba(34, 197, 94, 0);
+            }
+
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+            }
+        }
+
+        .spots-badge-pulse {
+            animation: pulse-gentle 2s infinite ease-in-out;
+        }
+
+        .scarcity-badge-pulse {
+            animation: gentle-pulse 3s infinite ease-in-out;
+        }
+
+        .live-dot {
+            animation: live-pulse 2s infinite;
+        }
+
+        .cta-solid {
+            background-color: #01696F;
+            transition: all 0.2s ease;
+        }
+
+        .cta-solid:hover {
+            background-color: #0c4e54;
+            transform: translateY(-1px);
+        }
+
+        nav.scrolled {
+            box-shadow: 0 4px 20px rgba(40, 37, 29, 0.08);
+        }
+
+        /* New Animated Flip Counter Styles */
+        .flip-number.flipping {
+            transform: translateY(-5px);
+            opacity: 0;
+        }
+
+        .live-counter-bar {
+            transition: all 0.3s ease;
+        }
+
+        /* Mobile Section Gaps */
+        @media (max-width: 768px) {
+            section {
+                padding-top: 48px !important;
+                padding-bottom: 48px !important;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-form button {
+                width: 100%;
+            }
+        }
+
+        /* Newsletter Styles */
+        .newsletter-form {
+            display: flex;
+            gap: 12px;
+            max-width: 500px;
+        }
+
+        /* Modal Styles */
+        #founding-modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(4px);
+            z-index: 100;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding: 20px;
+        }
+
+        #founding-modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        #founding-modal {
+            background: #F9F8F5;
+            border-radius: 12px;
+            padding: 40px;
+            max-width: 800px;
+            width: 100%;
+            position: relative;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        #founding-modal-overlay.active #founding-modal {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-surface antialiased">
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-50 bg-[#F7F6F2]/80 backdrop-blur-xl transition-shadow duration-300" id="navbar">
+        <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+            <a class="text-2xl font-bold text-[#28251D] tracking-tighter" href="#">Evisor</a>
+            <div class="hidden md:flex gap-8 items-center">
+                <a class="text-[#3f4949] font-bold tracking-tight hover:text-[#01696f] transition-colors duration-200"
+                    href="#how-it-works">How it works</a>
+                <a class="text-[#3f4949] font-bold tracking-tight hover:text-[#01696f] transition-colors duration-200"
+                    href="#features">Features</a>
+                <a class="text-[#3f4949] font-bold tracking-tight hover:text-[#01696f] transition-colors duration-200"
+                    href="#pricing">Pricing</a>
+                <a class="text-[#3f4949] font-bold tracking-tight hover:text-[#01696f] transition-colors duration-200"
+                    href="#faq">FAQ</a>
+                <a class="cta-solid text-on-primary px-6 py-2.5 rounded-lg font-bold" href="#pricing">Get early
+                    access</a>
+            </div>
+            <div class="md:hidden">
+                <span class="material-symbols-outlined text-on-surface">menu</span>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-8 max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center section-animate">
+        <div class="flex flex-col gap-6 text-left">
+            <h1 class="text-5xl md:text-6xl font-extrabold tracking-tighter leading-[1.1]">
+                You wrote the proposal. You sent the PDF. You followed up three times. They still haven't signed.
+            </h1>
+            <p class="text-lg text-on-surface-variant leading-relaxed max-w-xl">
+                Evisor handles the part of getting a new client that takes the most time and pays you nothing. For solo
+                bookkeepers, this means no more checking your inbox for signatures. Your client reads the terms, signs
+                from their phone, and pays you immediately.
+            </p>
+            <div class="flex flex-col gap-4 pt-4">
+                <div class="flex flex-wrap gap-4">
+                    <a class="cta-solid text-on-primary px-8 py-4 rounded-lg font-bold text-lg" href="#how-it-works">See
+                        how it works</a>
+                </div>
+
+            </div>
+        </div>
+        <div class="relative">
+            <div
+                class="bg-surface-container-low p-8 rounded-xl shadow-[0px_12px_32px_rgba(40,37,29,0.06)] border border-outline-variant/15 relative">
+                <div
+                    style="position: absolute; top: -10px; left: 12px; background: #01696F; color: white; font-size: 11px; font-weight: 600; border-radius: 4px; padding: 3px 8px; letter-spacing: 0.05em; text-transform: uppercase; z-index: 20;">
+                    Preview</div>
+                <div class="flex justify-between items-center mb-8">
+                    <span class="text-sm font-bold uppercase tracking-widest text-primary-container">EXAMPLE CLIENT
+                        PROPOSAL</span>
+                    <div
+                        class="bg-green-100 text-green-800 px-3 py-1 rounded text-xs font-bold flex items-center gap-1">
+                        <span class="material-symbols-outlined text-sm"
+                            style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        SIGNED
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="flex justify-between items-end pb-4 border-b border-outline-variant/10">
+                        <div>
+                            <p class="text-xs font-bold text-on-surface-variant mb-1">SERVICE</p>
+                            <p class="font-bold">Monthly Bookkeeping</p>
+                        </div>
+                        <p class="font-bold text-on-surface-variant">$350/mo</p>
+                    </div>
+                    <div class="flex justify-between items-end pb-4 border-b border-outline-variant/10">
+                        <div>
+                            <p class="text-xs font-bold text-on-surface-variant mb-1">SERVICE</p>
+                            <p class="font-bold">Onboarding &amp; Cleanup</p>
+                        </div>
+                        <p class="font-bold text-on-surface-variant">$600 (One-time)</p>
+                    </div>
+                    <div class="pt-4 flex justify-between items-center">
+                        <p class="text-sm text-on-surface-variant italic">Payment link ready</p>
+                        <div class="text-right">
+                            <p class="text-xs font-bold text-on-surface-variant mb-1">TOTAL STARTING</p>
+                            <p class="text-2xl font-black text-primary-container">$950.00</p>
+                        </div>
+                    </div>
+                </div>
+            </div><span
+                style="font-size: 13px; color: #9A9490; text-align: center; margin-top: 12px; display: block;">This is
+                what your client receives — not Evisor's pricing.</span>
+            <div class="absolute -z-10 -bottom-4 -right-4 w-full h-full bg-primary-container/5 rounded-xl"></div>
+        </div>
+    </section>
+    <!-- Problem Highlights -->
+    <section class="py-24 px-8 bg-surface-container-low section-animate" id="for-who">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-12 gap-12 text-left">
+            <div class="md:col-span-4">
+                <span class="text-primary-container font-bold text-sm tracking-[0.2em] uppercase">This is for you
+                    if...</span>
+            </div>
+            <div class="md:col-span-8">
+                <ul class="flex flex-col gap-8">
+                    <li class="flex gap-4 items-start">
+                        <span class="material-symbols-outlined text-primary-container mt-1">arrow_forward</span>
+                        <p class="text-2xl font-bold tracking-tight">You write proposals in Word or Google Docs and find
+                            yourself formatting tables instead of working.</p>
+                    </li>
+                    <li class="flex gap-4 items-start">
+                        <span class="material-symbols-outlined text-primary-container mt-1">arrow_forward</span>
+                        <p class="text-2xl font-bold tracking-tight">Evisor sends automatic reminders until they sign.
+                            You don't have to follow up manually.</p>
+                    </li>
+                    <li class="flex gap-4 items-start">
+                        <span class="material-symbols-outlined text-primary-container mt-1">arrow_forward</span>
+                        <p class="text-2xl font-bold tracking-tight">You're still chasing payments 15 days after you've
+                            already completed the work.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- Solution Blocks -->
+    <section class="py-24 px-8 max-w-7xl mx-auto section-animate text-left">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+            <div class="bg-surface-container p-10 rounded-xl min-h-[320px] flex flex-col justify-end">
+                <h3 class="text-3xl font-bold tracking-tighter leading-tight mb-4">Chasing a signature is not billable
+                    time.</h3>
+                <p class="text-on-surface-variant">Every hour you spend chasing a signature is an hour you can't bill.
+                    Evisor follows up automatically until they sign.</p>
+            </div>
+            <div class="cta-solid text-on-primary p-10 rounded-xl min-h-[320px] flex flex-col justify-end">
+                <h3 class="text-3xl font-bold tracking-tighter leading-tight mb-4">When your client signs, they
+                    immediately see your payment link. They pay right then, not three days later.</h3>
+                <p class="text-white/80">When your client signs, they immediately see your payment link. They pay right
+                    then, not three days later.</p>
+            </div>
+            <div class="bg-surface-container p-10 rounded-xl min-h-[320px] flex flex-col justify-end">
+                <h3 class="text-3xl font-bold tracking-tighter leading-tight mb-4">Getting paid reliably should not
+                    require this much admin.</h3>
+                <p class="text-on-surface-variant">We make it easy to pay at the moment of signing. No more awkward
+                    follow-ups for bank details or lost invoices.</p>
+            </div>
+        </div>
+    </section>
+    <!-- How it Works -->
+    <section class="py-24 px-8 bg-surface section-animate" id="how-it-works">
+        <div class="max-w-7xl mx-auto text-left">
+            <h2 class="text-4xl font-extrabold tracking-tighter mb-20 max-w-2xl">Here is exactly what happens after you
+                send your first proposal.</h2>
+            <div class="grid md:grid-cols-3 gap-16 relative">
+                <div class="hidden md:block absolute top-8 left-0 w-full h-[1px] bg-outline-variant/30 -z-10"></div>
+                <div class="flex flex-col gap-4">
+                    <span class="text-5xl font-black text-primary-container mb-4">01.</span>
+                    <h4 class="text-2xl font-bold tracking-tight">You build the proposal.</h4>
+                    <p class="text-on-surface-variant">Select from your services, set your terms, and hit send. Most
+                        people send their first proposal in under 10 minutes.</p>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <span class="text-5xl font-black text-primary-container mb-4">02.</span>
+                    <h4 class="text-2xl font-bold tracking-tight">Your client signs it.</h4>
+                    <p class="text-on-surface-variant">No login, no app download, no confusion. Your client opens a
+                        link, reads it, and signs.</p>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <span class="text-5xl font-black text-primary-container mb-4">03.</span>
+                    <h4 class="text-2xl font-bold tracking-tight">The billing takes care of itself.</h4>
+                    <p class="text-on-surface-variant">You paste your payment link — Stripe, PayPal, Wise, whatever you
+                        use — into the proposal. After signing, your client clicks and pays immediately. No chasing. No
+                        separate invoice.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Getting Started Callout Section -->
+    <section class="py-16 px-8 bg-[#F7F6F2] section-animate">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="bg-white border border-outline-variant rounded-xl p-6">
+                    <p class="text-xs font-bold uppercase tracking-widest text-primary-container mb-2">Starting Fresh</p>
+                    <p class="font-semibold text-on-surface text-base mb-2">Ready-to-use bookkeeping templates.</p>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">Pre-built engagement letters designed for how bookkeepers actually work — scope, fees, payment terms. Pick one, adjust your pricing, send. Your first proposal goes out in minutes.</p>
+                </div>
+                <div class="bg-white border border-outline-variant rounded-xl p-6">
+                    <p class="text-xs font-bold uppercase tracking-widest text-primary-container mb-2">Already Have Your Own</p>
+                    <p class="font-semibold text-on-surface text-base mb-2">Paste it in. Done.</p>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">If you have an existing engagement letter or template, paste it directly into Evisor. It formats automatically. No rebuilding, no reformatting — just faster delivery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Features List -->
+    <section class="py-24 px-8 bg-surface-container-low section-animate" id="features">
+        <div class="max-w-7xl mx-auto text-left">
+            <h2 class="text-4xl font-extrabold tracking-tighter mb-16 max-w-3xl">Six things your current setup probably
+                handles badly. Evisor handles them in one place.</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
+                <div class="flex flex-col gap-3">
+                    <h4 class="text-xl font-bold">Engagement proposals that look like you hired a designer.</h4>
+                    <p class="text-on-surface-variant leading-relaxed">Your client gets a clean, easy-to-read proposal
+                        on any device. It looks like you put real thought into it — because you did.</p>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <h4 class="text-xl font-bold">E-signature that your client can actually complete.</h4>
+                    <p class="text-on-surface-variant leading-relaxed">Every signed proposal includes a timestamped
+                        audit trail — client name, IP address, and time of signing.</p>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <h4 class="text-xl font-bold">Works with whatever you already use for payments.</h4>
+                    <p class="text-on-surface-variant leading-relaxed">Stripe, PayPal, Wise, bank transfer — paste your
+                        payment link into the proposal. Your client pays through whatever system you already have.</p>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <h4 class="text-xl font-bold">Service library management.</h4>
+                    <p class="text-on-surface-variant leading-relaxed">Standardize your pricing and service descriptions
+                        so you never have to "re-invent" a proposal again.</p>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <h4 class="text-xl font-bold">Professional engagement terms.</h4>
+                    <p class="text-on-surface-variant leading-relaxed">Pre-built templates built around how bookkeeping
+                        engagement letters actually work — scope, fees, and payment terms.</p>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <h4 class="text-xl font-bold">Automatic Audit Trails.</h4>
+                    <p class="text-on-surface-variant leading-relaxed">Digital signatures are legally binding. Evisor
+                        captures a full audit trail for every signed proposal, stored securely.</p>
+                    <p class="text-xs text-on-surface-variant/50 mt-2 leading-relaxed">
+                        Every signed proposal is stored securely and encrypted. Client data is never shared or sold.
+                        You can also export and save proposals directly to Google Drive or Dropbox — your records,
+                        your way.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Comparison Table -->
+    <section class="py-24 px-8 max-w-7xl mx-auto section-animate text-left">
+        <h2 class="text-4xl font-extrabold tracking-tighter mb-12">How Evisor compares</h2>
+        <div class="overflow-x-auto">
+            <table class="w-full border-collapse">
+                <thead>
+                    <tr class="border-b border-outline-variant">
+                        <th class="py-4 text-left font-bold text-on-surface-variant uppercase text-xs tracking-widest">
+                            Process</th>
+                        <th class="py-4 text-left font-bold text-on-surface-variant uppercase text-xs tracking-widest">
+                            Old Way (Email/PDF)</th>
+                        <th class="py-4 text-left font-bold text-primary-container uppercase text-xs tracking-widest">
+                            With Evisor</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-outline-variant/10">
+                    <tr>
+                        <td class="py-6 font-bold">Sending</td>
+                        <td class="py-6 text-on-surface-variant">Drafting Docs, Exporting PDFs</td>
+                        <td class="py-6 text-primary-container font-medium">1-Click from templates</td>
+                    </tr>
+                    <tr>
+                        <td class="py-6 font-bold">Getting signature</td>
+                        <td class="py-6 text-on-surface-variant">Manual email follow-ups</td>
+                        <td class="py-6 text-primary-container font-medium">Automatic smart reminders</td>
+                    </tr>
+                    <tr>
+                        <td class="py-6 font-bold">Collecting payment</td>
+                        <td class="py-6 text-on-surface-variant">Waiting for invoice sync</td>
+                        <td class="py-6 text-primary-container font-medium">Immediate on signing</td>
+                    </tr>
+                    <tr>
+                        <td class="py-6 font-bold">Monthly billing</td>
+                        <td class="py-6 text-on-surface-variant">Manual setup per client</td>
+                        <td class="py-6 text-primary-container font-medium">Payment link attached at signing — client pays
+                            immediately. Recurring billing in roadmap.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-6 font-bold">Your time</td>
+                        <td class="py-6 text-on-surface-variant">2-3 hours per client</td>
+                        <td class="py-6 text-primary-container font-medium">10 minutes total</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <!-- Roadmap Section (What we're building next) -->
+    <section class="py-24 px-8 bg-surface section-animate">
+        <div class="max-w-7xl mx-auto text-left">
+            <h2 class="text-3xl font-bold tracking-tighter mb-2">What we're building next</h2>
+            <p class="text-on-surface-variant mb-12">Founding members get early access to everything below the day it
+                ships.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="flex items-center justify-between bg-[#F7F5F0] border border-[#E8E3DA] p-5 rounded-lg">
+                    <span class="font-bold">QuickBooks Online</span>
+                    <span
+                        class="text-[10px] uppercase font-bold tracking-wider px-2 py-1 rounded border border-primary-container text-primary-container">Coming
+                        Soon</span>
+                </div>
+                <div class="flex items-center justify-between bg-[#F7F5F0] border border-[#E8E3DA] p-5 rounded-lg">
+                    <span class="font-bold">Xero Integration</span>
+                    <span
+                        class="text-[10px] uppercase font-bold tracking-wider px-2 py-1 rounded border border-primary-container text-primary-container">Coming
+                        Soon</span>
+                </div>
+                <div class="flex items-center justify-between bg-[#F7F5F0] border border-[#E8E3DA] p-5 rounded-lg">
+                    <span class="font-bold">Automatic Recurring Billing</span>
+                    <span
+                        class="text-[10px] uppercase font-bold tracking-wider px-2 py-1 rounded border border-primary-container text-primary-container">Coming
+                        Soon</span>
+                </div>
+                <div class="flex items-center justify-between bg-[#F7F5F0] border border-[#E8E3DA] p-5 rounded-lg">
+                    <span class="font-bold">Mobile App</span>
+                    <span
+                        class="text-[10px] uppercase font-bold tracking-wider px-2 py-1 rounded border border-primary-container text-primary-container">Coming
+                        Soon</span>
+                </div>
+                <div class="flex items-center justify-between bg-[#F7F5F0] border border-[#E8E3DA] p-5 rounded-lg">
+                    <span class="font-bold">Client Portal</span>
+                    <span
+                        class="text-[10px] uppercase font-bold tracking-wider px-2 py-1 rounded border border-primary-container text-primary-container">Coming
+                        Soon</span>
+                </div>
+                <div class="flex items-center justify-between bg-[#F7F5F0] border border-[#E8E3DA] p-5 rounded-lg">
+                    <span class="font-bold">Proposal Analytics</span>
+                    <span
+                        class="text-[10px] uppercase font-bold tracking-wider px-2 py-1 rounded border border-primary-container text-primary-container">Coming
+                        Soon</span>
+                </div>
+                <div class="flex items-center justify-between bg-[#F7F5F0] border border-[#E8E3DA] p-5 rounded-lg">
+                    <span class="font-bold">Multi-Currency</span>
+                    <span
+                        class="text-[10px] uppercase font-bold tracking-wider px-2 py-1 rounded border border-primary-container text-primary-container">Coming
+                        Soon</span>
+                </div>
+                <div class="flex items-center justify-between bg-[#F7F5F0] border border-[#E8E3DA] p-5 rounded-lg">
+                    <span class="font-bold">Custom Reminder Schedules</span>
+                    <span
+                        class="text-[10px] uppercase font-bold tracking-wider px-2 py-1 rounded border border-primary-container text-primary-container">Coming
+                        Soon</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Beta Feedback Section -->
+    <section class="py-20 bg-surface-container">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <p class="text-xs font-bold uppercase tracking-widest text-primary-container mb-3">EARLY ACCESS FEEDBACK</p>
+                <h2 class="text-3xl font-extrabold tracking-tighter text-on-surface">We asked. They didn't hold back.</h2>
+                <p class="text-on-surface-variant mt-3 text-base max-w-xl mx-auto">Real responses from bookkeepers on our early access waitlist — in their own words.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+                <div class="bg-white rounded-xl border border-outline-variant p-6 flex flex-col gap-4">
+                    <svg class="w-6 h-6 text-primary-container/30" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                    <p class="text-on-surface text-sm leading-relaxed font-medium">"I've been through Proposify, Dubsado, Cone, and now Ignition. Every time I switched I thought this one will finally handle it properly. Proposify didn't collect payments. Dubsado's automated follow-ups never worked the way I needed. Cone collected payment the second I sent an invoice — no grace period, no flexibility. I just want one tool that does the obvious things without me building workarounds."</p>
+                    <div class="mt-auto pt-4 border-t border-outline-variant/40">
+                        <p class="text-sm font-semibold text-on-surface">Solo bookkeeper</p>
+                        <p class="text-xs text-on-surface-variant/60">Early access waitlist</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl border-2 border-primary-container/20 p-6 flex flex-col gap-4 shadow-sm">
+                    <svg class="w-6 h-6 text-primary-container/30" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                    <p class="text-on-surface text-sm leading-relaxed font-medium">"I'm good at bookkeeping. I'm not supposed to be good at chasing people to open a PDF. But that's what every Sunday feels like — following up on things that should have been done Monday. I didn't start my practice to spend my weekends writing the same email over and over."</p>
+                    <div class="mt-auto pt-4 border-t border-outline-variant/40">
+                        <p class="text-sm font-semibold text-on-surface">Independent bookkeeper, 6 years</p>
+                        <p class="text-xs text-on-surface-variant/60">Early access waitlist</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl border border-outline-variant p-6 flex flex-col gap-4">
+                    <svg class="w-6 h-6 text-primary-container/30" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                    <p class="text-on-surface text-sm leading-relaxed font-medium">"Ignition is genuinely great but the $50/month fee is just the beginning — their processing fees run higher than Stripe's standard rate, and the moment you grow, the price jumps and locks features behind the next tier. I resisted switching to them for so long because of the cost. I still think about it every time the invoice hits."</p>
+                    <div class="mt-auto pt-4 border-t border-outline-variant/40">
+                        <p class="text-sm font-semibold text-on-surface">Bookkeeping firm owner</p>
+                        <p class="text-xs text-on-surface-variant/60">Early access waitlist</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Pricing Section -->
+    <section class="py-24 px-8 bg-[#F7F6F2]" id="pricing">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-left mb-16">
+                <h2 class="text-4xl font-extrabold tracking-tighter mb-4">Pricing built for humans.</h2>
+                <!-- Animated Flip Pill Counter -->
+                <div class="live-counter-bar"
+                    style="display:flex;align-items:center;gap:10px;background:#FFFFFF;border:1.5px solid #01696F;border-radius:100px;padding:10px 20px;margin-bottom:36px;box-shadow:0 2px 12px rgba(1,105,111,0.10);width:fit-content;">
+                    <span class="live-dot"
+                        style="width:8px;height:8px;background:#22c55e;border-radius:50%;flex-shrink:0;animation:live-pulse 2s ease-in-out infinite;display:inline-block;"></span>
+                    <span class="counter-label" style="font-size:14px;color:#4A4540;font-weight:400;">
+                        <span class="flip-number" id="signupCount"
+                            style="display:inline-block;font-size:17px;font-weight:700;color:#01696F;min-width:28px;text-align:center;transition:transform 0.15s ease-in,opacity 0.15s ease-in;"><!-- STAT:SIGNUPS_48HR -->37<!-- /STAT --></span>
+                        <span class="counter-text" style="color:#28251D;font-weight:400;"> bookkeepers joined the early
+                            access list in the last 48 hours</span>
+                    </span>
+                </div>
+                <p class="text-xs font-bold uppercase tracking-widest text-primary-container mb-3">Simple Pricing</p>
+                <h2 class="text-4xl font-extrabold tracking-tighter text-on-surface mb-4">Stop paying $49/month for a tool that still makes you chase signatures.</h2>
+                <p class="text-lg text-on-surface-variant mt-3 max-w-2xl">Evisor costs less than one hour of your billable time per month. And it gives you back far more than that.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 items-stretch">
+                <!-- Solo -->
+                <div
+                    class="bg-white p-10 rounded-xl flex flex-col border border-outline-variant/30 shadow-sm relative overflow-hidden text-left">
+                    <div
+                        class="absolute top-4 right-4 bg-primary-container/10 text-primary-container px-3 py-1 rounded text-xs font-bold">
+                        Early Access</div>
+                    <h3 class="text-xl font-bold mb-2">Solo Bookkeeper</h3>
+                    <div class="flex items-baseline gap-1 mb-1">
+                        <span class="text-4xl font-black">$15</span>
+                        <span class="text-on-surface-variant">/month</span>
+                    </div>
+                    <p class="text-sm text-on-surface-variant/60 mb-2 italic">then $19/month after first 3 months</p>
+                    <p class="text-sm font-bold text-primary-container mb-8">Annual: $149/year — 2 months free</p>
+                    <ul class="space-y-4 mb-12 flex-grow">
+                        <li class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-primary-container text-lg">check</span> 1 User
+                        </li>
+                        <li class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-primary-container text-lg">check</span> 25 Active
+                            Clients</li>
+                        <li class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-primary-container text-lg">check</span> We don't touch your payments. No transaction fees, no processing cut — your payment goes directly between your client and you.</li>
+                        <li class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-primary-container text-lg">check</span> Unlimited
+                            Proposals</li>
+                        <li class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-primary-container text-lg">check</span>
+                            E-Signatures</li>
+                        <li class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-primary-container text-lg">check</span> Unlimited proposals — no per-document fees, ever.</li>
+                        <li class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-primary-container text-lg">check</span> Your client signs in one click. No app, no account, no friction.</li>
+                        <li class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-primary-container text-lg">check</span> Automatic reminders until they sign — you never follow up manually again.</li>
+                        <li class="flex items-start gap-2"><span
+                                class="material-symbols-outlined text-primary-container text-lg mt-0.5">check</span><span>Document collection — request files from clients alongside proposals. <span class="ml-1 text-xs font-medium px-1.5 py-0.5 rounded-full" style="background:#f0fdf4;color:#166534;border:1px solid #bbf7d0;">Coming soon</span></span></li>
+                        <li class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-primary-container text-lg">check</span> Direct line to the founder — tell us what you need. We build for users who show up early, first.</li>
+                    </ul>
+                    <p class="text-xs text-on-surface-variant/50 mt-3">If you bill $50/hour, Evisor pays for itself the moment it saves you 20 minutes. Most users save that on their very first proposal. PandaDoc starts at $35/month. Proposify at $49. You're getting more, for less.</p>
+                    <div class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium mb-3 mt-3"
+                        style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0;">
+                        <!-- STAT:SOLO_MONTHLY_SEATS_TAKEN -->37<!-- /STAT -->
+                        of <!-- STAT:SOLO_MONTHLY_SEATS_TOTAL -->50<!-- /STAT -->
+                        seats left
+                    </div>
+                    <a class="cta-solid text-on-primary text-center py-4 rounded-lg font-bold"
+                        href="https://www.paypal.com/ncp/payment/PJNB7L6SB8Q4Q">Get started — $15/month</a>
+                    <p class="mt-4 text-center text-xs text-on-surface-variant">Cancel anytime. No contracts.</p>
+                </div>
+                <!-- Founding Offer -->
+                <div
+                    class="bg-white p-10 rounded-xl flex flex-col border-[1.5px] border-primary-container relative scale-105 shadow-2xl z-10 text-left">
+                    <h3 class="text-xl font-bold mb-2">Founding Offer</h3>
+                    <div class="flex items-baseline gap-2 mb-2">
+                        <span class="text-4xl font-black">$149</span>
+                        <span class="text-on-surface-variant font-bold text-lg">one-time (Solo)</span>
+                    </div>
+                    <p class="text-sm font-bold text-primary-container mb-8 italic">Or $249 for Small Firms</p>
+                    <!-- Founding Offer Checklist -->
+                    <ul class="space-y-0 mb-8 border-t border-[#E8E3DA]">
+                        <li class="py-3 border-b border-[#E8E3DA] flex items-start gap-3">
+                            <span class="text-[#01696F] font-bold">✓</span>
+                            <span class="text-sm leading-relaxed">Lifetime access — pay once, keep it forever. No
+                                monthly bill, ever.</span>
+                        </li>
+                        <li class="py-3 border-b border-[#E8E3DA] flex items-start gap-3">
+                            <span class="text-[#01696F] font-bold">✓</span>
+                            <span class="text-sm leading-relaxed">Zero transaction fees — ever. Your payments are yours. We don't take a cut.</span>
+                        </li>
+                        <li class="py-3 border-b border-[#E8E3DA] flex items-start gap-3">
+                            <span class="text-[#01696F] font-bold">✓</span>
+                            <span class="text-sm leading-relaxed">Personal 1-on-1 onboarding call — we build your first
+                                3 proposal templates with you.</span>
+                        </li>
+                        <li class="py-3 border-b border-[#E8E3DA] flex items-start gap-3">
+                            <span class="text-[#01696F] font-bold">✓</span>
+                            <span class="text-sm leading-relaxed">Direct access to the founder for your first 90 days —
+                                reply within 24 hours.</span>
+                        </li>
+                        <li class="py-3 border-b border-[#E8E3DA] flex items-start gap-3">
+                            <span class="text-[#01696F] font-bold">✓</span>
+                            <span class="text-sm leading-relaxed">Every new feature free as it ships — QuickBooks, Xero,
+                                recurring billing, mobile app.</span>
+                        </li>
+                        <li class="py-3 border-b border-[#E8E3DA] flex items-start gap-3">
+                            <span class="text-[#01696F] font-bold">✓</span>
+                            <span class="text-sm leading-relaxed">Your feedback decides what we build next.</span>
+                        </li>
+                        <li class="py-3 flex items-start gap-3">
+                            <span class="text-[#01696F] font-bold">✓</span>
+                            <span class="text-sm leading-relaxed">Unlimited proposals and unlimited clients from day
+                                one.</span>
+                        </li>
+                    </ul>
+                    <p class="mt-4 mb-1">
+                        <button onclick="document.getElementById('lifetime-modal').classList.remove('hidden')"
+                            class="text-xs text-on-surface-variant/40 hover:text-on-surface-variant/70 underline underline-offset-2 cursor-pointer transition-colors bg-transparent border-none p-0">
+                            * What does "lifetime access" include?
+                        </button>
+                    </p>
+                    <div
+                        class="inline-flex items-center justify-center bg-[#FFF3CD] text-[#856404] px-4 py-2 rounded-full text-sm font-medium mb-4 scarcity-badge-pulse self-start">
+                        🔴 <!-- STAT:FOUNDING_SPOTS_REMAINING -->9<!-- /STAT --> of <!-- STAT:FOUNDING_SPOTS_TOTAL -->14<!-- /STAT --> founding spots remaining
+                    </div>
+                    <button
+                        class="founding-cta-btn cta-solid text-on-primary text-center py-4 rounded-lg font-bold text-lg w-full">Claim
+                        your founding spot — $149</button>
+                    <p class="mt-4 text-center text-xs font-bold text-on-surface-variant">Onboarding call scheduled
+                        within 48 hours or full refund.</p>
+                </div>
+                <!-- Small Firm -->
+                <div
+                    class="bg-white p-10 rounded-xl flex flex-col border border-outline-variant/30 shadow-sm relative overflow-hidden text-left">
+                    <div
+                        class="absolute top-4 right-4 bg-primary-container/10 text-primary-container px-3 py-1 rounded text-xs font-bold">
+                        Early Access</div>
+                    <h3 class="text-xl font-bold mb-2">Small Firm</h3>
+                    <div class="flex items-baseline gap-1 mb-1">
+                        <span class="text-4xl font-black">$47</span>
+                        <span class="text-on-surface-variant">/month</span>
+                    </div>
+                    <p class="text-sm text-on-surface-variant/60 mb-2 italic">then $59/month after first 3 months</p>
+                    <p class="text-sm font-bold text-primary-container mb-6">Annual: $469/year — 2 months free</p>
+                    <div class="bg-primary-container/5 p-4 rounded-lg text-xs mb-6 border border-primary-container/10">
+                        Tools like Ignition charge per seat. A 3-person firm there pays $117+/month. <strong>Here it's
+                            $59. Flat.</strong>
+                    </div>
+                    <ul class="space-y-4 mb-12 flex-grow">
+                        <li class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-primary-container text-lg">check</span> <strong
+                                class="font-bold">5 team members</strong> (flat price — not per seat)</li>
+                        <li class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-primary-container text-lg">check</span> Shared
+                            Templates</li>
+                        <li class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-primary-container text-lg">check</span> Multi-user
+                            dashboard</li>
+                        <li class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-primary-container text-lg">check</span> Everything
+                            in Solo</li>
+                        <li class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-primary-container text-lg">check</span> We don't touch your payments. No transaction fees, no processing cut — every payment goes directly to your firm.</li>
+                        <li class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-primary-container text-lg">check</span> Unlimited proposals across your whole team — no per-seat proposal fees.</li>
+                        <li class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-primary-container text-lg">check</span> Every client signs in one click. No downloads, no confusion, no lost emails.</li>
+                        <li class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-primary-container text-lg">check</span> Automatic follow-ups on every proposal — your team stops chasing and starts closing.</li>
+                        <li class="flex items-start gap-2"><span
+                                class="material-symbols-outlined text-primary-container text-lg mt-0.5">check</span><span>Document collection — request files from clients alongside proposals. <span class="ml-1 text-xs font-medium px-1.5 py-0.5 rounded-full" style="background:#f0fdf4;color:#166534;border:1px solid #bbf7d0;">Coming soon</span></span></li>
+                        <li class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-primary-container text-lg">check</span> Direct line to the founder — your team's feedback shapes what gets built next.</li>
+                    </ul>
+                    <p class="text-xs text-on-surface-variant/50 mt-3">5 seats. Flat price. Ignition charges $117+/month for the same team size.</p>
+                    <div class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium mb-3 mt-3"
+                        style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0;">
+                        <!-- STAT:FIRM_MONTHLY_SEATS_TAKEN -->12<!-- /STAT -->
+                        of <!-- STAT:FIRM_MONTHLY_SEATS_TOTAL -->30<!-- /STAT -->
+                        seats left
+                    </div>
+                    <a class="cta-solid text-on-primary text-center py-4 rounded-lg font-bold"
+                        href="https://www.paypal.com/ncp/payment/A5M2YJ4CWVP88">Get started — $47/month</a>
+                    <p class="mt-4 text-center text-xs text-on-surface-variant">Cancel anytime. No contracts.</p>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+    <!-- FAQ Section -->
+    <section class="py-24 px-8 max-w-7xl mx-auto section-animate text-left" id="faq">
+        <h2 class="text-4xl font-extrabold tracking-tighter mb-4">Questions we'd ask if we were you.</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-12">
+            <div class="group bg-white border border-outline-variant rounded-xl p-6 cursor-pointer transition-all duration-200 hover:shadow-md hover:border-primary-container/40 hover:-translate-y-0.5">
+                <p class="font-semibold text-on-surface text-sm group-hover:text-primary-container transition-colors">Is Evisor available right now?</p>
+                <p class="text-on-surface-variant text-sm mt-3 leading-relaxed">Evisor is in active development. When you join today — founding member or waitlist — your spot and your price are locked in. Founding members get a personal onboarding call within 48 hours of launch. You'll hear from us before anyone else the moment it's live.</p>
+            </div>
+            <div class="group bg-white border border-outline-variant rounded-xl p-6 cursor-pointer transition-all duration-200 hover:shadow-md hover:border-primary-container/40 hover:-translate-y-0.5">
+                <p class="font-semibold text-on-surface text-sm group-hover:text-primary-container transition-colors">Will my clients find this confusing to use?</p>
+                <p class="text-on-surface-variant text-sm mt-3 leading-relaxed">No. Your client gets a link. They open it, read the proposal, and tap to sign — on any device, no account needed, no app to download. If anything, they'll comment on how easy it was. That's the point.</p>
+            </div>
+            <div class="group bg-white border border-outline-variant rounded-xl p-6 cursor-pointer transition-all duration-200 hover:shadow-md hover:border-primary-container/40 hover:-translate-y-0.5">
+                <p class="font-semibold text-on-surface text-sm group-hover:text-primary-container transition-colors">Is the e-signature legally binding?</p>
+                <p class="text-on-surface-variant text-sm mt-3 leading-relaxed">Digital signatures are legally binding in most countries. Evisor captures a full audit trail — name, timestamp, and IP — for every signed proposal.</p>
+            </div>
+            <div class="group bg-white border border-outline-variant rounded-xl p-6 cursor-pointer transition-all duration-200 hover:shadow-md hover:border-primary-container/40 hover:-translate-y-0.5">
+                <p class="font-semibold text-on-surface text-sm group-hover:text-primary-container transition-colors">How do payments work?</p>
+                <p class="text-on-surface-variant text-sm mt-3 leading-relaxed">After your client signs, they see a payment button linked directly to your payment page — Stripe, PayPal, Wise, or whatever you already use. They click and pay.</p>
+            </div>
+            <div class="group bg-white border border-outline-variant rounded-xl p-6 cursor-pointer transition-all duration-200 hover:shadow-md hover:border-primary-container/40 hover:-translate-y-0.5">
+                <p class="font-semibold text-on-surface text-sm group-hover:text-primary-container transition-colors">Can I use my own engagement letter?</p>
+                <p class="text-on-surface-variant text-sm mt-3 leading-relaxed">Absolutely. While we provide templates, you can copy/paste your existing terms into our editor and save them as your default.</p>
+            </div>
+            <div class="group bg-white border border-outline-variant rounded-xl p-6 cursor-pointer transition-all duration-200 hover:shadow-md hover:border-primary-container/40 hover:-translate-y-0.5">
+                <p class="font-semibold text-on-surface text-sm group-hover:text-primary-container transition-colors">Does this replace my practice management tool?</p>
+                <p class="text-on-surface-variant text-sm mt-3 leading-relaxed">Evisor handles the proposal, signature, and billing. Once a client is signed up, you manage their actual work in whatever tool you already use.</p>
+            </div>
+            <div class="group bg-white border border-outline-variant rounded-xl p-6 cursor-pointer transition-all duration-200 hover:shadow-md hover:border-primary-container/40 hover:-translate-y-0.5">
+                <p class="font-semibold text-on-surface text-sm group-hover:text-primary-container transition-colors">How long does setup take?</p>
+                <p class="text-on-surface-variant text-sm mt-3 leading-relaxed">Most users are sending their first proposal within 10 minutes. It's built for speed.</p>
+            </div>
+            <div class="group bg-white border border-outline-variant rounded-xl p-6 cursor-pointer transition-all duration-200 hover:shadow-md hover:border-primary-container/40 hover:-translate-y-0.5">
+                <p class="font-semibold text-on-surface text-sm group-hover:text-primary-container transition-colors">Is there a limit on proposals?</p>
+                <p class="text-on-surface-variant text-sm mt-3 leading-relaxed">No. Every plan includes unlimited proposals. We want you to grow your business without worrying about per-document fees.</p>
+            </div>
+            <div class="group bg-white border border-outline-variant rounded-xl p-6 cursor-pointer transition-all duration-200 hover:shadow-md hover:border-primary-container/40 hover:-translate-y-0.5">
+                <p class="font-semibold text-on-surface text-sm group-hover:text-primary-container transition-colors">What happens if I want to use my own engagement letter?</p>
+                <p class="text-on-surface-variant text-sm mt-3 leading-relaxed">Paste it straight in. Evisor formats it automatically. Your first proposal is ready in 60 seconds — not 60 minutes. Most users never rebuild their templates at all. They just stop emailing PDFs.</p>
+            </div>
+        </div>
+    </section>
+    <!-- Newsletter Placement 2 -->
+    <section class="py-24 px-8 bg-surface-container section-animate">
+        <div class="max-w-4xl mx-auto text-center flex flex-col items-center">
+            <h2 class="text-3xl font-extrabold tracking-tighter mb-8">Stay in the loop</h2>
+            <style>
+                @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+            </style>
+            <div class="newsletter-form-container">
+                <form class="newsletter-form"
+                    action="https://app.loops.so/api/newsletter-form/cmnn55mi53xqi0iyb377p0tkf" method="POST"
+                    style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%;">
+                    <input class="newsletter-form-input" placeholder="you@example.com" required="" type="email"
+                        name="newsletter-form-input"
+                        style="font-family: Inter, sans-serif; color: rgb(0, 0, 0); font-size: 14px; margin: 0px 0px 10px; width: 100%; max-width: 300px; min-width: 100px; background: rgb(255, 255, 255); border: 1px solid rgb(209, 213, 219); box-sizing: border-box; box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px; border-radius: 6px; padding: 8px 12px;"><button
+                        type="submit" class="newsletter-form-button"
+                        style="background: rgb(13, 148, 136); font-size: 14px; color: rgb(255, 255, 255); font-family: Inter, sans-serif; display: flex; width: 100%; max-width: 300px; white-space: normal; height: 38px; align-items: center; justify-content: center; flex-direction: row; padding: 9px 17px; box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px; border-radius: 6px; text-align: center; font-style: normal; font-weight: 500; line-height: 20px; border: none; cursor: pointer;">Get
+                        Early Acess -&gt;</button><button type="button" class="newsletter-loading-button"
+                        style="background: rgb(13, 148, 136); font-size: 14px; color: rgb(255, 255, 255); font-family: Inter, sans-serif; display: none; width: 100%; max-width: 300px; white-space: normal; height: 38px; align-items: center; justify-content: center; flex-direction: row; padding: 9px 17px; box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px; border-radius: 6px; text-align: center; font-style: normal; font-weight: 500; line-height: 20px; border: none; cursor: pointer;">Please
+                        wait...</button></form>
+                <div class="newsletter-success"
+                    style="display: none; align-items: center; justify-content: center; width: 100%;">
+                    <p class="newsletter-success-message"
+                        style="font-family: Inter, sans-serif; color: rgb(0, 0, 0); font-size: 14px;">Thanks! We'll be
+                        in touch!</p>
+                </div>
+                <div class="newsletter-error"
+                    style="display: none; align-items: center; justify-content: center; width: 100%;">
+                    <p class="newsletter-error-message"
+                        style="font-family: Inter, sans-serif; color: rgb(185, 28, 28); font-size: 14px;">Oops!
+                        Something went wrong, please try again</p>
+                </div>
+                <button class='newsletter-back-button' type='button'
+                    style='color:#6b7280;font: 14px, Inter, sans-serif;margin:10px auto;text-align:center;display:none;background:transparent;border:none;cursor:pointer'
+                    onmouseout='this.style.textDecoration="none"' onmouseover='this.style.textDecoration="underline"'>
+                    &larr; Back
+                </button>
+            </div>
+            <script>
+                function submitHandler(event) {
+                    event.preventDefault();
+                    var container = event.target.parentNode;
+                    var form = container.querySelector(".newsletter-form");
+                    var formInput = container.querySelector(".newsletter-form-input");
+                    var success = container.querySelector(".newsletter-success");
+                    var errorContainer = container.querySelector(".newsletter-error");
+                    var errorMessage = container.querySelector(".newsletter-error-message");
+                    var backButton = container.querySelector(".newsletter-back-button");
+                    var submitButton = container.querySelector(".newsletter-form-button");
+                    var loadingButton = container.querySelector(".newsletter-loading-button");
+
+                    const rateLimit = () => {
+                        errorContainer.style.display = "flex";
+                        errorMessage.innerText = "Too many signups, please try again in a little while";
+                        submitButton.style.display = "none";
+                        formInput.style.display = "none";
+                        backButton.style.display = "block";
+                    }
+
+                    var time = new Date();
+                    var timestamp = time.valueOf();
+                    var previousTimestamp = localStorage.getItem("loops-form-timestamp");
+
+                    if (previousTimestamp && Number(previousTimestamp) + 60000 > timestamp) {
+                        rateLimit();
+                        return;
+                    }
+                    localStorage.setItem("loops-form-timestamp", timestamp);
+
+                    submitButton.style.display = "none";
+                    loadingButton.style.display = "flex";
+
+                    var formBody = "userGroup=&mailingLists=&email="
+                        + encodeURIComponent(formInput.value);
+
+                    fetch(event.target.action, {
+                        method: "POST",
+                        body: formBody,
+                        headers: {
+                            "Content-Type": "application/x-www-form-urlencoded",
+                        },
+                    })
+                        .then((res) => [res.ok, res.json(), res])
+                        .then(([ok, dataPromise, res]) => {
+                            if (ok) {
+                                success.style.display = "flex";
+                                form.reset();
+                            } else {
+                                dataPromise.then(data => {
+                                    errorContainer.style.display = "flex";
+                                    errorMessage.innerText = data.message
+                                        ? data.message
+                                        : res.statusText;
+                                });
+                            }
+                        })
+                        .catch(error => {
+                            if (error.message === "Failed to fetch") {
+                                rateLimit();
+                                return;
+                            }
+                            errorContainer.style.display = "flex";
+                            if (error.message) errorMessage.innerText = error.message;
+                            localStorage.setItem("loops-form-timestamp", '');
+                        })
+                        .finally(() => {
+                            formInput.style.display = "none";
+                            loadingButton.style.display = "none";
+                            backButton.style.display = "block";
+                        });
+                }
+
+                function resetFormHandler(event) {
+                    var container = event.target.parentNode;
+                    var formInput = container.querySelector(".newsletter-form-input");
+                    var success = container.querySelector(".newsletter-success");
+                    var errorContainer = container.querySelector(".newsletter-error");
+                    var errorMessage = container.querySelector(".newsletter-error-message");
+                    var backButton = container.querySelector(".newsletter-back-button");
+                    var submitButton = container.querySelector(".newsletter-form-button");
+
+                    success.style.display = "none";
+                    errorContainer.style.display = "none";
+                    errorMessage.innerText = "Oops! Something went wrong, please try again";
+                    backButton.style.display = "none";
+                    formInput.style.display = "flex";
+                    submitButton.style.display = "flex";
+                }
+
+                var formContainers = document.getElementsByClassName("newsletter-form-container");
+
+                for (var i = 0; i < formContainers.length; i++) {
+                    var formContainer = formContainers[i];
+                    var handlersAdded = formContainer.classList.contains('newsletter-handlers-added');
+                    if (handlersAdded) continue;
+                    formContainer
+                        .querySelector(".newsletter-form")
+                        .addEventListener("submit", submitHandler);
+                    formContainer
+                        .querySelector(".newsletter-back-button")
+                        .addEventListener("click", resetFormHandler);
+                    formContainer.classList.add("newsletter-handlers-added");
+                }
+            </script>
+        </div>
+    </section>
+    <!-- Final CTA Section -->
+    <section class="py-24 px-8 bg-primary-container text-on-primary section-animate text-left">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-extrabold tracking-tighter mb-8 leading-tight">
+                You got into bookkeeping to do bookkeeping. Not to chase signatures and manually set up recurring
+                invoices.
+            </h2>
+            <div class="flex flex-col items-center gap-4">
+                <div
+                    class="inline-flex items-center bg-[#FFF3CD] text-[#856404] px-4 py-2 rounded-full text-sm font-medium scarcity-badge-pulse">
+                    🔴 <!-- STAT:FOUNDING_SPOTS_REMAINING -->9<!-- /STAT --> of <!-- STAT:FOUNDING_SPOTS_TOTAL -->14<!-- /STAT --> founding spots remaining
+                </div>
+                <button
+                    class="founding-cta-btn block bg-white text-primary-container px-10 py-5 rounded-lg font-bold text-xl hover:bg-surface-container transition-all shadow-xl text-center w-full max-w-xs">Claim
+                    your founding spot — $149</button>
+            </div>
+        </div>
+    </section>
+    <!-- Founder Story Section -->
+    <section class="border-t border-outline-variant/20 py-16">
+        <div class="max-w-2xl mx-auto px-6 text-center">
+            <p class="text-xs font-bold uppercase tracking-widest text-primary-container mb-4">WHY EVISOR EXISTS</p>
+            <p class="text-xl font-semibold text-on-surface leading-snug mb-4">
+                "I watched my uncle spend Sunday nights reformatting the same PDF, chasing the same signatures, sending the same follow-up emails — for years."
+            </p>
+            <p class="text-sm text-on-surface-variant leading-relaxed">
+                He's a great bookkeeper. That part was just wasted time. I built Evisor to give it back to him — and to everyone like him.
+            </p>
+            <p class="text-sm font-semibold text-on-surface mt-4">— Ray, Founder of Evisor</p>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="w-full border-t border-outline-variant/15 bg-background">
+        <div class="flex flex-col md:flex-row justify-between items-start px-8 py-12 max-w-7xl mx-auto text-left">
+            <div class="mb-8 md:mb-0">
+                <div class="text-xl font-bold text-[#28251D] tracking-tighter mb-2">Evisor</div>
+                <p class="text-on-surface-variant text-sm">Made for solo bookkeepers.</p>
+            </div>
+            <div class="flex flex-col md:flex-row gap-x-16 gap-y-6">
+                <div class="flex flex-col gap-3">
+                    <span class="font-bold text-xs uppercase tracking-widest text-on-surface-variant">Product</span>
+                    <a class="text-on-surface-variant text-sm hover:text-primary-container" href="#how-it-works">How it
+                        works</a>
+                    <a class="text-on-surface-variant text-sm hover:text-primary-container"
+                        href="#features">Features</a>
+                    <a class="text-on-surface-variant text-sm hover:text-primary-container" href="#pricing">Pricing</a>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <span class="font-bold text-xs uppercase tracking-widest text-on-surface-variant">Contact</span>
+                    <a class="text-on-surface-variant text-sm hover:text-primary-container"
+                        href="mailto:hello@evisor.app">hello@evisor.app</a>
+                    <a class="text-on-surface-variant text-sm hover:text-primary-container"
+                        href="https://instagram.com/evisor.app">Instagram</a>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <span class="font-bold text-xs uppercase tracking-widest text-on-surface-variant">Legal</span>
+                    <a class="text-on-surface-variant text-sm hover:text-primary-container" href="/privacy.html">Privacy
+                        Policy</a>
+                    <a class="text-on-surface-variant text-sm hover:text-primary-container" href="/terms.html">Terms of
+                        Service</a>
+                </div>
+            </div>
+        </div>
+        <div class="px-8 py-6 border-t border-outline-variant/5 max-w-7xl mx-auto text-left">
+            <span class="text-on-surface-variant/60 text-xs">© 2026 Evisor. All rights reserved.</span>
+        </div>
+        <p class="text-xs text-on-surface-variant/40 text-center mt-3">
+            By accessing this site, you agree to our
+            <a href="terms.html" class="underline hover:text-on-surface-variant/60">Terms of Service</a>
+            and
+            <a href="privacy.html" class="underline hover:text-on-surface-variant/60">Privacy Policy</a>.
+        </p>
+    </footer>
+    <!-- Modal Backdrop & Modal -->
+    <div class="fixed inset-0 z-[100] bg-black/40 flex items-center justify-center backdrop-blur-sm"
+        id="founding-modal-overlay">
+        <div class="bg-[#F9F8F5] p-10 rounded-[12px] max-w-[800px] w-full relative shadow-2xl" id="founding-modal">
+            <button class="absolute top-4 right-4 text-[#28251D] hover:opacity-70 transition-opacity" id="modal-close">
+                <span class="material-symbols-outlined text-3xl">close</span>
+            </button>
+            <div class="mb-8">
+                <h2 class="text-[20px] font-bold text-[#28251D] mb-1">Choose your founding access</h2>
+                <p class="text-[14px] text-[#7A7974]">Both plans include lifetime access, personal onboarding call, and
+                    direct founder access.</p>
+            </div>
+            <div class="flex flex-col md:flex-row gap-6">
+                <!-- Solo Card -->
+                <div class="flex-1 border border-[#E8E3DA] p-6 rounded-xl flex flex-col bg-white">
+                    <span
+                        class="inline-block bg-[#01696F]/10 text-[#01696F] text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded mb-3 self-start">Solo</span>
+                    <div class="mb-4">
+                        <span class="text-3xl font-black text-[#28251D]">$149</span>
+                    </div>
+                    <ul class="space-y-3 mb-8 flex-grow">
+                        <li class="flex items-center gap-2 text-sm text-[#3f4949]"><span
+                                class="material-symbols-outlined text-[#01696F] text-sm">check</span> 1 user</li>
+                        <li class="flex items-center gap-2 text-sm text-[#3f4949]"><span
+                                class="material-symbols-outlined text-[#01696F] text-sm">check</span> 25 clients</li>
+                        <li class="flex items-center gap-2 text-sm text-[#3f4949]"><span
+                                class="material-symbols-outlined text-[#01696F] text-sm">check</span> All features</li>
+                        <li class="flex items-center gap-2 text-sm text-[#3f4949]"><span
+                                class="material-symbols-outlined text-[#01696F] text-sm">check</span> Personal
+                            onboarding call</li>
+                    </ul>
+                    <a class="cta-solid text-on-primary text-center py-3 rounded-lg font-bold text-sm"
+                        href="https://www.paypal.com/ncp/payment/D9ATWVSV8FMPE">Choose Solo — $149</a>
+                </div>
+                <!-- Small Firm Card -->
+                <div class="flex-1 border-2 border-[#01696F] p-6 rounded-xl flex flex-col bg-white shadow-lg">
+                    <span
+                        class="inline-block bg-[#01696F] text-white text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded mb-3 self-start">Small
+                        Firm</span>
+                    <div class="mb-2">
+                        <span class="text-3xl font-black text-[#28251D]">$249</span>
+                    </div>
+                    <p class="text-[12px] text-[#7A7974] mb-4">Split across your team, that's $49 each. Once.</p>
+                    <ul class="space-y-3 mb-8 flex-grow">
+                        <li class="flex items-center gap-2 text-sm text-[#3f4949]"><span
+                                class="material-symbols-outlined text-[#01696F] text-sm">check</span> 5 users</li>
+                        <li class="flex items-center gap-2 text-sm text-[#3f4949]"><span
+                                class="material-symbols-outlined text-[#01696F] text-sm">check</span> 100 clients</li>
+                        <li class="flex items-center gap-2 text-sm text-[#3f4949]"><span
+                                class="material-symbols-outlined text-[#01696F] text-sm">check</span> All features</li>
+                        <li class="flex items-center gap-2 text-sm text-[#3f4949]"><span
+                                class="material-symbols-outlined text-[#01696F] text-sm">check</span> Personal
+                            onboarding call</li>
+                        <li class="flex items-center gap-2 text-sm text-[#3f4949]"><span
+                                class="material-symbols-outlined text-[#01696F] text-sm">check</span> Shared library
+                        </li>
+                    </ul>
+                    <a class="cta-solid text-on-primary text-center py-3 rounded-lg font-bold text-sm"
+                        href="https://www.paypal.com/ncp/payment/43TDN8BKXJTN6">Choose Firm — $249</a>
+                </div>
+            </div>
+            <p class="mt-4 mb-1 text-center">
+                <button onclick="document.getElementById('lifetime-modal').classList.remove('hidden')"
+                    class="text-xs text-on-surface-variant/40 hover:text-on-surface-variant/70 underline underline-offset-2 cursor-pointer transition-colors bg-transparent border-none p-0">
+                    * What does "lifetime access" include — and not include?
+                </button>
+            </p>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script>
+        // Intersection Observer for section animations
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section-animate').forEach(section => observer.observe(section));
+
+        // Sticky Nav Shadow
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 20) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
+        });
+
+        // Flip Counter Logic
+        function flipCounterTo(targetId, newValue) {
+            const el = document.getElementById(targetId);
+            if (el && el.innerText != newValue) {
+                el.classList.add('flipping');
+                setTimeout(() => {
+                    el.innerText = newValue;
+                    el.classList.remove('flipping');
+                }, 150);
+            }
+        }
+
+        const counterObserver = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                setTimeout(() => flipCounterTo('signupCount', 37), 2000);
+                counterObserver.unobserve(entries[0].target);
+            }
+        });
+        const counterEl = document.querySelector('.live-counter-bar');
+        if (counterEl) counterObserver.observe(counterEl);
+
+        // Modal Logic
+        const modalOverlay = document.getElementById('founding-modal-overlay');
+        const modalClose = document.getElementById('modal-close');
+        const ctaBtns = document.querySelectorAll('.founding-cta-btn');
+
+        const openModal = (e) => {
+            if (e) e.preventDefault();
+            modalOverlay.style.display = 'flex';
+            setTimeout(() => modalOverlay.classList.add('active'), 10);
+            document.body.style.overflow = 'hidden';
+        };
+
+        const closeModal = () => {
+            modalOverlay.classList.remove('active');
+            setTimeout(() => {
+                modalOverlay.style.display = 'none';
+                document.body.style.overflow = '';
+            }, 300);
+        };
+
+        ctaBtns.forEach(btn => btn.addEventListener('click', openModal));
+        modalClose.addEventListener('click', closeModal);
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) closeModal();
+        });
+    </script>
+    <!-- Loops Form Logic -->
+    <script>
+        document.querySelectorAll('form[action*="loops.so"]').forEach(form => {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const formData = new FormData(form);
+                const isHeroForm = form.getAttribute('data-form-id') === 'hero-form';
+                const successMsg = isHeroForm ? document.getElementById('newsletter-success') : form.nextElementSibling;
+                const errorMsg = isHeroForm ? document.getElementById('newsletter-error') : (successMsg ? successMsg.nextElementSibling : null);
+                try {
+                    const response = await fetch(form.action, { method: 'POST', body: formData });
+                    if (response.ok) {
+                        form.style.display = 'none';
+                        if (successMsg) successMsg.classList.remove('hidden');
+                        if (isHeroForm) {
+                            setTimeout(() => {
+                                const p = document.getElementById('pricing');
+                                if (p) p.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            }, 1200);
+                        }
+                    } else {
+                        if (errorMsg) errorMsg.classList.remove('hidden');
+                    }
+                } catch (err) {
+                    if (errorMsg) errorMsg.classList.remove('hidden');
+                }
+            });
+        });
+    </script>
+    <!-- Tawk.to Script -->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/69d3577e1678ab1c34d72e71/1jlgorigp';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!-- Lifetime Access Disclosure Modal -->
+    <div id="lifetime-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-4"
+        onclick="if(event.target===this)this.classList.add('hidden')">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-lg w-full p-8 relative">
+
+            <button onclick="document.getElementById('lifetime-modal').classList.add('hidden')"
+                class="absolute top-4 right-4 text-on-surface-variant/40 hover:text-on-surface-variant text-xl leading-none">&#x2715;</button>
+
+            <p class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-4">
+                Lifetime Access — Full Details
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 text-sm">
+                <div>
+                    <p class="font-semibold text-on-surface mb-2">&#x2713; Included forever</p>
+                    <ul class="space-y-1.5 text-on-surface-variant">
+                        <li>All features available at launch</li>
+                        <li>Core updates and bug fixes</li>
+                        <li>Improvements to existing features</li>
+                        <li>Your price is locked in — it never increases</li>
+                        <li>Onboarding call scheduled within 48 hours</li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="font-semibold text-on-surface mb-2">&#x2717; Not included for free</p>
+                    <ul class="space-y-1.5 text-on-surface-variant">
+                        <li>New modules launched as separate paid tiers</li>
+                        <li>Premium add-ons introduced after launch</li>
+                        <li>Third-party tool fees (Stripe, PayPal, etc.)</li>
+                        <li>White-labelling or API access (future tiers)</li>
+                        <li>Users beyond your plan limit</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="text-xs text-on-surface-variant/50 mt-6 leading-relaxed">
+                "Lifetime" means the lifetime of the Evisor product. If Evisor
+                ever shuts down, founding members receive a prorated refund.
+                By purchasing, you agree to our
+                <a href="terms.html" class="underline">Terms of Service</a>
+                and
+                <a href="privacy.html" class="underline">Privacy Policy</a>.
+            </p>
+
+        </div>
+    </div>
+</body>
+
+</html>
