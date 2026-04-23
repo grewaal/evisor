@@ -643,221 +643,126 @@
     <!-- Pricing Section -->
     <section class="py-24 px-8 bg-[#F7F6F2]" id="pricing">
         <div class="max-w-7xl mx-auto">
-            <div class="text-left mb-16">
-                <h2 class="text-4xl font-extrabold tracking-tighter mb-4">Pricing built for humans.</h2>
-                <!-- Animated Flip Pill Counter -->
-                <div class="live-counter-bar"
-                    style="display:flex;align-items:center;gap:10px;background:#FFFFFF;border:1.5px solid #01696F;border-radius:100px;padding:10px 20px;margin-bottom:36px;box-shadow:0 2px 12px rgba(1,105,111,0.10);width:fit-content;">
-                    <span class="live-dot"
-                        style="width:8px;height:8px;background:#22c55e;border-radius:50%;flex-shrink:0;animation:live-pulse 2s ease-in-out infinite;display:inline-block;"></span>
-                    <span class="counter-label" style="font-size:14px;color:#4A4540;font-weight:400;">
-                        <span class="flip-number" id="signupCount"
-                            style="display:inline-block;font-size:17px;font-weight:700;color:#01696F;min-width:28px;text-align:center;transition:transform 0.15s ease-in,opacity 0.15s ease-in;"><!-- STAT:SIGNUPS_48HR -->37<!-- /STAT --></span>
-                        <span class="counter-text" style="color:#28251D;font-weight:400;"> bookkeepers joined the early
-                            access list in the last 48 hours</span>
-                    </span>
-                </div>
-                <p class="text-xs font-bold uppercase tracking-widest text-primary-container mb-3">Simple Pricing</p>
-                <h2 class="text-4xl font-extrabold tracking-tighter text-on-surface mb-4">Stop paying $49/month for a
-                    tool that still makes you chase signatures.</h2>
-                <p class="text-lg text-on-surface-variant mt-3 max-w-2xl">Evisor costs less than one hour of your
-                    billable time per month. And it gives you back far more than that.</p>
+            <div class="text-center mb-14">
+                <h2 class="text-4xl font-extrabold tracking-tighter text-on-surface mb-4">Choose your plan</h2>
+                <p class="text-lg text-on-surface-variant max-w-2xl mx-auto">Start free and upgrade when you're ready. No
+                    commitment.</p>
             </div>
+
             <div class="grid md:grid-cols-3 gap-8 items-stretch">
-                <!-- Solo -->
-                <div
-                    class="bg-white p-10 rounded-xl flex flex-col border border-outline-variant/30 shadow-sm relative overflow-hidden text-left">
-                    <div
-                        class="absolute top-4 right-4 bg-primary-container/10 text-primary-container px-3 py-1 rounded text-xs font-bold">
-                        Early Access</div>
-                    <h3 class="text-xl font-bold mb-2">Solo Bookkeeper</h3>
-                    <div class="flex items-baseline gap-1 mb-1">
-                        <span class="text-4xl font-black">$11</span>
-                        <span class="text-on-surface-variant">/month</span>
-                    </div>
-                    <p class="text-sm text-on-surface-variant/60 mb-2 italic">then $17/month after first 3 months</p>
-                    <p class="text-sm font-bold text-primary-container mb-8">Annual: $149/year — 2 months free</p>
-                    <ul class="space-y-4 mb-12 flex-grow">
+                <!-- FREE -->
+                <div class="bg-white p-8 rounded-xl flex flex-col border border-outline-variant/40 text-left">
+                    <p class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3">FREE</p>
+                    <h3 class="text-3xl font-extrabold text-on-surface mb-8">Free</h3>
+                    <ul class="space-y-3 mb-8 flex-grow">
                         <li class="flex items-center gap-2"><span
-                                class="material-symbols-outlined text-primary-container text-lg">check</span> 1 User
+                                class="material-symbols-outlined text-primary-container text-lg">check</span>Up to 3
+                            clients</li>
+                        <li class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-primary-container text-lg">check</span>Up to 3
+                            proposals</li>
+                        <li class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-primary-container text-lg">check</span>Up to 3
+                            engagement letters</li>
+                        <li class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-primary-container text-lg">check</span>Client
+                            onboarding checklists</li>
+                        <li class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-primary-container text-lg">check</span>E-signatures
                         </li>
                         <li class="flex items-center gap-2"><span
-                                class="material-symbols-outlined text-primary-container text-lg">check</span> 25 Active
-                            Clients</li>
-                        <li class="flex items-center gap-2"><span
-                                class="material-symbols-outlined text-primary-container text-lg">check</span> We don't
-                            touch your payments. No transaction fees, no processing cut — your payment goes directly
-                            between your client and you.</li>
-                        <li class="flex items-center gap-2"><span
-                                class="material-symbols-outlined text-primary-container text-lg">check</span> Unlimited
-                            Proposals</li>
-                        <li class="flex items-center gap-2"><span
-                                class="material-symbols-outlined text-primary-container text-lg">check</span>
-                            E-Signatures</li>
-                        <li class="flex items-center gap-2"><span
-                                class="material-symbols-outlined text-primary-container text-lg">check</span> Unlimited
-                            proposals — no per-document fees, ever.</li>
-                        <li class="flex items-center gap-2"><span
-                                class="material-symbols-outlined text-primary-container text-lg">check</span> Your
-                            client signs in one click. No app, no account, no friction.</li>
-                        <li class="flex items-center gap-2"><span
-                                class="material-symbols-outlined text-primary-container text-lg">check</span> Automatic
-                            reminders until they sign — you never follow up manually again.</li>
-                        <li class="flex items-start gap-2"><span
-                                class="material-symbols-outlined text-primary-container text-lg mt-0.5">check</span><span>Document
-                                collection — request files from clients alongside proposals. <span
-                                    class="ml-1 text-xs font-medium px-1.5 py-0.5 rounded-full"
-                                    style="background:#f0fdf4;color:#166534;border:1px solid #bbf7d0;">Coming
-                                    soon</span></span></li>
-                        <li class="flex items-center gap-2"><span
-                                class="material-symbols-outlined text-primary-container text-lg">check</span> Direct
-                            line to the founder — tell us what you need. We build for users who show up early, first.
-                        </li>
-                    </ul>
-                    <p class="text-xs text-on-surface-variant/50 mt-3">If you bill $50/hour, Evisor pays for itself the
-                        moment it saves you 20 minutes. Most users save that on their very first proposal. PandaDoc
-                        starts at $35/month. Proposify at $49. You're getting more, for less.</p>
-                    <div class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium mb-3 mt-3"
-                        style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0;">
-                        <!-- STAT:SOLO_MONTHLY_SEATS_TAKEN -->37<!-- /STAT -->
-                        of <!-- STAT:SOLO_MONTHLY_SEATS_TOTAL -->50<!-- /STAT -->
-                        seats left
-                    </div>
-                    <a class="cta-solid text-on-primary text-center py-4 rounded-lg font-bold"
-                        href="https://my.evisor.app/register">Get started — $11/month</a>
-                    <p class="mt-4 text-center text-xs text-on-surface-variant">Cancel anytime. No contracts.</p>
-                </div>
-                <!-- Founding Offer -->
-                <div
-                    class="bg-white p-10 rounded-xl flex flex-col border-[1.5px] border-primary-container relative scale-105 shadow-2xl z-10 text-left">
-                    <h3 class="text-xl font-bold mb-2">Founding Offer</h3>
-                    <div class="flex items-baseline gap-2 mb-2">
-                        <span class="text-4xl font-black">$149</span>
-                        <span class="text-on-surface-variant font-bold text-lg">one-time (Solo)</span>
-                    </div>
-                    <p class="text-sm font-bold text-primary-container mb-8 italic">Or $249 for Small Firms</p>
-                    <!-- Founding Offer Checklist -->
-                    <ul class="space-y-0 mb-8 border-t border-[#E8E3DA] flex-grow">
-                        <li class="py-3 border-b border-[#E8E3DA] flex items-start gap-3">
-                            <span class="text-[#01696F] font-bold">✓</span>
-                            <span class="text-sm leading-relaxed">Lifetime access — pay once, keep it forever. No
-                                monthly bill, ever.</span>
-                        </li>
-                        <li class="py-3 border-b border-[#E8E3DA] flex items-start gap-3">
-                            <span class="text-[#01696F] font-bold">✓</span>
-                            <span class="text-sm leading-relaxed">Zero transaction fees — ever. Your payments are yours.
-                                We don't take a cut.</span>
-                        </li>
-                        <li class="py-3 border-b border-[#E8E3DA] flex items-start gap-3">
-                            <span class="text-[#01696F] font-bold">✓</span>
-                            <span class="text-sm leading-relaxed">Personal 1-on-1 onboarding call — we build your first
-                                3 proposal templates with you.</span>
-                        </li>
-                        <li class="py-3 border-b border-[#E8E3DA] flex items-start gap-3">
-                            <span class="text-[#01696F] font-bold">✓</span>
-                            <span class="text-sm leading-relaxed">Direct access to the founder for your first 90 days —
-                                reply within 24 hours.</span>
-                        </li>
-                        <li class="py-3 border-b border-[#E8E3DA] flex items-start gap-3">
-                            <span class="text-[#01696F] font-bold">✓</span>
-                            <span class="text-sm leading-relaxed">Every new feature free as it ships — QuickBooks, Xero,
-                                recurring billing, mobile app.</span>
-                        </li>
-                        <li class="py-3 border-b border-[#E8E3DA] flex items-start gap-3">
-                            <span class="text-[#01696F] font-bold">✓</span>
-                            <span class="text-sm leading-relaxed">Your feedback decides what we build next.</span>
-                        </li>
-                        <li class="py-3 flex items-start gap-3">
-                            <span class="text-[#01696F] font-bold">✓</span>
-                            <span class="text-sm leading-relaxed">Unlimited proposals and unlimited clients from day
-                                one.</span>
-                        </li>
-                    </ul>
-                    <p class="mt-4 mb-1">
-                        <button onclick="document.getElementById('lifetime-modal').classList.remove('hidden')"
-                            class="text-xs text-on-surface-variant/40 hover:text-on-surface-variant/70 underline underline-offset-2 cursor-pointer transition-colors bg-transparent border-none p-0">
-                            * What does "lifetime access" include?
-                        </button>
-                    </p>
-                    <div
-                        class="inline-flex items-center justify-center bg-[#FFF3CD] text-[#856404] px-4 py-2 rounded-full text-sm font-medium mb-4 scarcity-badge-pulse self-start">
-                        🔴 <!-- STAT:FOUNDING_SPOTS_REMAINING -->9<!-- /STAT --> of
-                        <!-- STAT:FOUNDING_SPOTS_TOTAL -->14<!-- /STAT --> founding spots remaining
-                    </div>
-                    <button
-                        class="founding-cta-btn cta-solid text-on-primary text-center py-4 rounded-lg font-bold text-lg w-full">Claim
-                        your founding spot — $149</button>
-                    <p class="mt-4 text-center text-xs font-bold text-on-surface-variant">Onboarding call scheduled
-                        within 48 hours or full refund.</p>
-                </div>
-                <!-- Small Firm -->
-                <div
-                    class="bg-white p-10 rounded-xl flex flex-col border border-outline-variant/30 shadow-sm relative overflow-hidden text-left">
-                    <div
-                        class="absolute top-4 right-4 bg-primary-container/10 text-primary-container px-3 py-1 rounded text-xs font-bold">
-                        Early Access</div>
-                    <h3 class="text-xl font-bold mb-2">Small Firm</h3>
-                    <div class="flex items-baseline gap-1 mb-1">
-                        <span class="text-4xl font-black">$47</span>
-                        <span class="text-on-surface-variant">/month</span>
-                    </div>
-                    <p class="text-sm text-on-surface-variant/60 mb-2 italic">then $59/month after first 3 months</p>
-                    <p class="text-sm font-bold text-primary-container mb-6">Annual: $469/year — 2 months free</p>
-                    <div class="bg-primary-container/5 p-4 rounded-lg text-xs mb-6 border border-primary-container/10">
-                        Tools like Ignition charge per seat. A 3-person firm there pays $117+/month. <strong>Here it's
-                            $59. Flat.</strong>
-                    </div>
-                    <ul class="space-y-4 mb-12 flex-grow">
-                        <li class="flex items-center gap-2"><span
-                                class="material-symbols-outlined text-primary-container text-lg">check</span> <strong
-                                class="font-bold">5 team members</strong> (flat price — not per seat)</li>
-                        <li class="flex items-center gap-2"><span
-                                class="material-symbols-outlined text-primary-container text-lg">check</span> Shared
-                            Templates</li>
-                        <li class="flex items-center gap-2"><span
-                                class="material-symbols-outlined text-primary-container text-lg">check</span> Multi-user
+                                class="material-symbols-outlined text-primary-container text-lg">check</span>Basic
                             dashboard</li>
-                        <li class="flex items-center gap-2"><span
-                                class="material-symbols-outlined text-primary-container text-lg">check</span> Everything
-                            in Solo</li>
-                        <li class="flex items-center gap-2"><span
-                                class="material-symbols-outlined text-primary-container text-lg">check</span> We don't
-                            touch your payments. No transaction fees, no processing cut — every payment goes directly to
-                            your firm.</li>
-                        <li class="flex items-center gap-2"><span
-                                class="material-symbols-outlined text-primary-container text-lg">check</span> Unlimited
-                            proposals across your whole team — no per-seat proposal fees.</li>
-                        <li class="flex items-center gap-2"><span
-                                class="material-symbols-outlined text-primary-container text-lg">check</span> Every
-                            client signs in one click. No downloads, no confusion, no lost emails.</li>
-                        <li class="flex items-center gap-2"><span
-                                class="material-symbols-outlined text-primary-container text-lg">check</span> Automatic
-                            follow-ups on every proposal — your team stops chasing and starts closing.</li>
-                        <li class="flex items-start gap-2"><span
-                                class="material-symbols-outlined text-primary-container text-lg mt-0.5">check</span><span>Document
-                                collection — request files from clients alongside proposals. <span
-                                    class="ml-1 text-xs font-medium px-1.5 py-0.5 rounded-full"
-                                    style="background:#f0fdf4;color:#166534;border:1px solid #bbf7d0;">Coming
-                                    soon</span></span></li>
-                        <li class="flex items-center gap-2"><span
-                                class="material-symbols-outlined text-primary-container text-lg">check</span> Direct
-                            line to the founder — your team's feedback shapes what gets built next.</li>
                     </ul>
-                    <p class="text-xs text-on-surface-variant/50 mt-3">5 seats. Flat price. Ignition charges $117+/month
-                        for the same team size.</p>
-                    <div class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium mb-3 mt-3"
-                        style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0;">
-                        <!-- STAT:FIRM_MONTHLY_SEATS_TAKEN -->12<!-- /STAT -->
-                        of <!-- STAT:FIRM_MONTHLY_SEATS_TOTAL -->30<!-- /STAT -->
-                        seats left
+                    <a class="w-full text-center py-3 rounded-lg font-bold border border-primary-container text-primary-container bg-transparent hover:bg-primary-container/5 transition-colors"
+                        href="https://my.evisor.app/register">Start Free — No card needed</a>
+                </div>
+
+                <!-- SOLO -->
+                <div
+                    class="bg-white p-8 rounded-xl flex flex-col border-[1.5px] border-primary-container shadow-xl text-left relative">
+                    <div
+                        class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary-container text-on-primary px-4 py-1 rounded-full text-xs font-bold whitespace-nowrap">
+                        ★ Most Popular
                     </div>
-                    <a class="cta-solid text-on-primary text-center py-4 rounded-lg font-bold"
-                        href="https://my.evisor.app/register">Get started — $47/month</a>
-                    <p class="mt-4 text-center text-xs text-on-surface-variant">Cancel anytime. No contracts.</p>
+                    <p class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3 mt-4">SOLO</p>
+                    <div
+                        class="inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold bg-yellow-100 text-yellow-800 mb-4 self-start">
+                        🚀 First month offer
+                    </div>
+                    <div class="flex items-end gap-2 mb-2">
+                        <span class="text-xl font-semibold line-through text-on-surface-variant">$15</span>
+                        <span class="text-4xl font-black text-on-surface">$7</span>
+                        <span class="text-on-surface-variant mb-1">/month</span>
+                    </div>
+                    <p class="text-sm text-on-surface-variant mb-6">then $15/mo · cancel anytime</p>
+                    <ul class="space-y-3 mb-8 flex-grow">
+                        <li class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-primary-container text-lg">check</span>Unlimited
+                            clients</li>
+                        <li class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-primary-container text-lg">check</span>Unlimited
+                            proposals</li>
+                        <li class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-primary-container text-lg">check</span>Unlimited
+                            engagement letters</li>
+                        <li class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-primary-container text-lg">check</span>Custom
+                            branding (logo + colour)</li>
+                        <li class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-primary-container text-lg">check</span>Custom letter
+                            templates</li>
+                        <li class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-primary-container text-lg">check</span>Proposal
+                            tracking (time spent)</li>
+                        <li class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-primary-container text-lg">check</span>Decline
+                            reason capture</li>
+                        <li class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-primary-container text-lg">check</span>Automated
+                            follow-ups</li>
+                        <li class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-primary-container text-lg">check</span>Payment link
+                            collection</li>
+                    </ul>
+                    <a class="cta-solid text-on-primary text-center py-3 rounded-lg font-bold"
+                        href="https://my.evisor.app/register">Get Started</a>
+                </div>
+
+                <!-- FIRM -->
+                <div class="bg-white p-8 rounded-xl flex flex-col border border-outline-variant/40 text-left">
+                    <p class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3">FIRM</p>
+                    <div class="flex items-end gap-2 mb-6">
+                        <span class="text-4xl font-black text-on-surface">$39</span>
+                        <span class="text-on-surface-variant mb-1">/month</span>
+                    </div>
+                    <ul class="space-y-3 mb-8 flex-grow">
+                        <li class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-primary-container text-lg">check</span>Everything in
+                            Solo</li>
+                        <li class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-primary-container text-lg">check</span>Up to 100
+                            team members</li>
+                        <li class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-primary-container text-lg">check</span>Priority
+                            support</li>
+                        <li class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-primary-container text-lg">check</span>Advanced
+                            analytics</li>
+                        <li class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-primary-container text-lg">check</span>Custom
+                            branding (logo + colour)</li>
+                        <li class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-primary-container text-lg">check</span>Dedicated
+                            onboarding</li>
+                    </ul>
+                    <a class="cta-solid text-on-primary text-center py-3 rounded-lg font-bold"
+                        href="https://my.evisor.app/register">Contact Us</a>
                 </div>
             </div>
 
-
+            <p class="text-center text-sm text-on-surface-variant mt-10">All plans include e-signatures, client
+                onboarding, and US-standard engagement letters. Cancel anytime — no lock-in.</p>
         </div>
     </section>
     <!-- FAQ Section -->
