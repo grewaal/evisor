@@ -3,24 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Evisor — Find, price &amp; sign your next bookkeeping client</title>
-  <meta name="description" content="Evisor helps bookkeepers find newly registered businesses near them, work out what to charge with confidence, and get proposals and engagement letters signed in minutes. Free to start — no credit card.">
-  <meta name="keywords" content="find bookkeeping clients, bookkeeper proposal software, engagement letters, bookkeeping pricing, e-signature for bookkeepers, accounting practice software">
-  <meta property="og:title" content="Evisor — Find, price &amp; sign your next bookkeeping client">
-  <meta property="og:description" content="The tool built for the whole bookkeeping client journey: find newly registered businesses near you, price the work with confidence, and get signed in minutes. Free to start.">
+  <title>Evisor — Find your next bookkeeping client, price the work, get it signed</title>
+  <meta name="description" content="Practice software for bookkeepers that starts three steps earlier than the rest. Real businesses in your niche, the exact words to reach them, a fee you can defend, and an engagement letter signed the same day. Free plan, no card.">
+  <meta name="keywords" content="find bookkeeping clients, bookkeeper proposal software, engagement letter software, bookkeeping pricing, e-signature for bookkeepers, accounting practice management, Ignition alternative, GoProposal alternative">
+  <meta property="og:title" content="Evisor — From stranger to signed">
+  <meta property="og:description" content="Every other tool for bookkeepers starts after you already have the client. Evisor starts three steps earlier: find them, price the work, get it signed. Free to start.">
   <meta property="og:url" content="https://evisor.app">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://evisor.app/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Evisor — Find, price &amp; sign your next bookkeeping client">
-  <meta name="twitter:description" content="Find newly registered businesses near you, price the work with confidence, and get proposals and engagement letters signed in minutes. Built for bookkeepers.">
+  <meta name="twitter:title" content="Evisor — From stranger to signed">
+  <meta name="twitter:description" content="Find real businesses in your niche, price the work with confidence, and get engagement letters signed the same day. Built for solo bookkeepers and small practices.">
   <meta name="twitter:image" content="https://evisor.app/og-image.png">
+  <link rel="canonical" href="https://evisor.app/">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/favicon.svg?v=2">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -29,113 +30,141 @@
           colors: {
             primary: '#004f54',
             'primary-mid': '#01696F',
-            'primary-light': '#e6f0f1',
+            'primary-light': '#E7EFEF',
+            'primary-deep': '#032C2E',
+            brass: '#C08A2E',
+            'brass-light': '#E8C57A',
             bg: '#F7F6F2',
             surface: '#ffffff',
-            border: '#E2E0DA',
-            'text-p': '#28251D',
-            'text-m': '#6B7280',
+            border: '#DFDBD0',
+            'border-soft': '#EAE7DE',
+            'text-p': '#221F19',
+            'text-m': '#6E6A5F',
           },
-          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            serif: ['"Source Serif 4"', 'Georgia', 'serif'],
+            mono: ['"IBM Plex Mono"', 'ui-monospace', 'monospace'],
+          },
         }
       }
     }
   </script>
   <style>
     *{box-sizing:border-box;}
-    body{font-family:'Inter',sans-serif;background:#F7F6F2;color:#28251D;overflow-x:hidden;}
-    .hero-grid{
-      background-image:linear-gradient(rgba(0,79,84,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(0,79,84,.07) 1px,transparent 1px);
-      background-size:40px 40px;
-    }
-    .gradient-text{
-      background:linear-gradient(135deg,#004f54 0%,#01696F 50%,#0d9488 100%);
-      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-    }
-    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
-    @keyframes pdot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.75)}}
-    @keyframes fadeup{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-    @keyframes chatpop{from{opacity:0;transform:scale(.85) translateY(16px)}to{opacity:1;transform:scale(1) translateY(0)}}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Inter',system-ui,sans-serif;background:#F7F6F2;color:#221F19;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+    h1,h2,.display{font-family:'Source Serif 4',Georgia,serif;font-weight:700;letter-spacing:-.015em;}
+    .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;}
+    .num{font-family:'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums;font-feature-settings:"tnum";letter-spacing:-.02em;}
+
+    /* ── Signature: the accounting double rule ─────────────────────────
+       In a ledger a single underline means subtotal; a double underline
+       means the figure is final, footed and closed. It is the page's
+       structural grammar — it appears under the thesis, under the price
+       that matters, and under the total of the one-time offer.        */
+    .rule2{position:relative;display:block;height:6px;color:#004f54;}
+    .rule2::before,.rule2::after{content:"";position:absolute;left:0;height:2px;background:currentColor;width:0;transition:width .55s cubic-bezier(.22,.68,.3,1);}
+    .rule2::before{top:0;}
+    .rule2::after{top:4px;transition-delay:.14s;}
+    .rule2.drawn::before,.rule2.drawn::after{width:100%;}
+    .rule2.thin::before,.rule2.thin::after{height:1.5px;}
+    .rule1{height:1px;background:#DFDBD0;}
+
+    .hairline{border-top:1px solid #DFDBD0;}
+    .eyebrow-rule{display:inline-flex;align-items:center;gap:12px;}
+    .eyebrow-rule::after{content:"";display:block;width:34px;height:1px;background:currentColor;opacity:.45;}
+
+    @keyframes fadeup{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+    @keyframes pdot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.75)}}
     @keyframes spin{to{transform:rotate(360deg)}}
-    .anim-float{animation:float 4s ease-in-out infinite;}
-    .anim-float2{animation:float 4s ease-in-out 1.8s infinite;}
+    @keyframes chatpop{from{opacity:0;transform:scale(.9) translateY(14px)}to{opacity:1;transform:none}}
+    .anim-fadeup{animation:fadeup .7s cubic-bezier(.22,.68,.3,1) both;}
     .anim-pdot{animation:pdot 2s ease-in-out infinite;}
-    .anim-fadeup{animation:fadeup .6s ease-out both;}
-    .d1{animation-delay:.1s}.d2{animation-delay:.2s}.d3{animation-delay:.3s}.d4{animation-delay:.4s}.d5{animation-delay:.5s}.d6{animation-delay:.6s}
-    .card-hover{transition:transform .2s ease,box-shadow .2s ease;}
-    .card-hover:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,79,84,.13);}
-    .faq-ans{max-height:0;overflow:hidden;transition:max-height .35s ease;}
-    .faq-ans.open{max-height:280px;}
+    .spin{animation:spin .7s linear infinite;}
+    .d1{animation-delay:.08s}.d2{animation-delay:.16s}.d3{animation-delay:.24s}.d4{animation-delay:.32s}.d5{animation-delay:.4s}.d6{animation-delay:.48s}
+    .scroll-rev{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s cubic-bezier(.22,.68,.3,1);}
+    .scroll-rev.vis{opacity:1;transform:none;}
+
+    .card-lift{transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;}
+    .card-lift:hover{transform:translateY(-3px);border-color:rgba(0,79,84,.32);box-shadow:0 14px 34px -18px rgba(34,31,25,.35);}
+
+    .faq-ans{max-height:0;overflow:hidden;transition:max-height .34s ease;}
+    .faq-ans.open{max-height:420px;}
     .faq-item.active .faq-ic{transform:rotate(45deg);}
     .faq-ic{transition:transform .3s ease;display:inline-block;}
-    .price-num{transition:opacity .18s ease;}
+
+    .price-num{transition:opacity .16s ease;}
     .price-num.fading{opacity:0;}
-    .bill-btn{transition:all .2s ease;border-radius:9999px;padding:7px 20px;font-size:13px;font-weight:600;white-space:nowrap;}
-    .bill-btn.on{background:#004f54;color:#fff;}
-    .bill-btn.off{color:#6B7280;}
-    .bill-btn.off:hover{color:#28251D;}
-    .strike-wrap{position:relative;display:inline-block;}
-    .strike-line{position:absolute;top:50%;left:0;height:2px;background:#9CA3AF;transform:translateY(-50%);width:0;transition:width .45s ease-out .5s;}
-    .do-strike .strike-line{width:100%;}
-    .new-price{transition:opacity .3s ease 1s,transform .3s ease 1s;opacity:0;transform:translateY(6px);}
-    .do-strike .new-price{opacity:1;transform:translateY(0);}
-    #mobile-panel{position:fixed;inset:0;background:#fff;z-index:998;transform:translateX(100%);transition:transform .3s ease;overflow-y:auto;}
-    #mobile-panel.open{transform:translateX(0);}
-    .scroll-rev{opacity:0;transform:translateY(24px);transition:opacity .5s ease,transform .5s ease;}
-    .scroll-rev.vis{opacity:1;transform:none;}
-    #chat-panel{
-      position:fixed;bottom:88px;right:20px;width:340px;max-height:520px;
-      background:#fff;border-radius:18px;box-shadow:0 8px 40px rgba(0,0,0,.16);
-      z-index:1000;display:none;flex-direction:column;overflow:hidden;
-      animation:chatpop .3s ease-out;
-    }
+    .seg{display:inline-flex;background:#fff;border:1px solid #DFDBD0;border-radius:999px;padding:4px;}
+    .seg-btn{border-radius:999px;padding:8px 18px;font-size:13px;font-weight:600;white-space:nowrap;transition:background .18s ease,color .18s ease;color:#6E6A5F;}
+    .seg-btn.on{background:#004f54;color:#fff;}
+    .seg-btn:not(.on):hover{color:#221F19;}
+
+    .plan-star{border:1.5px solid #004f54;box-shadow:0 22px 50px -30px rgba(0,79,84,.55);}
+    .tick{flex:0 0 auto;width:15px;height:15px;margin-top:3px;}
+
+    /* One-time offer band — the only dark surface, the only brass on the page */
+    .build-band{background:#032C2E;color:#F3F1EA;}
+    .build-band .hair{border-color:rgba(232,197,122,.24);}
+    .rule2s{position:relative;display:block;height:6px;color:#C08A2E;}
+    .rule2s::before,.rule2s::after{content:"";position:absolute;left:0;right:0;height:2px;background:currentColor;}
+    .rule2s::before{top:0}.rule2s::after{top:4px}
+    .rule2s.ink{color:#004f54;}
+
+    /* visibility keeps the closed off-canvas menu out of the tab order */
+    #mobile-panel{position:fixed;inset:0;background:#fff;z-index:998;transform:translateX(100%);visibility:hidden;transition:transform .3s ease,visibility .3s;overflow-y:auto;}
+    #mobile-panel.open{transform:translateX(0);visibility:visible;}
+
+    #chat-panel{position:fixed;bottom:88px;right:20px;width:340px;max-height:520px;background:#fff;border-radius:16px;box-shadow:0 8px 40px rgba(0,0,0,.16);z-index:1000;display:none;flex-direction:column;overflow:hidden;animation:chatpop .3s ease-out;}
     #chat-panel.open{display:flex;}
     #chat-msgs{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:8px;max-height:310px;}
-    .cmsg{max-width:82%;padding:10px 14px;border-radius:16px;font-size:13px;line-height:1.55;word-break:break-word;}
-    .cmsg.bot{background:#f3f4f6;color:#28251D;border-bottom-left-radius:4px;align-self:flex-start;}
+    .cmsg{max-width:82%;padding:10px 14px;border-radius:14px;font-size:13px;line-height:1.55;word-break:break-word;}
+    .cmsg.bot{background:#F2F0E9;color:#221F19;border-bottom-left-radius:4px;align-self:flex-start;}
     .cmsg.usr{background:#004f54;color:#fff;border-bottom-right-radius:4px;align-self:flex-end;}
-    .ctyping{background:#f3f4f6;padding:10px 14px;border-radius:16px;border-bottom-left-radius:4px;align-self:flex-start;display:inline-flex;gap:4px;align-items:center;}
-    .tdot{width:6px;height:6px;background:#9CA3AF;border-radius:50%;animation:pdot 1.1s ease-in-out infinite;}
-    .tdot:nth-child(2){animation-delay:.2s;}
-    .tdot:nth-child(3){animation-delay:.4s;}
+    .ctyping{background:#F2F0E9;padding:10px 14px;border-radius:14px;border-bottom-left-radius:4px;align-self:flex-start;display:inline-flex;gap:4px;align-items:center;}
+    .tdot{width:6px;height:6px;background:#9C978A;border-radius:50%;animation:pdot 1.1s ease-in-out infinite;}
+    .tdot:nth-child(2){animation-delay:.2s}.tdot:nth-child(3){animation-delay:.4s}
     #chat-bubble{position:fixed;bottom:20px;right:20px;z-index:1001;}
-    @media(max-width:640px){
-      #chat-panel{width:calc(100vw - 32px);right:16px;bottom:80px;}
-      #chat-bubble{right:16px;bottom:16px;}
+    @media(max-width:640px){#chat-panel{width:calc(100vw - 32px);right:16px;bottom:80px;}#chat-bubble{right:16px;bottom:16px;}}
+
+    a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid #004f54;outline-offset:2px;border-radius:4px;}
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto;}
+      *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;}
+      .scroll-rev{opacity:1;transform:none;}
+      .rule2::before,.rule2::after{width:100%;}
     }
-    .spin{animation:spin .7s linear infinite;}
-    .gradient-hero-bg{background:linear-gradient(160deg,#f0f8f8 0%,#F7F6F2 60%);}
-    .plan-popular-ring{border:2px solid #004f54;}
-    .trust-row-evisor{background:rgba(0,79,84,.07);}
   </style>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-B4347EDBV9"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-B4347EDBV9');</script>
 </head>
 <body class="bg-bg">
 
-<!-- NAVBAR -->
-<nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border">
+<!-- ─────────────────────────  NAV  ───────────────────────── -->
+<nav class="sticky top-0 z-50 bg-bg/92 backdrop-blur-md border-b border-border">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-    <a href="/" class="flex items-center gap-2.5 flex-shrink-0">
-      <svg width="32" height="32" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-        <path d="M10 8V40" fill="none" stroke="#0E6E6E" stroke-width="4.5" stroke-linecap="round"/>
-        <path d="M10 8H36" fill="none" stroke="#0E6E6E" stroke-width="4.5" stroke-linecap="round"/>
-        <path d="M10 40H36" fill="none" stroke="#0E6E6E" stroke-width="4.5" stroke-linecap="round"/>
-        <path d="M10 24H20L38 10" fill="none" stroke="#0E6E6E" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <a href="/" class="flex items-center gap-2.5 flex-shrink-0" aria-label="Evisor home">
+      <svg width="30" height="30" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M10 8V40" fill="none" stroke="#004f54" stroke-width="4.5" stroke-linecap="round"/>
+        <path d="M10 8H36" fill="none" stroke="#004f54" stroke-width="4.5" stroke-linecap="round"/>
+        <path d="M10 40H36" fill="none" stroke="#004f54" stroke-width="4.5" stroke-linecap="round"/>
+        <path d="M10 24H20L38 10" fill="none" stroke="#004f54" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-      <span class="text-xl font-bold" style="color:#004f54">Evisor</span>
+      <span class="text-xl font-bold tracking-tight" style="color:#004f54">Evisor</span>
     </a>
     <div class="hidden md:flex items-center gap-7">
-      <a href="#find" class="text-sm text-text-m hover:text-text-p transition-colors">Find clients</a>
+      <a href="#journey" class="text-sm text-text-m hover:text-text-p transition-colors">How it works</a>
       <a href="#features" class="text-sm text-text-m hover:text-text-p transition-colors">Features</a>
       <a href="#pricing" class="text-sm text-text-m hover:text-text-p transition-colors">Pricing</a>
+      <a href="#build" class="text-sm text-text-m hover:text-text-p transition-colors">Practice Build</a>
       <a href="#faq" class="text-sm text-text-m hover:text-text-p transition-colors">FAQ</a>
     </div>
     <div class="flex items-center gap-3">
-      <a href="https://my.evisor.app" class="hidden sm:block text-sm font-medium text-text-m hover:text-text-p transition-colors">Sign In</a>
-      <a href="https://my.evisor.app/register" class="bg-primary text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-primary-mid transition-colors">Start Free</a>
-      <button onclick="toggleMobileMenu()" class="md:hidden p-2 -mr-1 text-text-m hover:text-text-p" aria-label="Menu">
-        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <a href="https://my.evisor.app" class="hidden sm:block text-sm font-medium text-text-m hover:text-text-p transition-colors">Sign in</a>
+      <a href="https://my.evisor.app/register" class="bg-primary text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-primary-mid transition-colors">Start free</a>
+      <button onclick="toggleMobileMenu()" class="md:hidden p-2 -mr-1 text-text-m hover:text-text-p" aria-label="Open menu">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </button>
     </div>
   </div>
@@ -144,483 +173,1014 @@
 <!-- MOBILE PANEL -->
 <div id="mobile-panel">
   <div class="flex items-center justify-between px-5 h-16 border-b border-border">
-    <div class="flex items-center gap-2.5">
-      <svg width="28" height="28" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-        <path d="M10 8V40" fill="none" stroke="#0E6E6E" stroke-width="4.5" stroke-linecap="round"/>
-        <path d="M10 8H36" fill="none" stroke="#0E6E6E" stroke-width="4.5" stroke-linecap="round"/>
-        <path d="M10 40H36" fill="none" stroke="#0E6E6E" stroke-width="4.5" stroke-linecap="round"/>
-        <path d="M10 24H20L38 10" fill="none" stroke="#0E6E6E" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <span class="text-xl font-bold" style="color:#004f54">Evisor</span>
-    </div>
-    <button onclick="toggleMobileMenu()" class="p-2 text-text-m">
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    <span class="text-xl font-bold" style="color:#004f54">Evisor</span>
+    <button onclick="toggleMobileMenu()" class="p-2 text-text-m" aria-label="Close menu">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
     </button>
   </div>
   <div class="px-5 py-6 flex flex-col">
-    <a href="#find" onclick="toggleMobileMenu()" class="py-4 text-base font-medium border-b border-border/60">Find clients</a>
-    <a href="#how-it-works" onclick="toggleMobileMenu()" class="py-4 text-base font-medium border-b border-border/60">The journey</a>
-    <a href="#features" onclick="toggleMobileMenu()" class="py-4 text-base font-medium border-b border-border/60">Features</a>
-    <a href="#pricing" onclick="toggleMobileMenu()" class="py-4 text-base font-medium border-b border-border/60">Pricing</a>
-    <a href="#faq" onclick="toggleMobileMenu()" class="py-4 text-base font-medium border-b border-border/60">FAQ</a>
-    <a href="#contact" onclick="toggleMobileMenu()" class="py-4 text-base font-medium border-b border-border/60">Contact</a>
-    <div class="pt-5 flex flex-col gap-3">
-      <a href="https://my.evisor.app" class="text-center py-3 border-2 border-primary text-primary font-semibold rounded-xl">Sign In</a>
-      <a href="https://my.evisor.app/register" class="text-center py-3 bg-primary text-white font-semibold rounded-xl">Start Free — No Card Needed</a>
+    <a href="#journey" onclick="toggleMobileMenu()" class="py-4 text-base font-medium border-b border-border-soft">How it works</a>
+    <a href="#find" onclick="toggleMobileMenu()" class="py-4 text-base font-medium border-b border-border-soft">Find clients</a>
+    <a href="#features" onclick="toggleMobileMenu()" class="py-4 text-base font-medium border-b border-border-soft">Features</a>
+    <a href="#pricing" onclick="toggleMobileMenu()" class="py-4 text-base font-medium border-b border-border-soft">Pricing</a>
+    <a href="#build" onclick="toggleMobileMenu()" class="py-4 text-base font-medium border-b border-border-soft">Practice Build</a>
+    <a href="#faq" onclick="toggleMobileMenu()" class="py-4 text-base font-medium border-b border-border-soft">FAQ</a>
+    <a href="#contact" onclick="toggleMobileMenu()" class="py-4 text-base font-medium border-b border-border-soft">Contact</a>
+    <div class="pt-6 flex flex-col gap-3">
+      <a href="https://my.evisor.app" class="text-center py-3 border border-primary text-primary font-semibold rounded-xl">Sign in</a>
+      <a href="https://my.evisor.app/register" class="text-center py-3 bg-primary text-white font-semibold rounded-xl">Start free — no card</a>
     </div>
   </div>
 </div>
 
-<!-- HERO -->
-<section class="hero-grid gradient-hero-bg pt-16 pb-20 px-4 text-center overflow-hidden">
-  <div class="max-w-4xl mx-auto">
-    <div class="inline-flex items-center gap-2 bg-white border border-border rounded-full px-4 py-1.5 text-xs font-semibold text-text-m mb-8 shadow-sm anim-fadeup">
-      <span class="w-2 h-2 rounded-full bg-emerald-500 anim-pdot"></span>
-      New — Find Clients &amp; the pricing engine are live
-    </div>
-    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-5 anim-fadeup d1">
-      <span class="gradient-text">Find your next client.</span><br>
-      Not just paper them.
+<!-- ─────────────────────────  HERO  ───────────────────────── -->
+<header class="px-4 pt-16 pb-14 sm:pt-20 sm:pb-16">
+  <div class="max-w-5xl mx-auto">
+    <p class="eyebrow text-primary anim-fadeup"><span class="eyebrow-rule">Practice software for bookkeepers</span></p>
+
+    <h1 class="mt-6 text-[2.75rem] leading-[1.02] sm:text-6xl lg:text-[4.5rem] anim-fadeup d1">
+      From stranger<br>to <span class="relative inline-block">signed<span class="rule2 absolute left-0 -bottom-4 w-full" id="hero-rule" aria-hidden="true"></span></span>.
     </h1>
-    <p class="text-lg sm:text-xl text-text-m max-w-2xl mx-auto mb-8 anim-fadeup d2">
-      Most tools start once you already have a client. Evisor starts a step earlier — helping you <strong class="text-text-p font-semibold">find</strong> newly registered businesses near you, <strong class="text-text-p font-semibold">price</strong> the work with confidence, and get proposals and engagement letters <strong class="text-text-p font-semibold">signed</strong> in minutes.
+
+    <p class="mt-9 text-lg sm:text-xl leading-relaxed text-text-m max-w-2xl anim-fadeup d2">
+      Every other tool for bookkeepers starts <em class="not-italic text-text-p font-semibold">after</em> you already have the client. Evisor starts three steps earlier — with real businesses in the niche you want, the exact words to reach them, a fee you can defend, and an engagement letter signed on their phone the same day.
     </p>
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mb-10 anim-fadeup d3">
-      <a href="https://my.evisor.app/register" class="w-full sm:w-auto bg-primary text-white font-bold px-8 py-3.5 rounded-xl hover:bg-primary-mid transition-all hover:shadow-lg text-base">Start for free →</a>
-      <a href="#find" class="w-full sm:w-auto border-2 border-border bg-white text-text-p font-semibold px-8 py-3.5 rounded-xl hover:border-primary/40 transition-all text-base">See how it works</a>
+
+    <div class="mt-9 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 anim-fadeup d3">
+      <a href="https://my.evisor.app/register" class="text-center bg-primary text-white font-semibold px-8 py-4 rounded-xl hover:bg-primary-mid transition-colors text-base">Start free — no card</a>
+      <a href="#journey" class="text-center border border-border bg-white text-text-p font-semibold px-8 py-4 rounded-xl hover:border-primary/40 transition-colors text-base">See all six stages</a>
     </div>
-    <p class="text-sm text-text-m anim-fadeup d4">Free forever plan · No credit card · Built for bookkeepers, not enterprise</p>
-    <div class="mt-12 flex flex-wrap justify-center gap-3 anim-fadeup d5">
-      <div class="anim-float bg-white border border-border shadow-md rounded-2xl px-4 py-3 flex items-center gap-2.5 text-sm font-medium">
-        <svg class="w-4 h-4 flex-shrink-0" style="color:#004f54" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-        Businesses near you, before they hire
-      </div>
-      <div class="anim-float2 bg-white border border-border shadow-md rounded-2xl px-4 py-3 flex items-center gap-2.5 text-sm font-medium">
-        <svg class="w-4 h-4 flex-shrink-0" style="color:#004f54" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"/></svg>
-        Know exactly what to charge
-      </div>
-      <div class="anim-float bg-white border border-border shadow-md rounded-2xl px-4 py-3 flex items-center gap-2.5 text-sm font-medium" style="animation-delay:1s">
-        <svg class="w-4 h-4 flex-shrink-0" style="color:#004f54" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        Signed in minutes, on any device
-      </div>
+
+    <p class="mt-5 text-sm text-text-m anim-fadeup d4">Free plan with no time limit · We never take a percentage of your fees · Cancel in one click</p>
+
+    <!-- Ledger proof row -->
+    <div class="mt-14 anim-fadeup d5">
+      <div class="rule1"></div>
+      <dl class="grid grid-cols-2 md:grid-cols-4 gap-px bg-border">
+        <div class="bg-bg py-6 pr-4">
+          <dt class="num text-2xl sm:text-[1.75rem] font-semibold text-text-p">918,000</dt>
+          <dd class="mt-1.5 text-sm text-text-m leading-snug">verified businesses, refreshed every week</dd>
+        </div>
+        <div class="bg-bg py-6 px-4">
+          <dt class="num text-2xl sm:text-[1.75rem] font-semibold text-text-p">0%</dt>
+          <dd class="mt-1.5 text-sm text-text-m leading-snug">of what your clients pay you. Ever.</dd>
+        </div>
+        <div class="bg-bg py-6 px-4">
+          <dt class="num text-2xl sm:text-[1.75rem] font-semibold text-text-p">6</dt>
+          <dd class="mt-1.5 text-sm text-text-m leading-snug">stages of the client journey, one tool</dd>
+        </div>
+        <div class="bg-bg py-6 px-4">
+          <dt class="num text-2xl sm:text-[1.75rem] font-semibold text-text-p">100%</dt>
+          <dd class="mt-1.5 text-sm text-text-m leading-snug">of signatures captured with a tamper-evident audit trail</dd>
+        </div>
+      </dl>
+      <div class="rule1"></div>
     </div>
   </div>
-</section>
+</header>
 
-<!-- TRUST BAR -->
-<section class="bg-white border-y border-border py-5 px-4">
-  <div class="max-w-5xl mx-auto flex flex-wrap justify-center gap-x-10 gap-y-3">
-    <div class="flex items-center gap-2 text-sm font-medium text-text-m"><svg class="w-4 h-4" style="color:#004f54" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Find, price &amp; sign in one place</div>
-    <div class="flex items-center gap-2 text-sm font-medium text-text-m"><svg class="w-4 h-4" style="color:#004f54" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>0% payment fees — ever</div>
-    <div class="flex items-center gap-2 text-sm font-medium text-text-m"><svg class="w-4 h-4" style="color:#004f54" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Tamper-evident signature audit trail</div>
-    <div class="flex items-center gap-2 text-sm font-medium text-text-m"><svg class="w-4 h-4" style="color:#004f54" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Free plan — no time limit</div>
-    <div class="flex items-center gap-2 text-sm font-medium text-text-m"><svg class="w-4 h-4" style="color:#004f54" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Built for bookkeepers, not enterprise</div>
-  </div>
-</section>
-
-<!-- LIFECYCLE OVERVIEW -->
-<section id="how-it-works" class="py-20 px-4">
+<!-- ─────────────────────────  THE SIX STAGES  ───────────────────────── -->
+<section id="journey" class="px-4 py-20 sm:py-24 border-t border-border bg-white">
   <div class="max-w-5xl mx-auto">
-    <div class="text-center mb-4 scroll-rev"><p class="text-xs font-bold uppercase tracking-widest mb-2" style="color:#004f54">The whole client journey</p><h2 class="text-3xl font-bold mb-3">One tool for every stage — starting where it's hardest</h2><p class="text-text-m max-w-2xl mx-auto">The big suites pick up once you already have a prospect. Evisor covers the part that actually keeps you up at night — <strong class="text-text-p">finding</strong> the next client — then pricing, signing, and keeping them.</p></div>
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
-      <a href="#find" class="block bg-white rounded-2xl border border-border p-5 card-hover scroll-rev d1">
-        <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-3 text-white font-extrabold" style="background:#004f54">1</div>
-        <h3 class="font-bold text-base mb-1">Find</h3>
-        <p class="text-text-m text-sm">Newly registered businesses near you, before they have a bookkeeper.</p>
-      </a>
-      <a href="#price" class="block bg-white rounded-2xl border border-border p-5 card-hover scroll-rev d2">
-        <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-3 text-white font-extrabold" style="background:#01696F">2</div>
-        <h3 class="font-bold text-base mb-1">Price</h3>
-        <p class="text-text-m text-sm">Work out what to charge — with confidence, and a floor you never drop below.</p>
-      </a>
-      <a href="#propose" class="block bg-white rounded-2xl border border-border p-5 card-hover scroll-rev d3">
-        <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-3 text-white font-extrabold" style="background:#0d9488">3</div>
-        <h3 class="font-bold text-base mb-1">Propose &amp; sign</h3>
-        <p class="text-text-m text-sm">Proposals and compliant engagement letters, signed in minutes on any device.</p>
-      </a>
-      <a href="#keep" class="block bg-white rounded-2xl border border-border p-5 card-hover scroll-rev d4">
-        <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-3 text-white font-extrabold" style="background:#0f766e">4</div>
-        <h3 class="font-bold text-base mb-1">Keep</h3>
-        <p class="text-text-m text-sm">Onboard, remind, and renew — so the clients you win actually stay.</p>
-      </a>
-    </div>
+    <p class="eyebrow text-primary scroll-rev"><span class="eyebrow-rule">The client journey</span></p>
+    <h2 class="mt-5 text-3xl sm:text-[2.5rem] leading-tight max-w-2xl scroll-rev">Six stages. Everyone else joins at stage three.</h2>
+    <p class="mt-5 text-text-m max-w-2xl leading-relaxed scroll-rev">
+      Ignition, GoProposal, TaxDome and DocuSign are good at what they do — and every one of them assumes you already have a prospect on the phone. Getting to that phone call is the part that actually decides whether a practice grows.
+    </p>
+
+    <ol class="mt-12 grid grid-cols-2 lg:grid-cols-6 gap-px bg-border border border-border scroll-rev">
+      <li class="bg-white p-5 lg:p-4 relative">
+        <span class="num text-xs text-primary font-semibold">01</span>
+        <h3 class="font-serif text-lg mt-1.5">Find</h3>
+        <p class="text-text-m text-[13px] leading-snug mt-1.5">Real businesses in the niche you choose.</p>
+        <span class="absolute top-4 right-4 num text-[10px] font-semibold px-1.5 py-0.5 rounded bg-primary-light text-primary">Only here</span>
+      </li>
+      <li class="bg-white p-5 lg:p-4 relative">
+        <span class="num text-xs text-primary font-semibold">02</span>
+        <h3 class="font-serif text-lg mt-1.5">Price</h3>
+        <p class="text-text-m text-[13px] leading-snug mt-1.5">A fee you can defend, checked against your floor.</p>
+        <span class="absolute top-4 right-4 num text-[10px] font-semibold px-1.5 py-0.5 rounded bg-primary-light text-primary">Only here</span>
+      </li>
+      <li class="bg-white p-5 lg:p-4">
+        <span class="num text-xs text-text-m font-semibold">03</span>
+        <h3 class="font-serif text-lg mt-1.5">Propose</h3>
+        <p class="text-text-m text-[13px] leading-snug mt-1.5">Itemised, branded, built in minutes.</p>
+      </li>
+      <li class="bg-white p-5 lg:p-4">
+        <span class="num text-xs text-text-m font-semibold">04</span>
+        <h3 class="font-serif text-lg mt-1.5">Sign</h3>
+        <p class="text-text-m text-[13px] leading-snug mt-1.5">On their phone. No login, no app.</p>
+      </li>
+      <li class="bg-white p-5 lg:p-4">
+        <span class="num text-xs text-text-m font-semibold">05</span>
+        <h3 class="font-serif text-lg mt-1.5">Get paid</h3>
+        <p class="text-text-m text-[13px] leading-snug mt-1.5">Your payment link, on the signature page.</p>
+      </li>
+      <li class="bg-white p-5 lg:p-4">
+        <span class="num text-xs text-text-m font-semibold">06</span>
+        <h3 class="font-serif text-lg mt-1.5">Renew</h3>
+        <p class="text-text-m text-[13px] leading-snug mt-1.5">Your whole book, re-papered every January.</p>
+      </li>
+    </ol>
   </div>
 </section>
 
-<!-- FIND -->
-<section id="find" class="bg-white border-y border-border py-20 px-4">
-  <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+<!-- ─────────────────────────  01 FIND  ───────────────────────── -->
+<section id="find" class="px-4 py-20 sm:py-24 border-t border-border">
+  <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-14 lg:gap-16 items-center">
     <div class="scroll-rev">
-      <p class="text-xs font-bold uppercase tracking-widest mb-3" style="color:#004f54">01 — Find</p>
-      <h2 class="text-3xl font-bold mb-4 leading-tight">Newly registered businesses near you — before they have a bookkeeper.</h2>
-      <p class="text-text-m mb-6 leading-relaxed">Every week, new businesses register in your area. Most don't have a bookkeeper yet — and the one who reaches out first usually wins the work. Evisor gives you a fresh feed of them, the details to make contact, and a ready-to-send intro letter, so you're never staring at a blank page or a cold directory.</p>
-      <ul class="flex flex-col gap-3 mb-7">
-        <li class="flex items-start gap-3"><span class="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background:#e6f0f1"><svg class="w-3 h-3" style="color:#004f54" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span><span class="text-sm text-text-p"><strong>A live feed</strong> of newly registered local businesses</span></li>
-        <li class="flex items-start gap-3"><span class="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background:#e6f0f1"><svg class="w-3 h-3" style="color:#004f54" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span><span class="text-sm text-text-p"><strong>Contact tools</strong> to reach out while you're still first</span></li>
-        <li class="flex items-start gap-3"><span class="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background:#e6f0f1"><svg class="w-3 h-3" style="color:#004f54" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span><span class="text-sm text-text-p"><strong>Ready-to-send intro letters</strong> — personal, not spam</span></li>
-      </ul>
-      <p class="text-sm font-semibold text-text-p mb-6">New registrations appear all the time. The ones you don't reach, someone else will.</p>
-      <a href="https://my.evisor.app/register" class="inline-block bg-primary text-white font-semibold px-6 py-3 rounded-xl hover:bg-primary-mid transition-colors text-sm">Find clients free →</a>
-    </div>
-    <div class="scroll-rev d2">
-      <div class="bg-bg rounded-2xl border border-border shadow-lg p-5">
-        <div class="flex items-center justify-between mb-4">
-          <div class="flex items-center gap-2 text-sm font-bold text-text-p"><svg class="w-4 h-4" style="color:#004f54" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>New near you</div>
-          <span class="text-xs font-semibold text-white px-2.5 py-1 rounded-full" style="background:#004f54">12 this week</span>
-        </div>
-        <div class="flex flex-col gap-2.5">
-          <div class="bg-white rounded-xl border border-border p-3.5 flex items-center justify-between gap-3">
-            <div class="min-w-0"><p class="text-sm font-bold text-text-p truncate">Northside Coffee Co.</p><p class="text-xs text-text-m">Café · registered 2 days ago</p></div>
-            <button class="flex-shrink-0 text-xs font-semibold text-white px-3 py-1.5 rounded-lg" style="background:#004f54">Reach out</button>
-          </div>
-          <div class="bg-white rounded-xl border border-border p-3.5 flex items-center justify-between gap-3">
-            <div class="min-w-0"><p class="text-sm font-bold text-text-p truncate">Bright Path Consulting Ltd</p><p class="text-xs text-text-m">Consultancy · registered 4 days ago</p></div>
-            <button class="flex-shrink-0 text-xs font-semibold text-white px-3 py-1.5 rounded-lg" style="background:#004f54">Reach out</button>
-          </div>
-          <div class="bg-white rounded-xl border border-border p-3.5 flex items-center justify-between gap-3">
-            <div class="min-w-0"><p class="text-sm font-bold text-text-p truncate">Meadow &amp; Oak Interiors</p><p class="text-xs text-text-m">Retail · registered 5 days ago</p></div>
-            <button class="flex-shrink-0 text-xs font-semibold text-white px-3 py-1.5 rounded-lg" style="background:#004f54">Reach out</button>
-          </div>
-        </div>
-        <p class="text-center text-xs text-text-m mt-4">Illustrative preview of the Find Clients feed.</p>
-      </div>
-    </div>
-  </div>
-</section>
+      <p class="eyebrow text-primary"><span class="eyebrow-rule">Stage 01 — Find</span></p>
+      <h2 class="mt-5 text-3xl sm:text-[2.5rem] leading-tight">Start with a list.<br>Not a blank page.</h2>
+      <p class="mt-5 text-text-m leading-relaxed">
+        Choose the businesses you want as clients — restaurants, dental and medical, trades, e-commerce, salons, agencies, property. Evisor returns real, verified businesses you can contact today, with the intro email already written in your voice.
+      </p>
+      <p class="mt-4 text-text-m leading-relaxed">
+        You pick your niche, not your postcode. Bookkeeping isn't done at the client's desk any more, and the practices that grow fastest are the ones that specialise.
+      </p>
 
-<!-- PRICE -->
-<section id="price" class="py-20 px-4">
-  <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-    <div class="scroll-rev d2 order-last lg:order-first">
-      <div class="bg-white rounded-2xl border border-border shadow-lg p-5">
-        <p class="text-sm font-bold text-text-p mb-4">What should I charge?</p>
-        <div class="flex flex-col gap-2.5">
-          <div class="rounded-xl border border-border p-3.5 flex items-center justify-between"><div><p class="text-sm font-semibold">Essential</p><p class="text-xs text-text-m">Core monthly bookkeeping</p></div><p class="text-base font-extrabold text-text-p">$250<span class="text-xs font-medium text-text-m">/mo</span></p></div>
-          <div class="rounded-xl border-2 p-3.5 flex items-center justify-between" style="border-color:#004f54"><div><p class="text-sm font-semibold flex items-center gap-2">Standard <span class="text-[10px] font-bold text-white px-1.5 py-0.5 rounded-full" style="background:#004f54">Recommended</span></p><p class="text-xs text-text-m">Bookkeeping + monthly reporting</p></div><p class="text-base font-extrabold text-text-p">$400<span class="text-xs font-medium text-text-m">/mo</span></p></div>
-          <div class="rounded-xl border border-border p-3.5 flex items-center justify-between"><div><p class="text-sm font-semibold">Premium</p><p class="text-xs text-text-m">Full service + advisory</p></div><p class="text-base font-extrabold text-text-p">$600<span class="text-xs font-medium text-text-m">/mo</span></p></div>
-        </div>
-        <div class="mt-4 flex items-center gap-2 text-xs font-semibold" style="color:#0f766e"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Floor check passed — every option is above cost</div>
-        <p class="text-center text-xs text-text-m mt-4">Illustrative preview — example figures only.</p>
+      <ul class="mt-8 flex flex-col gap-4">
+        <li class="flex gap-3.5">
+          <svg class="tick text-primary" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p class="text-[15px] leading-relaxed"><strong class="font-semibold">The outreach is yours, entirely.</strong> Evisor writes the email and puts it on your clipboard. You send it from your own inbox — no mailbox connection, no sending on your behalf, nothing that can burn your domain.</p>
+        </li>
+        <li class="flex gap-3.5">
+          <svg class="tick text-primary" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p class="text-[15px] leading-relaxed"><strong class="font-semibold">A pipeline that shows movement.</strong> Saved, contacted, replied, proposal out, signed. You can see the machine working long before the first signature lands.</p>
+        </li>
+        <li class="flex gap-3.5">
+          <svg class="tick text-primary" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p class="text-[15px] leading-relaxed"><strong class="font-semibold">The answers to the four hard replies.</strong> "I already have an accountant." "What do you charge?" "Just send me some info." "Not right now." Written out, ready to paste.</p>
+        </li>
+      </ul>
+
+      <div class="mt-8 border border-border bg-white rounded-xl p-5">
+        <p class="eyebrow text-text-m">Where we're live today</p>
+        <p class="mt-2.5 text-sm leading-relaxed text-text-p">
+          The United Kingdom, Ireland, Canada and Australia in full — plus <strong class="font-semibold">New York, Pennsylvania, Connecticut, Colorado and Oregon</strong> in the US. Most members work remotely across all of it.
+        </p>
+        <p class="mt-2 text-sm text-text-m">Your state missing? <a href="#contact" class="underline decoration-primary/40 underline-offset-2 hover:text-text-p">Tell us and we'll prioritise it</a> — that list is how we decide what to open next.</p>
       </div>
     </div>
+
+    <!-- Find visual -->
     <div class="scroll-rev">
-      <p class="text-xs font-bold uppercase tracking-widest mb-3" style="color:#004f54">02 — Price</p>
-      <h2 class="text-3xl font-bold mb-4 leading-tight">Know exactly what to charge. Every time.</h2>
-      <p class="text-text-m mb-6 leading-relaxed">Under-pricing is the quiet killer of a bookkeeping practice. Evisor's pricing engine helps you land on a fair, profitable fee — it gives you three clear options to present, checks them against your floor so you never quote below cost, and turns the result into a client-ready quote in a click.</p>
-      <ul class="flex flex-col gap-3 mb-7">
-        <li class="flex items-start gap-3"><span class="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background:#e6f0f1"><svg class="w-3 h-3" style="color:#004f54" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span><span class="text-sm text-text-p"><strong>Three options</strong> — good, better, best — ready to present</span></li>
-        <li class="flex items-start gap-3"><span class="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background:#e6f0f1"><svg class="w-3 h-3" style="color:#004f54" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span><span class="text-sm text-text-p"><strong>A floor check</strong> so you never quote below what the work costs you</span></li>
-        <li class="flex items-start gap-3"><span class="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background:#e6f0f1"><svg class="w-3 h-3" style="color:#004f54" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span><span class="text-sm text-text-p"><strong>A client-ready quote</strong> in seconds — straight into a proposal</span></li>
-      </ul>
-      <p class="text-sm font-semibold text-text-p mb-6">Charge what you're worth — without the guesswork or the awkward back-and-forth.</p>
-      <a href="https://my.evisor.app/register" class="inline-block bg-primary text-white font-semibold px-6 py-3 rounded-xl hover:bg-primary-mid transition-colors text-sm">Price with confidence →</a>
-    </div>
-  </div>
-</section>
-
-<!-- PROPOSE & SIGN -->
-<section id="propose" class="bg-white border-y border-border py-20 px-4">
-  <div class="max-w-5xl mx-auto">
-    <div class="text-center mb-12 scroll-rev"><p class="text-xs font-bold uppercase tracking-widest mb-2" style="color:#004f54">03 — Propose &amp; sign</p><h2 class="text-3xl font-bold mb-3">Turn a yes into a signature — the same day</h2><p class="text-text-m max-w-2xl mx-auto">Send a polished proposal and a compliant engagement letter in one link. Your client reads and signs on their phone — no login, no app, no printing — and every signature is captured with a full, tamper-evident audit trail.</p></div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="text-center scroll-rev d1"><div class="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl font-extrabold text-white" style="background:#004f54">1</div><h3 class="font-bold text-lg mb-2">Build the proposal &amp; letter</h3><p class="text-text-m text-sm">Use professional templates or paste in your own. Add services, fees, and your branding in minutes — your quote flows straight in.</p></div>
-      <div class="text-center scroll-rev d2"><div class="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl font-extrabold text-white" style="background:#004f54">2</div><h3 class="font-bold text-lg mb-2">Send one link</h3><p class="text-text-m text-sm">Your client gets a polished, mobile-friendly page. They open it — no login, no app download — read, and sign with a tap.</p></div>
-      <div class="text-center scroll-rev d3"><div class="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl font-extrabold text-white" style="background:#004f54">3</div><h3 class="font-bold text-lg mb-2">Reminders until it's signed</h3><p class="text-text-m text-sm">If they haven't signed, Evisor follows up for you — so you stop chasing. You're notified the moment they sign.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- KEEP -->
-<section id="keep" class="py-20 px-4">
-  <div class="max-w-5xl mx-auto">
-    <div class="text-center mb-12 scroll-rev"><p class="text-xs font-bold uppercase tracking-widest mb-2" style="color:#004f54">04 — Keep</p><h2 class="text-3xl font-bold mb-3">Win them, then keep them</h2><p class="text-text-m max-w-2xl mx-auto">The work isn't done at the signature. Evisor onboards new clients automatically, follows up on what's missing, and tells you before a letter is due to renew — so the clients you worked to win actually stay.</p></div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-      <div class="bg-white rounded-2xl border border-border p-6 card-hover scroll-rev d1"><div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:#e6f0f1"><svg class="w-5 h-5" style="color:#004f54" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg></div><h3 class="font-bold text-base mb-2">Automatic onboarding</h3><p class="text-text-m text-sm">After signing, your client gets a checklist of everything you need — bank access, prior returns, software logins. Set once, reuse forever.</p></div>
-      <div class="bg-white rounded-2xl border border-border p-6 card-hover scroll-rev d2"><div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:#e6f0f1"><svg class="w-5 h-5" style="color:#004f54" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg></div><h3 class="font-bold text-base mb-2">Reminder sequences</h3><p class="text-text-m text-sm">Multi-step follow-ups that run on their own. Evisor chases missing documents and unsigned letters at the right intervals — so nothing stalls.</p></div>
-      <div class="bg-white rounded-2xl border border-border p-6 card-hover scroll-rev d3"><div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:#e6f0f1"><svg class="w-5 h-5" style="color:#004f54" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg></div><h3 class="font-bold text-base mb-2">Renewal tracking</h3><p class="text-text-m text-sm">Track when engagement letters expire. Get notified before contracts lapse and send the renewal before your client even realises it's due.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- FEATURES -->
-<section id="features" class="py-20 px-4">
-  <div class="max-w-6xl mx-auto">
-    <div class="text-center mb-12 scroll-rev"><p class="text-xs font-bold uppercase tracking-widest mb-2" style="color:#004f54">Everything included</p><h2 class="text-3xl font-bold mb-3">Replace the patchwork. Use one tool.</h2><p class="text-text-m max-w-xl mx-auto">From finding a client to pricing, signing, and keeping them — Evisor replaces the tools most bookkeepers cobble together, without the $50+/month price tag of enterprise software.</p></div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-      <div class="bg-white rounded-2xl border-2 p-6 card-hover scroll-rev d1" style="border-color:#004f54"><div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:#e6f0f1"><svg class="w-5 h-5" style="color:#004f54" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div><h3 class="font-bold text-base mb-2">Find Clients feed <span class="text-[10px] font-bold text-white px-1.5 py-0.5 rounded-full align-middle" style="background:#004f54">New</span></h3><p class="text-text-m text-sm">A fresh feed of newly registered businesses near you — before they have a bookkeeper — with contact tools and ready-to-send intro letters.</p></div>
-      <div class="bg-white rounded-2xl border-2 p-6 card-hover scroll-rev d2" style="border-color:#004f54"><div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:#e6f0f1"><svg class="w-5 h-5" style="color:#004f54" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"/></svg></div><h3 class="font-bold text-base mb-2">Pricing confidence engine <span class="text-[10px] font-bold text-white px-1.5 py-0.5 rounded-full align-middle" style="background:#004f54">New</span></h3><p class="text-text-m text-sm">Work out what to charge with three options, a floor check so you never quote below cost, and a client-ready quote that flows into your proposal.</p></div>
-      <div class="bg-white rounded-2xl border border-border p-6 card-hover scroll-rev d3"><div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:#e6f0f1"><svg class="w-5 h-5" style="color:#004f54" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div><h3 class="font-bold text-base mb-2">Professional proposals</h3><p class="text-text-m text-sm">Build service-itemised proposals in minutes. Your client gets something that looks like you hired a designer. No extra time.</p></div>
-      <div class="bg-white rounded-2xl border border-border p-6 card-hover scroll-rev d2"><div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:#e6f0f1"><svg class="w-5 h-5" style="color:#004f54" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg></div><h3 class="font-bold text-base mb-2">E-signatures on any device</h3><p class="text-text-m text-sm">Mobile-friendly signing — no app download, no account. Client opens a link, reads, and signs. Full audit trail automatically captured.</p></div>
-      <div class="bg-white rounded-2xl border border-border p-6 card-hover scroll-rev d3"><div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:#e6f0f1"><svg class="w-5 h-5" style="color:#004f54" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg></div><h3 class="font-bold text-base mb-2">Automated follow-up reminders</h3><p class="text-text-m text-sm">Evisor sends reminders on your behalf until your client signs or declines. You stop writing "just following up." They stop forgetting.</p></div>
-      <div class="bg-white rounded-2xl border border-border p-6 card-hover scroll-rev d1"><div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:#e6f0f1"><svg class="w-5 h-5" style="color:#004f54" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg></div><h3 class="font-bold text-base mb-2">Engagement letters with legal templates</h3><p class="text-text-m text-sm">Pre-built templates covering scope, fees, and dispute clauses. Use ours, or paste your own existing letter and get it signed.</p></div>
-      <div class="bg-white rounded-2xl border border-border p-6 card-hover scroll-rev d2"><div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:#e6f0f1"><svg class="w-5 h-5" style="color:#004f54" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg></div><h3 class="font-bold text-base mb-2">Client onboarding checklists</h3><p class="text-text-m text-sm">After signing, your client automatically receives a checklist of everything you need: bank access, prior returns, software login. Set once, reuse forever.</p></div>
-      <div class="bg-white rounded-2xl border border-border p-6 card-hover scroll-rev d3"><div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:#e6f0f1"><svg class="w-5 h-5" style="color:#004f54" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg></div><h3 class="font-bold text-base mb-2">Works with any payment processor</h3><p class="text-text-m text-sm">Stripe, PayPal, Wise, bank transfer — paste your link. Client pays immediately after signing. Evisor takes <strong>zero percentage</strong> of your revenue. Ever.</p></div>
-      <div class="bg-white rounded-2xl border border-border p-6 card-hover scroll-rev d1"><div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:#e6f0f1"><svg class="w-5 h-5" style="color:#004f54" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg></div><h3 class="font-bold text-base mb-2">Proposal &amp; letter analytics</h3><p class="text-text-m text-sm">See exactly when your client opened the proposal, how long they spent reading, and whether they've been back. Know when to follow up — and when to let it breathe.</p></div>
-      <div class="bg-white rounded-2xl border border-border p-6 card-hover scroll-rev d2"><div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:#e6f0f1"><svg class="w-5 h-5" style="color:#004f54" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div><h3 class="font-bold text-base mb-2">Quick charges</h3><p class="text-text-m text-sm">Bill for ad-hoc work without building a full proposal. Send a one-click payment request for an extra hour, catch-up cleanup, or anything out-of-scope in 30 seconds.</p></div>
-      <div class="bg-white rounded-2xl border border-border p-6 card-hover scroll-rev d3"><div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:#e6f0f1"><svg class="w-5 h-5" style="color:#004f54" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg></div><h3 class="font-bold text-base mb-2">Renewals tracking</h3><p class="text-text-m text-sm">Track when engagement letters expire. Get notified before contracts lapse and send the renewal letter before your client even realises it's due.</p></div>
-      <div class="bg-white rounded-2xl border border-border p-6 card-hover scroll-rev d1"><div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:#e6f0f1"><svg class="w-5 h-5" style="color:#004f54" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg></div><h3 class="font-bold text-base mb-2">Custom branding</h3><p class="text-text-m text-sm">Add your logo, colours, and firm name. Remove the Evisor footer. Your clients see your brand throughout — not ours.</p></div>
-      <div class="bg-white rounded-2xl border border-border p-6 card-hover scroll-rev d2"><div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:#e6f0f1"><svg class="w-5 h-5" style="color:#004f54" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg></div><h3 class="font-bold text-base mb-2">Reusable templates</h3><p class="text-text-m text-sm">Save your best proposals and letters as templates. Clone in seconds, tweak for the new client, send. No starting from scratch.</p></div>
-      <div class="bg-white rounded-2xl border border-border p-6 card-hover scroll-rev d3"><div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:#e6f0f1"><svg class="w-5 h-5" style="color:#004f54" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><h3 class="font-bold text-base mb-2">Reminder sequences</h3><p class="text-text-m text-sm">Automate multi-step follow-up schedules. Evisor sends reminder 1, 2, 3 at the right intervals — no manual scheduling needed.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- FOUNDER NOTE -->
-<section class="bg-white border-y border-border py-20 px-4">
-  <div class="max-w-3xl mx-auto">
-    <div class="text-center mb-8 scroll-rev"><p class="text-xs font-bold uppercase tracking-widest mb-2" style="color:#004f54">Why we built this</p><h2 class="text-3xl font-bold">Built for bookkeepers who hate admin</h2></div>
-    <div class="bg-bg rounded-2xl border border-border p-8 sm:p-10 scroll-rev">
-      <svg class="w-9 h-9 mb-5" style="color:#004f54" fill="currentColor" viewBox="0 0 24 24"><path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.57-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z"/></svg>
-      <p class="text-lg leading-relaxed text-text-p mb-4">Every tool for winning and keeping clients was either built for big firms, priced like it, or stopped at the paperwork. None of them helped with the hardest part — <strong>finding the next client</strong>.</p>
-      <p class="text-base leading-relaxed text-text-m mb-6">So we built the tool we wished we had: find, price, sign, and keep — in one place, at a price a solo practice can actually afford. Evisor is early and built in the open. There are no inflated logos or made-up reviews on this page, because we'd rather earn your trust with the product than borrow it with someone else's. If you try it, we'd genuinely love your feedback.</p>
-      <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-full flex items-center justify-center text-white text-sm font-bold" style="background:#004f54">E</div>
-        <div><p class="text-sm font-semibold text-text-p">The Evisor team</p><p class="text-xs text-text-m">Building in public · <a href="mailto:hello@evisor.app" class="underline hover:text-text-p">hello@evisor.app</a></p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PRICING -->
-<section id="pricing" class="py-20 px-4">
-  <div class="max-w-6xl mx-auto">
-    <div class="text-center mb-8 scroll-rev"><p class="text-xs font-bold uppercase tracking-widest mb-2" style="color:#004f54">Pricing</p><h2 class="text-3xl font-bold mb-2">Start free. Scale when you're ready.</h2><p class="text-text-m max-w-xl mx-auto">No hidden fees. No percentage of your revenue. Cancel anytime. Win one client with Evisor and the plan pays for itself many times over.</p></div>
-    <div class="flex justify-center mb-8 scroll-rev">
-      <div class="inline-flex items-center bg-white border border-border rounded-full p-1 shadow-sm">
-        <button id="btn-annual" onclick="setBilling('annual')" class="bill-btn on">Annual<span id="annual-badge" class="ml-2 text-xs font-bold px-2 py-0.5 rounded-full bg-white/20 text-white">2 months free</span></button>
-        <button id="btn-monthly" onclick="setBilling('monthly')" class="bill-btn off">Monthly</button>
-      </div>
-    </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 items-start">
-      <!-- Free -->
-      <div class="bg-white rounded-2xl border border-border shadow-sm p-6 flex flex-col scroll-rev d1">
-        <p class="text-xs font-bold uppercase tracking-wide text-text-m mb-1">Free</p>
-        <div class="flex items-baseline gap-1 my-3"><span class="text-4xl font-extrabold">$0</span></div>
-        <p class="text-xs text-text-m mb-1">No card required</p>
-        <p class="text-sm text-text-p mt-3 mb-5">Send your first signed document — free.</p>
-        <ul class="flex flex-col gap-2 text-sm mb-6 flex-1">
-          <li class="flex gap-2"><span style="color:#004f54">✓</span>3 clients</li>
-          <li class="flex gap-2"><span style="color:#004f54">✓</span>3 proposals &amp; 3 letters</li>
-          <li class="flex gap-2"><span style="color:#004f54">✓</span>E-signature &amp; audit trail</li>
-          <li class="flex gap-2"><span style="color:#004f54">✓</span>Standard templates</li>
-          <li class="flex gap-2"><span style="color:#004f54">✓</span>Free forever — no time limit</li>
-        </ul>
-        <a href="https://my.evisor.app/register" class="mt-auto block text-center border-2 border-primary text-primary font-semibold py-2.5 rounded-xl hover:bg-primary-light transition-colors text-sm">Start free — no card needed</a>
-        <p class="text-xs text-text-m text-center mt-2">Genuinely free forever.</p>
-      </div>
-      <!-- Starter -->
-      <div class="bg-white rounded-2xl border border-border shadow-sm p-6 flex flex-col scroll-rev d2">
-        <p class="text-xs font-bold uppercase tracking-wide text-text-m mb-1">Starter</p>
-        <div class="flex items-baseline gap-1 my-3"><span class="text-4xl font-extrabold price-num" data-monthly="$19" data-annual="$15">$15</span><span class="text-sm text-text-m">/mo</span></div>
-        <p class="text-xs text-text-m mb-1 price-period" data-monthly="Billed monthly" data-annual="Billed $180/year">Billed $180/year</p>
-        <p class="text-sm text-text-p mt-3 mb-5">Look professional and get paid.</p>
-        <ul class="flex flex-col gap-2 text-sm mb-6 flex-1">
-          <li class="flex gap-2"><span style="color:#004f54">✓</span>25 clients</li>
-          <li class="flex gap-2"><span style="color:#004f54">✓</span>100 proposals &amp; letters/month</li>
-          <li class="flex gap-2"><span style="color:#004f54">✓</span>Unlimited saved templates</li>
-          <li class="flex gap-2"><span style="color:#004f54">✓</span>Your branding — remove Evisor footer</li>
-          <li class="flex gap-2"><span style="color:#004f54">✓</span>One reminder per document</li>
-        </ul>
-        <a href="https://my.evisor.app/register" class="mt-auto block text-center bg-primary text-white font-semibold py-2.5 rounded-xl hover:bg-primary-mid transition-colors text-sm cta-btn" data-annual="Get Starter — save 2 mo" data-monthly="Get Starter">Get Starter — save 2 mo</a>
-        <p class="text-xs text-text-m text-center mt-2">Everything in Free, plus your brand.</p>
-      </div>
-      <!-- Practice -->
-      <div id="practice-card" class="relative bg-white rounded-2xl plan-popular-ring shadow-lg p-6 flex flex-col scroll-rev d3 lg:order-none order-first">
-        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap">★ Most popular</div>
-        <p class="text-xs font-bold uppercase tracking-wide text-text-m mb-1">Practice</p>
-        <div class="mt-3 min-h-[72px] flex flex-col justify-end">
-          <div class="flex items-center gap-2">
-            <div class="strike-wrap"><span class="text-xl font-semibold text-text-m">$39</span><div class="strike-line"></div></div>
-            <div class="new-price flex items-baseline gap-1"><span class="text-4xl font-extrabold price-num" data-monthly="$29" data-annual="$23">$23</span><span class="text-sm text-text-m">/mo</span></div>
-          </div>
-          <p class="text-xs text-text-m mt-1 price-period" data-monthly="Billed monthly" data-annual="Billed $276/year">Billed $276/year</p>
+      <div class="bg-white border border-border rounded-2xl p-5 shadow-[0_24px_60px_-40px_rgba(34,31,25,.5)]">
+        <p class="eyebrow text-text-m">Which businesses do you want as clients?</p>
+        <div class="mt-3 flex flex-wrap gap-2">
+          <span class="text-xs font-semibold px-3 py-1.5 rounded-full bg-primary text-white">Dental &amp; medical</span>
+          <span class="text-xs font-medium px-3 py-1.5 rounded-full border border-border text-text-m">Restaurants</span>
+          <span class="text-xs font-medium px-3 py-1.5 rounded-full border border-border text-text-m">Trades</span>
+          <span class="text-xs font-medium px-3 py-1.5 rounded-full border border-border text-text-m">E-commerce</span>
+          <span class="text-xs font-medium px-3 py-1.5 rounded-full border border-border text-text-m">Agencies</span>
+          <span class="text-xs font-medium px-3 py-1.5 rounded-full border border-border text-text-m">Property</span>
         </div>
-        <p class="text-sm text-text-p mt-3 mb-5">Everything a growing practice needs.</p>
-        <ul class="flex flex-col gap-2 text-sm mb-6 flex-1">
-          <li class="flex gap-2"><span style="color:#004f54">✓</span>100 clients</li>
-          <li class="flex gap-2"><span style="color:#004f54">✓</span>Unlimited everything</li>
-          <li class="flex gap-2"><span style="color:#004f54">✓</span>Premium high-risk templates</li>
-          <li class="flex gap-2"><span style="color:#004f54">✓</span>Proposal → letter auto-chain</li>
-          <li class="flex gap-2"><span style="color:#004f54">✓</span>Automated reminder sequences</li>
-          <li class="flex gap-2"><span style="color:#004f54">✓</span>Full analytics dashboard</li>
-          <li class="flex gap-2"><span style="color:#004f54">✓</span>Payment link collection</li>
-        </ul>
-        <a href="https://my.evisor.app/register" class="mt-auto block text-center bg-primary text-white font-semibold py-2.5 rounded-xl hover:bg-primary-mid transition-colors text-sm cta-btn" data-annual="Get Practice — save 2 mo" data-monthly="Get Practice">Get Practice — save 2 mo</a>
-        <p class="text-xs text-text-m text-center mt-2">Everything in Starter, built to scale.</p>
+
+        <div class="mt-5 rule1"></div>
+
+        <div class="divide-y divide-border-soft">
+          <div class="py-3.5 flex items-center justify-between gap-3">
+            <div class="min-w-0">
+              <p class="text-sm font-semibold truncate">Riverside Dental Practice</p>
+              <p class="text-xs text-text-m mt-0.5">Dental · 6 staff · verified 4 days ago</p>
+            </div>
+            <button class="flex-shrink-0 text-xs font-semibold text-white px-3 py-1.5 rounded-lg bg-primary">Draft email</button>
+          </div>
+          <div class="py-3.5 flex items-center justify-between gap-3">
+            <div class="min-w-0">
+              <p class="text-sm font-semibold truncate">Whitmore Orthodontics</p>
+              <p class="text-xs text-text-m mt-0.5">Dental · 11 staff · verified 6 days ago</p>
+            </div>
+            <button class="flex-shrink-0 text-xs font-semibold text-white px-3 py-1.5 rounded-lg bg-primary">Draft email</button>
+          </div>
+          <div class="py-3.5 flex items-center justify-between gap-3">
+            <div class="min-w-0">
+              <p class="text-sm font-semibold truncate">Bellview Family Dentistry</p>
+              <p class="text-xs text-text-m mt-0.5">Dental · 4 staff · verified 2 days ago</p>
+            </div>
+            <button class="flex-shrink-0 text-xs font-semibold text-white px-3 py-1.5 rounded-lg bg-primary">Draft email</button>
+          </div>
+        </div>
+
+        <div class="mt-5 bg-bg border border-border-soft rounded-xl p-4">
+          <p class="eyebrow text-text-m">Your pipeline this month</p>
+          <div class="mt-3 grid grid-cols-5 gap-2 text-center">
+            <div><p class="num text-lg font-semibold">62</p><p class="text-[10px] text-text-m mt-0.5 leading-tight">Saved</p></div>
+            <div><p class="num text-lg font-semibold">28</p><p class="text-[10px] text-text-m mt-0.5 leading-tight">Contacted</p></div>
+            <div><p class="num text-lg font-semibold">4</p><p class="text-[10px] text-text-m mt-0.5 leading-tight">Replied</p></div>
+            <div><p class="num text-lg font-semibold">2</p><p class="text-[10px] text-text-m mt-0.5 leading-tight">Proposal</p></div>
+            <div><p class="num text-lg font-semibold text-primary">1</p><p class="text-[10px] text-text-m mt-0.5 leading-tight">Signed</p></div>
+          </div>
+        </div>
+        <p class="mt-3.5 text-[11px] text-text-m text-center">Illustrative preview of the Find Clients feed.</p>
       </div>
-      <!-- Firm -->
-      <div class="bg-white rounded-2xl border border-border shadow-sm p-6 flex flex-col scroll-rev d4">
-        <p class="text-xs font-bold uppercase tracking-wide text-text-m mb-1">Firm</p>
-        <div class="flex items-baseline gap-1 my-3"><span class="text-4xl font-extrabold price-num" data-monthly="$79" data-annual="$65">$65</span><span class="text-sm text-text-m">/mo</span></div>
-        <p class="text-xs text-text-m mb-1 price-period" data-monthly="Billed monthly" data-annual="Billed $780/year">Billed $780/year</p>
-        <p class="text-sm text-text-p mt-3 mb-5">For teams and multi-person firms.</p>
-        <ul class="flex flex-col gap-2 text-sm mb-6 flex-1">
-          <li class="flex gap-2"><span style="color:#004f54">✓</span>Unlimited clients</li>
-          <li class="flex gap-2"><span style="color:#004f54">✓</span>Up to 5 team seats</li>
-          <li class="flex gap-2"><span style="color:#004f54">✓</span>Shared firm templates</li>
-          <li class="flex gap-2"><span style="color:#004f54">✓</span>Team roles &amp; permissions</li>
-          <li class="flex gap-2"><span style="color:#004f54">✓</span>Consistent firm branding</li>
-          <li class="flex gap-2"><span style="color:#004f54">✓</span>Team analytics</li>
-        </ul>
-        <a href="https://my.evisor.app/register" class="mt-auto block text-center bg-primary text-white font-semibold py-2.5 rounded-xl hover:bg-primary-mid transition-colors text-sm cta-btn" data-annual="Get Firm — save 2 mo" data-monthly="Get Firm">Get Firm — save 2 mo</a>
-        <p class="text-xs text-text-m text-center mt-2">Everything in Practice, for your team.</p>
-      </div>
-    </div>
-    <div class="flex flex-wrap justify-center gap-x-8 gap-y-2 mt-8 text-sm text-text-m scroll-rev">
-      <span class="flex items-center gap-1.5"><span style="color:#004f54">✓</span>Cancel anytime, no lock-in</span>
-      <span class="flex items-center gap-1.5"><span style="color:#004f54">✓</span>Your signed documents are always yours</span>
-      <span class="flex items-center gap-1.5"><span style="color:#004f54">✓</span>Upgrade or downgrade anytime</span>
     </div>
   </div>
 </section>
 
-<!-- COMPARISON -->
-<section class="bg-white border-y border-border py-16 px-4">
+<!-- ─────────────────────────  02 PRICE  ───────────────────────── -->
+<section id="price" class="px-4 py-20 sm:py-24 border-t border-border bg-white">
+  <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-14 lg:gap-16 items-center">
+    <div class="scroll-rev order-last lg:order-first">
+      <div class="bg-bg border border-border rounded-2xl p-5">
+        <p class="eyebrow text-text-m">What should I charge?</p>
+        <div class="mt-4 flex flex-col gap-2.5">
+          <div class="bg-white rounded-xl border border-border p-4 flex items-center justify-between gap-3">
+            <div><p class="text-sm font-semibold">Essential</p><p class="text-xs text-text-m mt-0.5">Core monthly bookkeeping</p></div>
+            <p class="num text-base font-semibold whitespace-nowrap">$250<span class="text-xs font-normal text-text-m">/mo</span></p>
+          </div>
+          <div class="bg-white rounded-xl border-[1.5px] border-primary p-4 flex items-center justify-between gap-3">
+            <div><p class="text-sm font-semibold flex items-center gap-2">Standard <span class="num text-[10px] font-semibold text-white px-1.5 py-0.5 rounded bg-primary">PRESENT THIS</span></p><p class="text-xs text-text-m mt-0.5">Bookkeeping + monthly reporting</p></div>
+            <p class="num text-base font-semibold whitespace-nowrap">$400<span class="text-xs font-normal text-text-m">/mo</span></p>
+          </div>
+          <div class="bg-white rounded-xl border border-border p-4 flex items-center justify-between gap-3">
+            <div><p class="text-sm font-semibold">Premium</p><p class="text-xs text-text-m mt-0.5">Full service + advisory</p></div>
+            <p class="num text-base font-semibold whitespace-nowrap">$600<span class="text-xs font-normal text-text-m">/mo</span></p>
+          </div>
+        </div>
+        <div class="mt-4 flex items-center gap-2 text-xs font-semibold text-primary">
+          <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Floor check passed — every option clears your cost of delivery
+        </div>
+        <p class="mt-4 text-[11px] text-text-m text-center">Illustrative preview — example figures only.</p>
+      </div>
+    </div>
+
+    <div class="scroll-rev">
+      <p class="eyebrow text-primary"><span class="eyebrow-rule">Stage 02 — Price</span></p>
+      <h2 class="mt-5 text-3xl sm:text-[2.5rem] leading-tight">Never quote a number you can't defend.</h2>
+      <p class="mt-5 text-text-m leading-relaxed">
+        Under-pricing is the quiet killer of a bookkeeping practice, and the fee line is where most people freeze. Evisor turns the job in front of you into three options you can present, checks every one against your own cost floor, and hands you a client-ready quote that drops straight into the proposal.
+      </p>
+      <ul class="mt-8 flex flex-col gap-4">
+        <li class="flex gap-3.5">
+          <svg class="tick text-primary" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p class="text-[15px] leading-relaxed"><strong class="font-semibold">Three options, not one number.</strong> Clients who are given a choice buy the middle one. Clients who are given a number negotiate it.</p>
+        </li>
+        <li class="flex gap-3.5">
+          <svg class="tick text-primary" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p class="text-[15px] leading-relaxed"><strong class="font-semibold">A floor you never drop below.</strong> Built from your hourly cost and the real scope, so a busy month can't turn into an unprofitable client.</p>
+        </li>
+        <li class="flex gap-3.5">
+          <svg class="tick text-primary" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p class="text-[15px] leading-relaxed"><strong class="font-semibold">Market benchmarks on Advisor.</strong> What practices of your size and niche are actually charging — which is the number you need in January, when you raise your fees.</p>
+        </li>
+      </ul>
+      <p class="mt-8 text-sm text-text-m italic">This is the most-used tool inside Evisor. It's also the one nobody expects a document product to have.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────  03 & 04 PROPOSE / SIGN  ───────────────────────── -->
+<section id="sign" class="px-4 py-20 sm:py-24 border-t border-border">
+  <div class="max-w-5xl mx-auto">
+    <div class="max-w-2xl scroll-rev">
+      <p class="eyebrow text-primary"><span class="eyebrow-rule">Stage 03 &amp; 04 — Propose and sign</span></p>
+      <h2 class="mt-5 text-3xl sm:text-[2.5rem] leading-tight">Turn a yes into a signature the same afternoon.</h2>
+      <p class="mt-5 text-text-m leading-relaxed">
+        The moment a prospect says "sure, send me something" is the moment you either look like a firm or look like a freelancer. One link, one page, one tap — and a signature captured to a standard that stands up.
+      </p>
+    </div>
+
+    <div class="mt-14 grid md:grid-cols-3 gap-px bg-border border border-border scroll-rev">
+      <div class="bg-white p-7">
+        <span class="num text-xs font-semibold text-primary">01</span>
+        <h3 class="font-serif text-xl mt-2">Build it</h3>
+        <p class="text-text-m text-sm leading-relaxed mt-2.5">Your quote flows in from the pricing engine. Add scope, terms and your logo. Use our templates or paste the letter you already trust.</p>
+      </div>
+      <div class="bg-white p-7">
+        <span class="num text-xs font-semibold text-primary">02</span>
+        <h3 class="font-serif text-xl mt-2">Send one link</h3>
+        <p class="text-text-m text-sm leading-relaxed mt-2.5">Your client opens it on their phone. No account, no app, no printer. They read, they sign, you're notified the second it lands.</p>
+      </div>
+      <div class="bg-white p-7">
+        <span class="num text-xs font-semibold text-primary">03</span>
+        <h3 class="font-serif text-xl mt-2">Stop chasing</h3>
+        <p class="text-text-m text-sm leading-relaxed mt-2.5">If they haven't signed, Evisor follows up on a schedule you set. You never write "just circling back on this" again.</p>
+      </div>
+    </div>
+
+    <div class="mt-10 grid md:grid-cols-2 gap-5 scroll-rev">
+      <div class="bg-primary-light border border-primary/25 rounded-xl p-6">
+        <p class="eyebrow text-primary">Worth knowing</p>
+        <p class="mt-3 text-[15px] leading-relaxed text-text-p">
+          <strong class="font-semibold">Two owners can both sign the same letter.</strong> A married couple filing jointly, two partners in a practice, a director and a co-director. Ignition's Solo and Core plans allow one signature per proposal. Co-signers are included on every paid Evisor plan.
+        </p>
+      </div>
+      <div class="bg-white border border-border rounded-xl p-6">
+        <p class="eyebrow text-text-m">On the record</p>
+        <p class="mt-3 text-[15px] leading-relaxed text-text-p">
+          Every signature is captured with the disclosure version shown, the presentation timestamp, the signer's IP, and a document hash recorded before and after signing. Content and signatures are encrypted at rest. You can download any signed PDF, any time, forever.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────  05 & 06 PAID / RENEW  ───────────────────────── -->
+<section class="px-4 py-20 sm:py-24 border-t border-border bg-white">
+  <div class="max-w-5xl mx-auto">
+    <div class="grid lg:grid-cols-[1.1fr,1fr] gap-14 items-start">
+      <div class="scroll-rev">
+        <p class="eyebrow text-primary"><span class="eyebrow-rule">Stage 05 &amp; 06 — Get paid and renew</span></p>
+        <h2 class="mt-5 text-3xl sm:text-[2.5rem] leading-tight">Paid on signature.<br>Re-papered in January.</h2>
+        <p class="mt-5 text-text-m leading-relaxed">
+          Your payment link sits on the signature page, so the client pays in the same motion they sign. Stripe, PayPal, Wise, GoCardless, plain bank transfer — whatever you already use. Evisor takes nothing from it.
+        </p>
+        <p class="mt-4 text-text-m leading-relaxed">
+          Then the part almost nobody builds for. Every engagement letter you send has an expiry date, and Evisor is already holding all of them.
+        </p>
+
+        <div class="mt-8 border-l-2 border-primary pl-6">
+          <p class="font-serif text-xl sm:text-2xl leading-snug text-text-p">
+            In January, Evisor re-issues every engagement letter you sent last year — at your new rates.
+          </p>
+          <p class="mt-3 text-sm text-text-m">Twenty-seven letters, one review, one send. This is the single reason Advisor costs more than Launch, and it is the reason a practice that starts on Evisor tends to stay on it.</p>
+        </div>
+      </div>
+
+      <div class="scroll-rev">
+        <div class="bg-bg border border-border rounded-2xl overflow-hidden">
+          <div class="px-5 py-4 border-b border-border flex items-center justify-between">
+            <p class="eyebrow text-text-m">Renewals — January</p>
+            <span class="num text-[10px] font-semibold px-2 py-1 rounded bg-primary text-white">27 DUE</span>
+          </div>
+          <div class="divide-y divide-border-soft">
+            <div class="px-5 py-3 flex items-center justify-between gap-3 text-sm">
+              <span class="truncate">Riverside Dental</span>
+              <span class="num text-text-m whitespace-nowrap">$400 → <strong class="text-text-p font-semibold">$440</strong></span>
+            </div>
+            <div class="px-5 py-3 flex items-center justify-between gap-3 text-sm">
+              <span class="truncate">Northside Coffee Co.</span>
+              <span class="num text-text-m whitespace-nowrap">$250 → <strong class="text-text-p font-semibold">$275</strong></span>
+            </div>
+            <div class="px-5 py-3 flex items-center justify-between gap-3 text-sm">
+              <span class="truncate">Meadow &amp; Oak Interiors</span>
+              <span class="num text-text-m whitespace-nowrap">$325 → <strong class="text-text-p font-semibold">$360</strong></span>
+            </div>
+            <div class="px-5 py-3 text-sm text-text-m">…and 24 more</div>
+          </div>
+          <div class="px-5 py-4 border-t border-border bg-white">
+            <div class="flex items-center justify-between text-sm">
+              <span class="text-text-m">Annual revenue, re-papered</span>
+              <span class="num font-semibold">$116,400</span>
+            </div>
+            <div class="flex items-center justify-between text-sm mt-1.5">
+              <span class="text-text-m">Uplift applied</span>
+              <span class="num font-semibold text-primary">+$10,560</span>
+            </div>
+            <p class="mt-3.5 text-[11px] text-text-m">Illustrative preview — example figures only.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────  FEATURES  ───────────────────────── -->
+<section id="features" class="px-4 py-20 sm:py-24 border-t border-border">
+  <div class="max-w-6xl mx-auto">
+    <div class="max-w-2xl scroll-rev">
+      <p class="eyebrow text-primary"><span class="eyebrow-rule">What's inside</span></p>
+      <h2 class="mt-5 text-3xl sm:text-[2.5rem] leading-tight">Replace the patchwork.</h2>
+      <p class="mt-5 text-text-m leading-relaxed">Most solo practices are running a lead list in a spreadsheet, a fee calculator in another spreadsheet, a proposal in Canva, a letter in Word, and a signature tool billed per envelope. That's five tools and four places for a client to fall through.</p>
+    </div>
+
+    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border border border-border scroll-rev">
+      <div class="bg-white p-6 card-lift">
+        <h3 class="font-serif text-lg">Find Clients feed</h3>
+        <p class="text-text-m text-sm leading-relaxed mt-2">Verified businesses in the niche you pick, refreshed weekly, with the intro email drafted for you and a pipeline that tracks every reply.</p>
+      </div>
+      <div class="bg-white p-6 card-lift">
+        <h3 class="font-serif text-lg">Pricing engine</h3>
+        <p class="text-text-m text-sm leading-relaxed mt-2">Three presentable options, a cost floor you can't accidentally quote below, and a client-ready quote in a click.</p>
+      </div>
+      <div class="bg-white p-6 card-lift">
+        <h3 class="font-serif text-lg">Proposals that look hired-for</h3>
+        <p class="text-text-m text-sm leading-relaxed mt-2">Service-itemised, branded, and readable on a phone. Your client sees something that looks like you paid a designer.</p>
+      </div>
+      <div class="bg-white p-6 card-lift">
+        <h3 class="font-serif text-lg">Engagement letters</h3>
+        <p class="text-text-m text-sm leading-relaxed mt-2">Templates covering scope, fees, limitation of liability and disengagement — or paste in the letter your accountant already approved.</p>
+      </div>
+      <div class="bg-white p-6 card-lift">
+        <h3 class="font-serif text-lg">E-signature with a real audit trail</h3>
+        <p class="text-text-m text-sm leading-relaxed mt-2">Consent capture, disclosure versioning, IP, timestamps, and a document hash before and after. Co-signers included.</p>
+      </div>
+      <div class="bg-white p-6 card-lift">
+        <h3 class="font-serif text-lg">Reminder sequences</h3>
+        <p class="text-text-m text-sm leading-relaxed mt-2">Multi-step follow-ups that run without you. Reminder one, two and three, at intervals you set, until they sign or decline.</p>
+      </div>
+      <div class="bg-white p-6 card-lift">
+        <h3 class="font-serif text-lg">Onboarding checklists</h3>
+        <p class="text-text-m text-sm leading-relaxed mt-2">The moment they sign, your client gets the list: bank access, prior returns, software logins. Set once, reused forever.</p>
+      </div>
+      <div class="bg-white p-6 card-lift">
+        <h3 class="font-serif text-lg">Renewal engine</h3>
+        <p class="text-text-m text-sm leading-relaxed mt-2">Every letter's expiry tracked, and your whole book re-issued in one review — at your new rates, before the client thinks to ask.</p>
+      </div>
+      <div class="bg-white p-6 card-lift">
+        <h3 class="font-serif text-lg">Quick charges</h3>
+        <p class="text-text-m text-sm leading-relaxed mt-2">Bill the out-of-scope hour without building a proposal. A one-click payment request, sent in thirty seconds.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────  COMPARISON  ───────────────────────── -->
+<section class="px-4 py-20 sm:py-24 border-t border-border bg-white">
+  <div class="max-w-4xl mx-auto">
+    <div class="max-w-2xl scroll-rev">
+      <p class="eyebrow text-primary"><span class="eyebrow-rule">The alternatives</span></p>
+      <h2 class="mt-5 text-3xl sm:text-[2.5rem] leading-tight">You've already looked at the others.</h2>
+      <p class="mt-5 text-text-m leading-relaxed">They're good products. They're also built for firms that already have a full book, and priced accordingly. Three differences worth checking yourself.</p>
+    </div>
+
+    <dl class="mt-12 scroll-rev">
+      <div class="rule1"></div>
+      <div class="py-6 grid sm:grid-cols-[180px,1fr] gap-2 sm:gap-8">
+        <dt class="font-serif text-lg">Against Ignition</dt>
+        <dd class="text-[15px] leading-relaxed text-text-m">Their entry plan asks you to be under a revenue ceiling and to connect Xero or QuickBooks with payments switched on — a brand-new practice can fail that test on day one. And they take a percentage of every payment your client makes. <strong class="text-text-p font-semibold">Evisor has no revenue test, needs no integration, and takes nothing from your fees.</strong></dd>
+      </div>
+      <div class="rule1"></div>
+      <div class="py-6 grid sm:grid-cols-[180px,1fr] gap-2 sm:gap-8">
+        <dt class="font-serif text-lg">Against DocuSign</dt>
+        <dd class="text-[15px] leading-relaxed text-text-m">A signature tool, billed per envelope, that knows nothing about the client, the fee, or what happens next January. <strong class="text-text-p font-semibold">Evisor signs the document and also finds the prospect, prices the work, collects the payment, and renews it.</strong></dd>
+      </div>
+      <div class="rule1"></div>
+      <div class="py-6 grid sm:grid-cols-[180px,1fr] gap-2 sm:gap-8">
+        <dt class="font-serif text-lg">Against TaxDome</dt>
+        <dd class="text-[15px] leading-relaxed text-text-m">Billed per user per year, upfront, with weeks of configuration before it does anything useful. Excellent once you're at scale. Punishing when you have four clients and need a letter out this afternoon. <strong class="text-text-p font-semibold">Your first letter goes out today.</strong></dd>
+      </div>
+      <div class="rule1"></div>
+    </dl>
+
+    <p class="mt-8 text-[15px] leading-relaxed text-center max-w-xl mx-auto scroll-rev">
+      And there's one column no suite fills at all: <strong class="font-semibold">finding the client.</strong> Every one of them begins after you already have the prospect.
+    </p>
+  </div>
+</section>
+
+<!-- ─────────────────────────  FOUNDER NOTE  ───────────────────────── -->
+<section class="px-4 py-20 sm:py-24 border-t border-border">
+  <div class="max-w-3xl mx-auto scroll-rev">
+    <p class="eyebrow text-primary"><span class="eyebrow-rule">Why this exists</span></p>
+    <blockquote class="mt-7">
+      <p class="font-serif text-2xl sm:text-[1.75rem] leading-[1.35] text-text-p">
+        Every tool for winning and keeping clients was either built for big firms, priced like it, or started at the paperwork. None of them helped with the part that actually keeps a new bookkeeper awake — finding the next client.
+      </p>
+    </blockquote>
+    <p class="mt-6 text-text-m leading-relaxed">
+      So we built the one we wanted: find, price, propose, sign, get paid, renew — in one place, at a price a solo practice can carry. Evisor is early and built in the open. There are no borrowed logos or invented reviews on this page, because we'd rather earn your trust with the product than rent it from someone else's. If you try it, we genuinely want to hear what's wrong with it.
+    </p>
+    <div class="mt-8 flex items-center gap-3">
+      <div class="w-10 h-10 rounded-full flex items-center justify-center text-white text-sm font-semibold bg-primary" aria-hidden="true">E</div>
+      <div>
+        <p class="text-sm font-semibold">The Evisor team</p>
+        <p class="text-xs text-text-m">Building in public · <a href="mailto:hello@evisor.app" class="underline underline-offset-2 hover:text-text-p">hello@evisor.app</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────  PRICING  ───────────────────────── -->
+<section id="pricing" class="px-4 py-20 sm:py-24 border-t border-border bg-white">
+  <div class="max-w-6xl mx-auto">
+
+    <div class="max-w-2xl scroll-rev">
+      <p class="eyebrow text-primary"><span class="eyebrow-rule">Pricing</span></p>
+      <h2 class="mt-5 text-3xl sm:text-[2.5rem] leading-tight">One client pays for the year.</h2>
+      <p class="mt-5 text-text-m leading-relaxed">This is the whole argument, and it's arithmetic you can check in four seconds.</p>
+    </div>
+
+    <!-- Ledger ROI -->
+    <div class="mt-10 max-w-lg scroll-rev">
+      <div class="bg-bg border border-border rounded-xl p-6 sm:p-7">
+        <p class="eyebrow text-text-m">One signed client, first year</p>
+        <dl class="mt-5 text-[15px]">
+          <div class="flex items-baseline justify-between gap-4 py-2">
+            <dt class="text-text-m">One bookkeeping client at $400/month</dt>
+            <dd class="num font-medium whitespace-nowrap">4,800</dd>
+          </div>
+          <div class="flex items-baseline justify-between gap-4 py-2">
+            <dt class="text-text-m">Advisor, billed annually</dt>
+            <dd class="num font-medium whitespace-nowrap">(720)</dd>
+          </div>
+          <div class="mt-1 h-px bg-border"></div>
+          <div class="flex items-baseline justify-between gap-4 pt-3">
+            <dt class="font-semibold">What the first client leaves you</dt>
+            <dd class="num text-xl font-semibold text-primary whitespace-nowrap">$4,080</dd>
+          </div>
+          <div class="rule2s ink mt-2" aria-hidden="true"></div>
+        </dl>
+        <p class="mt-6 text-[13px] leading-relaxed text-text-m">
+          Lead-generation agencies serving accountants charge <strong class="text-text-p font-medium">$150 to $600 per qualified lead</strong>. Advisor includes 250 verified businesses a month.
+        </p>
+      </div>
+    </div>
+
+    <!-- The promise -->
+    <div class="mt-10 max-w-3xl border-l-2 border-primary pl-6 scroll-rev">
+      <p class="eyebrow text-primary">Our promise</p>
+      <p class="mt-3 font-serif text-xl sm:text-2xl leading-snug text-text-p">
+        Your first client-ready proposal — priced, formatted and ready to send — inside your first week. If it isn't, we'll build it with you on a call.
+      </p>
+      <p class="mt-3 text-sm text-text-m">We won't promise you a signed client. Nobody honest can — that part involves you, them, and a dozen things no software controls. We promise the thing we do control, and we keep it every time.</p>
+    </div>
+
+    <!-- Which plan -->
+    <div class="mt-16 scroll-rev">
+      <p class="eyebrow text-text-m text-center">Which one is you?</p>
+      <div class="mt-5 grid sm:grid-cols-3 gap-px bg-border border border-border">
+        <div class="bg-white px-5 py-5 text-center">
+          <p class="text-sm text-text-m">Fewer than 10 clients, building the book</p>
+          <p class="font-serif text-xl mt-2">Launch</p>
+        </div>
+        <div class="bg-primary-light px-5 py-5 text-center">
+          <p class="text-sm text-primary/80">10 to 40 clients, running a real practice</p>
+          <p class="font-serif text-xl mt-2 text-primary">Advisor</p>
+        </div>
+        <div class="bg-white px-5 py-5 text-center">
+          <p class="text-sm text-text-m">More than one of you</p>
+          <p class="font-serif text-xl mt-2">Firm</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="mt-12 flex flex-col items-center gap-5 scroll-rev">
+      <div class="text-center">
+        <p class="eyebrow text-text-m">What do you need first?</p>
+        <div class="seg mt-3" role="group" aria-label="Show the features that matter most to you">
+          <button type="button" id="door-grow" class="seg-btn on" onclick="setDoor('grow')">Finding clients</button>
+          <button type="button" id="door-close" class="seg-btn" onclick="setDoor('close')">Signing and getting paid</button>
+        </div>
+        <p class="mt-2.5 text-xs text-text-m">Same plans, same prices — we'll just lead with the parts you care about.</p>
+      </div>
+
+      <div class="mt-2 flex items-center gap-3">
+        <div class="seg" role="group" aria-label="Billing period">
+          <button type="button" id="bill-annual" class="seg-btn on" onclick="setBilling('annual')">Annual</button>
+          <button type="button" id="bill-monthly" class="seg-btn" onclick="setBilling('monthly')">Monthly</button>
+        </div>
+        <span id="save-badge" class="num text-[11px] font-semibold px-2.5 py-1 rounded-full bg-primary-light text-primary">2 MONTHS FREE</span>
+      </div>
+    </div>
+
+    <!-- Cards -->
+    <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
+
+      <!-- FREE -->
+      <div class="bg-white border border-border rounded-2xl p-6 flex flex-col scroll-rev order-3 sm:order-none">
+        <p class="eyebrow text-text-m">Free</p>
+        <div class="mt-4 min-h-[68px]">
+          <p class="num text-[2.5rem] leading-none font-semibold">$0</p>
+          <p class="text-xs text-text-m mt-2">No card. No time limit.</p>
+        </div>
+        <p class="text-sm font-medium mt-4 mb-5 min-h-[40px]">See who's out there, and send your first three.</p>
+        <ul class="flex flex-col gap-2.5 text-sm mb-6 flex-1">
+          <li class="flex gap-2.5"><svg class="tick text-primary" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>25 verified businesses to start</span></li>
+          <li class="flex gap-2.5"><svg class="tick text-primary" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>3 active clients</span></li>
+          <li class="flex gap-2.5"><svg class="tick text-primary" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>3 proposals and 3 engagement letters</span></li>
+          <li class="flex gap-2.5"><svg class="tick text-primary" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>E-signature with full audit trail</span></li>
+          <li class="flex gap-2.5"><svg class="tick text-primary" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>3 pricing-engine quotes</span></li>
+          <li class="flex gap-2.5"><svg class="tick text-primary" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Standard template library</span></li>
+        </ul>
+        <a href="https://my.evisor.app/register" class="mt-auto block text-center border border-primary text-primary font-semibold py-3 rounded-xl hover:bg-primary-light transition-colors text-sm">Start free</a>
+        <p class="text-[11px] text-text-m text-center mt-2.5">Documents carry a small Evisor footer.</p>
+      </div>
+
+      <!-- LAUNCH -->
+      <div class="bg-white border border-border rounded-2xl p-6 flex flex-col scroll-rev order-2 sm:order-none">
+        <p class="eyebrow text-text-m">Launch</p>
+        <div class="mt-4 min-h-[68px]">
+          <p class="flex items-baseline gap-1">
+            <span class="num text-[2.5rem] leading-none font-semibold price-num" data-annual="$25" data-monthly="$30">$25</span>
+            <span class="text-sm text-text-m">/mo</span>
+          </p>
+          <p class="text-xs text-text-m mt-2 price-period" data-annual="Billed $300 a year — save $60" data-monthly="Billed monthly · $30 × 12 = $360">Billed $300 a year — save $60</p>
+        </div>
+        <p class="text-sm font-medium mt-4 mb-5 min-h-[40px] door-line" data-grow="Get in front of 75 new businesses every month." data-close="Everything you need to paper a client properly.">Get in front of 75 new businesses every month.</p>
+        <ul class="flex flex-col gap-2.5 text-sm mb-6 flex-1">
+          <li class="flex gap-2.5" data-g="1" data-c="5"><svg class="tick text-primary" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong class="font-semibold">75 verified businesses a month</strong>, in your niche</span></li>
+          <li class="flex gap-2.5" data-g="2" data-c="6"><svg class="tick text-primary" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Intro emails and follow-ups written for you</span></li>
+          <li class="flex gap-2.5" data-g="3" data-c="7"><svg class="tick text-primary" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Pipeline tracking, saved through to signed</span></li>
+          <li class="flex gap-2.5" data-g="4" data-c="1"><svg class="tick text-primary" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong class="font-semibold">30 documents sent a month</strong></span></li>
+          <li class="flex gap-2.5" data-g="5" data-c="2"><svg class="tick text-primary" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Up to 10 active clients</span></li>
+          <li class="flex gap-2.5" data-g="6" data-c="3"><svg class="tick text-primary" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Unlimited pricing-engine quotes</span></li>
+          <li class="flex gap-2.5" data-g="7" data-c="4"><svg class="tick text-primary" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Your branding — Evisor footer removed</span></li>
+          <li class="flex gap-2.5" data-g="8" data-c="8"><svg class="tick text-primary" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Co-signers and payment links</span></li>
+        </ul>
+        <a href="https://my.evisor.app/register" class="mt-auto block text-center bg-primary text-white font-semibold py-3 rounded-xl hover:bg-primary-mid transition-colors text-sm">Start on Launch</a>
+        <p class="text-[11px] text-text-m text-center mt-2.5">Everything in Free, under your own name.</p>
+      </div>
+
+      <!-- ADVISOR -->
+      <div class="relative bg-white plan-star rounded-2xl p-6 flex flex-col scroll-rev order-1 sm:order-none">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 num text-[10px] font-semibold tracking-wider px-3 py-1 rounded-full bg-primary text-white whitespace-nowrap">MOST PRACTICES START HERE</div>
+        <p class="eyebrow text-primary">Advisor</p>
+        <div class="mt-4 min-h-[68px]">
+          <p class="flex items-baseline gap-1">
+            <span class="num text-[2.5rem] leading-none font-semibold price-num" data-annual="$60" data-monthly="$72">$60</span>
+            <span class="text-sm text-text-m">/mo</span>
+          </p>
+          <p class="text-xs text-text-m mt-2 price-period" data-annual="Billed $720 a year — save $144" data-monthly="Billed monthly · $72 × 12 = $864">Billed $720 a year — save $144</p>
+        </div>
+        <p class="text-sm font-medium mt-4 mb-5 min-h-[40px] door-line" data-grow="250 new businesses a month, 48 hours before anyone else." data-close="The practice keeps moving while you do the work.">250 new businesses a month, 48 hours before anyone else.</p>
+        <ul class="flex flex-col gap-2.5 text-sm mb-6 flex-1">
+          <li class="flex gap-2.5" data-g="1" data-c="6"><svg class="tick text-primary" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong class="font-semibold">250 verified businesses a month</strong> + 48-hour first look</span></li>
+          <li class="flex gap-2.5" data-g="2" data-c="4"><svg class="tick text-primary" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Market fee benchmarks — what your peers actually charge</span></li>
+          <li class="flex gap-2.5" data-g="3" data-c="7"><svg class="tick text-primary" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Objection scripts for the four replies that lose deals</span></li>
+          <li class="flex gap-2.5" data-g="4" data-c="1"><svg class="tick text-primary" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong class="font-semibold">120 documents sent a month</strong></span></li>
+          <li class="flex gap-2.5" data-g="5" data-c="2"><svg class="tick text-primary" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Up to 40 active clients</span></li>
+          <li class="flex gap-2.5" data-g="6" data-c="3"><svg class="tick text-primary" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong class="font-semibold">The January renewal engine</strong> — your whole book, re-issued at new rates</span></li>
+          <li class="flex gap-2.5" data-g="7" data-c="5"><svg class="tick text-primary" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Reminder sequences, proposal-to-letter auto-chain, premium templates</span></li>
+          <li class="flex gap-2.5" data-g="8" data-c="8"><svg class="tick text-primary" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Read receipts and proposal analytics</span></li>
+          <li class="flex gap-2.5" data-g="9" data-c="9"><svg class="tick text-primary" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong class="font-semibold">Same-day answers, from the person who built it</strong></span></li>
+        </ul>
+        <a href="https://my.evisor.app/register" class="mt-auto block text-center bg-primary text-white font-semibold py-3 rounded-xl hover:bg-primary-mid transition-colors text-sm">Start on Advisor</a>
+        <p class="text-[11px] text-text-m text-center mt-2.5">Everything in Launch, plus the year that repeats.</p>
+      </div>
+
+      <!-- FIRM -->
+      <div class="bg-white border border-border rounded-2xl p-6 flex flex-col scroll-rev order-4 sm:order-none">
+        <p class="eyebrow text-text-m">Firm</p>
+        <div class="mt-4 min-h-[68px]">
+          <p class="flex items-baseline gap-1">
+            <span class="num text-[2.5rem] leading-none font-semibold price-num" data-annual="$125" data-monthly="$150">$125</span>
+            <span class="text-sm text-text-m">/mo</span>
+          </p>
+          <p class="text-xs text-text-m mt-2 price-period" data-annual="Billed $1,500 a year — save $300" data-monthly="Billed monthly · $150 × 12 = $1,800">Billed $1,500 a year — save $300</p>
+        </div>
+        <p class="text-sm font-medium mt-4 mb-5 min-h-[40px] door-line" data-grow="Everyone working the same list, without collisions." data-close="One brand, one library, one audit trail.">Everyone working the same list, without collisions.</p>
+        <ul class="flex flex-col gap-2.5 text-sm mb-6 flex-1">
+          <li class="flex gap-2.5"><svg class="tick text-primary" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Everything in Advisor, for up to 5 people</span></li>
+          <li class="flex gap-2.5"><svg class="tick text-primary" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>750 verified businesses a month, shared</span></li>
+          <li class="flex gap-2.5"><svg class="tick text-primary" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong class="font-semibold">400 documents sent a month</strong>, pooled across the team</span></li>
+          <li class="flex gap-2.5"><svg class="tick text-primary" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Unlimited active clients</span></li>
+          <li class="flex gap-2.5"><svg class="tick text-primary" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Shared template library and firm rate card</span></li>
+          <li class="flex gap-2.5"><svg class="tick text-primary" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Roles, permissions and team analytics</span></li>
+          <li class="flex gap-2.5"><svg class="tick text-primary" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Consistent firm branding on every document</span></li>
+        </ul>
+        <a href="https://my.evisor.app/register" class="mt-auto block text-center bg-primary text-white font-semibold py-3 rounded-xl hover:bg-primary-mid transition-colors text-sm">Start on Firm</a>
+        <p class="text-[11px] text-text-m text-center mt-2.5">More than 5 people? <a href="#contact" class="underline underline-offset-2">Talk to us.</a></p>
+      </div>
+    </div>
+
+    <!-- Founding rate -->
+    <div class="mt-8 border border-primary/25 bg-primary-light rounded-xl px-6 py-5 flex flex-col sm:flex-row sm:items-center gap-3 justify-between scroll-rev">
+      <div>
+        <p class="text-sm font-semibold text-primary">Founding rate — the first 50 practices keep these prices for as long as they stay.</p>
+        <p class="text-sm text-primary/75 mt-1">We'll raise them for everyone who comes after. Never for you.</p>
+      </div>
+      <a href="https://my.evisor.app/register" class="flex-shrink-0 text-center bg-primary text-white text-sm font-semibold px-5 py-2.5 rounded-lg hover:bg-primary-mid transition-colors">Claim the rate</a>
+    </div>
+
+    <!-- Send allowance explainer -->
+    <div class="mt-6 border border-border rounded-xl p-6 sm:p-7 scroll-rev">
+      <p class="eyebrow text-text-m">About the monthly send allowance</p>
+      <div class="mt-4 grid md:grid-cols-2 gap-6 text-[15px] leading-relaxed">
+        <p class="text-text-m">
+          Every plan includes roughly <strong class="text-text-p font-semibold">three documents per active client, per month</strong> — enough to propose, paper and re-paper your entire book in the same month, several times over. That's where the numbers come from; they aren't arbitrary.
+        </p>
+        <p class="text-text-m">
+          The allowance exists because Evisor delivers on your behalf, and one account sending in bulk damages deliverability for everybody. It's a fair-use line, not a sales tactic. <strong class="text-text-p font-semibold">If a peak month needs more, message us and we'll raise it the same day, at no charge.</strong>
+        </p>
+      </div>
+      <div class="mt-6 rule1"></div>
+      <div class="pt-4 grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+        <div><p class="num text-lg font-semibold">6</p><p class="text-xs text-text-m mt-1">Free — 3 proposals, 3 letters, one time</p></div>
+        <div><p class="num text-lg font-semibold">30</p><p class="text-xs text-text-m mt-1">Launch — per month</p></div>
+        <div><p class="num text-lg font-semibold text-primary">120</p><p class="text-xs text-text-m mt-1">Advisor — per month</p></div>
+        <div><p class="num text-lg font-semibold">400</p><p class="text-xs text-text-m mt-1">Firm — per month, pooled</p></div>
+      </div>
+    </div>
+
+    <div class="mt-8 flex flex-wrap justify-center gap-x-7 gap-y-2.5 text-sm text-text-m scroll-rev">
+      <span class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-primary" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Cancel in one click</span>
+      <span class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-primary" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Pause any month and keep your data</span>
+      <span class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-primary" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Your signed documents are always yours</span>
+      <span class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-primary" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>No percentage of your fees, ever</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────  PRACTICE BUILD  ───────────────────────── -->
+<section id="build" class="build-band px-4 py-20 sm:py-28">
+  <div class="max-w-5xl mx-auto">
+
+    <div class="max-w-2xl">
+      <p class="eyebrow" style="color:#E8C57A">One payment. Not a subscription.</p>
+      <h2 class="mt-6 text-3xl sm:text-[2.75rem] leading-[1.12] text-[#F3F1EA]">
+        Some people don't want the software.<br>They want the practice built.
+      </h2>
+      <div class="rule2s mt-6 w-24" aria-hidden="true"></div>
+      <p class="mt-8 text-lg leading-relaxed text-[#C9CFC9]">
+        Four weeks, one to one, with the person who built Evisor. We don't coach you through it and hand you a workbook — we build it with you, inside your own account. You finish positioned, priced, papered and prospecting.
+      </p>
+    </div>
+
+    <div class="mt-14 grid lg:grid-cols-[1.35fr,1fr] gap-12 lg:gap-16 items-start">
+
+      <!-- Deliverables -->
+      <div>
+        <p class="eyebrow" style="color:#E8C57A">What you walk away holding</p>
+        <ol class="mt-6">
+          <li class="py-5 border-t hair grid grid-cols-[28px,1fr] gap-4">
+            <span class="num text-sm" style="color:#C08A2E">01</span>
+            <div>
+              <h3 class="font-serif text-xl text-[#F3F1EA]">Your niche and your offer, decided</h3>
+              <p class="mt-1.5 text-[15px] leading-relaxed text-[#A9B2AC]">One working session. You leave knowing exactly which businesses you're going after and the reason they should pick you over the accountant they already have.</p>
+            </div>
+          </li>
+          <li class="py-5 border-t hair grid grid-cols-[28px,1fr] gap-4">
+            <span class="num text-sm" style="color:#C08A2E">02</span>
+            <div>
+              <h3 class="font-serif text-xl text-[#F3F1EA]">Your rate card, built</h3>
+              <p class="mt-1.5 text-[15px] leading-relaxed text-[#A9B2AC]">Your real cost of delivery, your floor, and three tiers you can present to anyone. You stop guessing at fees permanently — this is the deliverable people tell us mattered most.</p>
+            </div>
+          </li>
+          <li class="py-5 border-t hair grid grid-cols-[28px,1fr] gap-4">
+            <span class="num text-sm" style="color:#C08A2E">03</span>
+            <div>
+              <h3 class="font-serif text-xl text-[#F3F1EA]">Your document set, built</h3>
+              <p class="mt-1.5 text-[15px] leading-relaxed text-[#A9B2AC]">Proposal, engagement letter and onboarding checklist — branded, reviewed, and sitting in your account ready to send. Not templates to fill in later. Yours, finished.</p>
+            </div>
+          </li>
+          <li class="py-5 border-t hair grid grid-cols-[28px,1fr] gap-4">
+            <span class="num text-sm" style="color:#C08A2E">04</span>
+            <div>
+              <h3 class="font-serif text-xl text-[#F3F1EA]">Your first 250 prospects, hand-picked</h3>
+              <p class="mt-1.5 text-[15px] leading-relaxed text-[#A9B2AC]">Filtered to your niche and your market by hand, loaded into your pipeline in the order we'd work them. Not a raw export you have to sort out yourself.</p>
+            </div>
+          </li>
+          <li class="py-5 border-t hair grid grid-cols-[28px,1fr] gap-4">
+            <span class="num text-sm" style="color:#C08A2E">05</span>
+            <div>
+              <h3 class="font-serif text-xl text-[#F3F1EA]">Your outreach, written</h3>
+              <p class="mt-1.5 text-[15px] leading-relaxed text-[#A9B2AC]">The intro email, two follow-ups, and the answers to "I already have an accountant", "what do you charge", "just send me some info" and "not right now" — in your voice, not ours.</p>
+            </div>
+          </li>
+          <li class="py-5 border-t border-b hair grid grid-cols-[28px,1fr] gap-4">
+            <span class="num text-sm" style="color:#C08A2E">06</span>
+            <div>
+              <h3 class="font-serif text-xl text-[#F3F1EA]">Thirty days of direct access</h3>
+              <p class="mt-1.5 text-[15px] leading-relaxed text-[#A9B2AC]">My inbox, answered the same day, while you send the first hundred emails. The month after you start is when the questions actually arrive.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <!-- Price panel -->
+      <aside class="lg:sticky lg:top-24">
+        <div class="border rounded-2xl p-7" style="border-color:rgba(232,197,122,.3);background:rgba(255,255,255,.04)">
+          <p class="eyebrow" style="color:#E8C57A">Practice Build</p>
+
+          <dl class="mt-6 text-[15px]">
+            <div class="flex items-baseline justify-between gap-4 py-2">
+              <dt class="text-[#A9B2AC]">Four weeks, done with you</dt>
+              <dd class="num text-[#F3F1EA]">1,080</dd>
+            </div>
+            <div class="flex items-baseline justify-between gap-4 py-2">
+              <dt class="text-[#A9B2AC]">Twelve months of Advisor, included</dt>
+              <dd class="num text-[#F3F1EA]">720</dd>
+            </div>
+            <div class="mt-1 h-px" style="background:rgba(232,197,122,.3)"></div>
+            <div class="flex items-baseline justify-between gap-4 pt-3">
+              <dt class="font-semibold text-[#F3F1EA]">One payment</dt>
+              <dd class="num text-3xl font-semibold" style="color:#E8C57A">$1,800</dd>
+            </div>
+            <div class="rule2s mt-2" aria-hidden="true"></div>
+          </dl>
+
+          <p class="mt-6 text-sm leading-relaxed text-[#A9B2AC]">
+            No subscription on top of it. When the twelve months are up, Advisor continues at your founding rate — or you stop. Your call, no conversation required.
+          </p>
+
+          <div class="mt-7 pt-6 border-t hair">
+            <p class="text-sm leading-relaxed text-[#C9CFC9]">
+              <strong class="text-[#F3F1EA] font-semibold">We take four practices a month</strong>, because it's one person doing the work. When the month is full, the next opening is the following month.
+            </p>
+          </div>
+
+          <a href="#contact" onclick="prefillBuild()" class="mt-7 block text-center font-semibold py-3.5 rounded-xl transition-colors" style="background:#E8C57A;color:#032C2E">Apply for Practice Build</a>
+          <p class="mt-3 text-xs text-center text-[#8E9691]">We'll reply within a day with three questions and a time.</p>
+        </div>
+      </aside>
+    </div>
+
+    <p class="mt-14 max-w-2xl text-[15px] leading-relaxed text-[#8E9691]">
+      Most people should not buy this. If you already know your niche, your rates and your letter, Advisor at $60 a month does everything you need and Practice Build would be an expensive way to get the same software. This is for the person who has the certificate, has the ambition, and has been staring at a blank first email for three weeks.
+    </p>
+  </div>
+</section>
+
+<!-- ─────────────────────────  FAQ  ───────────────────────── -->
+<section id="faq" class="px-4 py-20 sm:py-24 border-t border-border bg-white">
   <div class="max-w-3xl mx-auto">
-    <div class="text-center mb-8 scroll-rev"><p class="text-xs font-bold uppercase tracking-widest mb-2" style="color:#004f54">How Evisor compares</p><h2 class="text-2xl font-bold mb-3">You've probably looked at the alternatives</h2><p class="text-text-m text-sm max-w-xl mx-auto">The big suites are powerful — and priced for firms that already have a full book of clients. Evisor gives a solo or growing practice the whole journey for less.</p></div>
-    <div class="overflow-hidden rounded-2xl border border-border shadow-sm scroll-rev">
-      <div class="grid grid-cols-4 text-sm">
-        <div class="px-4 py-3 font-semibold text-text-m bg-bg border-b border-border">&nbsp;</div>
-        <div class="px-4 py-3 font-semibold text-text-m bg-bg border-b border-border text-center">Entry price</div>
-        <div class="px-4 py-3 font-semibold text-text-m bg-bg border-b border-border text-center">Clients</div>
-        <div class="px-4 py-3 font-semibold text-text-m bg-bg border-b border-border text-center">Fee on payments</div>
-        <div class="px-4 py-3 border-b border-border">GoProposal</div>
-        <div class="px-4 py-3 border-b border-border text-center text-text-m">$75/mo</div>
-        <div class="px-4 py-3 border-b border-border text-center text-text-m">5 proposals</div>
-        <div class="px-4 py-3 border-b border-border text-center text-text-m">—</div>
-        <div class="px-4 py-3 border-b border-border">Ignition</div>
-        <div class="px-4 py-3 border-b border-border text-center text-text-m">$49/mo</div>
-        <div class="px-4 py-3 border-b border-border text-center text-text-m">20 (+$7 each)</div>
-        <div class="px-4 py-3 border-b border-border text-center text-text-m">1% + $0.30</div>
-        <div class="px-4 py-3 font-bold trust-row-evisor" style="color:#004f54">Evisor Practice</div>
-        <div class="px-4 py-3 font-bold trust-row-evisor text-center" style="color:#004f54">$29/mo</div>
-        <div class="px-4 py-3 font-bold trust-row-evisor text-center" style="color:#004f54">100</div>
-        <div class="px-4 py-3 font-bold trust-row-evisor text-center" style="color:#004f54">0%</div>
+    <p class="eyebrow text-primary scroll-rev"><span class="eyebrow-rule">Questions</span></p>
+    <h2 class="mt-5 text-3xl sm:text-[2.5rem] leading-tight scroll-rev">The things people actually ask.</h2>
+
+    <div class="mt-12 scroll-rev">
+      <div class="rule1"></div>
+
+      <div class="faq-item border-b border-border">
+        <button class="w-full flex items-start justify-between gap-6 py-5 text-left" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="font-semibold text-[15px]">Will these businesses actually become clients?</span>
+          <span class="faq-ic text-xl leading-none text-text-m flex-shrink-0" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-ans"><p class="pb-5 pr-8 text-[15px] text-text-m leading-relaxed">We won't quote you a close rate, because we can't yet measure one honestly and a made-up number is worse than none. Here's what we do stand behind: the businesses are real, verified, and refreshed weekly; the email you send them is written for you; and the moment one of them says "send me a proposal", you can have a priced, branded, signable document in front of them in about ten minutes. Cold outreach is a numbers game either way — Evisor's job is to make sure you never lose one because you didn't know what to say or what to charge.</p></div>
       </div>
+
+      <div class="faq-item border-b border-border">
+        <button class="w-full flex items-start justify-between gap-6 py-5 text-left" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="font-semibold text-[15px]">Does Evisor email prospects on my behalf?</span>
+          <span class="faq-ic text-xl leading-none text-text-m flex-shrink-0" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-ans"><p class="pb-5 pr-8 text-[15px] text-text-m leading-relaxed">No — and that's deliberate. Evisor writes the outreach and puts it on your clipboard. You paste it into whatever you already use and send it yourself. No mailbox connection, no OAuth, no DNS records, nothing touching your domain reputation. The relationship is yours from the first sentence, and so is control of it.</p></div>
+      </div>
+
+      <div class="faq-item border-b border-border">
+        <button class="w-full flex items-start justify-between gap-6 py-5 text-left" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="font-semibold text-[15px]">What counts toward the monthly send allowance, and what happens if I hit it?</span>
+          <span class="faq-ic text-xl leading-none text-text-m flex-shrink-0" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-ans"><p class="pb-5 pr-8 text-[15px] text-text-m leading-relaxed">A send is one proposal or one engagement letter delivered to a client. Drafts, edits, re-sends of the same document, reminders and renewals of an existing letter don't count — only new documents going out. The allowance resets on the first of each calendar month. If you reach it, tell us: peak months are a normal part of this profession and we'll lift your ceiling the same day at no charge. We'd rather a human read that request than let anyone use Evisor as a bulk mailer.</p></div>
+      </div>
+
+      <div class="faq-item border-b border-border">
+        <button class="w-full flex items-start justify-between gap-6 py-5 text-left" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="font-semibold text-[15px]">Which countries and states are you live in?</span>
+          <span class="faq-ic text-xl leading-none text-text-m flex-shrink-0" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-ans"><p class="pb-5 pr-8 text-[15px] text-text-m leading-relaxed">The Find Clients feed covers the United Kingdom, Ireland, Canada and Australia in full, plus New York, Pennsylvania, Connecticut, Colorado and Oregon in the United States. We're adding states in the order our members ask for them, so tell us yours. Everything else in Evisor — pricing, proposals, engagement letters, signing, payments, renewals — works anywhere in the world.</p></div>
+      </div>
+
+      <div class="faq-item border-b border-border">
+        <button class="w-full flex items-start justify-between gap-6 py-5 text-left" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="font-semibold text-[15px]">I'm busy in tax season and quiet after. Can I pause?</span>
+          <span class="faq-ic text-xl leading-none text-text-m flex-shrink-0" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-ans"><p class="pb-5 pr-8 text-[15px] text-text-m leading-relaxed">Yes. Pause any month from Settings and pick it up when the work comes back — your clients, templates and documents stay exactly where they are. If you'd rather step further back, <strong class="text-text-p font-medium">Evisor Keep</strong> holds your entire archive live and retrievable for $9 a month, sends you five new prospects by email each month, and lets you return to a full plan whenever you want.</p></div>
+      </div>
+
+      <div class="faq-item border-b border-border">
+        <button class="w-full flex items-start justify-between gap-6 py-5 text-left" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="font-semibold text-[15px]">What happens to my signed documents if I stop paying?</span>
+          <span class="faq-ic text-xl leading-none text-text-m flex-shrink-0" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-ans"><p class="pb-5 pr-8 text-[15px] text-text-m leading-relaxed">They're yours, permanently. Export and download every signed engagement letter and accepted proposal, with its audit trail, at any point — including after you cancel. These are records you're professionally required to retain, and holding them hostage would be an unforgivable way to run a software company.</p></div>
+      </div>
+
+      <div class="faq-item border-b border-border">
+        <button class="w-full flex items-start justify-between gap-6 py-5 text-left" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="font-semibold text-[15px]">Why is Advisor more than twice the price of Launch?</span>
+          <span class="faq-ic text-xl leading-none text-text-m flex-shrink-0" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-ans"><p class="pb-5 pr-8 text-[15px] text-text-m leading-relaxed">Because it does a different job, not a bigger version of the same one. Launch is built for the months when you're winning your first clients. Advisor is built for the year after that — it re-issues your entire book of engagement letters every January at updated rates, tells you what those rates should be, chases every unsigned document without you, and gives you 250 new businesses a month with a 48-hour head start on them. If you don't have a book to renew yet, stay on Launch. You'll know when you've outgrown it.</p></div>
+      </div>
+
+      <div class="faq-item border-b border-border">
+        <button class="w-full flex items-start justify-between gap-6 py-5 text-left" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="font-semibold text-[15px]">Can two people sign the same engagement letter?</span>
+          <span class="faq-ic text-xl leading-none text-text-m flex-shrink-0" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-ans"><p class="pb-5 pr-8 text-[15px] text-text-m leading-relaxed">Yes — co-signers are included on every paid plan. A married couple filing jointly, two business partners, a director and co-director. Each signs their own block, each signature is separately captured in the audit trail. It's a common requirement and a surprising number of tools at this price point don't support it.</p></div>
+      </div>
+
+      <div class="faq-item border-b border-border">
+        <button class="w-full flex items-start justify-between gap-6 py-5 text-left" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="font-semibold text-[15px]">Do my clients need an account or an app?</span>
+          <span class="faq-ic text-xl leading-none text-text-m flex-shrink-0" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-ans"><p class="pb-5 pr-8 text-[15px] text-text-m leading-relaxed">No. They receive a link, open it in any browser on any device, read the document, and sign with a tap. No login, no download, no PDF to print and scan. The full audit trail is captured behind the scenes without them having to do anything.</p></div>
+      </div>
+
+      <div class="faq-item border-b border-border">
+        <button class="w-full flex items-start justify-between gap-6 py-5 text-left" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="font-semibold text-[15px]">Is a signature captured in Evisor legally valid?</span>
+          <span class="faq-ic text-xl leading-none text-text-m flex-shrink-0" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-ans"><p class="pb-5 pr-8 text-[15px] text-text-m leading-relaxed">Every signature is captured with an explicit electronic-records consent gate, the exact disclosure version that was shown, the timestamp it was presented, the signer's IP address, and a hash of the document recorded both before and after signing. Content and signatures are encrypted at rest. That's the evidentiary standard enterprise signature products charge several hundred dollars a month for. As always, if a specific engagement carries unusual legal risk, take advice on the wording of the letter itself.</p></div>
+      </div>
+
+      <div class="faq-item border-b border-border">
+        <button class="w-full flex items-start justify-between gap-6 py-5 text-left" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="font-semibold text-[15px]">Can I try it before paying?</span>
+          <span class="faq-ic text-xl leading-none text-text-m flex-shrink-0" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-ans"><p class="pb-5 pr-8 text-[15px] text-text-m leading-relaxed">You can do the whole thing before paying. The free plan isn't a crippled demo — it includes real verified businesses, real pricing quotes, and three proposals and three engagement letters sent to real clients with legally binding signatures. No card, no time limit. The only visible difference is a small "Prepared with Evisor" footer on your documents. Reach the end of that and you'll know exactly what you're buying.</p></div>
+      </div>
+
     </div>
-    <p class="mt-5 text-sm font-semibold text-text-p text-center scroll-rev">And there's one column no suite can fill: <span style="color:#004f54" class="font-bold">finding the client</span>. GoProposal and Ignition begin once you already have a prospect — Evisor helps you find them first.</p>
-    <p class="mt-3 text-sm font-semibold text-text-p text-center scroll-rev">We also take <span style="color:#004f54" class="font-bold">0%</span> of your payments. Ignition charges 1% of every dollar your clients pay you (plus $0.30 per transaction) — you keep every cent with Evisor.</p>
-    <div class="mt-5 bg-bg rounded-xl border border-border p-4 text-sm text-text-m leading-relaxed text-center scroll-rev">Every signature is captured with a full, tamper-evident audit trail — disclosure version, presentation timestamp, signer IP, and a document hash recorded before and after signing. The same standard that enterprise software charges $200+/month for.</div>
   </div>
 </section>
 
-<!-- ROADMAP -->
-<section class="py-16 px-4">
-  <div class="max-w-4xl mx-auto text-center">
-    <div class="scroll-rev"><p class="text-xs font-bold uppercase tracking-widest mb-2" style="color:#004f54">What's coming</p><h2 class="text-2xl font-bold mb-8">The roadmap</h2></div>
-    <div class="flex flex-wrap justify-center gap-3 scroll-rev">
-      <span class="bg-white border border-border rounded-full px-4 py-2 text-sm font-medium">QuickBooks Online integration</span>
-      <span class="bg-white border border-border rounded-full px-4 py-2 text-sm font-medium">Xero integration</span>
-      <span class="bg-white border border-border rounded-full px-4 py-2 text-sm font-medium">Recurring billing</span>
-      <span class="bg-white border border-border rounded-full px-4 py-2 text-sm font-medium">iOS &amp; Android app</span>
-      <span class="bg-white border border-border rounded-full px-4 py-2 text-sm font-medium">Client portal</span>
-      <span class="bg-white border border-border rounded-full px-4 py-2 text-sm font-medium">Multi-currency</span>
-      <span class="bg-white border border-border rounded-full px-4 py-2 text-sm font-medium">AI-assisted drafting</span>
-      <span class="bg-white border border-border rounded-full px-4 py-2 text-sm font-medium">Document requests</span>
-    </div>
-    <p class="mt-6 text-sm text-text-m scroll-rev">Built in public. <a href="#contact" class="underline hover:text-text-p">Have a feature request? Tell us.</a></p>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="bg-white border-y border-border py-20 px-4">
+<!-- ─────────────────────────  CONTACT  ───────────────────────── -->
+<section id="contact" class="px-4 py-20 sm:py-24 border-t border-border">
   <div class="max-w-xl mx-auto">
-    <div class="text-center mb-10 scroll-rev"><p class="text-xs font-bold uppercase tracking-widest mb-2" style="color:#004f54">Get in touch</p><h2 class="text-3xl font-bold mb-2">Have a question?</h2><p class="text-text-m">We typically reply within a few hours. No bots — you'll hear from a real person.</p></div>
-    <form id="contact-form" class="scroll-rev" novalidate>
-      <div class="flex flex-col gap-4">
-        <div><label class="block text-sm font-semibold mb-1.5" for="cf-name">Your name</label><input id="cf-name" name="name" type="text" placeholder="Jane Smith" required class="w-full border border-border rounded-xl px-4 py-3 text-sm bg-bg focus:outline-none focus:border-primary transition-colors"></div>
-        <div><label class="block text-sm font-semibold mb-1.5" for="cf-email">Email address</label><input id="cf-email" name="email" type="email" placeholder="jane@myfirm.com" required class="w-full border border-border rounded-xl px-4 py-3 text-sm bg-bg focus:outline-none focus:border-primary transition-colors"></div>
-        <div><label class="block text-sm font-semibold mb-1.5" for="cf-message">How can we help?</label><textarea id="cf-message" name="message" rows="4" placeholder="Ask about features, pricing, getting started…" required class="w-full border border-border rounded-xl px-4 py-3 text-sm bg-bg focus:outline-none focus:border-primary transition-colors resize-none"></textarea></div>
-        <button type="submit" id="cf-btn" class="w-full bg-primary text-white font-bold py-3.5 rounded-xl hover:bg-primary-mid transition-colors text-sm">Send Message</button>
-        <p id="cf-status" class="text-sm text-center hidden"></p>
+    <div class="scroll-rev">
+      <p class="eyebrow text-primary"><span class="eyebrow-rule">Get in touch</span></p>
+      <h2 class="mt-5 text-3xl leading-tight">Ask us anything.</h2>
+      <p class="mt-4 text-text-m">A real person reads these, usually within a few hours. Applying for Practice Build? Say so and we'll send you the three questions.</p>
+    </div>
+    <form id="contact-form" class="mt-10 flex flex-col gap-4 scroll-rev" novalidate>
+      <div>
+        <label class="block text-sm font-medium mb-1.5" for="cf-name">Your name</label>
+        <input id="cf-name" name="name" type="text" placeholder="Jane Smith" required class="w-full border border-border rounded-xl px-4 py-3 text-sm bg-white focus:outline-none focus:border-primary transition-colors">
       </div>
+      <div>
+        <label class="block text-sm font-medium mb-1.5" for="cf-email">Email address</label>
+        <input id="cf-email" name="email" type="email" placeholder="jane@myfirm.com" required class="w-full border border-border rounded-xl px-4 py-3 text-sm bg-white focus:outline-none focus:border-primary transition-colors">
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-1.5" for="cf-message">How can we help?</label>
+        <textarea id="cf-message" name="message" rows="4" placeholder="Ask about a feature, the plans, or which states we're opening next…" required class="w-full border border-border rounded-xl px-4 py-3 text-sm bg-white focus:outline-none focus:border-primary transition-colors resize-none"></textarea>
+      </div>
+      <button type="submit" id="cf-btn" class="w-full bg-primary text-white font-semibold py-3.5 rounded-xl hover:bg-primary-mid transition-colors text-sm">Send message</button>
+      <p id="cf-status" class="text-sm text-center hidden"></p>
     </form>
   </div>
 </section>
 
-<!-- FAQ -->
-<section id="faq" class="py-20 px-4">
-  <div class="max-w-3xl mx-auto">
-    <div class="text-center mb-10 scroll-rev"><p class="text-xs font-bold uppercase tracking-widest mb-2" style="color:#004f54">FAQ</p><h2 class="text-3xl font-bold">Questions, answered</h2></div>
-    <div class="flex flex-col gap-3">
-      <div class="faq-item bg-white rounded-2xl border border-border overflow-hidden scroll-rev"><button class="w-full flex items-center justify-between px-5 py-4 text-left" onclick="toggleFaq(this)"><span class="font-semibold text-sm">What is Find Clients?</span><span class="faq-ic text-xl leading-none text-text-m ml-4">+</span></button><div class="faq-ans"><p class="px-5 pb-4 text-sm text-text-m leading-relaxed">Find Clients is a feed of newly registered businesses near you that likely don't have a bookkeeper yet. You get the details to make contact and a ready-to-send intro letter, so you can reach out while you're still first. It's built for the hardest part of growing a practice — finding the next client.</p></div></div>
-      <div class="faq-item bg-white rounded-2xl border border-border overflow-hidden scroll-rev"><button class="w-full flex items-center justify-between px-5 py-4 text-left" onclick="toggleFaq(this)"><span class="font-semibold text-sm">How does the pricing engine work?</span><span class="faq-ic text-xl leading-none text-text-m ml-4">+</span></button><div class="faq-ans"><p class="px-5 pb-4 text-sm text-text-m leading-relaxed">Tell Evisor about the client and the work, and it helps you land on a fair, profitable fee — three options to present, a floor check so you never quote below cost, and a client-ready quote you can drop straight into a proposal. It's guidance to help you decide what to charge, not a rule you have to follow.</p></div></div>
-      <div class="faq-item bg-white rounded-2xl border border-border overflow-hidden scroll-rev"><button class="w-full flex items-center justify-between px-5 py-4 text-left" onclick="toggleFaq(this)"><span class="font-semibold text-sm">Is Evisor live? Is it ready to use?</span><span class="faq-ic text-xl leading-none text-text-m ml-4">+</span></button><div class="faq-ans"><p class="px-5 pb-4 text-sm text-text-m leading-relaxed">Yes — Evisor is live and in production. You can create an account and start finding clients, pricing work, sending proposals, collecting e-signatures, and onboarding clients today. It's early and we're improving it every week, and the free plan lets you start immediately with no credit card.</p></div></div>
-      <div class="faq-item bg-white rounded-2xl border border-border overflow-hidden scroll-rev"><button class="w-full flex items-center justify-between px-5 py-4 text-left" onclick="toggleFaq(this)"><span class="font-semibold text-sm">Does the free plan actually include sending for signature?</span><span class="faq-ic text-xl leading-none text-text-m ml-4">+</span></button><div class="faq-ans"><p class="px-5 pb-4 text-sm text-text-m leading-relaxed">Yes. On the free plan you can send up to 3 engagement letters and 3 proposals to real clients and collect legally binding e-signatures. The only difference is your client documents show a small "Prepared with Evisor" footer.</p></div></div>
-      <div class="faq-item bg-white rounded-2xl border border-border overflow-hidden scroll-rev"><button class="w-full flex items-center justify-between px-5 py-4 text-left" onclick="toggleFaq(this)"><span class="font-semibold text-sm">Do my clients need to create an account or download anything?</span><span class="faq-ic text-xl leading-none text-text-m ml-4">+</span></button><div class="faq-ans"><p class="px-5 pb-4 text-sm text-text-m leading-relaxed">No. Your client receives a link, opens it in their browser (on any device), reads the document, and signs with a tap or click. No login, no app download, no friction. The entire audit trail is captured automatically.</p></div></div>
-      <div class="faq-item bg-white rounded-2xl border border-border overflow-hidden scroll-rev"><button class="w-full flex items-center justify-between px-5 py-4 text-left" onclick="toggleFaq(this)"><span class="font-semibold text-sm">Can I switch plans or cancel at any time?</span><span class="faq-ic text-xl leading-none text-text-m ml-4">+</span></button><div class="faq-ans"><p class="px-5 pb-4 text-sm text-text-m leading-relaxed">Yes — upgrade or downgrade any time from Settings. Upgrades take effect immediately; downgrades apply at the end of your billing period. Nothing you've created is ever lost.</p></div></div>
-      <div class="faq-item bg-white rounded-2xl border border-border overflow-hidden scroll-rev"><button class="w-full flex items-center justify-between px-5 py-4 text-left" onclick="toggleFaq(this)"><span class="font-semibold text-sm">What happens to my documents if I cancel?</span><span class="faq-ic text-xl leading-none text-text-m ml-4">+</span></button><div class="faq-ans"><p class="px-5 pb-4 text-sm text-text-m leading-relaxed">Your signed documents are always yours. You can export and download every signed engagement letter and accepted proposal at any time, even after cancelling. We will never hold your documents hostage.</p></div></div>
-      <div class="faq-item bg-white rounded-2xl border border-border overflow-hidden scroll-rev"><button class="w-full flex items-center justify-between px-5 py-4 text-left" onclick="toggleFaq(this)"><span class="font-semibold text-sm">What are the premium templates on Practice?</span><span class="faq-ic text-xl leading-none text-text-m ml-4">+</span></button><div class="faq-ans"><p class="px-5 pb-4 text-sm text-text-m leading-relaxed">High-stakes letters where the wording really matters: Fee Increase, IRS Audit Representation, Virtual CFO / Fractional Controller, and Client Disengagement. These are included on Practice and Firm plans.</p></div></div>
-      <div class="faq-item bg-white rounded-2xl border border-border overflow-hidden scroll-rev"><button class="w-full flex items-center justify-between px-5 py-4 text-left" onclick="toggleFaq(this)"><span class="font-semibold text-sm">I have more than 5 team members. What should I do?</span><span class="faq-ic text-xl leading-none text-text-m ml-4">+</span></button><div class="faq-ans"><p class="px-5 pb-4 text-sm text-text-m leading-relaxed">Email us at <a href="mailto:hello@evisor.app" class="underline" style="color:#004f54">hello@evisor.app</a> and we'll sort you out. The Firm plan includes 5 seats and we can add more for larger teams.</p></div></div>
+<!-- ─────────────────────────  FINAL CTA  ───────────────────────── -->
+<section class="px-4 py-20 sm:py-24 border-t border-border bg-white">
+  <div class="max-w-3xl mx-auto text-center scroll-rev">
+    <h2 class="text-3xl sm:text-[2.5rem] leading-tight">Your next client is already registered somewhere.</h2>
+    <p class="mt-5 text-text-m max-w-xl mx-auto leading-relaxed">Start free, pick your niche, and see the list. It takes about four minutes and costs nothing to find out whether the businesses you want are in there.</p>
+    <div class="mt-9 flex flex-col sm:flex-row justify-center gap-3">
+      <a href="https://my.evisor.app/register" class="bg-primary text-white font-semibold px-8 py-4 rounded-xl hover:bg-primary-mid transition-colors">Start free — no card</a>
+      <a href="#pricing" class="border border-border bg-bg text-text-p font-semibold px-8 py-4 rounded-xl hover:border-primary/40 transition-colors">See the plans again</a>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer class="bg-white border-t border-border py-12 px-4">
+<!-- ─────────────────────────  FOOTER  ───────────────────────── -->
+<footer class="border-t border-border px-4 py-14">
   <div class="max-w-6xl mx-auto">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
       <div class="lg:col-span-2">
         <div class="flex items-center gap-2.5 mb-3">
-          <svg width="28" height="28" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10 8V40" fill="none" stroke="#0E6E6E" stroke-width="4.5" stroke-linecap="round"/>
-            <path d="M10 8H36" fill="none" stroke="#0E6E6E" stroke-width="4.5" stroke-linecap="round"/>
-            <path d="M10 40H36" fill="none" stroke="#0E6E6E" stroke-width="4.5" stroke-linecap="round"/>
-            <path d="M10 24H20L38 10" fill="none" stroke="#0E6E6E" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <svg width="26" height="26" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M10 8V40" fill="none" stroke="#004f54" stroke-width="4.5" stroke-linecap="round"/>
+            <path d="M10 8H36" fill="none" stroke="#004f54" stroke-width="4.5" stroke-linecap="round"/>
+            <path d="M10 40H36" fill="none" stroke="#004f54" stroke-width="4.5" stroke-linecap="round"/>
+            <path d="M10 24H20L38 10" fill="none" stroke="#004f54" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
           <span class="text-lg font-bold" style="color:#004f54">Evisor</span>
         </div>
-        <p class="text-sm text-text-m leading-relaxed max-w-xs">Software for bookkeepers and small accounting practices — find, price, sign, and keep clients, all in one place.</p>
+        <p class="text-sm text-text-m leading-relaxed max-w-xs">Practice software for bookkeepers and small accounting firms. Find the client, price the work, get it signed, keep it renewed.</p>
         <p class="mt-4 text-sm"><a href="mailto:hello@evisor.app" class="text-text-m hover:text-text-p transition-colors">hello@evisor.app</a></p>
       </div>
       <div>
-        <p class="text-xs font-bold uppercase tracking-widest mb-3 text-text-m">Product</p>
-        <ul class="flex flex-col gap-2 text-sm">
+        <p class="eyebrow text-text-m mb-4">Product</p>
+        <ul class="flex flex-col gap-2.5 text-sm">
+          <li><a href="#journey" class="text-text-m hover:text-text-p transition-colors">How it works</a></li>
           <li><a href="#features" class="text-text-m hover:text-text-p transition-colors">Features</a></li>
           <li><a href="#pricing" class="text-text-m hover:text-text-p transition-colors">Pricing</a></li>
+          <li><a href="#build" class="text-text-m hover:text-text-p transition-colors">Practice Build</a></li>
           <li><a href="#faq" class="text-text-m hover:text-text-p transition-colors">FAQ</a></li>
-          <li><a href="https://my.evisor.app" class="text-text-m hover:text-text-p transition-colors">Sign in</a></li>
-          <li><a href="https://my.evisor.app/register" class="font-semibold" style="color:#004f54">Start for free</a></li>
+          <li><a href="https://my.evisor.app/register" class="font-semibold" style="color:#004f54">Start free</a></li>
         </ul>
       </div>
       <div>
-        <p class="text-xs font-bold uppercase tracking-widest mb-3 text-text-m">Legal</p>
-        <ul class="flex flex-col gap-2 text-sm">
-          <li><a href="https://my.evisor.app/privacy" class="text-text-m hover:text-text-p transition-colors">Privacy Policy</a></li>
-          <li><a href="https://my.evisor.app/terms" class="text-text-m hover:text-text-p transition-colors">Terms of Service</a></li>
-          <li><a href="https://my.evisor.app/cookie-policy" class="text-text-m hover:text-text-p transition-colors">Cookie Policy</a></li>
-          <li><a href="https://my.evisor.app/acceptable-use" class="text-text-m hover:text-text-p transition-colors">Acceptable Use</a></li>
-          <li><a href="https://my.evisor.app/refund-policy" class="text-text-m hover:text-text-p transition-colors">Refund Policy</a></li>
+        <p class="eyebrow text-text-m mb-4">Legal</p>
+        <ul class="flex flex-col gap-2.5 text-sm">
+          <li><a href="https://my.evisor.app/privacy" class="text-text-m hover:text-text-p transition-colors">Privacy policy</a></li>
+          <li><a href="https://my.evisor.app/terms" class="text-text-m hover:text-text-p transition-colors">Terms of service</a></li>
+          <li><a href="https://my.evisor.app/cookie-policy" class="text-text-m hover:text-text-p transition-colors">Cookie policy</a></li>
+          <li><a href="https://my.evisor.app/acceptable-use" class="text-text-m hover:text-text-p transition-colors">Acceptable use</a></li>
+          <li><a href="https://my.evisor.app/refund-policy" class="text-text-m hover:text-text-p transition-colors">Refund policy</a></li>
         </ul>
       </div>
     </div>
-    <div class="border-t border-border pt-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-text-m">
+    <div class="rule1"></div>
+    <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-text-m">
       <p>&copy; 2026 Evisor. All rights reserved.</p>
       <p>Built for bookkeepers, by people who care about the details.</p>
     </div>
   </div>
 </footer>
 
-<!-- CHAT WIDGET (Eva) -->
+<!-- ─────────────────────────  CHAT (Eva)  ───────────────────────── -->
 <div id="chat-bubble">
-  <button onclick="toggleChat()" aria-label="Chat with us" class="w-14 h-14 rounded-full shadow-xl flex items-center justify-center relative hover:scale-105 transition-transform" style="background:#004f54">
-    <svg id="chat-icon-open" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
-    <svg id="chat-icon-close" class="w-5 h-5 text-white hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+  <button onclick="toggleChat()" aria-label="Chat with us" class="w-14 h-14 rounded-full shadow-xl flex items-center justify-center relative hover:scale-105 transition-transform bg-primary">
+    <svg id="chat-icon-open" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
+    <svg id="chat-icon-close" class="w-5 h-5 text-white hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
     <span class="absolute top-0.5 right-0.5 w-3.5 h-3.5 bg-emerald-500 rounded-full border-2 border-white anim-pdot"></span>
   </button>
 </div>
 
 <div id="chat-panel">
-  <div class="flex items-center gap-3 px-4 py-3 border-b border-border" style="background:#004f54">
+  <div class="flex items-center gap-3 px-4 py-3 bg-primary">
     <div class="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
-      <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+      <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
     </div>
     <div class="flex-1 min-w-0">
-      <p class="text-white text-sm font-semibold">Eva — Evisor Assistant</p>
+      <p class="text-white text-sm font-semibold">Eva — Evisor assistant</p>
       <p class="text-white/70 text-xs flex items-center gap-1"><span class="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span>Typically replies within a few hours</p>
     </div>
-    <button onclick="toggleChat()" class="text-white/70 hover:text-white p-1">
-      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+    <button onclick="toggleChat()" class="text-white/70 hover:text-white p-1" aria-label="Close chat">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
     </button>
   </div>
   <div id="chat-msgs"></div>
@@ -628,66 +1188,118 @@
     <button onclick="chatSkipEmail()" class="text-xs text-text-m underline hover:text-text-p">Skip — I'd rather not share my email</button>
   </div>
   <div class="px-3 py-3 border-t border-border flex gap-2">
-    <input id="chat-input" type="text" placeholder="Type a message…" class="flex-1 border border-border rounded-xl px-3 py-2 text-sm bg-bg focus:outline-none focus:border-primary transition-colors" onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();chatSend();}">
-    <button onclick="chatSend()" class="flex-shrink-0 w-9 h-9 rounded-xl flex items-center justify-center hover:bg-primary-mid transition-colors" style="background:#004f54">
-      <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+    <input id="chat-input" type="text" placeholder="Type a message…" aria-label="Chat message" class="flex-1 border border-border rounded-xl px-3 py-2 text-sm bg-bg focus:outline-none focus:border-primary transition-colors" onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();chatSend();}">
+    <button onclick="chatSend()" class="flex-shrink-0 w-9 h-9 rounded-xl flex items-center justify-center hover:bg-primary-mid transition-colors bg-primary" aria-label="Send message">
+      <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
     </button>
   </div>
 </div>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Evisor",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "url": "https://evisor.app",
+      "description": "Practice software for bookkeepers: find businesses in your niche, price the work with confidence, and get proposals and engagement letters signed.",
+      "offers": [
+        {"@type":"Offer","name":"Free","price":"0","priceCurrency":"USD"},
+        {"@type":"Offer","name":"Launch","price":"30","priceCurrency":"USD"},
+        {"@type":"Offer","name":"Advisor","price":"72","priceCurrency":"USD"},
+        {"@type":"Offer","name":"Firm","price":"150","priceCurrency":"USD"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"Does Evisor email prospects on my behalf?","acceptedAnswer":{"@type":"Answer","text":"No. Evisor writes the outreach and puts it on your clipboard. You send it yourself from your own inbox — no mailbox connection, no OAuth, nothing touching your domain reputation."}},
+        {"@type":"Question","name":"What counts toward the monthly send allowance?","acceptedAnswer":{"@type":"Answer","text":"A send is one proposal or one engagement letter delivered to a client. Drafts, edits, re-sends, reminders and renewals of an existing letter do not count. The allowance resets on the first of each calendar month and can be raised on request at no charge."}},
+        {"@type":"Question","name":"Which countries and states does Find Clients cover?","acceptedAnswer":{"@type":"Answer","text":"The United Kingdom, Ireland, Canada and Australia in full, plus New York, Pennsylvania, Connecticut, Colorado and Oregon in the United States. The rest of Evisor works anywhere."}},
+        {"@type":"Question","name":"What happens to my signed documents if I cancel?","acceptedAnswer":{"@type":"Answer","text":"They remain yours permanently. Every signed engagement letter and accepted proposal can be exported and downloaded with its audit trail, including after cancellation."}},
+        {"@type":"Question","name":"Can two people sign the same engagement letter?","acceptedAnswer":{"@type":"Answer","text":"Yes. Co-signers are included on every paid plan, and each signature is separately captured in the audit trail."}}
+      ]
+    }
+  ]
+}
+</script>
+
 <script>
-// ===== BILLING =====
+// ─── Billing toggle ────────────────────────────────────────────────
 let billing = 'annual';
 function setBilling(mode) {
   if (billing === mode) return;
   billing = mode;
-  const btnA = document.getElementById('btn-annual');
-  const btnM = document.getElementById('btn-monthly');
-  const badge = document.getElementById('annual-badge');
-  if (mode === 'annual') { btnA.className='bill-btn on'; btnM.className='bill-btn off'; badge.style.display=''; }
-  else { btnM.className='bill-btn on'; btnA.className='bill-btn off'; badge.style.display='none'; }
+  document.getElementById('bill-annual').classList.toggle('on', mode === 'annual');
+  document.getElementById('bill-monthly').classList.toggle('on', mode === 'monthly');
+  document.getElementById('save-badge').style.visibility = mode === 'annual' ? 'visible' : 'hidden';
   document.querySelectorAll('.price-num').forEach(el => {
     el.classList.add('fading');
-    setTimeout(() => { el.textContent = mode==='annual' ? el.dataset.annual : el.dataset.monthly; el.classList.remove('fading'); }, 180);
+    setTimeout(() => { el.textContent = el.dataset[mode]; el.classList.remove('fading'); }, 160);
   });
-  document.querySelectorAll('.price-period').forEach(el => { el.textContent = mode==='annual' ? el.dataset.annual : el.dataset.monthly; });
-  document.querySelectorAll('.cta-btn').forEach(el => { el.textContent = mode==='annual' ? el.dataset.annual : el.dataset.monthly; });
+  document.querySelectorAll('.price-period').forEach(el => { el.textContent = el.dataset[mode]; });
 }
-setBilling('annual');
 
-// ===== MOBILE MENU =====
+// ─── Two doors: reorder the bullets, never the prices ──────────────
+let door = 'grow';
+function setDoor(which) {
+  if (door === which) return;
+  door = which;
+  document.getElementById('door-grow').classList.toggle('on', which === 'grow');
+  document.getElementById('door-close').classList.toggle('on', which === 'close');
+  document.querySelectorAll('.door-line').forEach(el => { el.textContent = el.dataset[which]; });
+  document.querySelectorAll('li[data-g]').forEach(li => {
+    li.style.order = which === 'grow' ? li.dataset.g : li.dataset.c;
+  });
+}
+setDoor('close'); setDoor('grow'); // seed the flex order values on load
+
+// ─── Hero double rule ──────────────────────────────────────────────
+window.addEventListener('load', () => {
+  setTimeout(() => { document.getElementById('hero-rule').classList.add('drawn'); }, 420);
+});
+
+// ─── Mobile menu ───────────────────────────────────────────────────
 function toggleMobileMenu() {
   const p = document.getElementById('mobile-panel');
   p.classList.toggle('open');
   document.body.style.overflow = p.classList.contains('open') ? 'hidden' : '';
 }
 
-// ===== FAQ =====
+// ─── FAQ ───────────────────────────────────────────────────────────
 function toggleFaq(btn) {
   const item = btn.closest('.faq-item');
   const ans = btn.nextElementSibling;
-  const isOpen = ans.classList.contains('open');
+  const wasOpen = ans.classList.contains('open');
   document.querySelectorAll('.faq-ans.open').forEach(el => el.classList.remove('open'));
   document.querySelectorAll('.faq-item.active').forEach(el => el.classList.remove('active'));
-  if (!isOpen) { ans.classList.add('open'); item.classList.add('active'); }
+  document.querySelectorAll('.faq-item button').forEach(el => el.setAttribute('aria-expanded', 'false'));
+  if (!wasOpen) { ans.classList.add('open'); item.classList.add('active'); btn.setAttribute('aria-expanded', 'true'); }
 }
 
-// ===== PRACTICE STRIKETHROUGH =====
-const practiceCard = document.getElementById('practice-card');
-let strikeFired = false;
-if (practiceCard && 'IntersectionObserver' in window) {
-  new IntersectionObserver((entries) => {
-    if (entries[0].isIntersecting && !strikeFired) { strikeFired=true; setTimeout(()=>practiceCard.classList.add('do-strike'),300); }
-  }, {threshold:0.35}).observe(practiceCard);
-} else if (practiceCard) { setTimeout(()=>practiceCard.classList.add('do-strike'),800); }
-
-// ===== SCROLL REVEAL =====
+// ─── Scroll reveal + rule drawing ──────────────────────────────────
 if ('IntersectionObserver' in window) {
-  const sObs = new IntersectionObserver((entries) => { entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('vis'); }); }, {threshold:0.08});
-  document.querySelectorAll('.scroll-rev').forEach(el => sObs.observe(el));
-} else { document.querySelectorAll('.scroll-rev').forEach(el=>el.classList.add('vis')); }
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.scroll-rev').forEach(el => obs.observe(el));
+} else {
+  document.querySelectorAll('.scroll-rev').forEach(el => el.classList.add('vis'));
+}
 
-// ===== CONTACT FORM =====
+// ─── Practice Build: prefill the contact form ──────────────────────
+function prefillBuild() {
+  const msg = document.getElementById('cf-message');
+  if (msg && !msg.value.trim()) {
+    msg.value = "I'd like to apply for Practice Build. Here's where my practice is right now: ";
+  }
+  setTimeout(() => { const n = document.getElementById('cf-name'); if (n) n.focus({ preventScroll: true }); }, 700);
+}
+
+// ─── Contact form ──────────────────────────────────────────────────
 const cfForm = document.getElementById('contact-form');
 if (cfForm) {
   cfForm.addEventListener('submit', async (e) => {
@@ -699,7 +1311,7 @@ if (cfForm) {
     const msg = document.getElementById('cf-message').value.trim();
     if (!name || !email || !msg) return;
     btn.disabled = true;
-    btn.innerHTML = '<span class="inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full spin mr-2"></span>Sending…';
+    btn.innerHTML = '<span class="inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full spin mr-2 align-[-3px]"></span>Sending…';
     status.className = 'text-sm text-center hidden';
     try {
       const res = await fetch('https://formsubmit.co/ajax/hello@evisor.app', {
@@ -709,25 +1321,23 @@ if (cfForm) {
       });
       const json = await res.json();
       if (json.success === 'true' || json.success === true) {
-        status.textContent = '✓ Message sent! We\'ll get back to you within a few hours.';
-        status.className = 'text-sm text-center text-emerald-600';
+        status.textContent = '✓ Sent. We\'ll come back to you within a few hours.';
+        status.className = 'text-sm text-center text-emerald-700';
         cfForm.reset();
       } else throw new Error();
     } catch {
-      status.textContent = 'Something went wrong — please email us at hello@evisor.app';
-      status.className = 'text-sm text-center text-red-500';
+      status.textContent = 'That didn\'t go through — email us directly at hello@evisor.app';
+      status.className = 'text-sm text-center text-red-600';
     }
     btn.disabled = false;
-    btn.textContent = 'Send Message';
+    btn.textContent = 'Send message';
   });
 }
 
-// ===== CHAT WIDGET =====
-let chatOpen = false;
-let chatPhase = 'idle';
+// ─── Chat widget ───────────────────────────────────────────────────
+let chatOpen = false, chatPhase = 'idle', chatFirstOpen = true;
 let chatUser = { name: '', email: '' };
 let chatHistory = [];
-let chatFirstOpen = true;
 
 function toggleChat() {
   chatOpen = !chatOpen;
@@ -739,7 +1349,7 @@ function toggleChat() {
     iconOpen.classList.add('hidden'); iconClose.classList.remove('hidden');
     if (chatFirstOpen) {
       chatFirstOpen = false; chatPhase = 'name';
-      setTimeout(() => addBotMsg("Hi there! 👋 I\'m Eva, your Evisor assistant. What\'s your name?"), 350);
+      setTimeout(() => addBotMsg("Hi there! 👋 I'm Eva, your Evisor assistant. What's your name?"), 350);
     }
     setTimeout(() => document.getElementById('chat-input').focus(), 400);
   } else {
@@ -799,10 +1409,10 @@ function chatSend() {
 
 function chatSkipEmail() {
   document.getElementById('chat-skip-row').classList.add('hidden');
-  addUserMsg("I\'d rather not share my email");
+  addUserMsg("I'd rather not share my email");
   chatUser.email = '';
   chatPhase = 'message';
-  addBotMsg("No problem! Just a heads-up — without your email I won\'t be able to follow up personally. I\'m still here to help though! What would you like to know?");
+  addBotMsg("No problem! Just a heads-up — without your email I won't be able to follow up personally. I'm still here to help though! What would you like to know?");
 }
 
 function _fireAndForget(payload) {
@@ -820,7 +1430,6 @@ function _buildTranscript() {
 function submitChat(userMsg) {
   const noEmail = !chatUser.email;
   chatPhase = 'more';
-  // Fire and forget — never block UX on delivery
   _fireAndForget({
     name: chatUser.name || 'Website visitor',
     email: chatUser.email || 'not provided',
@@ -829,16 +1438,13 @@ function submitChat(userMsg) {
     _subject: '[landingpage-chat] ' + (chatUser.name || 'Visitor') + '\'s message',
     _captcha: 'false'
   });
-  // Always respond like a real support agent regardless of send result
-  const botReply = noEmail
-    ? 'Thanks for reaching out! 💬 Our team has received your message. For a faster reply you can also email us at hello@evisor.app. Is there anything else I can help you with?'
-    : 'Thanks, ' + chatUser.name + '! 😊 Your message is on its way to our team. We\'ll reply to ' + chatUser.email + ' within a few hours. Is there anything else I can help with?';
-  addBotMsg(botReply, 200);
+  addBotMsg(noEmail
+    ? 'Thanks for reaching out! 💬 Our team has your message. For a faster reply you can also email hello@evisor.app. Anything else I can help with?'
+    : 'Thanks, ' + chatUser.name + '! 😊 Your message is on its way to our team and we\'ll reply to ' + chatUser.email + ' within a few hours. Anything else I can help with?', 200);
 }
 
 function submitChatFollowup(userMsg) {
   chatPhase = 'more';
-  // Include the updated full transcript so the team sees everything
   _fireAndForget({
     name: chatUser.name || 'Website visitor',
     email: chatUser.email || 'not provided',
@@ -847,7 +1453,7 @@ function submitChatFollowup(userMsg) {
     _subject: '[landingpage-chat-followup] ' + (chatUser.name || 'Visitor'),
     _captcha: 'false'
   });
-  addBotMsg('Got it, noted! 📝 I\'ve passed that on to our team as well. Anything else before I wrap up?', 200);
+  addBotMsg('Got it, noted 📝 — passed on to the team as well. Anything else before I wrap up?', 200);
 }
 </script>
 </body>
