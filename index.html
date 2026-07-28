@@ -95,6 +95,8 @@
     /* grid items default to min-width:auto, which lets a wide child push the
        column past the viewport on very narrow screens */
     .grid > *{min-width:0;}
+    .no-sb{scrollbar-width:none;-ms-overflow-style:none;}
+    .no-sb::-webkit-scrollbar{display:none;}
     .ico{width:20px;height:20px;}
 
     /* Practice Build — brand-native premium band */
@@ -240,12 +242,18 @@
 
         <div class="bg-white border border-border rounded-xl shadow-md p-3.5">
           <p class="text-[9.5px] font-bold uppercase tracking-widest text-text-m mb-2.5">01 · Find</p>
-          <div class="flex flex-wrap gap-1">
-            <span class="text-[9.5px] font-semibold px-1.5 py-0.5 rounded-full text-white" style="background:#004f54">Trades</span>
-            <span class="text-[9.5px] font-medium px-1.5 py-0.5 rounded-full border border-border text-text-m">Restaurants</span>
-            <span class="text-[9.5px] font-medium px-1.5 py-0.5 rounded-full border border-border text-text-m">E-commerce</span>
-            <span class="text-[9.5px] font-medium px-1.5 py-0.5 rounded-full border border-border text-text-m">Dental</span>
-            <span class="text-[9.5px] font-medium px-1.5 py-0.5 rounded-full border border-border text-text-m">+ more</span>
+          <div class="relative">
+            <div class="no-sb flex gap-1 overflow-x-auto pr-7">
+              <span class="flex-shrink-0 text-[9.5px] font-semibold px-1.5 py-0.5 rounded-full text-white whitespace-nowrap" style="background:#004f54">Trades</span>
+              <span class="flex-shrink-0 text-[9.5px] font-medium px-1.5 py-0.5 rounded-full border border-border text-text-m whitespace-nowrap">Restaurants</span>
+              <span class="flex-shrink-0 text-[9.5px] font-medium px-1.5 py-0.5 rounded-full border border-border text-text-m whitespace-nowrap">E-commerce</span>
+              <span class="flex-shrink-0 text-[9.5px] font-medium px-1.5 py-0.5 rounded-full border border-border text-text-m whitespace-nowrap">Dental</span>
+              <span class="flex-shrink-0 text-[9.5px] font-medium px-1.5 py-0.5 rounded-full border border-border text-text-m whitespace-nowrap">Salons</span>
+              <span class="flex-shrink-0 text-[9.5px] font-medium px-1.5 py-0.5 rounded-full border border-border text-text-m whitespace-nowrap">Property</span>
+              <span class="flex-shrink-0 text-[9.5px] font-medium px-1.5 py-0.5 rounded-full border border-border text-text-m whitespace-nowrap">Agencies</span>
+              <span class="flex-shrink-0 text-[9.5px] font-medium px-1.5 py-0.5 rounded-full border border-border text-text-m whitespace-nowrap">Fitness</span>
+            </div>
+            <div class="absolute right-0 top-0 bottom-0 w-8 pointer-events-none" style="background:linear-gradient(90deg,rgba(255,255,255,0),#fff 70%)"></div>
           </div>
           <p class="mt-2.5 leading-none"><strong class="text-xl font-extrabold">1,284</strong> <span class="text-[12px] text-text-m">match your filters</span></p>
           <div class="mt-2.5 pt-2.5 border-t border-border">
@@ -253,7 +261,7 @@
               <p class="text-[11.5px] font-semibold truncate">Halston Plumbing &amp; Heating</p>
               <span class="text-[8px] font-bold px-1 py-0.5 rounded text-white flex-shrink-0" style="background:#0f766e">NEW</span>
             </div>
-            <p class="text-[10px] text-text-m mt-0.5">Registered 6 days ago · added this week</p>
+            <p class="text-[10px] text-text-m mt-0.5">Trades · 4 staff · registered 6 days ago</p>
           </div>
         </div>
         <div class="hidden sm:flex items-center justify-center px-0.5" aria-hidden="true"><svg class="w-4 h-4 text-text-m/50" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></div>
@@ -377,23 +385,17 @@
     <div class="scroll-rev">
       <p class="text-[11px] font-bold uppercase tracking-widest mb-2.5" style="color:#004f54">01 — Find</p>
       <h2 class="text-xl sm:text-2xl lg:text-[1.7rem] font-bold mb-3 leading-tight">Start with a list. Not a blank page.</h2>
-      <p class="text-text-m mb-3.5 leading-relaxed text-[14.5px]">Choose the businesses you actually want as clients — trades and construction, restaurants and cafés, e-commerce, dental and medical, salons and studios, agencies, property, fitness, childcare, auto, logistics, professional services. Evisor gives you real, verified businesses you can contact today, with the intro email already written in your voice.</p>
-      <p class="text-text-m mb-5 leading-relaxed text-[14.5px]">You pick your niche, not your postcode. Bookkeeping isn't done at the client's desk any more, and the practices that grow fastest are the ones that specialise.</p>
+      <p class="text-text-m mb-5 leading-relaxed text-[14.5px]">Pick the businesses you actually want — trades, restaurants, e-commerce, dental, salons, property, agencies, fitness, childcare, auto, logistics and more. You get real businesses you can contact today, with the intro email already written in your voice. You choose by niche, not by postcode, because the practices that grow fastest are the ones that specialise.</p>
       <div class="rounded-xl p-5 mb-5" style="background:#e6f0f1;border:1px solid rgba(0,79,84,.25)">
         <p class="text-[11px] font-bold uppercase tracking-widest mb-2" style="color:#004f54">Why these aren't like other lead lists</p>
-        <p class="text-[14px] leading-relaxed text-text-p mb-2.5"><strong>You get the businesses that have just registered — not the ones everyone else already emailed.</strong></p>
-        <p class="text-[13.5px] leading-relaxed text-text-m">A bought lead list is the same directory a hundred other people bought. The businesses on it have been pitched for years and have learned to ignore it. Evisor works from <strong class="text-text-p">new company registrations, added every week</strong> — companies that were incorporated in the last few weeks, mostly haven't appointed anyone yet, and in many cases have never been contacted by a bookkeeper at all.</p>
-        <p class="text-[13.5px] leading-relaxed text-text-m mt-2.5">That's the whole edge: <strong class="text-text-p">being first, not being louder.</strong> A business that registered three weeks ago still needs someone. A business that's been on a list for three years has already said no, several times.</p>
+        <p class="text-[14px] leading-relaxed text-text-p mb-2.5"><strong>You get the businesses that just registered — not the ones everyone else already emailed.</strong></p>
+        <p class="text-[13.5px] leading-relaxed text-text-m">Evisor works from <strong class="text-text-p">new company registrations, added every week</strong>, and most of them haven't appointed anyone yet. A business that registered three weeks ago still needs someone. One that's been on a bought list for three years has already said no, several times.</p>
       </div>
       <ul class="flex flex-col gap-3 mb-6">
         <li class="flex items-start gap-2.5"><span class="mt-0.5 flex-shrink-0 w-[18px] h-[18px] rounded-full flex items-center justify-center" style="background:#e6f0f1"><svg class="w-2.5 h-2.5" style="color:#004f54" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span class="text-[14px] text-text-p leading-relaxed"><strong>The outreach stays yours.</strong> Evisor writes the email and puts it on your clipboard. You send it from your own inbox — no mailbox connection, nothing that can burn your domain.</span></li>
         <li class="flex items-start gap-2.5"><span class="mt-0.5 flex-shrink-0 w-[18px] h-[18px] rounded-full flex items-center justify-center" style="background:#e6f0f1"><svg class="w-2.5 h-2.5" style="color:#004f54" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span class="text-[14px] text-text-p leading-relaxed"><strong>A pipeline that shows movement.</strong> Saved, contacted, replied, proposal out, signed — so you can see the machine working long before the first signature lands.</span></li>
         <li class="flex items-start gap-2.5"><span class="mt-0.5 flex-shrink-0 w-[18px] h-[18px] rounded-full flex items-center justify-center" style="background:#e6f0f1"><svg class="w-2.5 h-2.5" style="color:#004f54" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span class="text-[14px] text-text-p leading-relaxed"><strong>The answers to the four hard replies.</strong> "I already have an accountant." "What do you charge?" "Just send me some info." "Not right now." Written out, ready to paste.</span></li>
       </ul>
-      <div class="bg-white border border-border rounded-xl p-4 mb-5">
-        <p class="text-[11px] font-bold uppercase tracking-widest mb-2 text-text-m">Free vs paid, stated plainly</p>
-        <p class="text-[14px] text-text-p leading-relaxed">On the free plan you see <strong>your market</strong> — how many businesses match your niche, and where they are. <strong>Contact details and the working list open on Launch</strong>, because that's the part that costs us money to keep verified.</p>
-      </div>
       <div class="bg-white border border-border rounded-xl p-4 mb-6">
         <p class="text-[11px] font-bold uppercase tracking-widest mb-2 text-text-m">Where we're live today</p>
         <p class="text-[14px] text-text-p leading-relaxed">The United Kingdom, Ireland, Canada and Australia in full — plus <strong>New York, Pennsylvania, Connecticut, Colorado and Oregon</strong> in the US. Most members work remotely across all of it.</p>
@@ -649,7 +651,7 @@
         <div class="flex items-center justify-between gap-4 py-1.5 text-[13.5px]"><span class="text-text-m">One bookkeeping client at $400 a month</span><span class="font-semibold whitespace-nowrap">$4,800/yr</span></div>
         <div class="flex items-center justify-between gap-4 py-1.5 pb-3 text-[13.5px] border-b border-border"><span class="text-text-m">Evisor Practice, billed annually</span><span class="font-semibold whitespace-nowrap">−$540/yr</span></div>
         <div class="flex items-center justify-between gap-4 pt-3.5"><span class="font-bold text-[14px]">What that one client leaves you</span><span class="text-2xl font-extrabold whitespace-nowrap" style="color:#004f54">$4,260</span></div>
-        <p class="text-[12px] text-text-m leading-relaxed mt-4">For comparison: lead-generation agencies serving accountants charge <strong class="text-text-p">$150 to $600 per qualified lead</strong>. Practice includes 250 verified businesses every month.</p>
+        <p class="text-[12px] text-text-m leading-relaxed mt-4">For comparison: lead-generation agencies serving accountants charge <strong class="text-text-p">$150 to $600 per qualified lead</strong>. Practice includes 250 newly registered businesses every month.</p>
       </div>
     </div>
 
@@ -673,8 +675,11 @@
           </ul>
         </div>
         <div class="flex-shrink-0 lg:w-[236px] lg:border-l lg:border-white/15 lg:pl-8">
-          <p class="text-[2.1rem] sm:text-[2.35rem] font-extrabold text-white leading-none">$1,500</p>
-          <p class="text-white/60 text-[11.5px] mt-2 leading-relaxed">One payment. Includes 12 months of Practice ($540 of it), so there is nothing to pay monthly on top.</p>
+          <div class="flex items-center gap-2.5 flex-wrap">
+            <p class="text-[2.1rem] sm:text-[2.35rem] font-extrabold text-white leading-none">$1,500</p>
+            <span class="text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded text-white whitespace-nowrap" style="background:rgba(255,255,255,.18)">One time</span>
+          </div>
+          <p class="text-white/60 text-[11.5px] mt-2.5 leading-relaxed">Paid once, not monthly. Includes 12 months of Practice ($540 of it), so there is nothing to pay on top.</p>
           <span class="mt-4 inline-flex items-center gap-2 bg-white text-[13px] font-bold px-4 py-2.5 rounded-lg whitespace-nowrap" style="color:#004f54">
             See what's included
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
@@ -766,7 +771,7 @@
 
       <!-- PRACTICE -->
       <div id="practice-card" class="relative bg-white rounded-2xl plan-popular-ring shadow-lg p-5 pt-6 flex flex-col scroll-rev order-1 sm:order-none">
-        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full whitespace-nowrap">★ MOST PRACTICES START HERE</div>
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full whitespace-nowrap">★ BEST VALUE</div>
         <p class="text-[11px] font-bold uppercase tracking-wide text-text-m mb-1">Practice</p>
         <div class="mt-2 min-h-[74px] flex flex-col justify-end">
           <div class="flex items-center gap-2 flex-wrap">
@@ -823,10 +828,26 @@
     </div>
 
     <!-- THE PROMISE -->
-    <div class="mt-4 rounded-2xl border border-border border-l-4 bg-bg p-5 sm:p-6 scroll-rev" style="border-left-color:#004f54">
-      <p class="text-[11px] font-bold uppercase tracking-widest mb-2.5" style="color:#004f54">Our promise</p>
-      <p class="text-base sm:text-lg font-bold leading-snug text-text-p">Your first client-ready proposal — priced, formatted and ready to send — inside your first week. If it isn't, we'll build it with you on a call.</p>
-      <p class="text-[13.5px] text-text-m mt-2.5 leading-relaxed">We won't promise you a signed client. Nobody honest can — that part involves you, them, and a dozen things no software controls. We promise the thing we do control, and we keep it every time.</p>
+    <div class="mt-4 rounded-2xl overflow-hidden border-2 scroll-rev" style="border-color:rgba(0,79,84,.28)">
+      <div class="p-5 sm:p-7 flex flex-col sm:flex-row gap-5 sm:gap-6" style="background:#e6f0f1">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 text-white" style="background:#004f54">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <div class="min-w-0">
+          <p class="text-[11px] font-bold uppercase tracking-widest mb-2" style="color:#004f54">Our promise</p>
+          <p class="text-base sm:text-lg font-bold leading-snug text-text-p">Your first client-ready proposal — priced, formatted and ready to send — inside your first week. If it isn't, we'll build it with you on a call.</p>
+          <div class="mt-4 pt-4 grid sm:grid-cols-2 gap-4 sm:gap-6" style="border-top:1px solid rgba(0,79,84,.2)">
+            <div>
+              <p class="text-[11px] font-bold uppercase tracking-widest mb-1.5" style="color:rgba(0,79,84,.8)">What we guarantee</p>
+              <p class="text-[13.5px] text-text-m leading-relaxed">The thing we control — that you finish week one with a real, sendable document instead of a blank screen.</p>
+            </div>
+            <div>
+              <p class="text-[11px] font-bold uppercase tracking-widest mb-1.5" style="color:rgba(0,79,84,.8)">What we won't</p>
+              <p class="text-[13.5px] text-text-m leading-relaxed">A signed client. Nobody honest can — that part involves you, them, and a dozen things no software controls.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- ══ COMPARISON TABLE — at the decision point ══ -->
