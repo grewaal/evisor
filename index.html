@@ -149,9 +149,151 @@
       .scroll-rev{opacity:1;transform:none;}
       .strike-line{width:100%;}
     }
+    /* ===== Analytics consent banner (F-14) ===== */
+    #cookie-consent{position:fixed;left:0;right:0;bottom:0;z-index:1002;background:#fff;border-top:1px solid #E2E0DA;
+      box-shadow:0 -6px 24px rgba(40,37,29,.10);padding:16px 16px calc(16px + env(safe-area-inset-bottom));}
+    #cookie-consent[hidden]{display:none;}
+    #cookie-consent .cc-wrap{max-width:1024px;margin:0 auto;display:flex;flex-direction:column;gap:12px;}
+    #cookie-consent .cc-row{display:flex;flex-direction:column;gap:12px;}
+    #cookie-consent p{font-size:13px;line-height:1.55;color:#28251D;margin:0;}
+    #cookie-consent a{color:#004f54;text-decoration:underline;}
+    #cookie-consent .cc-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
+    #cookie-consent button{font:inherit;font-size:13px;font-weight:600;border-radius:10px;padding:9px 16px;cursor:pointer;
+      border:1px solid #004f54;transition:background .15s,color .15s;}
+    #cookie-consent .cc-accept{background:#004f54;color:#fff;}
+    #cookie-consent .cc-accept:hover{background:#01696F;}
+    #cookie-consent .cc-reject{background:#fff;color:#004f54;}
+    #cookie-consent .cc-reject:hover{background:#e6f0f1;}
+    #cookie-consent button:focus-visible{outline:2px solid #004f54;outline-offset:2px;}
+    html.cc-open #mbar{display:none!important;}
+    @media(min-width:640px){
+      #cookie-consent .cc-row{flex-direction:row;align-items:center;}
+      #cookie-consent p{flex:1;}
+      #cookie-consent .cc-actions{flex-shrink:0;}
+    }
   </style>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B4347EDBV9"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-B4347EDBV9');</script>
+  <!-- F-14: Google Analytics 4 is loaded ONLY after the visitor accepts analytics cookies. No gtag before consent. -->
+  <script>
+  (function () {
+    var GA_ID = 'G-B4347EDBV9';
+    var KEY = 'evisor_analytics_consent';         // 'granted' | 'denied'
+    var gaLoaded = false;
+
+    function loadGA() {
+      if (gaLoaded) return;
+      gaLoaded = true;
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { window.dataLayer.push(arguments); };
+      window.gtag('js', new Date());
+      window.gtag('config', GA_ID);
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+      document.head.appendChild(s);
+    }
+
+    function clearGACookies() {
+      var names = ['_ga', '_ga_' + GA_ID.replace(/^G-/, ''), '_gid', '_gat', '_gat_gtag_' + GA_ID.replace(/-/g, '_')];
+      var host = location.hostname;
+      var domains = ['', ';domain=' + host, ';domain=.' + host, ';domain=.evisor.app'];
+      names.forEach(function (n) {
+        domains.forEach(function (d) {
+          document.cookie = n + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/' + d;
+        });
+      });
+    }
+
+    function read() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
+    function write(v) { try { localStorage.setItem(KEY, v); } catch (e) {} }
+
+    function apply(v) {
+      if (v === 'granted') loadGA();
+      else clearGACookies();
+    }
+
+    var banner, lastFocus;
+
+    function buildBanner() {
+      if (banner) return banner;
+      banner = document.createElement('div');
+      banner.id = 'cookie-consent';
+      banner.setAttribute('role', 'dialog');
+      banner.setAttribute('aria-modal', 'false');
+      banner.setAttribute('aria-labelledby', 'cc-title');
+      banner.setAttribute('aria-describedby', 'cc-desc');
+      banner.hidden = true;
+      banner.innerHTML =
+        '<div class="cc-wrap">' +
+          '<div class="cc-row">' +
+            '<p><strong id="cc-title">Analytics cookies</strong><br>' +
+            '<span id="cc-desc">We use Google Analytics to understand how visitors use this site. ' +
+            'It only loads if you accept. Necessary cookies for the site to work are always on. ' +
+            'See our <a href="https://my.evisor.app/cookie-policy" target="_blank" rel="noopener noreferrer">Cookie Policy</a>.</span></p>' +
+            '<div class="cc-actions">' +
+              '<button type="button" class="cc-reject" data-choice="denied">Reject analytics</button>' +
+              '<button type="button" class="cc-accept" data-choice="granted">Accept analytics</button>' +
+            '</div>' +
+          '</div>' +
+        '</div>';
+      banner.addEventListener('click', function (e) {
+        var b = e.target.closest('button[data-choice]');
+        if (b) choose(b.getAttribute('data-choice'));
+      });
+      // No Escape-to-dismiss: the banner is non-modal and never traps focus, so
+      // a keyboard user can Tab straight past it. We do not record a consent
+      // choice the visitor did not explicitly make; analytics stays off until
+      // they pick Accept or Reject.
+      (document.body || document.documentElement).appendChild(banner);
+      return banner;
+    }
+
+    function showBanner() {
+      buildBanner();
+      lastFocus = document.activeElement;
+      banner.hidden = false;
+      document.documentElement.classList.add('cc-open');
+      document.body.style.paddingBottom = banner.offsetHeight + 'px';
+      var first = banner.querySelector('button');
+      if (first) first.focus();
+    }
+
+    function hideBanner() {
+      if (!banner) return;
+      banner.hidden = true;
+      document.documentElement.classList.remove('cc-open');
+      document.body.style.paddingBottom = '';
+      if (lastFocus && lastFocus.focus) { try { lastFocus.focus(); } catch (e) {} }
+    }
+
+    function choose(v) {
+      write(v);
+      apply(v);
+      hideBanner();
+    }
+
+    // Public hook for the footer "Cookie settings" control.
+    window.EvisorConsent = {
+      get: read,
+      openSettings: function () { showBanner(); }
+    };
+
+    var stored = read();
+    if (stored === 'granted') {
+      loadGA();
+    } else {
+      // No consent on record (rejected or never asked): make sure no GA cookie
+      // survives from an earlier visit, then ask if the visitor has not chosen.
+      clearGACookies();
+      if (stored !== 'denied') {
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', showBanner);
+        } else {
+          showBanner();
+        }
+      }
+    }
+  })();
+  </script>
 </head>
 <body class="bg-bg text-[15px]">
 
@@ -1119,6 +1261,7 @@
           <li><a href="https://my.evisor.app/privacy" class="text-text-m hover:text-text-p transition-colors">Privacy Policy</a></li>
           <li><a href="https://my.evisor.app/terms" class="text-text-m hover:text-text-p transition-colors">Terms of Service</a></li>
           <li><a href="https://my.evisor.app/cookie-policy" class="text-text-m hover:text-text-p transition-colors">Cookie Policy</a></li>
+          <li><button type="button" onclick="window.EvisorConsent&amp;&amp;window.EvisorConsent.openSettings()" class="text-text-m hover:text-text-p transition-colors underline-offset-2">Cookie settings</button></li>
           <li><a href="https://my.evisor.app/acceptable-use" class="text-text-m hover:text-text-p transition-colors">Acceptable Use</a></li>
           <li><a href="https://my.evisor.app/refund-policy" class="text-text-m hover:text-text-p transition-colors">Refund Policy</a></li>
         </ul>
