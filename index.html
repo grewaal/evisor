@@ -80,12 +80,6 @@
     .bill-btn.on{background:#004f54;color:#fff;}
     .bill-btn.off{color:#6B7280;}
     .bill-btn.off:hover{color:#28251D;}
-    .strike-wrap{position:relative;display:inline-block;}
-    .strike-line{position:absolute;top:50%;left:0;height:2px;background:#9CA3AF;transform:translateY(-50%);width:0;transition:width .45s ease-out .4s;}
-    .do-strike .strike-line{width:100%;}
-    /* The live price is ALWAYS rendered — never make the number someone is
-       buying on depend on JS or an animation delay. Only the strike animates. */
-    .new-price{opacity:1;}
     #mobile-panel{position:fixed;inset:0;background:#fff;z-index:998;transform:translateX(100%);visibility:hidden;transition:transform .3s ease,visibility .3s;overflow-y:auto;}
     #mobile-panel.open{transform:translateX(0);visibility:visible;}
     .scroll-rev{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease;}
@@ -147,7 +141,6 @@
       html{scroll-behavior:auto;}
       *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;}
       .scroll-rev{opacity:1;transform:none;}
-      .strike-line{width:100%;}
     }
     /* ===== Analytics consent banner (F-14) ===== */
     #cookie-consent{position:fixed;left:0;right:0;bottom:0;z-index:1002;background:#fff;border-top:1px solid #E2E0DA;
@@ -791,8 +784,8 @@
       <div class="bg-bg rounded-2xl border border-border p-5 sm:p-6">
         <p class="text-[11px] font-bold uppercase tracking-widest text-text-m mb-3.5">What one signed client is worth</p>
         <div class="flex items-center justify-between gap-4 py-1.5 text-[13.5px]"><span class="text-text-m">One bookkeeping client at $400 a month</span><span class="font-semibold whitespace-nowrap">$4,800/yr</span></div>
-        <div class="flex items-center justify-between gap-4 py-1.5 pb-3 text-[13.5px] border-b border-border"><span class="text-text-m">Evisor Practice, billed annually</span><span class="font-semibold whitespace-nowrap">−$540/yr</span></div>
-        <div class="flex items-center justify-between gap-4 pt-3.5"><span class="font-bold text-[14px]">What that one client leaves you</span><span class="text-2xl font-extrabold whitespace-nowrap" style="color:#004f54">$4,260</span></div>
+        <div class="flex items-center justify-between gap-4 py-1.5 pb-3 text-[13.5px] border-b border-border"><span class="text-text-m">Evisor Practice, billed annually</span><span class="font-semibold whitespace-nowrap">−$828/yr</span></div>
+        <div class="flex items-center justify-between gap-4 pt-3.5"><span class="font-bold text-[14px]">What that one client leaves you</span><span class="text-2xl font-extrabold whitespace-nowrap" style="color:#004f54">$3,972</span></div>
         <p class="text-[12px] text-text-m leading-relaxed mt-4">For comparison: lead-generation agencies serving accountants charge <strong class="text-text-p">$150 to $600 per qualified lead</strong>. Practice includes 250 newly registered businesses every month.</p>
       </div>
     </div>
@@ -821,7 +814,7 @@
             <p class="text-[2.1rem] sm:text-[2.35rem] font-extrabold text-white leading-none">$1,500</p>
             <span class="text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded text-white whitespace-nowrap" style="background:rgba(255,255,255,.18)">One time</span>
           </div>
-          <p class="text-white/60 text-[11.5px] mt-2.5 leading-relaxed">Paid once, not monthly. Includes 12 months of Practice ($540 of it), so there is nothing to pay on top.</p>
+          <p class="text-white/60 text-[11.5px] mt-2.5 leading-relaxed">Paid once, not monthly. Includes 12 months of Practice ($828 of it), so there is nothing to pay on top.</p>
           <span class="mt-4 inline-flex items-center gap-2 bg-white text-[13px] font-bold px-4 py-2.5 rounded-lg whitespace-nowrap" style="color:#004f54">
             See what's included
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
@@ -862,7 +855,7 @@
         <button type="button" id="btn-annual" onclick="setBilling('annual')" class="bill-btn on">Annual</button>
         <button type="button" id="btn-monthly" onclick="setBilling('monthly')" class="bill-btn off">Monthly</button>
       </div>
-      <span id="save-badge" class="text-[11.5px] font-bold px-3 py-1.5 rounded-full" style="background:#e6f0f1;color:#004f54">Save 24% — nearly 3 months free</span>
+      <span id="save-badge" class="text-[11.5px] font-bold px-3 py-1.5 rounded-full" style="background:#e6f0f1;color:#004f54">Save up to 24% with annual billing</span>
     </div>
 
     <!-- PLAN CARDS -->
@@ -916,11 +909,11 @@
         <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full whitespace-nowrap">★ BEST VALUE</div>
         <p class="text-[11px] font-bold uppercase tracking-wide text-text-m mb-1">Practice</p>
         <div class="mt-2 min-h-[74px] flex flex-col justify-end">
-          <div class="flex items-center gap-2 flex-wrap">
-            <div class="strike-wrap"><span class="text-lg font-semibold text-text-m">$79</span><div class="strike-line"></div></div>
-            <div class="new-price flex items-baseline gap-1"><span class="text-[2rem] font-extrabold price-num" data-monthly="$59" data-annual="$45">$45</span><span class="text-[13px] text-text-m">/mo</span></div>
+          <div class="flex items-baseline gap-1">
+            <span class="text-[2rem] font-extrabold price-num" data-monthly="$79" data-annual="$69" data-no-fade="true">$69</span><span class="text-[13px] text-text-m">/mo</span>
           </div>
-          <p class="text-[11.5px] text-text-m mt-1.5 price-period" data-monthly="Founding rate · billed monthly" data-annual="Founding rate · billed $540 a year">Founding rate · billed $540 a year</p>
+          <p class="text-[11.5px] text-text-m mt-1.5 price-period" data-monthly="Billed monthly · $79 × 12 = $948" data-annual="Billed $828 a year · you save $120">Billed $828 a year · you save $120</p>
+          <p class="mt-2.5 inline-flex self-start items-center gap-1.5 rounded-full border px-2.5 py-1 text-[10px] font-bold" style="color:#004f54;border-color:rgba(0,79,84,.24);background:#e6f0f1"><span class="w-1.5 h-1.5 rounded-full" style="background:#0f766e" aria-hidden="true"></span>New system coming soon</p>
         </div>
         <p class="text-[13.5px] font-medium text-text-p mt-2 mb-4 min-h-[38px]">Run a real practice — and keep the book you build.</p>
         <ul class="flex flex-col gap-2 text-[13.5px] mb-5 flex-1">
@@ -935,7 +928,7 @@
           <li class="flex gap-2"><svg class="tick" style="color:#004f54" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span><strong>Same-day answers, from the person who built it</strong></span></li>
         </ul>
         <a href="https://my.evisor.app/register" class="mt-auto block text-center bg-primary text-white font-bold py-3.5 rounded-xl hover:bg-primary-mid transition-colors text-[13.5px]">Get Practice</a>
-        <p class="text-[11px] text-text-m text-center mt-2">Founding rate held for as long as you stay.</p>
+        <p class="text-[11px] text-text-m text-center mt-2">Your selected Practice rate is held for as long as you stay.</p>
       </div>
 
       <!-- FIRM -->
@@ -964,7 +957,7 @@
     <div class="mt-5 rounded-2xl border-2 px-5 sm:px-6 py-4 flex flex-col sm:flex-row sm:items-center gap-3.5 justify-between scroll-rev" style="background:#e6f0f1;border-color:rgba(0,79,84,.3)">
       <div>
         <p class="text-[13.5px] font-bold" style="color:#004f54">Founding rate — the first 50 practices keep these prices for as long as they stay.</p>
-        <p class="text-[13px] mt-0.5" style="color:rgba(0,79,84,.75)">Practice goes back to $79 once the cohort is full. We'll raise it for everyone who comes after — never for you.</p>
+        <p class="text-[13px] mt-0.5" style="color:rgba(0,79,84,.75)">Practice is $79 monthly, or $69/mo when billed annually. The first 50 practices keep these rates for as long as they stay.</p>
       </div>
       <a href="https://my.evisor.app/register" class="flex-shrink-0 text-center bg-primary text-white text-[13.5px] font-bold px-5 py-3 rounded-xl hover:bg-primary-mid transition-colors">Claim the rate</a>
     </div>
@@ -1014,7 +1007,7 @@
             <tbody>
               <tr>
                 <td>Entry price</td>
-                <td class="col-ev font-bold" style="color:#004f54">$45/mo</td>
+                <td class="col-ev font-bold" style="color:#004f54">$69/mo annually</td>
                 <td class="text-text-m">$49/mo</td>
                 <td class="text-text-m">$75/mo</td>
                 <td class="text-text-m">$25/user/mo</td>
@@ -1138,7 +1131,7 @@
         <div class="bg-white rounded-2xl p-5 sm:p-6 shadow-2xl">
           <p class="text-[11px] font-bold uppercase tracking-widest mb-4" style="color:#004f54">Practice Build</p>
           <div class="flex items-center justify-between gap-4 py-1.5 text-[13.5px]"><span class="text-text-m">Four weeks, done with you</span><span class="font-semibold whitespace-nowrap">$960</span></div>
-          <div class="flex items-center justify-between gap-4 py-1.5 pb-3 text-[13.5px] border-b border-border"><span class="text-text-m">12 months of Practice, included</span><span class="font-semibold whitespace-nowrap">$540</span></div>
+          <div class="flex items-center justify-between gap-4 py-1.5 pb-3 text-[13.5px] border-b border-border"><span class="text-text-m">12 months of Practice, included</span><span class="font-semibold whitespace-nowrap">$828</span></div>
           <div class="flex items-baseline justify-between gap-4 pt-3.5">
             <span class="font-bold text-[13.5px]">One payment</span>
             <span class="text-[2.1rem] font-extrabold whitespace-nowrap leading-none" style="color:#004f54">$1,500</span>
@@ -1151,7 +1144,7 @@
           <p class="mt-2.5 text-[11.5px] text-center text-text-m">We reply within a day with three questions and a time.</p>
         </div>
         <p class="mt-4 text-white/55 text-[12px] leading-relaxed">
-          Most people should not buy this. If you already know your niche, your rates and your letter, Practice at $45 a month does everything you need. This is for the person who has the certificate, has the ambition, and has been staring at a blank first email for three weeks.
+          Most people should not buy this. If you already know your niche, your rates and your letter, Practice at $79 a month does everything you need. This is for the person who has the certificate, has the ambition, and has been staring at a blank first email for three weeks.
         </p>
       </div>
     </div>
@@ -1330,7 +1323,7 @@
       "offers": [
         {"@type":"Offer","name":"Free","price":"0","priceCurrency":"USD"},
         {"@type":"Offer","name":"Starter","price":"25","priceCurrency":"USD"},
-        {"@type":"Offer","name":"Practice","price":"59","priceCurrency":"USD"},
+        {"@type":"Offer","name":"Practice","price":"79","priceCurrency":"USD"},
         {"@type":"Offer","name":"Firm","price":"149","priceCurrency":"USD"}
       ]
     },
@@ -1359,6 +1352,7 @@ function setBilling(mode) {
   document.getElementById('btn-monthly').className = 'bill-btn ' + (mode === 'monthly' ? 'on' : 'off');
   document.getElementById('save-badge').style.visibility = mode === 'annual' ? 'visible' : 'hidden';
   document.querySelectorAll('.price-num').forEach(el => {
+    if (el.dataset.noFade === 'true') { el.textContent = el.dataset[mode]; return; }
     el.classList.add('fading');
     setTimeout(() => { el.textContent = el.dataset[mode]; el.classList.remove('fading'); }, 180);
   });
@@ -1382,15 +1376,6 @@ function toggleFaq(btn) {
   document.querySelectorAll('.faq-item button').forEach(el => el.setAttribute('aria-expanded', 'false'));
   if (!wasOpen) { ans.classList.add('open'); item.classList.add('active'); btn.setAttribute('aria-expanded', 'true'); }
 }
-
-// ===== PRACTICE CARD STRIKETHROUGH =====
-const practiceCard = document.getElementById('practice-card');
-let strikeFired = false;
-if (practiceCard && 'IntersectionObserver' in window) {
-  new IntersectionObserver((entries) => {
-    if (entries[0].isIntersecting && !strikeFired) { strikeFired = true; setTimeout(() => practiceCard.classList.add('do-strike'), 250); }
-  }, { threshold: 0.3 }).observe(practiceCard);
-} else if (practiceCard) { setTimeout(() => practiceCard.classList.add('do-strike'), 800); }
 
 // ===== SCROLL REVEAL =====
 if ('IntersectionObserver' in window) {
