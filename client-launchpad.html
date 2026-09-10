@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You're all set — Evisor</title>
+  <meta name="description" content="Your Evisor payment is confirmed and your Client Launchpad is being prepared.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #17383a;
+      --muted: #607879;
+      --teal: #004f54;
+      --teal-mid: #08777b;
+      --mint: #dff4ec;
+      --green: #15966c;
+      --cream: #f7f6f2;
+      --line: rgba(0, 79, 84, .12);
+    }
+
+    * { box-sizing: border-box; }
+    html { min-height: 100%; }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 8% 12%, rgba(98, 202, 177, .18), transparent 28rem),
+        radial-gradient(circle at 92% 18%, rgba(0, 79, 84, .12), transparent 27rem),
+        var(--cream);
+      color: var(--ink);
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page-shell {
+      position: relative;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 48px 20px;
+      isolation: isolate;
+    }
+
+    .page-shell::before {
+      position: absolute;
+      inset: 0 0 auto;
+      height: 44vh;
+      min-height: 360px;
+      content: '';
+      background: linear-gradient(150deg, #003f44 0%, var(--teal) 52%, #0b7777 100%);
+      clip-path: ellipse(86% 76% at 50% 0%);
+      z-index: -1;
+    }
+
+    .brand {
+      position: absolute;
+      top: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255, 255, 255, .9);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .08em;
+    }
+
+    .content {
+      width: min(100%, 680px);
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      padding: 50px 34px 38px;
+      border: 1px solid rgba(255, 255, 255, .72);
+      border-radius: 28px;
+      background: rgba(255, 255, 255, .94);
+      box-shadow: 0 28px 80px rgba(0, 57, 61, .2), 0 4px 14px rgba(0, 57, 61, .08);
+      animation: card-rise .75s cubic-bezier(.22, 1, .36, 1) both;
+    }
+
+    .hero-card::after {
+      position: absolute;
+      top: -100px;
+      right: -80px;
+      width: 220px;
+      height: 220px;
+      content: '';
+      border-radius: 50%;
+      background: rgba(207, 244, 231, .5);
+      filter: blur(4px);
+      pointer-events: none;
+    }
+
+    .success-mark {
+      position: relative;
+      display: grid;
+      width: 104px;
+      height: 104px;
+      margin: 0 auto 26px;
+      place-items: center;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #dff8eb, #b8ecd5);
+      box-shadow: 0 0 0 10px rgba(21, 150, 108, .08), 0 14px 30px rgba(21, 150, 108, .18);
+      animation: mark-pop .72s .12s cubic-bezier(.22, 1.35, .36, 1) both;
+    }
+
+    .success-mark svg { width: 72px; height: 72px; overflow: visible; }
+    .success-mark circle {
+      fill: none;
+      stroke: var(--green);
+      stroke-width: 3;
+      stroke-dasharray: 276;
+      stroke-dashoffset: 276;
+      animation: draw-circle .8s .4s ease-out forwards;
+    }
+    .success-mark path {
+      fill: none;
+      stroke: var(--green);
+      stroke-width: 5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 74;
+      stroke-dashoffset: 74;
+      animation: draw-tick .52s 1.02s cubic-bezier(.65, 0, .35, 1) forwards;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--teal-mid);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--ink);
+      font-size: clamp(2.25rem, 7vw, 4.2rem);
+      font-weight: 800;
+      letter-spacing: -.065em;
+      line-height: .98;
+    }
+
+    .lead {
+      max-width: 510px;
+      margin: 20px auto 0;
+      color: #385a5b;
+      font-size: clamp(1rem, 2.4vw, 1.18rem);
+      line-height: 1.65;
+    }
+
+    .note {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin: 30px auto 0;
+      padding: 15px 17px;
+      border: 1px solid rgba(0, 79, 84, .14);
+      border-radius: 15px;
+      background: #f1faf6;
+      color: #416263;
+      font-size: 13px;
+      line-height: 1.6;
+      text-align: left;
+    }
+
+    .note-dot {
+      flex: 0 0 auto;
+      width: 8px;
+      height: 8px;
+      margin-top: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 5px rgba(21, 150, 108, .1);
+    }
+
+    .status-card {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      margin-top: 18px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: var(--line);
+      box-shadow: 0 12px 32px rgba(0, 57, 61, .06);
+      animation: card-rise .75s .16s cubic-bezier(.22, 1, .36, 1) both;
+    }
+
+    .status-item {
+      min-height: 118px;
+      padding: 21px 15px 17px;
+      background: rgba(255, 255, 255, .92);
+    }
+
+    .status-icon {
+      display: grid;
+      width: 28px;
+      height: 28px;
+      margin: 0 auto 11px;
+      place-items: center;
+      border-radius: 9px;
+      background: var(--mint);
+      color: var(--teal);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .status-item strong {
+      display: block;
+      color: var(--ink);
+      font-size: 11px;
+      line-height: 1.35;
+    }
+
+    .status-item span {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.4;
+    }
+
+    .footer-note {
+      margin: 24px 0 0;
+      color: rgba(40, 81, 82, .62);
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    #confetti {
+      position: fixed;
+      inset: 0;
+      z-index: 10;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .confetti-piece {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 8px;
+      height: 15px;
+      border-radius: 2px;
+      background: var(--piece-color);
+      opacity: 0;
+      transform-origin: center;
+      animation: confetti-burst 2.25s var(--piece-delay) cubic-bezier(.16, .84, .44, 1) forwards;
+    }
+
+    @keyframes card-rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes mark-pop {
+      from { opacity: 0; transform: scale(.55) rotate(-10deg); }
+      to { opacity: 1; transform: scale(1) rotate(0); }
+    }
+    @keyframes draw-circle { to { stroke-dashoffset: 0; } }
+    @keyframes draw-tick { to { stroke-dashoffset: 0; } }
+    @keyframes confetti-burst {
+      0% { opacity: 0; transform: translate(0, 0) rotate(0) scale(.5); }
+      12% { opacity: 1; }
+      100% { opacity: 0; transform: translate(var(--x), var(--y)) rotate(var(--rotation)) scale(.78); }
+    }
+
+    @media (max-width: 560px) {
+      .page-shell { padding: 30px 14px; }
+      .brand { top: 20px; }
+      .content { margin-top: 30px; }
+      .hero-card { padding: 38px 20px 27px; border-radius: 23px; }
+      .success-mark { width: 88px; height: 88px; margin-bottom: 22px; }
+      .success-mark svg { width: 62px; height: 62px; }
+      .status-card { grid-template-columns: 1fr; }
+      .status-item { min-height: auto; padding: 15px 18px; text-align: left; }
+      .status-icon { display: inline-grid; margin: 0 10px 0 0; vertical-align: middle; }
+      .status-item strong, .status-item span { display: inline; }
+      .status-item span::before { content: ' · '; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .001ms !important;
+      }
+      #confetti { display: none; }
+      .success-mark circle, .success-mark path { stroke-dashoffset: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div id="confetti" aria-hidden="true"></div>
+  <div class="page-shell">
+    <div class="brand" aria-label="Evisor">EVISOR</div>
+
+    <main class="content">
+      <section class="hero-card" aria-labelledby="page-title">
+        <div class="success-mark" role="img" aria-label="Payment complete">
+          <svg viewBox="0 0 72 72" aria-hidden="true">
+            <circle cx="36" cy="36" r="31"></circle>
+            <path d="M21 36.5 31.5 47 52 26"></path>
+          </svg>
+        </div>
+        <p class="eyebrow">Payment complete</p>
+        <h1 id="page-title">You're all set.</h1>
+        <p class="lead">Your place in the next Evisor experience is secured. We're preparing your Client Launchpad now.</p>
+        <div class="note">
+          <span class="note-dot" aria-hidden="true"></span>
+          <span>For now, keep using your current Evisor account as usual. We'll let you know as soon as the updated experience is ready — it's coming soon.</span>
+        </div>
+      </section>
+
+      <section class="status-card" aria-label="What happens next">
+        <div class="status-item">
+          <div class="status-icon" aria-hidden="true">✓</div>
+          <strong>Payment received</strong>
+          <span>Your place is secured</span>
+        </div>
+        <div class="status-item">
+          <div class="status-icon" aria-hidden="true">↗</div>
+          <strong>Account stays active</strong>
+          <span>Keep working as normal</span>
+        </div>
+        <div class="status-item">
+          <div class="status-icon" aria-hidden="true">✦</div>
+          <strong>Launchpad in progress</strong>
+          <span>We'll share the update soon</span>
+        </div>
+      </section>
+
+      <p class="footer-note">No further action is needed right now. Thank you for building with Evisor.</p>
+    </main>
+  </div>
+
+  <script>
+    (function () {
+      const confetti = document.getElementById('confetti');
+      if (!confetti || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      const colors = ['#0f766e', '#15966c', '#43b58a', '#8bd8b5', '#f4c95d', '#ffffff'];
+      const count = 72;
+      for (let i = 0; i < count; i += 1) {
+        const piece = document.createElement('span');
+        const angle = (Math.PI * 2 * i / count) + (Math.random() - .5) * .22;
+        const distance = 25 + Math.random() * 76;
+        piece.className = 'confetti-piece';
+        piece.style.setProperty('--x', `${Math.cos(angle) * distance}vw`);
+        piece.style.setProperty('--y', `${Math.sin(angle) * distance}vh`);
+        piece.style.setProperty('--rotation', `${Math.round(Math.random() * 720 - 360)}deg`);
+        piece.style.setProperty('--piece-delay', `${Math.random() * .18}s`);
+        piece.style.setProperty('--piece-color', colors[i % colors.length]);
+        piece.style.width = `${5 + Math.random() * 5}px`;
+        piece.style.height = `${9 + Math.random() * 10}px`;
+        confetti.appendChild(piece);
+      }
+
+      window.setTimeout(() => confetti.remove(), 3000);
+    }());
+  </script>
+</body>
+</html>
