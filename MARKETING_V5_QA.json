@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "check_count": 170,
+  "browser_errors": [],
+  "network_requests": [],
+  "rendering": "Offline exact HTML/CSS/JS via Chromium set_content; external requests aborted",
+  "asset_sha256": {
+    "index.html": "8390de4eb0de229d52eb92c8b0a68e47029f7a2fb2740595fef16496f21b854d",
+    "marketing/v5.css": "08b6a0bcc6f6a4c18bd263062b19fecca3fe69993d0b9f74e600273f89bfa9fb",
+    "marketing/v5.js": "1715c154114b3f2f21622e6182fcf8dff7ee3c0607ee29b30c5ae0d5481e7eb2",
+    "marketing/v5-plans.json": "74d2d380a5905bab5ee2d7c167594469f6803b7f33af4f0da74e4e9a889e8116"
+  },
+  "limitations": [
+    "HTTP browser navigation blocked by administrator policy; hosting is NOT browser-qualified",
+    "No live signup/OAuth/checkout/provider tests",
+    "No axe library available in this runtime",
+    "No real Safari/Comet/device or browser-zoom qualification",
+    "No field Core Web Vitals or conversion/retention experiment"
+  ],
+  "contrast": {
+    "checks": 16,
+    "failures": 0,
+    "method": "Computed text colors composited on solid ancestor backgrounds; visible direct text nodes, WCAG contrast thresholds. Not an axe scan or complete accessibility audit."
+  },
+  "assets": {
+    "index.html": {
+      "raw_bytes": 39010,
+      "gzip_bytes": 9045
+    },
+    "marketing/v5.css": {
+      "raw_bytes": 38060,
+      "gzip_bytes": 8280
+    },
+    "marketing/v5.js": {
+      "raw_bytes": 5318,
+      "gzip_bytes": 1810
+    }
+  }
+}
