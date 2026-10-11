@@ -1,0 +1,50 @@
+{
+  "version": "review-2026_08",
+  "currency": "USD",
+  "source_commit": "11737d21c32810450bdf2818c04f36eb8c75ec14",
+  "live_verified": false,
+  "plans": [
+    {
+      "id": "starter",
+      "name": "Starter",
+      "monthly": 25,
+      "annual_total": 228,
+      "audience": "A smaller client book",
+      "outcome": "Look prepared. Get the work agreed.",
+      "features": [
+        "Up to 10 clients",
+        "30 document sends per month",
+        "Your branding and reusable templates",
+        "Prospect research and pricing tools"
+      ]
+    },
+    {
+      "id": "practice",
+      "name": "Practice",
+      "monthly": 59,
+      "annual_total": 540,
+      "audience": "A growing practice",
+      "outcome": "Connect the next steps as you grow.",
+      "features": [
+        "Up to 40 clients",
+        "120 document sends per month",
+        "Document reminders and renewals",
+        "Quick Charges and additional templates"
+      ]
+    },
+    {
+      "id": "firm",
+      "name": "Firm",
+      "monthly": 149,
+      "annual_total": 1356,
+      "audience": "A coordinated team",
+      "outcome": "One client book. Shared standards.",
+      "features": [
+        "3 team seats included",
+        "Unlimited clients and document sends",
+        "Shared templates and rate card",
+        "Team roles and approvals"
+      ]
+    }
+  ]
+}
