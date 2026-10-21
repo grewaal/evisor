@@ -1,0 +1,6 @@
+# GitHub Pages (Jekyll) settings for evisor.app.
+# docs/ holds internal planning notes for the landing page; keep them off the
+# published site. (The repository itself is public, so they are still readable
+# on GitHub.)
+exclude:
+  - docs
