@@ -1159,28 +1159,26 @@ button.sg-pad:focus-visible { outline-offset: 2px; }
 .free-block p { margin-top: 6px; font-size: .96875rem; color: rgb(var(--ev-ink-2)); }
 .free-block .btn { margin-top: 16px; }
 
-/* ---------- After the yes: the money moment, and tiles that line up ---------- */
-.pay-band { position: relative; overflow: hidden; isolation: isolate; margin-top: 16px; display: grid; gap: 28px; padding: clamp(26px, 3.6vw, 48px); border-radius: var(--lp-radius-shell); }
-.pay-band::before { content: none; }
-.pay-band::after { content: ""; position: absolute; z-index: -1; left: -12%; top: -60%; width: 60%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(closest-side, rgb(30 122 79 / .45), transparent); pointer-events: none; }
+/* ---------- After the yes: the money moment (same weight as the tiles), and tiles that line up ---------- */
+.pay-band { margin-top: 16px; display: grid; gap: 24px; padding: clamp(22px, 3vw, 32px); border-radius: var(--ev-radius-popover); background: rgb(var(--ev-surface)); box-shadow: inset 0 0 0 1px rgb(var(--ev-line)); }
 .pay-band > * { min-width: 0; }
-@media (min-width: 640px) and (max-width: 1023px) { .pay-band { grid-template-columns: auto minmax(0, 1fr); column-gap: 36px; align-items: center; } .pay-flow { grid-column: 1 / -1; } }
-@media (min-width: 1024px) { .pay-band { grid-template-columns: auto minmax(0, 1fr) minmax(0, .95fr); gap: 48px; align-items: center; } }
-.pay-big { font-size: clamp(4.25rem, 2.8rem + 5vw, 7.25rem); line-height: .86; font-weight: 700; letter-spacing: -0.065em; color: rgb(134 214 168); }
-.pay-cap { margin-top: 12px; max-width: 13ch; font-size: 1.0625rem; line-height: 1.3; font-weight: 620; color: rgb(var(--lp-ink-text)); }
-.pay-copy .h3 { color: rgb(var(--lp-ink-text)); font-size: clamp(1.25rem, 1.12rem + .55vw, 1.625rem); letter-spacing: -0.025em; }
-.pay-copy p:not(.micro) { margin-top: 10px; max-width: 48ch; font-size: 1rem; color: rgb(var(--lp-ink-text-2)); }
-.pay-copy .micro { margin-top: 12px; }
-.pay-flow { display: grid; gap: 12px; }
-.pay-flow li { position: relative; display: grid; grid-template-columns: 38px minmax(0, 1fr); column-gap: 14px; align-items: center; padding: 12px 16px 12px 12px; border-radius: 12px; background: rgb(255 255 255 / .05); box-shadow: inset 0 0 0 1px rgb(255 255 255 / .1); }
-.pay-flow li + li::before { content: ""; position: absolute; left: 30px; top: -13px; width: 2px; height: 14px; border-radius: 1px; background: rgb(255 255 255 / .22); }
-.pf-i { grid-row: 1 / span 2; width: 38px; height: 38px; display: grid; place-items: center; border-radius: 10px; background: rgb(var(--lp-ink-accent) / .14); color: rgb(var(--lp-ink-accent)); }
-.pf-i svg { width: 18px; height: 18px; }
-.pay-flow b { font-size: .96875rem; font-weight: 620; color: rgb(var(--lp-ink-text)); }
-.pay-flow li > span:not(.pf-i) { font-size: .8125rem; color: rgb(var(--lp-ink-text-2)); }
-.pay-flow .is-you { background: rgb(134 214 168 / .1); box-shadow: inset 0 0 0 1px rgb(134 214 168 / .38); }
-.pay-flow .is-you .pf-i { background: rgb(134 214 168); color: rgb(var(--lp-ink-bg)); }
-.pay-flow .is-you > span:not(.pf-i) { color: rgb(134 214 168); font-weight: 650; }
+@media (min-width: 640px) and (max-width: 1023px) { .pay-band { grid-template-columns: auto minmax(0, 1fr); column-gap: 32px; align-items: center; } .pay-flow { grid-column: 1 / -1; } }
+@media (min-width: 1024px) { .pay-band { grid-template-columns: auto minmax(0, 1fr) minmax(0, .9fr); gap: 40px; align-items: center; } }
+.pay-big { font-size: clamp(2.75rem, 2.2rem + 1.8vw, 3.75rem); line-height: .95; font-weight: 700; letter-spacing: -0.05em; color: rgb(var(--ev-positive)); }
+.pay-cap { margin-top: 8px; max-width: 13ch; font-size: .9375rem; line-height: 1.3; font-weight: 600; color: rgb(var(--ev-ink-2)); }
+.pay-copy .h3 { font-size: clamp(1.1875rem, 1.1rem + .4vw, 1.375rem); text-wrap: balance; }
+.pay-copy p:not(.micro) { margin-top: 6px; max-width: 52ch; font-size: .96875rem; color: rgb(var(--ev-ink-2)); }
+.pay-copy .micro { margin-top: 10px; }
+.pay-flow { display: grid; gap: 8px; }
+.pay-flow li { position: relative; display: grid; grid-template-columns: 32px minmax(0, 1fr); column-gap: 12px; align-items: center; padding: 9px 12px 9px 10px; border-radius: 10px; background: rgb(var(--ev-surface-subtle)); box-shadow: inset 0 0 0 1px rgb(var(--ev-line)); }
+.pay-flow li + li::before { content: ""; position: absolute; left: 25px; top: -9px; width: 1.5px; height: 10px; background: rgb(var(--ev-line-strong)); }
+.pf-i { grid-row: 1 / span 2; width: 32px; height: 32px; display: grid; place-items: center; border-radius: 8px; background: rgb(var(--ev-accent-soft)); color: rgb(var(--ev-accent)); }
+.pf-i svg { width: 16px; height: 16px; }
+.pay-flow b { font-size: .9375rem; font-weight: 620; color: rgb(var(--ev-ink)); }
+.pay-flow li > span:not(.pf-i) { font-size: .8125rem; color: rgb(var(--ev-ink-3)); }
+.pay-flow .is-you { background: rgb(var(--ev-positive-soft) / .7); box-shadow: inset 0 0 0 1px rgb(var(--ev-positive) / .25); }
+.pay-flow .is-you .pf-i { background: rgb(var(--ev-positive)); color: #fff; }
+.pay-flow .is-you > span:not(.pf-i) { color: rgb(var(--ev-positive)); font-weight: 640; }
 /* every tile gets the same picture plate, so titles line up and nothing floats */
 .after-tiles .tile { gap: 0; }
 .after-tiles .tile .h4 { margin-top: 20px; padding-top: 0; }
@@ -1197,5 +1195,4 @@ button.sg-pad:focus-visible { outline-offset: 2px; }
 .sheet-grid b { font-weight: 640; color: rgb(var(--ev-ink-2)); background: rgb(var(--ev-accent-soft) / .5); }
 .juris-lg { justify-content: center; gap: 8px; }
 .juris-lg span { padding: 9px 14px; font-size: .9375rem; box-shadow: inset 0 0 0 1px rgb(var(--ev-line)), 0 4px 10px -8px rgb(19 42 48 / .3); }
-.pay-copy .h3 { text-wrap: balance; }
 @media (min-width: 640px) and (max-width: 1023px) { .after-tiles .tile:last-child { grid-column: 1 / -1; } }

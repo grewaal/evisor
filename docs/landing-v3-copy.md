@@ -195,7 +195,7 @@ What they feel, in order of intensity:
   - **One checklist link, not twelve emails.** Software access, statements, prior returns, a kickoff call. Your client ticks them off; you see the progress.
   - **Raise fees across your book in one pass.** Each letter comes up for review after twelve months. Choose a fee change, preview it, and prepare renewals as drafts you check first. _(Practice)_
   - **Today tells you what's next.** Who signed, who's stalling, what's due.
-  - **Payment band** (a dark feature band; gain framing instead of "0%"):
+  - **Payment card** (a full-width white card at the same weight as the tiles; gain framing instead of "0%"):
     - Big number: **100%** of your fee stays yours.
     - Headline: Get paid directly. Evisor takes no cut.
     - Body: On paid plans, your own Stripe, PayPal or GoCardless link appears once a client accepts or signs. They pay you, not us, straight into your own account.
