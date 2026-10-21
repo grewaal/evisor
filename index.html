@@ -25,9 +25,9 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <script>document.documentElement.classList.add('js')</script>
   <link rel="preload" href="/assets/fonts/dm-sans-latin-opsz.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/v3/landing.css?v=20261021">
-  <script src="/assets/v3/config.js?v=20261021" defer></script>
-  <script src="/assets/v3/landing.js?v=20261021" defer></script>
+  <link rel="stylesheet" href="/assets/v3/landing.css?v=20261021b">
+  <script src="/assets/v3/config.js?v=20261021b" defer></script>
+  <script src="/assets/v3/landing.js?v=20261021b" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -616,25 +616,39 @@ d.querySelector('[data-hero-sub]').textContent=v[2];d.querySelector('[data-hero-
       </article>
     </div>
 
+    <div class="pay-band lp-ink">
+      <div class="pay-num">
+        <p class="pay-big tnum">100%</p>
+        <p class="pay-cap">of your fee stays yours</p>
+      </div>
+      <div class="pay-copy">
+        <h3 class="h3">Get paid directly. Evisor takes no cut.</h3>
+        <p>On paid plans, your own Stripe, PayPal or GoCardless link appears once a client accepts or signs. They pay you, not us, straight into your own account.</p>
+        <p class="micro">Your payment provider’s usual processing fees apply. Evisor never touches the money.</p>
+      </div>
+      <ol class="pay-flow" aria-label="How a client pays you">
+        <li><span class="pf-i" aria-hidden="true"><svg><use href="#i-pen"/></svg></span><b>Your client signs</b><span>or accepts the proposal</span></li>
+        <li><span class="pf-i" aria-hidden="true"><svg><use href="#i-card"/></svg></span><b>They pay through your link</b><span>Stripe, PayPal or GoCardless</span></li>
+        <li class="is-you"><span class="pf-i" aria-hidden="true"><svg><use href="#i-check"/></svg></span><b>It lands in your account</b><span>Evisor’s cut: $0</span></li>
+      </ol>
+    </div>
+
     <div class="after-tiles">
-      <article class="tile tile-zero">
-        <p class="zero tnum" aria-hidden="true">0%</p>
-        <h3 class="h4">Get paid directly</h3>
-        <p>On paid plans, show your own Stripe, PayPal or GoCardless link once a client accepts or signs. Evisor takes 0%.</p>
-      </article>
-      <article class="tile tile-brand">
-        <div class="brand-swatches" role="group" aria-label="Try a brand color"><button type="button" aria-pressed="true" style="--c:#2f5d50" data-swatch="#2f5d50"><span class="sr-only">Green</span></button><button type="button" aria-pressed="false" style="--c:#7a3b2e" data-swatch="#7a3b2e"><span class="sr-only">Rust</span></button><button type="button" aria-pressed="false" style="--c:#1f4e79" data-swatch="#1f4e79"><span class="sr-only">Navy</span></button><button type="button" aria-pressed="false" style="--c:#5b4a8b" data-swatch="#5b4a8b"><span class="sr-only">Plum</span></button></div>
-        <div class="brand-page" aria-hidden="true" data-brand-page><span class="bp-mast"><span class="bp-logo">NB</span>Northfield Bookkeeping</span><span class="bp-line"></span><span class="bp-btn">Accept proposal</span></div>
+      <article class="tile">
+        <div class="tile-vis tile-vis-brand">
+          <div class="brand-swatches" role="group" aria-label="Try a brand color"><button type="button" aria-pressed="true" style="--c:#2f5d50" data-swatch="#2f5d50"><span class="sr-only">Green</span></button><button type="button" aria-pressed="false" style="--c:#7a3b2e" data-swatch="#7a3b2e"><span class="sr-only">Rust</span></button><button type="button" aria-pressed="false" style="--c:#1f4e79" data-swatch="#1f4e79"><span class="sr-only">Navy</span></button><button type="button" aria-pressed="false" style="--c:#5b4a8b" data-swatch="#5b4a8b"><span class="sr-only">Plum</span></button></div>
+          <div class="brand-page" aria-hidden="true" data-brand-page><span class="bp-mast"><span class="bp-logo">NB</span>Northfield Bookkeeping</span><span class="bp-btn">Accept proposal</span></div>
+        </div>
         <h3 class="h4">Your brand, not ours</h3>
         <p>Your color on every client page, on every plan. On paid plans, your logo too, and no Evisor footer.</p>
       </article>
-      <article class="tile tile-import">
-        <div class="csv" aria-hidden="true"><span>Name</span><span>Email</span><span>Business</span></div>
+      <article class="tile">
+        <div class="tile-vis" aria-hidden="true"><div class="sheet"><p class="sheet-file">clients.csv</p><div class="sheet-grid"><b>Name</b><b>Email</b><b>Business</b><span>Maya Ortiz</span><span>maya@…</span><span>Harbor Lane Dental</span><span>Dan Reyes</span><span>dan@…</span><span>Oakline Dental</span></div></div></div>
         <h3 class="h4">Bring your current clients</h3>
         <p>Import your client list from a spreadsheet and paper them properly. How many clients you can add depends on your plan.</p>
       </article>
-      <article class="tile tile-juris">
-        <div class="juris" aria-hidden="true"><span>US</span><span>UK</span><span>AU</span><span>CA</span><span>NZ</span></div>
+      <article class="tile">
+        <div class="tile-vis" aria-hidden="true"><div class="juris juris-lg"><span>US</span><span>UK</span><span>AU</span><span>CA</span><span>NZ</span></div></div>
         <h3 class="h4">Letters that know where you work</h3>
         <p>Clauses and wording adapt for the US, UK, Australia, Canada and New Zealand.</p>
       </article>

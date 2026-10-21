@@ -113,7 +113,7 @@ Send each ad to the URL whose first line repeats the ad's promise. The swap happ
 
 ### Design tokens
 - The `:root` block in `landing.css` mirrors the app's `frontend/src/index.css`. `--lp-*` tokens are landing-only and derived from it.
-- Green (`--ev-positive`) is reserved for two moments: a fee that clears the floor, and a signature.
+- Green (`--ev-positive`) is reserved for the moments that pay the bookkeeper: a fee that clears the floor, a signature, and the "100% of your fee stays yours" payment band.
 
 ## Placeholders and decisions that need you
 

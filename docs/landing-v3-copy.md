@@ -195,7 +195,12 @@ What they feel, in order of intensity:
   - **One checklist link, not twelve emails.** Software access, statements, prior returns, a kickoff call. Your client ticks them off; you see the progress.
   - **Raise fees across your book in one pass.** Each letter comes up for review after twelve months. Choose a fee change, preview it, and prepare renewals as drafts you check first. _(Practice)_
   - **Today tells you what's next.** Who signed, who's stalling, what's due.
-  - **Get paid directly.** Your own Stripe, PayPal or GoCardless link once a client accepts or signs. 0% to Evisor.
+  - **Payment band** (a dark feature band; gain framing instead of "0%"):
+    - Big number: **100%** of your fee stays yours.
+    - Headline: Get paid directly. Evisor takes no cut.
+    - Body: On paid plans, your own Stripe, PayPal or GoCardless link appears once a client accepts or signs. They pay you, not us, straight into your own account.
+    - Fine print, kept on purpose so the 100% stays honest: Your payment provider's usual processing fees apply. Evisor never touches the money.
+    - Flow: Your client signs → They pay through your link → It lands in your account (Evisor's cut: $0).
   - **Bring your current clients.** Import from a spreadsheet and paper them properly.
   - **Letters that know where you work.** Wording adapts for the US, UK, Australia, Canada and New Zealand.
 - **Note:** Evisor doesn't do the books, tasks or time tracking. Keep QuickBooks or Xero and your practice tool. Evisor handles the client side.
