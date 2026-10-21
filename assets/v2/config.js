@@ -47,7 +47,7 @@ window.EVISOR_CONFIG = {
       cta: 'Start free',
       ctaPlanParam: null,
       features: [
-        { text: '<strong>Find Clients preview</strong> — businesses near you, names masked' },
+        { text: '<strong>Find Clients preview</strong> — businesses near you, names masked (covered areas)' },
         { text: 'Pricing calculator with your floor check' },
         { text: '3 clients' },
         { text: '3 proposals and 3 engagement letters' },
@@ -70,7 +70,7 @@ window.EVISOR_CONFIG = {
         { text: 'Your branding — Evisor footer removed' },
         { text: 'Know when clients open documents' },
         { text: 'Payment links on documents, 0% to Evisor' },
-        { text: 'Client-ready quote PDF, straight into a proposal' }
+        { text: 'Client-ready quote PDF, and “Use in proposal” from any estimate' }
       ],
       footnote: 'Everything in Free, under your own name.'
     },
@@ -84,7 +84,7 @@ window.EVISOR_CONFIG = {
       cta: 'Start with Practice',
       ctaPlanParam: 'practice',
       features: [
-        { text: '<strong>Up to 250 reveals a month</strong> (fair use)' },
+        { text: '<strong>250 reveals a month</strong> in Find Clients' },
         { text: '40 clients' },
         { text: '120 proposals + 120 letters a month' },
         { text: '<strong>The letter fills itself</strong> from the accepted proposal' },
@@ -107,7 +107,7 @@ window.EVISOR_CONFIG = {
         { text: 'Unlimited clients and documents' },
         { text: '300 reveals per seat a month, shared' },
         { text: 'One shared client book' },
-        { text: 'Roles, and approval before anything is sent' },
+        { text: 'Roles, and optional approval before members send' },
         { text: 'Firm dashboard and shared templates' },
         { text: 'Lock branding and price floors firm-wide' }
       ],
@@ -159,7 +159,7 @@ window.EVISOR_CONFIG = {
       variants: {
         a: {
           h1: 'Find your next clients. <span class="hero-h1-2">See the evidence first.</span>',
-          sub: 'Evisor shows you real businesses near you — why each one fits, how to reach them, and what isn’t known yet. When one says yes, you price it, propose it and get the letter signed in one place.'
+          sub: 'Evisor shows you real businesses near you — why each one is on your list, how to reach them, and what isn’t known yet. When one says yes, you price it, propose it and get the letter signed in one place.'
         },
         b: {
           h1: 'Stop waiting on referrals. <span class="hero-h1-2">Start with businesses worth a conversation.</span>',

@@ -15,7 +15,7 @@ The standalone copy pass, written and edited before layout. Every factual line w
 
 | | Eyebrow | H1 | Subhead |
 |---|---|---|---|
-| **A (ship)** | For independent bookkeepers | **Find your next clients. See the evidence first.** | Evisor shows you real businesses near you — why each one fits, how to reach them, and what isn’t known yet. When one says yes, you price it, propose it and get the letter signed in one place. |
+| **A (ship)** | For independent bookkeepers | **Find your next clients. See the evidence first.** | Evisor shows you real businesses near you — why each one is on your list, how to reach them, and what isn’t known yet. When one says yes, you price it, propose it and get the letter signed in one place. |
 | B | For independent bookkeepers | **Stop waiting on referrals. Start with businesses worth a conversation.** | Real businesses near you, with the case for each one laid out, including the gaps. Then price, propose and sign them without leaving Evisor. |
 | C | For independent bookkeepers | **From "who do I even contact?" to a signed engagement letter.** | Evisor finds businesses near you, shows the evidence on each one, and carries every yes through pricing, proposal, e-signature, onboarding and renewal. |
 
@@ -31,7 +31,7 @@ The standalone copy pass, written and edited before layout. Every factual line w
 
 **Primary CTA:** Start free → `my.evisor.app/register`
 **Secondary CTA:** See how it works (scrolls to the journey)
-**Under the buttons:** Free plan · No card · Sign up with Google or email
+**Under the buttons:** Free plan, no card · Google or email · Reveals from $19/mo
 **Coverage line:** Find Clients is live in Colorado, New York and Oregon. **Check your area →**
 **Under the product view:** Find Clients as it looks in Evisor. Business details are illustrative.
 
@@ -41,9 +41,9 @@ The standalone copy pass, written and edited before layout. Every factual line w
 - *Unlock returned* — if a promised route fails
 
 **Fact strip under the hero:**
-- Never contacts anyone for you
-- Signed letters can't be altered
-- 0% of your client payments
+- Unlock returned if a promised route fails
+- Never contacts a business for you
+- Signed letters can’t be altered
 - Free plan — no card, no time limit
 
 ---
@@ -51,14 +51,14 @@ The standalone copy pass, written and edited before layout. Every factual line w
 ## 2. "The bookkeeping part is the easy bit." (reconciliation)
 
 **Eyebrow:** Sound familiar?
-**H2:** The bookkeeping part is the easy bit.
+**H2:** The bookkeeping is the easy part.
 **Lead:** You're good at the work. It's everything around the work that nobody trained you for.
 
 | What it feels like | What changes with Evisor |
 |---|---|
 | "Referrals arrive in a rush — then nothing for months." | A steady place to look. Real businesses in your area, there whenever you have an hour. |
 | "I've tried flyers, Facebook groups, and a directory listing that never sent a thing." | You pick who's worth a conversation, with the evidence in front of you instead of a guess. |
-| "I paid for 'leads' that went to five other bookkeepers. Half were junk." | No credits and no bidding on someone's quote request. Each business shows what's known and what isn't. |
+| "I paid for 'leads' that went to five other bookkeepers. Half were junk." | Reveals come with your plan, not paid per lead. These businesses haven’t asked anyone for a quote, so nobody’s bidding on them. |
 | "Someone finally says 'send me something' — and I freeze at the fee." | A suggested fee built from your own rates, with a warning before you quote below your floor. |
 | "Then I chase the signature for a week and feel like I'm begging." | One link they sign on their phone. If they don't, two reminders go out without you. |
 
@@ -81,9 +81,9 @@ The standalone copy pass, written and edited before layout. Every factual line w
 6. **Reveal.** One unlock shows the name and contact details. If a promised route fails its check, the unlock comes back.
 
 **Three things Evisor won't do**
-- **Pad a quiet area.** If there aren't many good matches near you, you'll see fewer, not weaker ones.
-- **Quietly widen your search.** No recycled duplicates. No silent switch to a bigger radius.
-- **Contact anyone for you.** You decide who to reach and how. Evisor never sends a word on your behalf.
+- **Pad a quiet area.** When an area is quiet, you reach the end of the list sooner. Evisor doesn’t recycle duplicates to fill it.
+- **Quietly widen your search.** No silent switch to a bigger area, and no businesses swapped in from another state.
+- **Contact a business for you.** You decide who to reach and how. Evisor never sends a word to a business on your behalf.
 
 **Look before you pay.** On the free plan you can browse the businesses near you with names masked. Reviewing never uses an unlock.
 
@@ -101,7 +101,7 @@ The standalone copy pass, written and edited before layout. Every factual line w
 
 **Eyebrow:** How it works
 **H2:** From "who should I talk to?" to a signed engagement letter.
-**Lead:** Six steps, one thread. Every client you find keeps their history all the way through.
+**Lead:** Six steps, one thread. Once a business becomes a client, its proposal, letter, onboarding and renewal stay on one record.
 
 | # | Title | Copy | Plan note |
 |---|---|---|---|
@@ -118,7 +118,7 @@ The standalone copy pass, written and edited before layout. Every factual line w
 
 **Eyebrow:** One place
 **H2:** Retire the spreadsheet, the Word template and the signing app.
-**Lead:** Most solo practices run five tools and lose clients in the gaps between them. Evisor keeps the whole relationship in one record.
+**Lead:** Many solo practices juggle a spreadsheet, a Word template and a signing app — and lose clients in the gaps between them. Evisor keeps the whole relationship in one record.
 
 | Tile | Copy |
 |---|---|
@@ -177,7 +177,7 @@ The standalone copy pass, written and edited before layout. Every factual line w
 - **Signed means final.** Signed letters and accepted proposals can't be edited afterwards; the database refuses. Changes happen in a new draft.
 - **Encrypted where it matters.** Signatures and signed or accepted PDFs are encrypted with AES-GCM. Each firm's data is kept separate from every other firm's.
 - **Your clients pay you, not us.** Payment links go to your own Stripe, PayPal or GoCardless account. Evisor never touches the money and takes 0%.
-- **Two-factor sign-in.** Turn on an authenticator app. Once it's on, sending and signing ask for it.
+- **Two-factor sign-in.** Turn on an authenticator app. Once it’s on, Evisor asks for a 6-digit code each time you sign in.
 - **Your records stay yours.** Export your data from Settings at any time.
 
 **Footnote:** A simple electronic signature, recognised under laws including the US ESIGN Act, the UK Electronic Communications Act 2000 and the EU eIDAS Regulation. Not for documents that legally require a notarised or witnessed signature.

@@ -112,7 +112,7 @@ These come from public forums and reviews, plus two pseudonymised founding users
 1. **Who it's for, and the outcome:** independent bookkeepers; find your next clients.
 2. **The mechanism:** evidence on every business, gaps included. You review before you spend anything.
 3. **The system:** one thread from find → price → propose → sign → onboard → renew.
-4. **Safety:** Evisor never contacts anyone for you; signed letters can't be altered; your clients pay you directly, at 0% to Evisor.
+4. **Safety:** Evisor never contacts a business for you; signed letters can't be altered; your clients pay you directly, at 0% to Evisor.
 5. **Low risk:** free plan, no card, no time limit; paid from $19/mo; one client covers years of it.
 
 ---
@@ -121,16 +121,16 @@ These come from public forums and reviews, plus two pseudonymised founding users
 
 | # | Objection, in their words | Answer, all verified | Where |
 |---|---|---|---|
-| 1 | "Will these be junk? Are they even real?" | Every business shows why it's there, which contact routes are on record, and what isn't known. Evisor won't pad a quiet area with weaker records or quietly widen your search. If a promised contact route fails its check, the unlock comes back. You can browse names-masked for free first. | Hero mock, Evidence section, FAQ |
-| 2 | "I'm not a salesperson / I hate cold calling." | Evisor never contacts anyone on your behalf. You decide who's worth a conversation and how you start it. Reviewing never commits you to anything. | Evidence rules, FAQ |
-| 3 | "Is this the same lead sold to five bookkeepers?" | It isn't a marketplace: no credits, no pay-per-lead, no bidding on someone's quote request. (We do **not** claim exclusivity.) | Comparison, FAQ |
+| 1 | "Will these be junk? Are they even real?" | Every business shows why it's there, which contact routes are on record, and what isn't known. Evisor doesn't recycle duplicates or quietly broaden your search to fill a quiet area. If a promised contact route fails its check, the unlock comes back. You can browse names-masked for free first. | Hero mock, Evidence section, FAQ |
+| 2 | "I'm not a salesperson / I hate cold calling." | Evisor never contacts a business on your behalf. You decide who's worth a conversation and how you start it. Reviewing never commits you to anything. | Evidence rules, FAQ |
+| 3 | "Is this the same lead sold to five bookkeepers?" | It isn't a marketplace: reveals come with the plan, not paid per lead, and nobody is bidding on a quote request. The FAQ says plainly that other Evisor users nearby may see the same businesses, so there's no exclusivity claim. | Comparison, FAQ |
 | 4 | "Is this spammy or legal?" | You are the sender and stay in control. Evisor shows published business contact routes and reminds you to verify before reaching out. You follow your local rules (CAN-SPAM and so on), and we say that plainly. | FAQ |
 | 5 | "Another subscription before I have clients?" | Free plan, no card, no time limit. The one-client calculator uses your own fee. Paid plans from $19/mo. | Pricing |
 | 6 | "Will it work where I am?" | The coverage checker gives an honest yes or not-yet, and tells you what still works where you are. | Evidence section, FAQ |
 | 7 | "I'm too new. What do I charge?" | The pricing calculator sets your target and floor rates, then builds a suggested fee and three options to present. It warns before you quote below your floor. Free on every plan. | Journey step 2, First twenty minutes |
 | 8 | "Setup will be overwhelming." | Sign up with Google or two fields. Then a first-run choice of where to start, and a 4-step first session. The founder promises a first proposal in week one, or a call to build it with you. | First twenty minutes, Promise |
 | 9 | "Are e-signatures valid?" | A simple electronic signature with a versioned disclosure (ESIGN / UK ECA 2000 / eIDAS SES), a server-checked record of what was read, a SHA-256 fingerprint, IP and UTC time. Signed letters can't be altered afterwards. The page notes plainly when a wet or notarised signature is still needed. | Trust section, FAQ |
-| 10 | "Is my data safe?" | Signatures and signed or accepted PDFs are encrypted; every firm's data is isolated; optional two-factor; export any time. No certification claims. | Trust section |
+| 10 | "Is my data safe?" | Signatures and signed or accepted PDFs are encrypted; every firm's data is isolated; optional two-factor at sign-in; export from Settings. No certification claims. | Trust section |
 | 11 | "Can I cancel?" | Yes, any time. Your plan runs to the end of the period you've paid for. Fees aren't refunded once a period starts, which is exactly why Free has no time limit. | Pricing, FAQ |
 | 12 | "How is this different from Ignition / a lead list?" | A category comparison table, honest about what Evisor isn't (not a practice-management or workflow tool). | Comparison |
 

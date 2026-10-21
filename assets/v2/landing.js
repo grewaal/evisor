@@ -20,6 +20,32 @@
   function store(key, val) { try { if (val === undefined) return localStorage.getItem(key); localStorage.setItem(key, val); } catch (e) { return null; } }
 
   /* ------------------------------------------------------------------
+     In-page links. Sections far below the fold skip layout until needed
+     (content-visibility), so lay everything out before jumping to a target.
+     ------------------------------------------------------------------ */
+  var fitCanvases = function () {};
+  function fullLayout() { root.classList.add('cv-off'); fitCanvases(); }
+  function goTo(id, smooth) {
+    var t = id && doc.getElementById(id);
+    if (!t) return false;
+    fullLayout();
+    t.scrollIntoView({ behavior: smooth && !reduceMotion ? 'smooth' : 'auto', block: 'start' });
+    return true;
+  }
+  doc.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href^="#"]');
+    if (!a || e.defaultPrevented) return;
+    var id = a.getAttribute('href').slice(1);
+    if (goTo(id, true)) { e.preventDefault(); if (history.pushState) history.pushState(null, '', '#' + id); }
+  });
+  if (location.hash.length > 1) {
+    var initialId = decodeURIComponent(location.hash.slice(1));
+    // after the canvases have been fitted (set up further down this file)
+    setTimeout(function () { goTo(initialId, false); }, 0);
+  }
+  window.addEventListener('popstate', function () { if (location.hash.length > 1) goTo(location.hash.slice(1), false); });
+
+  /* ------------------------------------------------------------------
      Experiments (A/B). Off unless enabled in config or forced by ?hero=
      ------------------------------------------------------------------ */
   var heroVariant = null;
@@ -200,7 +226,8 @@
     if (f.photo) { var av = $('[data-founder-avatar]'); if (av) av.innerHTML = '<img src="' + f.photo + '" alt="" width="46" height="46" loading="lazy">'; }
 
     var real = P.testimonials || [];
-    var placeholder = !real.length && (C.PROOF_PLACEHOLDER === true || params.get('proof') === 'placeholder');
+    var previewHost = /^(localhost|127\.0\.0\.1)$/.test(location.hostname);
+    var placeholder = !real.length && (C.PROOF_PLACEHOLDER === true || (previewHost && params.get('proof') === 'placeholder'));
     var list = real.length ? real : (placeholder ? (P.placeholderTestimonials || []) : []);
     var box = $('[data-proof]');
     if (!box || !list.length) return;
@@ -344,6 +371,8 @@
       var w = Number(getComputedStyle(cv).getPropertyValue('--mk-w')) || 600;
       if (avail) cv.style.setProperty('--mk-z', Math.min(avail / w, 1.3).toFixed(4));
     };
+    // synchronous fit, used before in-page jumps so heights are final before scrolling
+    fitCanvases = function () { canvases.forEach(function (cv) { apply(cv, cv.parentElement.clientWidth); }); };
     if ('ResizeObserver' in window) {
       var ro = new ResizeObserver(function (entries) {
         entries.forEach(function (en) { var cv = en.target.querySelector('[data-mk-canvas]'); if (cv) apply(cv, en.contentRect.width); });
@@ -381,7 +410,7 @@
         routes: '', contact: [] }
     ];
     var revealed = {};
-    var current = 1;
+    var current = 0;
     var unlocks = 62;
     var els = {
       name: $('[data-d-name]', app), meta: $('[data-d-meta]', app), why: $('[data-d-why]', app), bullets: $('[data-d-bullets]', app),
@@ -403,13 +432,9 @@
         els.note.textContent = 'Revealed — contact details are shown below.';
         els.reveal.hidden = true;
         els.reachH.textContent = 'Contact details';
-        els.reach.innerHTML = r.contact.map(function (c) { return '<p class="mk-kv">' + icon(c[0]) + c[1] + '</p>'; }).join('');
-      } else if (isRev === 'returned') {
-        els.action.classList.add('is-returned');
-        els.note.textContent = 'No contact route was delivered — your unlock was returned.';
-        els.reveal.hidden = true;
-        els.reachH.textContent = 'How to reach them';
-        els.reach.innerHTML = '<p>No contact route reported. Research is required before outreach.</p>';
+        els.reach.innerHTML = r.contact.length
+          ? r.contact.map(function (c) { return '<p class="mk-kv">' + icon(c[0]) + c[1] + '</p>'; }).join('')
+          : '<p>No contact route was delivered for this business.</p>';
       } else {
         els.note.textContent = 'Uses 1 unlock. If a promised contact route fails its evidence check, that unlock is returned.';
         els.reachH.textContent = 'How to reach them';
@@ -418,9 +443,11 @@
           : '<p>No contact route reported.</p>';
       }
       $$('.mk-row', app).forEach(function (row) {
-        var on = Number(row.getAttribute('data-row')) === i;
+        var k = Number(row.getAttribute('data-row'));
+        var on = k === i;
         row.classList.toggle('is-sel', on);
-        $('em', row).textContent = on ? 'Selected' : (revealed[row.getAttribute('data-row')] === 'ok' ? 'Revealed' : 'Review');
+        $('em', row).textContent = on ? 'Selected' : 'Review';
+        $('.mk-name', row).textContent = revealed[k] === 'ok' ? rows[k].name : rows[k].masked;
       });
       if (animate && !reduceMotion) { els.detail.classList.remove('is-swap'); void els.detail.offsetWidth; els.detail.classList.add('is-swap'); }
     }
@@ -431,32 +458,15 @@
       toastTimer = setTimeout(function () { els.toast.classList.remove('is-on'); }, 2600);
     }
     function resolveName(i, done) {
-      var target = rows[i].name;
       if (reduceMotion) { done(); return; }
-      var glyphs = 'abcdefghijklmnopqrstuvwxyz';
-      var frame = 0, total = 14;
       els.name.classList.add('is-resolving');
-      (function step() {
-        frame++;
-        var k = Math.floor(target.length * frame / total);
-        var s = target.slice(0, k);
-        for (var j = k; j < target.length; j++) s += target[j] === ' ' ? ' ' : glyphs[(j * 7 + frame * 3) % 26];
-        els.name.textContent = s;
-        if (frame < total) requestAnimationFrame(function () { setTimeout(step, 28); });
-        else { els.name.classList.remove('is-resolving'); done(); }
-      })();
+      setTimeout(function () { els.name.classList.remove('is-resolving'); done(); }, 220);
     }
     function doReveal(i, auto) {
       if (revealed[i]) return;
       var r = rows[i];
       els.reveal.classList.add('is-press');
       setTimeout(function () { els.reveal.classList.remove('is-press'); }, 160);
-      if (!r.contact.length) {
-        revealed[i] = 'returned';
-        paint(i, true);
-        toast('No route delivered — unlock returned.');
-        return;
-      }
       revealed[i] = 'ok';
       unlocks -= 1;
       els.unlocks.textContent = unlocks;
@@ -471,7 +481,7 @@
       if (e.target.closest('[data-d-reveal]')) { userTouched = true; doReveal(current, false); }
     });
     paint(current, false);
-    if (!reduceMotion) setTimeout(function () { if (!userTouched) doReveal(current, true); }, 1700);
+    if (!reduceMotion) setTimeout(function () { if (!userTouched) doReveal(current, true); }, 2600);
   })();
 
   /* ------------------------------------------------------------------
@@ -496,7 +506,7 @@
     });
     list.addEventListener('mouseleave', function () { light(pinned); });
     list.addEventListener('focusout', function (e) { if (!list.contains(e.relatedTarget)) light(pinned); });
-    if (reduceMotion || !hasIO) return;
+    if (reduceMotion || !hasIO || !window.matchMedia('(min-width: 1024px)').matches) return;
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
         if (!en.isIntersecting) return;
@@ -506,7 +516,7 @@
         tour = setInterval(function () {
           if (i >= keys.length) { stopTour(); light(pinned); return; }
           light(keys[i++]);
-        }, 1500);
+        }, 2300);
       });
     }, { threshold: 0.55 });
     io.observe(panel);
@@ -535,7 +545,7 @@
       out.className = 'coverage-result ' + (live ? 'is-live' : 'is-not');
       out.innerHTML = live
         ? '<p class="cov-status">Live</p><p>Yes — Find Clients is live in ' + where + '. Start free to browse the businesses near you; names stay masked until you reveal one.</p><a class="btn btn-primary" href="' + registerUrl(null) + '" data-cta="coverage_live">Start free<span class="btn-key" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a>'
-        : '<p class="cov-status">Not yet</p><p>Not yet in ' + where + '. Find Clients is live in ' + listNames(coverage) + ', opening area by area. Everything else in Evisor works where you are today — pricing, proposals, engagement letters, e-signature, onboarding and renewals. Start free, then turn on <em>Notify me</em> in Find Clients to hear the day it opens.</p><a class="btn btn-primary" href="' + registerUrl(null) + '" data-cta="coverage_not_yet">Start free — everything else works<span class="btn-key" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a>';
+        : '<p class="cov-status">Not yet</p><p>Not yet in ' + where + '. Find Clients is live in ' + listNames(coverage) + ', opening area by area — and if you work remotely, you can browse the live areas from anywhere. Everything else in Evisor works where you are today: pricing, proposals, engagement letters, e-signature, onboarding and renewals. Start free, then use <em>Notify me when this place is live</em> in Find Clients to join the coverage update list.</p><a class="btn btn-primary" href="' + registerUrl(null) + '" data-cta="coverage_not_yet">Start free<span class="btn-key" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a>';
       track('coverage_check', { area: code, status: live ? 'live' : 'not_yet' });
     }
     form.addEventListener('submit', function (e) { e.preventDefault(); show(); });
