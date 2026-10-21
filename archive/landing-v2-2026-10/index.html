@@ -1,0 +1,1023 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <!-- ARCHIVED: landing page v2 as live on evisor.app at commit 7ed622d (21 Oct 2026). Kept for side-by-side comparison with v3. It still loads /assets/v2/*, which must stay in place. Only change: noindex added so search engines do not index the duplicate. -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>Evisor — Find, price and sign new bookkeeping clients</title>
+  <meta name="description" content="Evisor helps independent bookkeepers find real local businesses worth contacting — with the evidence on each one — then price, propose and get engagement letters signed in one place. Free plan, no card.">
+  <link rel="canonical" href="https://evisor.app/">
+  <meta name="theme-color" content="#f7f7f4">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Evisor">
+  <meta property="og:url" content="https://evisor.app/">
+  <meta property="og:title" content="Evisor — Find your next bookkeeping clients. See the evidence first.">
+  <meta property="og:description" content="Real local businesses with the case for each one — then price, propose and get the engagement letter signed in the same place. Built for independent bookkeepers.">
+  <meta property="og:image" content="https://evisor.app/assets/v2/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Evisor — Find your next clients. See the evidence first.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Evisor — Find your next bookkeeping clients. See the evidence first.">
+  <meta name="twitter:description" content="Real local businesses with the case for each one — then price, propose and get the engagement letter signed in one place.">
+  <meta name="twitter:image" content="https://evisor.app/assets/v2/og.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="preload" href="/assets/fonts/dm-sans-latin-opsz.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/v2/landing.css?v=20261021">
+  <script src="/assets/v2/config.js?v=20261021" defer></script>
+  <script src="/assets/v2/landing.js?v=20261021" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://evisor.app/#org",
+        "name": "Evisor",
+        "url": "https://evisor.app/",
+        "logo": "https://evisor.app/apple-touch-icon.png",
+        "email": "hello@evisor.app"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://evisor.app/#site",
+        "url": "https://evisor.app/",
+        "name": "Evisor",
+        "publisher": { "@id": "https://evisor.app/#org" }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://evisor.app/#faq",
+        "mainEntity": [
+          { "@type": "Question", "name": "What do I get on the free plan?", "acceptedAnswer": { "@type": "Answer", "text": "A names-masked preview of businesses near you in covered areas, the pricing calculator with your floor check, 3 clients, 3 proposals, and 3 engagement letters with e-signature and co-signers. No card and no time limit. Revealing a business's name and contact details starts on Starter." } },
+          { "@type": "Question", "name": "Where does the business data come from?", "acceptedAnswer": { "@type": "Answer", "text": "Find Clients is built on open business-listing data from the Overture Maps Foundation, with attribution. Contact details are the routes the business has published; Evisor shows them but does not verify them, so every business lists what isn't known." } },
+          { "@type": "Question", "name": "Which areas does Find Clients cover?", "acceptedAnswer": { "@type": "Answer", "text": "Today Find Clients covers Colorado, New York and Oregon, and is opening area by area. Everything else in Evisor — pricing, proposals, engagement letters, e-signature, onboarding and renewals — works wherever you are." } },
+          { "@type": "Question", "name": "Does Evisor contact businesses for me?", "acceptedAnswer": { "@type": "Answer", "text": "No, never. You decide who to contact, what to say and how. You are the sender, so following the rules where you work is up to you." } },
+          { "@type": "Question", "name": "Are signatures captured in Evisor legally valid?", "acceptedAnswer": { "@type": "Answer", "text": "Evisor captures a simple electronic signature, recognized under laws including the US ESIGN Act, the UK Electronic Communications Act 2000 and the EU eIDAS Regulation. Documents that legally need a notarized or witnessed signature should not rely on any e-signature tool alone." } },
+          { "@type": "Question", "name": "Can I cancel?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, any time. Your plan stays active until the end of the period you have paid for. Fees generally are not refunded once a billing period starts, which is why the free plan has no time limit." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<!-- Icon sprite: 1.5px strokes, round joins — lighter than the app's 2px Lucide so they read as print, not UI. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M7 7l10 10M17 7L7 17" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-dash" viewBox="0 0 24 24"><path d="M8 12h8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 10.5V8a3.5 3.5 0 017 0v2.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0113 0c0 5.4-6.5 11-6.5 11z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.3" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-today" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 9.5h16M8.5 3v4M15.5 3v4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-find" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M16 16l4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-price" viewBox="0 0 24 24"><rect x="5" y="3.5" width="14" height="17" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 7.5h7M8.5 12h1.5M12 12h1.5M8.5 15.5h1.5M12 15.5h1.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="9" r="3.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 19c.8-3 3-4.5 5.5-4.5s4.7 1.5 5.5 4.5M15.5 6a3 3 0 010 6M17 14.7c1.8.5 3 1.9 3.5 4.3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path d="M7 3.5h7l4.5 4.5v12.5H7z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14 3.5V8h4.5M9.5 12.5h6M9.5 16h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 3.5v2.2M12 18.3v2.2M20.5 12h-2.2M5.7 12H3.5M18 6l-1.6 1.6M7.6 16.4L6 18M18 18l-1.6-1.6M7.6 7.6L6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20l1.2-4.6L15.6 5a2 2 0 012.8 0l.6.6a2 2 0 010 2.8L8.6 18.8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="i-renew" viewBox="0 0 24 24"><path d="M19.5 12a7.5 7.5 0 01-13.2 4.9M4.5 12a7.5 7.5 0 0113.2-4.9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M18 3.5v4h-4M6 20.5v-4h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><path d="M9.5 7h10M9.5 12h10M9.5 17h10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M4.5 7l1 1 2-2M4.5 12l1 1 2-2M4.5 17h3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3.5l7 2.6v5.2c0 4.4-3 8-7 9.2-4-1.2-7-4.8-7-9.2V6.1z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12l2.2 2.2L15.5 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-hash" viewBox="0 0 24 24"><path d="M9.5 4L8 20M16 4l-1.5 16M4.5 9h15M3.8 15h15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M11 12.2L19.5 4M16.5 7l2.5 2.5M14.5 9l1.8 1.8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-card" viewBox="0 0 24 24"><rect x="3.5" y="6" width="17" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 10h17M7 14.5h3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11M7.5 10.5L12 15l4.5-4.5M5 19.5h14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12s3.5-6.5 9.5-6.5S21.5 12 21.5 12s-3.5 6.5-9.5 6.5S2.5 12 2.5 12z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="12" r="2.8" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 12h17M12 3.5c2.4 2.4 3.5 5.2 3.5 8.5s-1.1 6.1-3.5 8.5c-2.4-2.4-3.5-5.2-3.5-8.5s1.1-6.1 3.5-8.5z" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.5 3.5h3l1.5 4-2 1.3a10 10 0 005.2 5.2l1.3-2 4 1.5v3a2 2 0 01-2.2 2A16.5 16.5 0 014.5 5.7a2 2 0 012-2.2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 15V4M7.5 8.5L12 4l4.5 4.5M5 19.5h14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6.5 16.5V11a5.5 5.5 0 0111 0v5.5l1.5 2h-14zM10 20.5h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-receipt" viewBox="0 0 24 24"><path d="M6 3.5h12v17l-2-1.4-2 1.4-2-1.4-2 1.4-2-1.4-2 1.4z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 8.5h6M9 12h6M9 15.5h3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+    <symbol id="i-mark" viewBox="0 0 48 48"><path d="M10 8V40M10 8H36M10 40H36M10 24H20L38 10" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============================== NAV ============================== -->
+<header class="nav" data-nav>
+  <div class="nav-inner">
+    <a href="/" class="brand" aria-label="Evisor home">
+      <svg class="brand-mark" aria-hidden="true"><use href="#i-mark"/></svg>
+      <span class="brand-word">Evisor</span>
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#evidence" data-nav-link>Find Clients</a>
+      <a href="#journey" data-nav-link>How it works</a>
+      <a href="#pricing" data-nav-link>Pricing</a>
+      <a href="#faq" data-nav-link>FAQ</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="nav-signin" href="https://my.evisor.app/login" data-link="signIn">Sign in</a>
+      <a class="btn btn-primary btn-sm" href="https://my.evisor.app/register" data-cta="nav">Start free</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
+        <span class="sr-only">Menu</span>
+        <span class="nav-toggle-lines" aria-hidden="true"><span></span><span></span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" hidden data-menu>
+    <nav aria-label="Mobile">
+      <a href="#evidence" data-menu-link>Find Clients</a>
+      <a href="#journey" data-menu-link>How it works</a>
+      <a href="#pricing" data-menu-link>Pricing</a>
+      <a href="#faq" data-menu-link>FAQ</a>
+      <a href="#contact" data-menu-link>Contact</a>
+    </nav>
+    <div class="mobile-menu-ctas">
+      <a class="btn btn-primary btn-block" href="https://my.evisor.app/register" data-cta="mobile_menu">Start free<span class="btn-key" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a>
+      <a class="btn btn-secondary btn-block btn-plain" href="https://my.evisor.app/login" data-link="signIn">Sign in</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============================== HERO ============================== -->
+<section class="hero" data-section="hero" aria-labelledby="hero-title">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="wrap hero-top">
+    <div class="hero-head">
+      <p class="eyebrow hero-in" style="--i:0">For independent bookkeepers</p>
+      <h1 id="hero-title" class="display hero-in" style="--i:1" data-hero-h1>Find your next clients. <span class="hero-h1-2">See the evidence first.</span></h1>
+    </div>
+    <div class="hero-act">
+      <p class="lead hero-sub hero-in" style="--i:2" data-hero-sub>Evisor shows you real businesses near you — why each one is on your list, how to reach them, and what isn’t known yet. When one says yes, you price it, propose it and get the letter signed in one place.</p>
+      <div class="cta-row hero-in" style="--i:3">
+        <a class="btn btn-primary" href="https://my.evisor.app/register" data-cta="hero_primary" data-magnetic>Start free<span class="btn-key" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a>
+        <a class="btn btn-ghost" href="#journey" data-cta="hero_secondary">See how it works</a>
+      </div>
+      <p class="cta-note hero-in" style="--i:4">
+        <span><svg aria-hidden="true"><use href="#i-check"/></svg>Free plan, no card</span>
+        <span><svg aria-hidden="true"><use href="#i-check"/></svg>Google or email</span>
+        <span><svg aria-hidden="true"><use href="#i-check"/></svg><span>Reveals from <span data-from-price>$19</span>/mo</span></span>
+      </p>
+    </div>
+  </div>
+
+  <div class="wrap hero-stage">
+    <a class="coverage-chip hero-in" style="--i:5" href="#coverage" data-cta="hero_coverage">
+      <svg aria-hidden="true"><use href="#i-pin"/></svg>
+      <span>Find Clients is live in <strong data-coverage-list>Colorado, New York and Oregon</strong>.</span>
+      <span class="coverage-chip-link">Check your area<svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+    </a>
+    <figure class="hero-visual hero-in" style="--i:4">
+      <p class="sr-only">Illustration of the Find Clients screen in Evisor. A list of local businesses with their names masked sits on the left. On the right is the evidence for the selected business: why it is here, whether demand is known, the contact routes on record, what is not known, and a Reveal button that uses one unlock.</p>
+      <div class="frame" aria-hidden="true">
+        <div class="frame-core">
+          <div class="mk-canvas mk-canvas-hero" data-mk-canvas>
+            <div class="mk-app" data-hero-mock>
+              <div class="mk-bar">
+                <svg class="mk-bar-mark"><use href="#i-mark"/></svg>
+                <span class="mk-url"><svg><use href="#i-lock"/></svg>my.evisor.app/find-clients</span>
+              </div>
+              <div class="mk-body">
+                <div class="mk-rail">
+                  <span class="mk-rail-i"><svg><use href="#i-today"/></svg></span>
+                  <span class="mk-rail-i is-on"><svg><use href="#i-find"/></svg></span>
+                  <span class="mk-rail-i"><svg><use href="#i-price"/></svg></span>
+                  <span class="mk-rail-i"><svg><use href="#i-people"/></svg></span>
+                  <span class="mk-rail-i"><svg><use href="#i-doc"/></svg></span>
+                  <span class="mk-rail-i mk-rail-end"><svg><use href="#i-gear"/></svg></span>
+                </div>
+                <div class="mk-main">
+                  <div class="mk-head">
+                    <div>
+                      <p class="mk-title">Find Clients</p>
+                      <p class="mk-desc">Review the evidence before starting a conversation.</p>
+                    </div>
+                    <span class="mk-pill">Unlocks: <b data-mk-unlocks>62</b> of 75 left this month</span>
+                  </div>
+                  <div class="mk-tabs">
+                    <span class="is-on">Lead feed</span><span>Pipeline <i>3</i></span>
+                    <span class="mk-clock"><i></i>10:42 AM MT · 12:42 PM your time</span>
+                  </div>
+                  <div class="mk-split">
+                    <div class="mk-queue">
+                      <div class="mk-qhead"><b>Opportunities</b><span>24 in batch</span></div>
+                      <div class="mk-filters"><span>All markets</span><span class="mk-ph">Postcode / ZIP</span><span>Filters</span></div>
+                      <ol class="mk-rows" data-mk-rows>
+                        <li><button type="button" tabindex="-1" class="mk-row is-sel" data-row="0"><span class="mk-sel"></span><span class="mk-rowh"><b class="mk-name" data-name="0">Ce ••••••••</b><em>Selected</em></span><span class="mk-meta">In your area · contactable · <svg><use href="#i-pin"/></svg>Lakewood · 80226</span><span class="mk-why"><b>Why it is here</b> Matches your selected area and has a published contact route.</span><span class="mk-foot"><i>Demand unknown</i>Reported routes: email, phone, website</span></button></li>
+                        <li><button type="button" tabindex="-1" class="mk-row" data-row="1"><span class="mk-sel"></span><span class="mk-rowh"><b class="mk-name" data-name="1">Ha ••••••••</b><em>Review</em></span><span class="mk-meta">Strong fit · contactable · <svg><use href="#i-pin"/></svg>Beaverton · 97005</span><span class="mk-why"><b>Why it is here</b> Every evaluable criterion matches and a contact route is published.</span><span class="mk-foot"><i>Demand unknown</i>Reported routes: phone, website</span></button></li>
+                        <li><button type="button" tabindex="-1" class="mk-row" data-row="2"><span class="mk-sel"></span><span class="mk-rowh"><b class="mk-name" data-name="2">Bl ••••••••</b><em>Review</em></span><span class="mk-meta">Potential fit · important unknowns · <svg><use href="#i-pin"/></svg>Brooklyn · 11215</span><span class="mk-why"><b>Why it is here</b> One important criterion is unknown, so this needs confirming.</span><span class="mk-foot"><i>Demand unknown</i>Reported routes: email, phone</span></button></li>
+                        <li><button type="button" tabindex="-1" class="mk-row" data-row="3"><span class="mk-sel"></span><span class="mk-rowh"><b class="mk-name" data-name="3">Pi ••••••••</b><em>Review</em></span><span class="mk-meta">Strong fit · research required · <svg><use href="#i-pin"/></svg>Fort Collins · 80521</span><span class="mk-why"><b>Why it is here</b> Every criterion matches, but no contact route is published.</span><span class="mk-foot"><i>Demand unknown</i>No contact route reported</span></button></li>
+                      </ol>
+                    </div>
+                    <div class="mk-detail" data-mk-detail>
+                      <div class="mk-dhead">
+                        <p class="mk-dname" data-d-name>Ha ••••••••</p>
+                        <p class="mk-dmeta" data-d-meta>Strong fit · contactable · Beaverton · 97005 · Lead Foundry</p>
+                      </div>
+                      <div class="mk-action" data-d-action>
+                        <p data-d-note>Uses 1 unlock. If a promised contact route fails its evidence check, that unlock is returned.</p>
+                        <button type="button" tabindex="-1" class="mk-reveal" data-d-reveal><svg><use href="#i-lock"/></svg><span>Reveal — 1 unlock</span></button>
+                      </div>
+                      <div class="mk-sections">
+                        <div class="mk-sec" data-sec="why"><p class="mk-sech">Why it is here</p><p data-d-why>Every evaluable criterion matches and an approved contact route is published; no timing evidence is required.</p><ul data-d-bullets><li>Within your selected geography</li><li>Matches an industry you prefer</li><li>An approved contact route is published</li></ul></div>
+                        <div class="mk-sec" data-sec="demand"><p class="mk-sech">Demand</p><p><span class="mk-chip">Demand unknown</span> This is a fit-based match. There is no published evidence that this business is looking for a bookkeeper.</p></div>
+                        <div class="mk-sec" data-sec="reach"><p class="mk-sech" data-d-reach-h>How to reach them</p><div data-d-reach><p>Reported routes: phone, website. The values are shown after you reveal.</p></div></div>
+                        <div class="mk-sec" data-sec="unknown"><p class="mk-sech">What we don’t know</p><ul><li>No published source establishes founding or incorporation age.</li></ul></div>
+                        <div class="mk-sec" data-sec="check"><p class="mk-sech">Check before outreach</p><ul><li>Some of the evidence is old — confirm it is still current.</li></ul></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mk-toast" data-mk-toast><svg><use href="#i-check"/></svg><span>Revealed — contact details below.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="note note-a" aria-hidden="true"><span class="note-tick"><svg><use href="#i-check"/></svg></span><span><b>Why it’s here</b>on every business</span></div>
+      <div class="note note-b" aria-hidden="true"><span class="note-tick"><svg><use href="#i-renew"/></svg></span><span><b>Unlock returned</b>if a promised route fails</span></div>
+      <figcaption class="hero-caption">Find Clients as it looks in Evisor. Business details are illustrative. <span class="hero-try">Click a business, then Reveal.</span></figcaption>
+    </figure>
+
+    <ul class="factstrip" aria-label="Key facts">
+      <li><svg aria-hidden="true"><use href="#i-renew"/></svg>Unlock returned if a promised route fails</li>
+      <li><svg aria-hidden="true"><use href="#i-shield"/></svg>Never contacts a business for you</li>
+      <li><svg aria-hidden="true"><use href="#i-lock"/></svg>Signed letters can’t be altered</li>
+      <li><svg aria-hidden="true"><use href="#i-check"/></svg>Free plan — no card, no time limit</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================== RECONCILE (problem) ============================== -->
+<section class="section lp-paper lp-rule-top" id="familiar" data-section="familiar" aria-labelledby="familiar-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Sound familiar?</p>
+      <h2 id="familiar-title" class="h2">The bookkeeping is the easy part.</h2>
+      <p class="lead">You’re good at the work. It’s everything around the work that nobody trained you for.</p>
+    </div>
+
+    <div class="ledger" role="table" aria-label="What it feels like, and what changes with Evisor">
+      <div class="ledger-head" role="row">
+        <span role="columnheader">What it feels like</span>
+        <span role="columnheader" class="ledger-head-tick"><span class="sr-only">Matched</span></span>
+        <span role="columnheader">What changes with Evisor</span>
+      </div>
+      <div class="ledger-row reveal" role="row">
+        <p role="cell" class="ledger-pain">“Referrals arrive in a rush — then nothing for months.”</p>
+        <span role="cell" class="ledger-tick" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7"/></svg></span>
+        <p role="cell" class="ledger-fix">A steady place to look. Real businesses in your area, there whenever you have an hour. <span class="tag">Find Clients</span></p>
+      </div>
+      <div class="ledger-row reveal" role="row">
+        <p role="cell" class="ledger-pain">“I’ve tried flyers, Facebook groups, and a directory listing that never sent a thing.”</p>
+        <span role="cell" class="ledger-tick" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7"/></svg></span>
+        <p role="cell" class="ledger-fix">You pick who’s worth a conversation — with the evidence in front of you, not a guess. <span class="tag">Evidence</span></p>
+      </div>
+      <div class="ledger-row reveal" role="row">
+        <p role="cell" class="ledger-pain">“I paid for ‘leads’ that went to five other bookkeepers. Half were junk.”</p>
+        <span role="cell" class="ledger-tick" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7"/></svg></span>
+        <p role="cell" class="ledger-fix">Reveals come with your plan, not paid per lead. These businesses haven’t asked anyone for a quote, so nobody’s bidding on them. <span class="tag">No marketplace</span></p>
+      </div>
+      <div class="ledger-row reveal" role="row">
+        <p role="cell" class="ledger-pain">“Someone finally says ‘send me something’ — and I freeze at the fee.”</p>
+        <span role="cell" class="ledger-tick" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7"/></svg></span>
+        <p role="cell" class="ledger-fix">A suggested fee built from your own rates, with a warning before you quote below your floor. <span class="tag">Price a client</span></p>
+      </div>
+      <div class="ledger-row reveal" role="row">
+        <p role="cell" class="ledger-pain">“Then I chase the signature for a week and feel like I’m begging.”</p>
+        <span role="cell" class="ledger-tick" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7"/></svg></span>
+        <p role="cell" class="ledger-fix">One link they sign on their phone. If they don’t, two reminders go out without you. <span class="tag">E-signature</span></p>
+      </div>
+    </div>
+
+    <p class="ledger-close reveal">None of this is a bookkeeping problem. It’s the client side of running a practice — <span class="accent-em">and that’s the only part Evisor is built for.</span></p>
+  </div>
+</section>
+
+<!-- ============================== EVIDENCE (ink) ============================== -->
+<section class="section lp-ink evidence" id="evidence" data-section="evidence" aria-labelledby="evidence-title">
+  <div class="ink-glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="evidence-grid">
+      <div class="evidence-copy">
+        <div class="section-head reveal">
+          <p class="eyebrow">Find Clients</p>
+          <h2 id="evidence-title" class="h2">Evidence, not a list.</h2>
+          <p class="lead">A list gives you names. Evisor gives you the case for each business — gaps included — so you only reach out where it makes sense.</p>
+        </div>
+        <ol class="anno" data-anno>
+          <li class="reveal"><button type="button" data-anno-key="why"><span class="anno-n">1</span><span><b>Why it’s here.</b> The match in plain words. If only your area matched, it says so.</span></button></li>
+          <li class="reveal"><button type="button" data-anno-key="demand"><span class="anno-n">2</span><span><b>Demand.</b> Marked unknown unless there’s published evidence. Evisor never calls a business “ready to buy”.</span></button></li>
+          <li class="reveal"><button type="button" data-anno-key="reach"><span class="anno-n">3</span><span><b>How to reach them.</b> The contact routes on record — email, phone, website — before you spend anything.</span></button></li>
+          <li class="reveal"><button type="button" data-anno-key="unknown"><span class="anno-n">4</span><span><b>What we don’t know.</b> The gaps, listed. Never filled in with guesses.</span></button></li>
+          <li class="reveal"><button type="button" data-anno-key="check"><span class="anno-n">5</span><span><b>Check before outreach.</b> Old or conflicting facts, flagged for you to confirm.</span></button></li>
+          <li class="reveal"><button type="button" data-anno-key="reveal"><span class="anno-n">6</span><span><b>Reveal.</b> One unlock shows the name and contact details. If a promised route fails its check, the unlock comes back.</span></button></li>
+        </ol>
+      </div>
+
+      <div class="evidence-panel-wrap reveal">
+        <div class="paper-panel" data-anno-panel aria-hidden="true">
+          <div class="pp-head">
+            <div>
+              <p class="pp-name">Bl ••••••••</p>
+              <p class="pp-meta">Potential fit · important unknowns · <svg><use href="#i-pin"/></svg>Brooklyn · 11215 · Lead Foundry</p>
+            </div>
+            <span class="pp-back">Back to opportunities</span>
+          </div>
+          <div class="pp-block pp-action" data-anno-target="reveal">
+            <span class="pp-pin">6</span>
+            <p>Uses 1 unlock. If a promised contact route fails its evidence check, that unlock is returned.</p>
+            <span class="pp-btn"><svg><use href="#i-lock"/></svg>Reveal — 1 unlock</span>
+          </div>
+          <div class="pp-block" data-anno-target="why">
+            <span class="pp-pin">1</span>
+            <p class="pp-h">Why it is here</p>
+            <p>At least one important criterion is unknown (maturity). No established criterion mismatches, so the business is a potential match that needs confirmation.</p>
+            <ul><li>Within your selected geography</li><li>An approved contact route is published</li></ul>
+          </div>
+          <div class="pp-block" data-anno-target="demand">
+            <span class="pp-pin">2</span>
+            <p class="pp-h">Demand</p>
+            <p><span class="pp-chip">Demand unknown</span> This is a fit-based match. There is no published evidence that this business is looking for a bookkeeper.</p>
+          </div>
+          <div class="pp-block" data-anno-target="reach">
+            <span class="pp-pin">3</span>
+            <p class="pp-h">How to reach them</p>
+            <p class="pp-routes"><span><svg><use href="#i-mail"/></svg>email</span><span><svg><use href="#i-phone"/></svg>phone</span></p>
+            <p class="pp-sub">Reported routes. The values are shown after you reveal.</p>
+          </div>
+          <div class="pp-block" data-anno-target="unknown">
+            <span class="pp-pin">4</span>
+            <p class="pp-h">What we don’t know</p>
+            <ul><li>No published source establishes founding or incorporation age.</li></ul>
+          </div>
+          <div class="pp-block" data-anno-target="check">
+            <span class="pp-pin">5</span>
+            <p class="pp-h">Check before outreach</p>
+            <ul><li>Published facts disagree with each other — verify before outreach.</li></ul>
+          </div>
+          <p class="pp-source">Source: Overture Maps Foundation · not verified by Evisor. Practical information, not legal advice.</p>
+        </div>
+        <p class="panel-caption">The evidence panel for one business, with illustrative details.</p>
+      </div>
+    </div>
+
+    <div class="rules">
+      <h3 class="rules-title reveal">Three things Evisor won’t do</h3>
+      <div class="rules-grid">
+        <article class="rule reveal">
+          <span class="rule-x" aria-hidden="true"><svg><use href="#i-x"/></svg></span>
+          <h4 class="h4">Pad a quiet area.</h4>
+          <p>When an area is quiet, you reach the end of the list sooner. Evisor doesn’t recycle duplicates to fill it.</p>
+        </article>
+        <article class="rule reveal">
+          <span class="rule-x" aria-hidden="true"><svg><use href="#i-x"/></svg></span>
+          <h4 class="h4">Quietly widen your search.</h4>
+          <p>No silent switch to a bigger area, and no businesses swapped in from another state.</p>
+        </article>
+        <article class="rule reveal">
+          <span class="rule-x" aria-hidden="true"><svg><use href="#i-x"/></svg></span>
+          <h4 class="h4">Contact a business for you.</h4>
+          <p>You decide who to reach and how. Evisor never sends a word to a business on your behalf.</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="coverage-grid" id="coverage">
+      <div class="coverage-card reveal">
+        <h3 class="h3">Is Find Clients live where you work?</h3>
+        <form class="coverage-form" data-coverage-form>
+          <label for="coverage-area" class="coverage-label">Where do you work?</label>
+          <div class="coverage-row">
+            <div class="select-wrap">
+              <select id="coverage-area" name="area" data-coverage-select>
+                <option value="">Select your area</option>
+              </select>
+              <svg aria-hidden="true"><use href="#i-chev"/></svg>
+            </div>
+            <button class="btn btn-secondary btn-plain" type="submit">Check</button>
+          </div>
+        </form>
+        <div class="coverage-result" data-coverage-result aria-live="polite"></div>
+        <p class="coverage-live">Live today: <strong data-coverage-list>Colorado, New York and Oregon</strong>. Opening area by area.</p>
+      </div>
+      <div class="free-card reveal">
+        <span class="free-eye" aria-hidden="true"><svg><use href="#i-eye"/></svg></span>
+        <h3 class="h3">Look before you pay.</h3>
+        <p>On the free plan you can browse the businesses near you with names masked. Reviewing never uses an unlock — reveal is always a separate choice.</p>
+        <a class="btn btn-primary" href="https://my.evisor.app/register" data-cta="evidence_free">Start free<span class="btn-key" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a>
+      </div>
+    </div>
+    <p class="source-note reveal">Built on open business-listing data from the Overture Maps Foundation. Always check a business’s details before you reach out.</p>
+  </div>
+</section>
+
+<!-- ============================== JOURNEY ============================== -->
+<section class="section journey" id="journey" data-section="journey" aria-labelledby="journey-title">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <p class="eyebrow">How it works</p>
+      <h2 id="journey-title" class="h2">From “who should I talk to?” to a signed engagement letter.</h2>
+      <p class="lead">Six steps, one thread. Once a business becomes a client, its proposal, letter, onboarding and renewal stay on one record.</p>
+    </div>
+
+    <div class="journey-grid" data-journey>
+      <div class="journey-tabs" role="tablist" aria-label="Steps">
+        <button role="tab" type="button" aria-selected="true" data-step-tab="0"><span>01</span>Find</button>
+        <button role="tab" type="button" aria-selected="false" data-step-tab="1"><span>02</span>Price</button>
+        <button role="tab" type="button" aria-selected="false" data-step-tab="2"><span>03</span>Propose</button>
+        <button role="tab" type="button" aria-selected="false" data-step-tab="3"><span>04</span>Sign</button>
+        <button role="tab" type="button" aria-selected="false" data-step-tab="4"><span>05</span>Onboard</button>
+        <button role="tab" type="button" aria-selected="false" data-step-tab="5"><span>06</span>Renew</button>
+      </div>
+
+      <ol class="journey-steps">
+        <li class="jstep is-on" data-step="0">
+          <p class="jstep-n"><span>01</span>Find</p>
+          <h3 class="h3">Review businesses near you</h3>
+          <p class="body">Pick your area and the kinds of clients you want. Read why each business is there, reveal the ones worth a conversation, then reach out your way — email, phone or a visit.</p>
+          <p class="jstep-plan">Browse free · 75 reveals a month on Starter</p>
+        </li>
+        <li class="jstep" data-step="1">
+          <p class="jstep-n"><span>02</span>Price</p>
+          <h3 class="h3">Know your number before they ask</h3>
+          <p class="body">Set your target and floor rates once. Describe the job — state of the books, transactions, payroll, catch-up — and get a suggested monthly fee plus three options to present. If a price would pay you below your floor, Evisor says so first.</p>
+          <p class="jstep-plan">Breakdown and floor check free on every plan</p>
+        </li>
+        <li class="jstep" data-step="2">
+          <p class="jstep-n"><span>03</span>Propose</p>
+          <h3 class="h3">Send a proposal that looks like a firm sent it</h3>
+          <p class="body">Turn the estimate into a proposal in your own branding. Your client reads the scope and fees on any device and accepts with their name. No login, no app.</p>
+          <p class="jstep-plan">“Use in proposal” from Starter</p>
+        </li>
+        <li class="jstep" data-step="3">
+          <p class="jstep-n"><span>04</span>Sign</p>
+          <h3 class="h3">Get the letter signed on their phone</h3>
+          <p class="body">On Practice, the engagement letter fills itself from the accepted proposal. Your client draws, uploads or photographs their signature. Still unsigned after two days? Evisor sends the reminder.</p>
+          <p class="jstep-plan">E-signature on every plan, co-signers included</p>
+        </li>
+        <li class="jstep" data-step="4">
+          <p class="jstep-n"><span>05</span>Onboard</p>
+          <h3 class="h3">Start every client the same organized way</h3>
+          <p class="body">Send one checklist link: software access, statements, prior returns, fee confirmation, a kickoff call. Your client ticks each item off and you see their progress.</p>
+          <p class="jstep-plan">A checklist link you can copy and send</p>
+        </li>
+        <li class="jstep" data-step="5">
+          <p class="jstep-n"><span>06</span>Renew</p>
+          <h3 class="h3">Review your whole book in one pass</h3>
+          <p class="body">Twelve months after signing, each letter comes up for review. Choose a fee change, preview it, and prepare every renewal as a draft you check before it goes.</p>
+          <p class="jstep-plan">Practice</p>
+        </li>
+      </ol>
+
+      <div class="journey-stage-col">
+        <div class="journey-stage" aria-hidden="true">
+          <div class="frame frame-stage">
+            <div class="frame-core">
+              <div class="stage-bar"><svg class="mk-bar-mark"><use href="#i-mark"/></svg><span class="stage-url" data-stage-url>my.evisor.app/find-clients</span><span class="stage-progress"><i data-stage-progress></i></span></div>
+              <div class="mk-canvas stage-canvas" data-mk-canvas>
+                <div class="stage-panes">
+
+                  <!-- 01 FIND -->
+                  <div class="pane is-on" data-pane="0" data-url="my.evisor.app/find-clients">
+                    <div class="p-find">
+                      <div class="pf-list">
+                        <p class="p-kicker">Opportunities · 24 in batch</p>
+                        <div class="pf-row"><b>Ce ••••••••</b><span>In your area · contactable · Lakewood</span></div>
+                        <div class="pf-row is-sel"><b>Harbor Lane Dental Studio</b><span>Strong fit · contactable · Beaverton</span><em>Selected</em></div>
+                        <div class="pf-row"><b>Bl ••••••••</b><span>Potential fit · Brooklyn</span></div>
+                        <div class="pf-row"><b>Pi ••••••••</b><span>Strong fit · research required</span></div>
+                      </div>
+                      <div class="pf-detail">
+                        <p class="pf-name">Harbor Lane Dental Studio</p>
+                        <p class="pf-meta">Strong fit · contactable · Beaverton · 97005</p>
+                        <p class="p-ok"><svg><use href="#i-check"/></svg>Revealed — contact details are shown below.</p>
+                        <p class="p-h">Contact details</p>
+                        <p class="pf-kv"><svg><use href="#i-phone"/></svg>+1 503 555 0118</p>
+                        <p class="pf-kv"><svg><use href="#i-globe"/></svg>harborlane.example</p>
+                        <p class="p-h">Why it is here</p>
+                        <p class="pf-txt">Every evaluable criterion matches and an approved contact route is published.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 02 PRICE -->
+                  <div class="pane" data-pane="1" data-url="my.evisor.app/pricing">
+                    <div class="p-price">
+                      <p class="p-kicker">Working estimate · Harbor Lane Dental Studio</p>
+                      <div class="pp-fee">
+                        <div><p class="p-lbl">Suggested monthly fee (USD)</p><p class="pp-big tnum">$1,180<small>/mo</small></p></div>
+                        <div><p class="p-lbl">One-off work (USD)</p><p class="pp-mid tnum">$1,450</p></div>
+                        <span class="p-floor"><svg><use href="#i-check"/></svg>Clears your floor</span>
+                      </div>
+                      <div class="p-tabs"><span>Breakdown</span><span class="is-on">Client Quote</span><span>Defend the Price</span></div>
+                      <div class="p-opts">
+                        <div class="p-opt"><p>Essential</p><b class="tnum">$890<small>/mo</small></b><span>Core monthly bookkeeping</span></div>
+                        <div class="p-opt is-rec"><i>Recommended</i><p>Standard</p><b class="tnum">$1,180<small>/mo</small></b><span>Bookkeeping, payroll, reporting</span></div>
+                        <div class="p-opt"><p>Premium</p><b class="tnum">$1,540<small>/mo</small></b><span>Full service with advisory</span></div>
+                      </div>
+                      <div class="p-foot"><span>Effective rate: $88/hr over ~160 hrs/yr · target $95 · floor $60</span><span class="p-btn">Use in proposal<svg><use href="#i-arrow"/></svg></span></div>
+                      <p class="p-note">Working estimate — not a sent or final offer.</p>
+                    </div>
+                  </div>
+
+                  <!-- 03 PROPOSE (client's phone, firm-branded) -->
+                  <div class="pane" data-pane="2" data-url="my.evisor.app/p/…">
+                    <div class="p-phone-wrap">
+                      <div class="phone">
+                        <div class="phone-in brand-firm">
+                          <div class="pr-mast"><span class="pr-logo">NB</span><span>Northfield Bookkeeping</span></div>
+                          <p class="pr-kick">Prepared for Harbor Lane Dental · 21 Oct 2026</p>
+                          <p class="pr-h">Monthly bookkeeping — Harbor Lane Dental</p>
+                          <p class="pr-lede">Read the scope and fees, then accept or decline below.</p>
+                          <div class="pr-group"><p>Monthly <b class="tnum">$1,180 per month</b></p><span>Bookkeeping &amp; reconciliations</span><span>Payroll (up to 10 staff)</span><span>Monthly reporting</span></div>
+                          <div class="pr-group"><p>One-time <b class="tnum">$1,450</b></p><span>Catch-up &amp; onboarding</span></div>
+                          <div class="pr-bar"><span class="pr-dec">Decline</span><span class="pr-acc" data-accept>Accept proposal</span></div>
+                        </div>
+                      </div>
+                      <div class="p-side">
+                        <p class="p-side-h">Your branding</p>
+                        <p>Your logo, name and color on every client page.</p>
+                        <div class="p-accepted" data-accepted><svg><use href="#i-check"/></svg><div><b>Proposal accepted</b><span>Maya Ortiz · 21 Oct, 2:14 pm</span></div></div>
+                        <p class="p-fine">Accepting records the client’s decision to proceed. The engagement letter is the document they sign.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 04 SIGN -->
+                  <div class="pane" data-pane="3" data-url="my.evisor.app/sign/…">
+                    <div class="p-phone-wrap">
+                      <div class="phone">
+                        <div class="phone-in brand-firm">
+                          <div class="pr-mast"><span class="pr-logo">NB</span><span>Northfield Bookkeeping</span></div>
+                          <p class="pr-kick">Please review and sign · from Northfield Bookkeeping</p>
+                          <p class="pr-h">Engagement Letter — Monthly Bookkeeping</p>
+                          <div class="sg-card">
+                            <p class="sg-as">You are signing as Maya Ortiz.</p>
+                            <div class="sg-seg"><span class="is-on">Draw</span><span>Upload</span><span>Camera</span></div>
+                            <div class="sg-pad">
+                              <svg class="sg-ink" viewBox="0 0 260 90"><path pathLength="1" d="M14 62c10-22 20-40 28-38 9 2-8 40 0 40 9 0 15-32 24-32 8 0 0 26 7 26 8 0 13-20 21-20 6 0 3 15 9 15 7 0 12-14 19-14 9 0 2 16 10 16 12 0 30-18 46-24 10-4 22-6 34-4M150 70c20-4 52-8 92-6"/></svg>
+                              <span class="sg-tap">Tap to sign</span>
+                            </div>
+                            <p class="sg-check"><span class="sg-box"><svg><use href="#i-check"/></svg></span>I have read and agree to this engagement letter and the disclosure above, and I consent to sign electronically.</p>
+                            <span class="sg-btn">Sign &amp; Submit</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="p-side">
+                        <p class="p-side-h">What Evisor records</p>
+                        <dl class="rec">
+                          <div><dt>Signed by</dt><dd>Maya Ortiz</dd></div>
+                          <div><dt>Signed on (UTC)</dt><dd class="tnum">21 Oct 2026, 14:32</dd></div>
+                          <div><dt>Signed from IP</dt><dd class="tnum">203.0.113.24</dd></div>
+                          <div><dt>Disclosure version</dt><dd>2026-07-11</dd></div>
+                          <div><dt>Document fingerprint</dt><dd class="tnum">SHA-256 9f2c…e41a</dd></div>
+                        </dl>
+                        <p class="p-fine">Not signed after 48 hours? Evisor sends the client a reminder, then one more.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 05 ONBOARD -->
+                  <div class="pane" data-pane="4" data-url="my.evisor.app/onboard/…">
+                    <div class="p-onb brand-firm">
+                      <div class="pr-mast"><span class="pr-logo">NB</span><span>Northfield Bookkeeping · Onboarding for Maya Ortiz</span></div>
+                      <p class="onb-h">Your onboarding checklist</p>
+                      <p class="onb-intro">Northfield Bookkeeping needs a few things to get started. Mark each item once you have done it — your progress saves as you go.</p>
+                      <div class="onb-prog"><div><b>Progress</b><span class="tnum" data-onb-count>2 of 5 done</span></div><span class="onb-bar"><i data-onb-bar></i></span><p data-onb-next>Next: Provide prior-year financial statements or tax return</p></div>
+                      <ul class="onb-list" data-onb-list>
+                        <li class="is-done"><span class="onb-box"><svg><use href="#i-check"/></svg></span>Grant access to bookkeeping software<em>Done · 21 Oct</em></li>
+                        <li class="is-done"><span class="onb-box"><svg><use href="#i-check"/></svg></span>Share bank and credit card statements<em>Done · 21 Oct</em></li>
+                        <li><span class="onb-box"><svg><use href="#i-check"/></svg></span>Provide prior-year financial statements or tax return<em>Still to do</em></li>
+                        <li><span class="onb-box"><svg><use href="#i-check"/></svg></span>Confirm services, pricing and billing details<em>Still to do</em></li>
+                        <li><span class="onb-box"><svg><use href="#i-check"/></svg></span>Schedule a kickoff call<em>Still to do</em></li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <!-- 06 RENEW -->
+                  <div class="pane" data-pane="5" data-url="my.evisor.app/renewals">
+                    <div class="p-ren">
+                      <p class="ren-h">Renewals &amp; book review</p>
+                      <p class="ren-d">Review the scope and fee each client actually signed, decide deliberately, and prepare the next agreement as a draft. The signed original is never changed.</p>
+                      <div class="ren-strip"><span><b>1</b>Overdue</span><span><b>3</b>Due in 60 days</span><span><b>6</b>Upcoming</span><span><b>4</b>Completed</span></div>
+                      <div class="ren-table">
+                        <div class="ren-row ren-th"><span></span><span>Client</span><span>Current signed scope</span><span>Proposed</span><span>Due</span></div>
+                        <div class="ren-row is-sel"><span class="ren-cb"><svg><use href="#i-check"/></svg></span><span>Harbor Lane Dental</span><span class="tnum">3 services · $1,180/mo</span><span class="tnum ren-new" data-ren="1180">$1,239/mo</span><span class="tnum">12 Nov</span></div>
+                        <div class="ren-row is-sel"><span class="ren-cb"><svg><use href="#i-check"/></svg></span><span>Oakline Dental</span><span class="tnum">2 services · $640/mo</span><span class="tnum ren-new" data-ren="640">$672/mo</span><span class="tnum">28 Nov</span></div>
+                        <div class="ren-row"><span class="ren-cb"></span><span>Pinecrest Landscaping</span><span class="tnum">2 services · $520/mo</span><span class="muted">Not decided</span><span class="tnum">9 Dec</span></div>
+                      </div>
+                      <div class="ren-bulk"><span>2 letters selected · Fee decision</span><span class="ren-sel">Propose % increase</span><span class="ren-sel tnum">5%</span><span class="ren-btn">Prepare renewal drafts</span></div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="stage-caption">Screens from Evisor with illustrative names and figures.</p>
+      </div>
+    </div>
+
+    <div class="center-cta reveal">
+      <a class="btn btn-primary" href="https://my.evisor.app/register" data-cta="journey">Start free<span class="btn-key" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a>
+      <p class="micro">Free plan · No card · Google or email</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== ONE PLACE (bento) ============================== -->
+<section class="section lp-paper lp-rule-top" id="one-place" data-section="one_place" aria-labelledby="one-place-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">One place</p>
+      <h2 id="one-place-title" class="h2">Retire the spreadsheet, the Word template and the signing app.</h2>
+      <p class="lead">Many solo practices juggle a spreadsheet, a Word template and a signing app — and lose clients in the gaps between them. Evisor keeps the whole relationship in one record.</p>
+    </div>
+
+    <div class="bento">
+      <article class="tile tile-today reveal" data-spot>
+        <div class="tile-copy">
+          <h3 class="h4">Today tells you what’s next</h3>
+          <p>Who signed, who’s stalling, what’s due for renewal — one calm list each morning.</p>
+        </div>
+        <div class="today" aria-hidden="true">
+          <p class="today-h">Good morning, Priya</p>
+          <p class="today-sub">3 things need your attention, and 2 documents are with clients.</p>
+          <div class="today-feat">
+            <p class="today-eb">Next to move forward</p>
+            <p class="today-t">Harbor Lane Dental signed their engagement letter</p>
+            <p class="today-d">Review their onboarding checklist and the next step.</p>
+            <span class="today-btn">Open client<svg><use href="#i-arrow"/></svg></span>
+          </div>
+          <ul class="today-list">
+            <li><i class="t-sig">Signature</i><span>Daniel Reyes hasn’t signed yet</span><em>Sent 5 days ago</em></li>
+            <li><i class="t-pro">Proposal</i><span>Oakline Dental opened it, not accepted yet</span><em class="tnum">$640/mo</em></li>
+            <li><i class="t-ren">Renewal</i><span>2 letters are due for renewal</span><em>Review</em></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="tile tile-brand reveal" data-spot>
+        <div class="brand-swatches" role="group" aria-label="Try a brand color"><button type="button" aria-pressed="true" style="--c:#2f5d50" data-swatch="#2f5d50"><span class="sr-only">Green</span></button><button type="button" aria-pressed="false" style="--c:#7a3b2e" data-swatch="#7a3b2e"><span class="sr-only">Rust</span></button><button type="button" aria-pressed="false" style="--c:#1f4e79" data-swatch="#1f4e79"><span class="sr-only">Navy</span></button><button type="button" aria-pressed="false" style="--c:#5b4a8b" data-swatch="#5b4a8b"><span class="sr-only">Plum</span></button></div>
+        <div class="brand-page" aria-hidden="true" data-brand-page><span class="bp-mast"><span class="bp-logo">NB</span>Northfield Bookkeeping</span><span class="bp-line"></span><span class="bp-line short"></span><span class="bp-btn">Accept proposal</span></div>
+        <h3 class="h4">Your brand on every client page</h3>
+        <p>On paid plans, your logo and color on proposals, letters and checklists — and no Evisor footer.</p>
+      </article>
+
+      <article class="tile tile-zero reveal" data-spot>
+        <p class="zero tnum" aria-hidden="true">0%</p>
+        <h3 class="h4">Payment links, 0% to Evisor</h3>
+        <p>Show your own Stripe, PayPal or GoCardless link once a client accepts or signs. They pay you directly.</p>
+      </article>
+
+      <article class="tile tile-juris reveal" data-spot>
+        <div class="juris" aria-hidden="true"><span>US</span><span>UK</span><span>AU</span><span>CA</span><span>NZ</span></div>
+        <h3 class="h4">Letters that know where you work</h3>
+        <p>Clauses and wording adapt for the US, UK, Australia, Canada and New Zealand.</p>
+      </article>
+
+      <article class="tile tile-open reveal" data-spot>
+        <div class="toastlet" aria-hidden="true"><svg><use href="#i-eye"/></svg><span><b>Maya opened your proposal</b>2 minutes ago</span></div>
+        <h3 class="h4">Know when they’ve looked</h3>
+        <p>Get notified when a client opens a proposal or letter.</p>
+      </article>
+
+      <article class="tile tile-import reveal" data-spot>
+        <div class="csv" aria-hidden="true"><span>Name</span><span>Email</span><span>Business</span></div>
+        <h3 class="h4">Bring your existing clients</h3>
+        <p>Import your client list from a spreadsheet and paper your current book properly.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FIRST TWENTY MINUTES ============================== -->
+<section class="section" id="start" data-section="first_twenty" aria-labelledby="start-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Getting started</p>
+      <h2 id="start-title" class="h2">Your first twenty minutes, in order.</h2>
+      <p class="lead">No blank dashboard and no guessing where to start. Here’s exactly what you’ll do — all of it on the free plan.</p>
+    </div>
+    <ol class="timeline" data-timeline>
+      <li class="tl reveal"><span class="tl-dot" aria-hidden="true"></span><p class="tl-min tnum">Minute 1</p><h3 class="h4">Create your account</h3><p>Email and password, or Google. Then pick where to begin: find clients, price a job, or send a letter.</p></li>
+      <li class="tl reveal"><span class="tl-dot" aria-hidden="true"></span><p class="tl-min tnum">Minute 3</p><h3 class="h4">See who’s near you</h3><p>Set your area and the clients you want. Browse the businesses that match — names masked — before you spend a cent. <span class="muted-em">In covered areas.</span></p></li>
+      <li class="tl reveal"><span class="tl-dot" aria-hidden="true"></span><p class="tl-min tnum">Minute 8</p><h3 class="h4">Set your rates</h3><p>Enter your target and floor rates. Price a sample client and see the three options you’d present.</p></li>
+      <li class="tl reveal"><span class="tl-dot" aria-hidden="true"></span><p class="tl-min tnum">Minute 20</p><h3 class="h4">Send your first letter</h3><p>Write your engagement letter, add your details and send it for signature. A real client, papered properly — for free.</p></li>
+    </ol>
+    <div class="center-cta reveal">
+      <a class="btn btn-primary" href="https://my.evisor.app/register" data-cta="first_twenty">Start free<span class="btn-key" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== COMPARISON ============================== -->
+<section class="section lp-paper lp-rule-top" id="compare" data-section="compare" aria-labelledby="compare-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Where Evisor fits</p>
+      <h2 id="compare-title" class="h2">Built for the part the other tools skip.</h2>
+      <p class="lead">Lead marketplaces stop at an inquiry. Proposal tools start once you already have a client. Evisor covers the stretch in between — and stays with the client after.</p>
+    </div>
+    <div class="cmp-wrap reveal">
+      <div class="cmp-scroll" tabindex="0" role="region" aria-label="Comparison table, scrolls sideways on small screens">
+        <table class="cmp">
+          <thead>
+            <tr><th scope="col"><span class="sr-only">Job</span></th><th scope="col" class="cmp-ev">Evisor</th><th scope="col">Lead marketplaces</th><th scope="col">Bought lists &amp; registry data</th><th scope="col">Proposal &amp; e-sign tools</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Businesses to contact</th><td class="cmp-ev">Local businesses, with evidence</td><td>Shared inquiries</td><td>Names, no context</td><td class="cmp-none"><svg aria-label="No"><use href="#i-dash"/></svg></td></tr>
+            <tr><th scope="row">Why each one, and what’s unknown</th><td class="cmp-ev">On every business</td><td class="cmp-none"><svg aria-label="No"><use href="#i-dash"/></svg></td><td class="cmp-none"><svg aria-label="No"><use href="#i-dash"/></svg></td><td class="cmp-none"><svg aria-label="No"><use href="#i-dash"/></svg></td></tr>
+            <tr><th scope="row">The business has asked for help</th><td class="cmp-ev cmp-honest">No — you start the conversation</td><td>Yes, often shared with other firms</td><td class="cmp-none"><svg aria-label="No"><use href="#i-dash"/></svg></td><td class="cmp-none"><svg aria-label="No"><use href="#i-dash"/></svg></td></tr>
+            <tr><th scope="row">How you pay</th><td class="cmp-ev">Free plan, then from <span data-from-price>$19</span>/mo</td><td>Per lead, often shared</td><td>Per list or credits</td><td>Monthly</td></tr>
+            <tr><th scope="row">Help setting the fee</th><td class="cmp-ev">From your target and floor rates</td><td class="cmp-none"><svg aria-label="No"><use href="#i-dash"/></svg></td><td class="cmp-none"><svg aria-label="No"><use href="#i-dash"/></svg></td><td>Some</td></tr>
+            <tr><th scope="row">Proposals &amp; engagement letters</th><td class="cmp-ev">Yes, in one thread</td><td class="cmp-none"><svg aria-label="No"><use href="#i-dash"/></svg></td><td class="cmp-none"><svg aria-label="No"><use href="#i-dash"/></svg></td><td>Yes</td></tr>
+            <tr><th scope="row">E-signature with a record</th><td class="cmp-ev">Yes, co-signers included</td><td class="cmp-none"><svg aria-label="No"><use href="#i-dash"/></svg></td><td class="cmp-none"><svg aria-label="No"><use href="#i-dash"/></svg></td><td>Usually</td></tr>
+            <tr><th scope="row">Onboarding checklist &amp; renewals</th><td class="cmp-ev">Yes</td><td class="cmp-none"><svg aria-label="No"><use href="#i-dash"/></svg></td><td class="cmp-none"><svg aria-label="No"><use href="#i-dash"/></svg></td><td>Varies</td></tr>
+            <tr><th scope="row">Tasks, time tracking, workflows</th><td class="cmp-ev cmp-honest">No — keep your current tool</td><td class="cmp-none"><svg aria-label="No"><use href="#i-dash"/></svg></td><td class="cmp-none"><svg aria-label="No"><use href="#i-dash"/></svg></td><td>Some</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="micro cmp-foot">A general comparison of categories, not of specific products. Features vary by vendor and plan.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== TRUST ============================== -->
+<section class="section" id="trust" data-section="trust" aria-labelledby="trust-title">
+  <div class="wrap trust-grid">
+    <div class="trust-copy">
+      <div class="section-head reveal">
+        <p class="eyebrow">Trust</p>
+        <h2 id="trust-title" class="h2">Built to be trusted with signatures.</h2>
+        <p class="lead">Your engagement letters are legal records. Evisor treats them that way.</p>
+      </div>
+      <div class="cert reveal" aria-hidden="true">
+        <p class="cert-h">Signature certificate</p>
+        <dl>
+          <div><dt>Document</dt><dd>Engagement Letter — Monthly Bookkeeping</dd></div>
+          <div><dt>Signed by</dt><dd>Maya Ortiz</dd></div>
+          <div><dt>Signed with</dt><dd>Northfield Bookkeeping</dd></div>
+          <div><dt>Signed on (UTC)</dt><dd class="tnum">21 October 2026 at 2:32 PM UTC</dd></div>
+          <div><dt>Signed from IP</dt><dd class="tnum">203.0.113.24</dd></div>
+          <div><dt>Consent</dt><dd>Electronic-signature disclosure accepted</dd></div>
+        </dl>
+        <p class="cert-foot">The details your client receives by email after signing. Illustrative values.</p>
+      </div>
+    </div>
+    <ul class="trust-list">
+      <li class="reveal"><span class="trust-i" aria-hidden="true"><svg><use href="#i-hash"/></svg></span><div><h3 class="h4">A record of what was signed</h3><p>Each signature is stored with the exact disclosure shown, a SHA-256 fingerprint of what was signed, the signer’s IP address and the UTC time. Evisor checks the signer saw the same version before it accepts the signature.</p></div></li>
+      <li class="reveal"><span class="trust-i" aria-hidden="true"><svg><use href="#i-lock"/></svg></span><div><h3 class="h4">Signed means final</h3><p>Signed letters and accepted proposals can’t be edited afterwards — the database refuses. Changes happen in a new draft.</p></div></li>
+      <li class="reveal"><span class="trust-i" aria-hidden="true"><svg><use href="#i-key"/></svg></span><div><h3 class="h4">Encrypted where it matters</h3><p>Signatures and signed or accepted PDFs are encrypted with AES-GCM. Each firm’s data is kept separate from every other firm’s.</p></div></li>
+      <li class="reveal"><span class="trust-i" aria-hidden="true"><svg><use href="#i-card"/></svg></span><div><h3 class="h4">Your clients pay you, not us</h3><p>Payment links go to your own Stripe, PayPal or GoCardless account. Evisor never touches the money and takes 0%.</p></div></li>
+      <li class="reveal"><span class="trust-i" aria-hidden="true"><svg><use href="#i-shield"/></svg></span><div><h3 class="h4">Two-factor sign-in</h3><p>Turn on an authenticator app. Once it’s on, Evisor asks for a 6-digit code each time you sign in.</p></div></li>
+      <li class="reveal"><span class="trust-i" aria-hidden="true"><svg><use href="#i-download"/></svg></span><div><h3 class="h4">Your records stay yours</h3><p>Export your data from Settings at any time.</p></div></li>
+    </ul>
+    <div class="trust-foot reveal">
+      <p class="small">A simple electronic signature, recognized under laws including the US ESIGN Act, the UK Electronic Communications Act 2000 and the EU eIDAS Regulation. Not for documents that legally require a notarized or witnessed signature.</p>
+      <p class="trust-links"><a href="https://my.evisor.app/trust" data-link="trust">Trust</a><a href="https://my.evisor.app/dpa" data-link="dpa">Data processing agreement</a><a href="https://my.evisor.app/subprocessors" data-link="subprocessors">Subprocessors</a><a href="https://my.evisor.app/electronic-signature-disclosure" data-link="esignDisclosure">E-signature disclosure</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FROM THE TEAM (proof slot) ============================== -->
+<section class="section lp-paper lp-rule-top" id="team" data-section="team" aria-labelledby="team-title">
+  <div class="wrap team-grid">
+    <div class="letter reveal">
+      <p class="eyebrow">From the people building Evisor</p>
+      <h2 id="team-title" class="h2 letter-h">No logos here yet. Here’s what we’ll stand behind instead.</h2>
+      <p>Evisor is early. You won’t find customer logos or five-star quotes on this page — we’d rather you judge the product than a testimonial we wrote ourselves.</p>
+      <p>What we can offer is this: every business in Find Clients shows its evidence and its gaps, every plan limit is written down, and every message to <a href="mailto:hello@evisor.app">hello@evisor.app</a> is read by a person who builds Evisor.</p>
+      <div class="letter-sign">
+        <span class="letter-avatar" data-founder-avatar aria-hidden="true"><svg><use href="#i-mark"/></svg></span>
+        <div><p class="letter-name" data-founder-name>The Evisor team</p><p class="micro" data-founder-role>hello@evisor.app</p></div>
+      </div>
+    </div>
+    <aside class="promise reveal" data-promise aria-labelledby="promise-title">
+      <span class="promise-seal" aria-hidden="true"><svg><use href="#i-shield"/></svg></span>
+      <p class="eyebrow">Our promise</p>
+      <p id="promise-title" class="promise-h">Your first client-ready proposal — priced and ready to send — inside your first week. If it isn’t, we’ll build it with you on a call.</p>
+      <div class="promise-cols">
+        <div><p class="promise-k">What we guarantee</p><p>The part we control: a real, sendable document instead of a blank screen.</p></div>
+        <div><p class="promise-k">What we won’t</p><p>A signed client. Nobody honest can promise that.</p></div>
+      </div>
+    </aside>
+  </div>
+  <div class="wrap">
+    <div class="proof" data-proof hidden>
+      <p class="proof-flag" data-proof-flag>Placeholder — replace with real, permissioned testimonials before launch</p>
+      <div class="proof-grid" data-proof-grid></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== PRICING ============================== -->
+<section class="section pricing" id="pricing" data-section="pricing" aria-labelledby="pricing-title">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <p class="eyebrow">Pricing</p>
+      <h2 id="pricing-title" class="h2">One client pays for years of it.</h2>
+      <p class="lead">Start free, with no card and no time limit. Upgrade when Evisor is earning its keep.</p>
+    </div>
+
+    <div class="pricing-tools reveal">
+      <div class="roi" data-roi>
+        <label class="roi-label" for="roi-fee">What would one new client pay you a month?</label>
+        <div class="roi-row">
+          <output class="roi-fee tnum" for="roi-fee" data-roi-fee>$400</output>
+          <input id="roi-fee" type="range" min="150" max="2000" step="25" value="400" data-roi-input aria-describedby="roi-out">
+        </div>
+        <div class="roi-bars" aria-hidden="true">
+          <p class="roi-bar"><span>One client, a year</span><i><b data-roi-bar-client></b></i><span data-roi-v-client>$4,800</span></p>
+          <p class="roi-bar is-cost"><span>Practice, a year</span><i><b data-roi-bar-cost style="--w:17%"></b></i><span data-roi-v-cost>$828</span></p>
+        </div>
+        <p class="roi-out" id="roi-out" data-roi-out>$400 a month is <b class="tnum">$4,800</b> a year. Practice, billed annually, is <b class="tnum">$828</b> a year. <span class="roi-x">One client covers it <b class="tnum">5.8×</b> over.</span></p>
+      </div>
+      <div class="finder" data-finder>
+        <p class="finder-q" id="finder-q">Which one is you?</p>
+        <div class="finder-opts" role="group" aria-labelledby="finder-q">
+          <button type="button" aria-pressed="false" data-finder-pick="starter"><b>Building your first book</b><span>Under 10 clients</span></button>
+          <button type="button" aria-pressed="false" data-finder-pick="practice"><b>Running a practice</b><span>10–40 clients</span></button>
+          <button type="button" aria-pressed="false" data-finder-pick="firm"><b>More than one of you</b><span>A team, one client book</span></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="billing reveal">
+      <div class="toggle" role="radiogroup" aria-label="Billing period" data-billing>
+        <button type="button" role="radio" aria-checked="true" data-billing-opt="annual">Annual <span class="save" data-save-label>Save 24%</span></button>
+        <button type="button" role="radio" aria-checked="false" data-billing-opt="monthly">Monthly</button>
+        <span class="toggle-thumb" aria-hidden="true"></span>
+      </div>
+    </div>
+
+    <div class="plans" data-plans>
+      <!-- Rendered from assets/v2/config.js. Static fallback for no-JS readers: -->
+      <noscript>
+        <div class="plans-fallback">
+          <p><strong>Free</strong> — $0. 3 clients, 3 proposals and 3 letters, e-signature, Find Clients preview.</p>
+          <p><strong>Starter</strong> — $19/mo billed annually ($228/yr), or $25 monthly. 75 reveals a month, 10 clients, your branding.</p>
+          <p><strong>Practice</strong> — $69/mo billed annually ($828/yr), or $79 monthly. Up to 250 reveals a month, 40 clients, renewals.</p>
+          <p><strong>Firm</strong> — $113/mo billed annually ($1,356/yr), or $149 monthly. 3 seats, unlimited clients and documents.</p>
+          <p><a href="https://my.evisor.app/choose-plan">Compare plans in the app</a></p>
+        </div>
+      </noscript>
+    </div>
+
+    <div class="plan-notes reveal">
+      <p><svg aria-hidden="true"><use href="#i-check"/></svg>Prices in US dollars. Sales tax or VAT, where it applies, is added at checkout.</p>
+      <p><svg aria-hidden="true"><use href="#i-check"/></svg>Monthly allowances count new proposals and letters, including drafts and new renewal documents. Editing or sending an existing document doesn’t count.</p>
+      <p><svg aria-hidden="true"><use href="#i-check"/></svg>Cancel any time — your plan runs to the end of the period you’ve paid for. Fees generally aren’t refunded once a period starts, which is why Free has no time limit: try what matters before you pay. <a href="https://my.evisor.app/refund-policy" data-link="refunds">Refund policy</a></p>
+    </div>
+
+    <div class="build lp-ink reveal" data-build>
+      <div class="build-copy">
+        <p class="eyebrow">Practice Build · done with you</p>
+        <h3 class="h3 build-h">We set your practice up with you, in four weeks.</h3>
+        <p class="body">Four one-to-one sessions. We build it inside your own account, and you finish positioned, priced, papered and prospecting.</p>
+        <ul class="build-list">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Your niche and offer</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Your rate card</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Proposal, letter and checklist</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>Your first prospects, hand-picked <span class="muted-em">(in covered areas)</span></span></li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Your outreach, written</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>30 days of direct access</li>
+        </ul>
+      </div>
+      <div class="build-price">
+        <p class="build-amt tnum"><span data-build-price>$1,500</span><small>one payment</small></p>
+        <p class="small" data-build-includes>Includes 12 months of Practice ($828 of it). Nothing to pay on top.</p>
+        <a class="btn btn-primary" href="#contact" data-prefill="build" data-cta="practice_build">Apply for Practice Build<span class="btn-key" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a>
+        <p class="micro" data-build-capacity>We take four practices a month.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FAQ ============================== -->
+<section class="section lp-paper lp-rule-top" id="faq" data-section="faq" aria-labelledby="faq-title">
+  <div class="wrap faq-grid">
+    <div class="faq-side reveal">
+      <p class="eyebrow">FAQ</p>
+      <h2 id="faq-title" class="h2">The things people actually ask.</h2>
+      <p class="body">Still unsure about something? <a href="#contact">Ask a person</a> — a real one reads every message.</p>
+    </div>
+    <div class="faq-list" data-faq>
+      <details class="faq" data-faq-id="free"><summary><span>What do I get on the free plan?</span><svg aria-hidden="true"><use href="#i-plus"/></svg></summary><div class="faq-a"><p>Everything you need to set up and paper a real client: a names-masked preview of businesses near you (in covered areas), the pricing calculator with your floor check, 3 clients, 3 proposals, and 3 engagement letters with e-signature and co-signers. No card, no time limit. Revealing a business’s name and contact details starts on Starter.</p></div></details>
+      <details class="faq" data-faq-id="clients"><summary><span>Will these businesses actually become clients?</span><svg aria-hidden="true"><use href="#i-plus"/></svg></summary><div class="faq-a"><p>We won’t quote a close rate — we can’t measure one honestly yet, and an invented number is worse than none. What we stand behind: the businesses are real listings in your area, each shows why it’s there and what isn’t known, and when one says “send me something”, you can have a priced, branded proposal in front of them the same day. Finding clients still takes conversations. Evisor makes sure you start the right ones — and don’t lose one to a slow quote.</p></div></details>
+      <details class="faq" data-faq-id="data"><summary><span>Where does the business data come from?</span><svg aria-hidden="true"><use href="#i-plus"/></svg></summary><div class="faq-a"><p>Find Clients is built on open business-listing data from the Overture Maps Foundation, with attribution. Contact details are the routes the business has published. Evisor shows them but doesn’t verify them — which is why every business lists what isn’t known, old evidence is flagged, and you should check details before reaching out.</p></div></details>
+      <details class="faq" data-faq-id="open_data"><summary><span>If the data is open, what am I paying for?</span><svg aria-hidden="true"><use href="#i-plus"/></svg></summary><div class="faq-a"><p>The list is only the start. Evisor matches businesses to your area and preferences, shows the case and the gaps for each one, tells you which contact routes are on record before you spend anything, and returns an unlock if a promised route fails. Then it carries the client through pricing, proposal, e-signature, onboarding and renewal. The free plan lets you judge all of that before you pay.</p></div></details>
+      <details class="faq" data-faq-id="same_businesses"><summary><span>Do other bookkeepers see the same businesses?</span><svg aria-hidden="true"><use href="#i-plus"/></svg></summary><div class="faq-a"><p>They might — Find Clients is built on open listing data, and other Evisor users near you can see the same businesses. What you won’t get is a quote request sold to five firms at once. These businesses haven’t asked anyone for a quote, so there’s no race to answer first; you start the conversation, on your terms.</p></div></details>
+      <details class="faq" data-faq-id="outreach"><summary><span>Will Evisor write my outreach?</span><svg aria-hidden="true"><use href="#i-plus"/></svg></summary><div class="faq-a"><p>Not for today’s leads. You write and send it yourself — from your own email, phone or in person — so the relationship is yours from the first sentence. If you’d like it done with you, Practice Build includes your outreach, written in your voice.</p></div></details>
+      <details class="faq" data-faq-id="coverage"><summary><span>Which areas does Find Clients cover?</span><svg aria-hidden="true"><use href="#i-plus"/></svg></summary><div class="faq-a"><p>Today: <span data-coverage-list>Colorado, New York and Oregon</span>. We’re opening area by area. Everything else in Evisor — pricing, proposals, engagement letters, e-signature, onboarding and renewals — works wherever you are. If your area isn’t live yet, start free and use <em>Notify me when this place is live</em> in Find Clients to join the coverage update list.</p></div></details>
+      <details class="faq" data-faq-id="contact"><summary><span>Does Evisor contact businesses for me?</span><svg aria-hidden="true"><use href="#i-plus"/></svg></summary><div class="faq-a"><p>No, never. You decide who to contact, what to say and how. You’re the sender, so following the rules where you work is up to you — in the US, for example, CAN-SPAM for email.</p></div></details>
+      <details class="faq" data-faq-id="list"><summary><span>Isn’t this just another lead list?</span><svg aria-hidden="true"><use href="#i-plus"/></svg></summary><div class="faq-a"><p>A list hands you names. Evisor shows why each business is in front of you, what’s known, what isn’t, and which details are old or conflicting — and it won’t recycle duplicates or quietly broaden your search to fill a quiet area. There are no pay-per-lead credits and no bidding against other bookkeepers for someone’s quote request.</p></div></details>
+      <details class="faq" data-faq-id="new"><summary><span>I’m brand new. Is this too much for me?</span><svg aria-hidden="true"><use href="#i-plus"/></svg></summary><div class="faq-a"><p>It’s built for exactly that moment. The pricing calculator works out a fee from your own rates, and you can send a real engagement letter for signature on the free plan. If you get stuck in your first week, we’ll build your first proposal with you on a call.</p></div></details>
+      <details class="faq" data-faq-id="import"><summary><span>I already have clients. Can I bring them across?</span><svg aria-hidden="true"><use href="#i-plus"/></svg></summary><div class="faq-a"><p>Yes. Import your client list from a spreadsheet (name, email, business), then paper them properly with engagement letters. On Practice, renewals come around each year so your book is reviewed in one pass.</p></div></details>
+      <details class="faq" data-faq-id="esign"><summary><span>Are signatures captured in Evisor legally valid?</span><svg aria-hidden="true"><use href="#i-plus"/></svg></summary><div class="faq-a"><p>Evisor captures a simple electronic signature, recognized under laws including the US ESIGN Act, the UK Electronic Communications Act 2000 and the EU eIDAS Regulation. Each one is recorded with the disclosure shown, a fingerprint of the document, the IP address and the time. Some documents legally need a notarized or witnessed signature — don’t rely on any e-signature tool alone for those.</p></div></details>
+      <details class="faq" data-faq-id="client_app"><summary><span>Do my clients need an account or an app?</span><svg aria-hidden="true"><use href="#i-plus"/></svg></summary><div class="faq-a"><p>No. They open a link on any device, read, then accept or sign. On a phone they can draw, upload or photograph a signature.</p></div></details>
+      <details class="faq" data-faq-id="cancel"><summary><span>Can I cancel? Do you offer refunds?</span><svg aria-hidden="true"><use href="#i-plus"/></svg></summary><div class="faq-a"><p>Cancel any time — your plan stays active until the end of the period you’ve paid for. Fees generally aren’t refunded once a billing period starts, which is why the free plan has no time limit: try the parts that matter to you before you pay. Full details are in the <a href="https://my.evisor.app/refund-policy" data-link="refunds">refund policy</a>.</p></div></details>
+      <details class="faq" data-faq-id="practice_vs_starter"><summary><span>How is Practice different from Starter?</span><svg aria-hidden="true"><use href="#i-plus"/></svg></summary><div class="faq-a"><p>Starter is for winning your first clients: 75 reveals a month, your branding, payment links and up to 10 clients. Practice is for running the book: 250 reveals a month, 40 clients, the letter that fills itself from an accepted proposal, scheduled follow-ups, renewals and quick charges.</p></div></details>
+      <details class="faq" data-faq-id="ledger_software"><summary><span>Do I have to switch from QuickBooks or Xero?</span><svg aria-hidden="true"><use href="#i-plus"/></svg></summary><div class="faq-a"><p>No. Evisor sits alongside your bookkeeping software. It handles finding, pricing, signing and onboarding clients; the books stay where they are.</p></div></details>
+      <details class="faq" data-faq-id="usd"><summary><span>Why are prices in US dollars?</span><svg aria-hidden="true"><use href="#i-plus"/></svg></summary><div class="faq-a"><p>Evisor bills in US dollars everywhere. If sales tax or VAT applies, it’s calculated and shown at checkout before you pay.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FINAL CTA ============================== -->
+<section class="section lp-ink final" id="start-now" data-section="final_cta" aria-labelledby="final-title">
+  <div class="ink-glow ink-glow-center" aria-hidden="true"></div>
+  <svg class="final-mark" aria-hidden="true"><use href="#i-mark"/></svg>
+  <div class="wrap wrap-narrow final-inner reveal">
+    <h2 id="final-title" class="display final-h">Your next client is already in business. <span class="accent-em">Go and find them.</span></h2>
+    <p class="lead">Start free. Set your rates, see who’s near you, and have your first letter ready to send today.</p>
+    <div class="cta-row cta-center">
+      <a class="btn btn-primary" href="https://my.evisor.app/register" data-cta="final_primary" data-magnetic>Start free<span class="btn-key" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a>
+      <a class="btn btn-secondary btn-plain" href="#pricing" data-cta="final_pricing">See pricing</a>
+    </div>
+    <p class="cta-note cta-center">
+      <span><svg aria-hidden="true"><use href="#i-check"/></svg>Free plan</span>
+      <span><svg aria-hidden="true"><use href="#i-check"/></svg>No card</span>
+      <span><svg aria-hidden="true"><use href="#i-check"/></svg>Google or email</span>
+    </p>
+  </div>
+</section>
+
+<!-- ============================== CONTACT ============================== -->
+<section class="section section-tight" id="contact" data-section="contact" aria-labelledby="contact-title">
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <p class="eyebrow">Contact</p>
+      <h2 id="contact-title" class="h2">Ask a person.</h2>
+      <p class="lead">A real person reads every message. Applying for Practice Build, or need more than three Firm seats? Say so.</p>
+      <p class="body contact-mail"><svg aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:hello@evisor.app">hello@evisor.app</a></p>
+    </div>
+    <form class="contact-form reveal" data-contact-form novalidate>
+      <div class="field"><label for="cf-name">Your name</label><input id="cf-name" name="name" type="text" autocomplete="name" required></div>
+      <div class="field"><label for="cf-email">Email</label><input id="cf-email" name="email" type="email" autocomplete="email" required></div>
+      <div class="field"><label for="cf-message">How can we help?</label><textarea id="cf-message" name="message" rows="4" required></textarea></div>
+      <button class="btn btn-primary btn-plain" type="submit" data-contact-submit>Send message</button>
+      <p class="form-status" data-contact-status role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================== FOOTER ============================== -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="brand" aria-label="Evisor home"><svg class="brand-mark" aria-hidden="true"><use href="#i-mark"/></svg><span class="brand-word">Evisor</span></a>
+        <p class="small">Where independent bookkeepers find, price and sign new clients.</p>
+        <p class="small"><a href="mailto:hello@evisor.app">hello@evisor.app</a></p>
+      </div>
+      <nav aria-label="Product" class="footer-col">
+        <p class="footer-h">Product</p>
+        <a href="#evidence">Find Clients</a>
+        <a href="#journey">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#compare">Compare</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://my.evisor.app/register" data-cta="footer">Start free</a>
+      </nav>
+      <nav aria-label="Legal" class="footer-col">
+        <p class="footer-h">Legal &amp; trust</p>
+        <a href="https://my.evisor.app/privacy" data-link="privacy">Privacy Policy</a>
+        <a href="https://my.evisor.app/terms" data-link="terms">Terms of Service</a>
+        <a href="https://my.evisor.app/cookie-policy" data-link="cookies">Cookie Policy</a>
+        <button type="button" class="footer-btn" data-cookie-settings>Cookie settings</button>
+        <a href="https://my.evisor.app/refund-policy" data-link="refunds">Refund Policy</a>
+        <a href="https://my.evisor.app/acceptable-use" data-link="acceptableUse">Acceptable Use</a>
+        <a href="https://my.evisor.app/trust" data-link="trust">Trust</a>
+      </nav>
+    </div>
+    <div class="footer-base">
+      <p>© 2026 Evisor. All rights reserved.</p>
+      <p>Find Clients data: Overture Maps Foundation.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating CTA: appears after the hero, hides near pricing and the final CTA. -->
+<div class="dock" data-dock aria-hidden="true">
+  <p class="dock-txt"><b>Find your next clients.</b> <span>Free plan, no card.</span></p>
+  <a class="btn btn-primary btn-sm" href="https://my.evisor.app/register" data-cta="dock" tabindex="-1">Start free<span class="btn-key" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a>
+</div>
+
+<div id="cookie-consent" role="dialog" aria-modal="false" aria-labelledby="cc-title" aria-describedby="cc-desc" hidden>
+  <p><strong id="cc-title">Analytics cookies</strong><span id="cc-desc">We use Google Analytics to understand how visitors use this site. It only loads if you accept. Necessary cookies for the site to work are always on. See our <a href="https://my.evisor.app/cookie-policy" target="_blank" rel="noopener noreferrer">Cookie Policy</a>.</span></p>
+  <div class="cc-actions"><button type="button" class="cc-reject" data-choice="denied">Reject analytics</button><button type="button" class="cc-accept" data-choice="granted">Accept analytics</button></div>
+</div>
+<script>/* show the consent banner at first paint when no choice is stored; landing.js wires the buttons */(function(){var v=null;try{v=localStorage.getItem('evisor_analytics_consent')}catch(e){}if(v!=='granted'&&v!=='denied'){document.getElementById('cookie-consent').hidden=false;document.documentElement.classList.add('cc-open')}})();</script>
+
+</body>
+</html>
