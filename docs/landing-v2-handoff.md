@@ -1,5 +1,7 @@
 # Evisor landing v2 — handoff
 
+> **Superseded on 21 Oct 2026 by v3** — see `docs/landing-v3-handoff.md`. v2 is archived at `/archive/landing-v2-2026-10/` and still loads `/assets/v2/*`.
+
 _Live on evisor.app since 21 Oct 2026, 07:59 UTC: `main` was fast-forwarded from `5280507` (v1) to `eb7dda8` (v2) at the founder's request, and the GitHub Pages build and deploy succeeded. Working branch: `claude/affectionate-mendel-7acz8b`._
 
 ## Roll back (if ever needed)
