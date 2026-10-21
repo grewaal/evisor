@@ -1,0 +1,224 @@
+/* ==========================================================================
+   Evisor landing v2 — "Paper & Ink"
+   Every colour, radius and shadow below starts from the app's UI V3 tokens
+   (evisorapp/frontend/src/index.css). Landing-only additions are marked
+   `--lp-*` and are derived from those tokens, never invented.
+   ========================================================================== */
+
+@font-face {
+  font-family: 'DM Sans Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 1000;
+  src: url(/assets/fonts/dm-sans-latin-opsz.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'DM Sans Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 1000;
+  src: url(/assets/fonts/dm-sans-latin-ext-opsz.woff2) format('woff2-variations');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* Same metric-matched fallback the app uses, so the font swap changes glyphs, not layout. */
+@font-face {
+  font-family: 'DM Sans Fallback';
+  src: local('Arial'), local('Helvetica Neue'), local('Helvetica');
+  size-adjust: 100.28%;
+  ascent-override: 98.92%;
+  descent-override: 30.91%;
+  line-gap-override: 0%;
+}
+
+:root {
+  /* ---- App tokens, 1:1 (RGB channels so alpha can be applied) ---- */
+  --ev-canvas: 247 247 244;
+  --ev-surface: 255 255 255;
+  --ev-surface-subtle: 250 250 248;
+  --ev-surface-sunken: 238 239 236;
+  --ev-line: 220 222 220;
+  --ev-line-strong: 166 175 182;
+  --ev-ink: 36 42 50;
+  --ev-ink-2: 74 83 95;
+  --ev-ink-3: 91 100 111;
+  --ev-accent: 40 75 135;
+  --ev-accent-strong: 35 65 119;
+  --ev-accent-soft: 237 242 251;
+  --ev-accent-hover: 28 53 96;
+  --ev-positive: 30 122 79;
+  --ev-positive-soft: 231 244 236;
+  --ev-caution: 138 90 0;
+  --ev-caution-soft: 251 241 220;
+  --ev-critical: 179 38 30;
+  --ev-critical-soft: 252 235 234;
+  --ev-info: 31 94 156;
+  --ev-info-soft: 234 241 249;
+  --ev-nav: 238 239 236;
+  --ev-radius-control: 7px;
+  --ev-radius-panel: 10px;
+  --ev-radius-popover: 14px;
+  --ev-shadow-raised: 0 1px 2px rgb(19 42 48 / 0.06), 0 6px 16px -8px rgb(19 42 48 / 0.12);
+  --ev-shadow-popover: 0 20px 48px -16px rgb(19 42 48 / 0.32), 0 2px 8px rgb(19 42 48 / 0.08);
+  --ev-font: "DM Sans Variable", "DM Sans Fallback", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  /* ---- Landing extensions (derived from the tokens above) ---- */
+  /* "Ink" bands: the accent hue (218°) taken down to night. */
+  --lp-ink-bg: 13 21 37;          /* hsl(220 48% 10%) */
+  --lp-ink-surface: 20 30 49;     /* hsl(220 42% 14%) */
+  --lp-ink-raised: 27 39 62;
+  --lp-ink-line: 255 255 255;     /* used at 8–14% */
+  --lp-ink-text: 238 241 246;
+  --lp-ink-text-2: 170 181 198;
+  --lp-ink-accent: 143 176 236;   /* accent lifted for 7:1+ on --lp-ink-bg */
+  --lp-radius-shell: 20px;        /* popover radius + 6px bezel, concentric */
+  --lp-shadow-lift: 0 1px 1px rgb(19 42 48 / 0.04), 0 12px 32px -12px rgb(19 42 48 / 0.16), 0 48px 96px -40px rgb(40 75 135 / 0.30);
+  --lp-shadow-card: 0 1px 2px rgb(19 42 48 / 0.05), 0 10px 28px -14px rgb(19 42 48 / 0.16);
+
+  /* Motion: same family as the app (140ms micro, 220ms panels, ease-out). */
+  --lp-ease: cubic-bezier(.22, 1, .36, 1);
+  --lp-ease-snap: cubic-bezier(.23, 1, .32, 1);
+  --lp-dur-micro: 140ms;
+  --lp-dur-panel: 220ms;
+  --lp-dur-reveal: 640ms;
+
+  --lp-gutter: clamp(16px, 4vw, 32px);
+  --lp-max: 1200px;
+  --lp-nav-h: 64px;
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-padding-top: calc(var(--lp-nav-h) + 16px); }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+body {
+  margin: 0;
+  background: rgb(var(--ev-canvas));
+  color: rgb(var(--ev-ink));
+  font-family: var(--ev-font);
+  font-size: 17px;
+  line-height: 1.6;
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
+}
+img, svg, video { display: block; max-width: 100%; }
+button, input, textarea, select { font: inherit; color: inherit; }
+button { cursor: pointer; background: none; border: 0; padding: 0; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3, h4, p, ul, ol, figure, blockquote, dl, dd { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+[hidden] { display: none !important; }
+::selection { background: rgb(var(--ev-accent) / .16); }
+.tnum { font-variant-numeric: tabular-nums; }
+.sr-only { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+:where(a, button, input, textarea, summary, [tabindex]):focus-visible {
+  outline: 2px solid rgb(var(--ev-accent-strong));
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+.lp-ink :where(a, button, input, textarea, summary, [tabindex]):focus-visible { outline-color: rgb(var(--lp-ink-accent)); }
+
+.skip-link {
+  position: absolute; left: 12px; top: -100px; z-index: 100;
+  padding: 10px 14px; border-radius: var(--ev-radius-control);
+  background: rgb(var(--ev-ink)); color: #fff; font-size: 14px; font-weight: 600;
+}
+.skip-link:focus { top: 12px; }
+
+/* ---------- Layout ---------- */
+.wrap { width: 100%; max-width: calc(var(--lp-max) + 2 * var(--lp-gutter)); margin-inline: auto; padding-inline: var(--lp-gutter); }
+.wrap-narrow { max-width: calc(760px + 2 * var(--lp-gutter)); }
+.section { position: relative; padding-block: clamp(72px, 9vw, 136px); }
+.section-tight { padding-block: clamp(56px, 7vw, 96px); }
+.lp-paper { background: rgb(var(--ev-surface)); }
+.lp-rule-top { border-top: 1px solid rgb(var(--ev-line)); }
+.lp-ink { background: rgb(var(--lp-ink-bg)); color: rgb(var(--lp-ink-text)); }
+
+/* ---------- Type ---------- */
+.display {
+  font-size: clamp(2.5rem, 1.55rem + 4vw, 4.75rem);
+  line-height: 1.02;
+  letter-spacing: -0.042em;
+  font-weight: 640;
+  text-wrap: balance;
+}
+.h2 {
+  font-size: clamp(2rem, 1.45rem + 2.3vw, 3.25rem);
+  line-height: 1.06;
+  letter-spacing: -0.036em;
+  font-weight: 640;
+  text-wrap: balance;
+}
+.h3 { font-size: clamp(1.25rem, 1.1rem + .6vw, 1.5rem); line-height: 1.25; letter-spacing: -0.02em; font-weight: 620; }
+.h4 { font-size: 1.0625rem; line-height: 1.4; letter-spacing: -0.012em; font-weight: 620; }
+.lead { font-size: clamp(1.0625rem, 1rem + .35vw, 1.25rem); line-height: 1.55; color: rgb(var(--ev-ink-2)); text-wrap: pretty; }
+.body { color: rgb(var(--ev-ink-2)); text-wrap: pretty; }
+.small { font-size: 0.875rem; line-height: 1.55; color: rgb(var(--ev-ink-2)); }
+.micro { font-size: 0.8125rem; line-height: 1.5; color: rgb(var(--ev-ink-3)); }
+.lp-ink .lead, .lp-ink .body, .lp-ink .small { color: rgb(var(--lp-ink-text-2)); }
+.lp-ink .micro { color: rgb(var(--lp-ink-text-2) / .85); }
+.muted-em { color: rgb(var(--ev-ink-3)); }
+.lp-ink .muted-em { color: rgb(var(--lp-ink-text-2)); }
+.accent-em { color: rgb(var(--ev-accent)); }
+.lp-ink .accent-em { color: rgb(var(--lp-ink-accent)); }
+
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.75rem; line-height: 1; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 640;
+  color: rgb(var(--ev-accent));
+}
+.eyebrow::before { content: ""; width: 18px; height: 1px; background: currentColor; opacity: .7; }
+.lp-ink .eyebrow { color: rgb(var(--lp-ink-accent)); }
+
+.section-head { display: grid; gap: 18px; max-width: 760px; }
+.section-head.center { margin-inline: auto; text-align: center; justify-items: center; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  --btn-h: 52px;
+  position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+  min-height: var(--btn-h); padding: 0 8px 0 22px;
+  border-radius: 8px;
+  font-size: 1rem; font-weight: 620; letter-spacing: -0.005em; line-height: 1; white-space: nowrap;
+  transition: background-color var(--lp-dur-micro) var(--lp-ease-snap), color var(--lp-dur-micro), box-shadow var(--lp-dur-panel) var(--lp-ease), transform var(--lp-dur-micro) var(--lp-ease-snap);
+  -webkit-tap-highlight-color: transparent;
+}
+.btn:active { transform: scale(.985); }
+.btn-plain { padding: 0 22px; }
+.btn-primary {
+  background: rgb(var(--ev-accent)); color: #fff;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / .14), 0 1px 2px rgb(19 42 48 / .18), 0 8px 20px -8px rgb(var(--ev-accent) / .55);
+}
+.btn-primary:hover { background: rgb(var(--ev-accent-strong)); box-shadow: inset 0 1px 0 rgb(255 255 255 / .14), 0 1px 2px rgb(19 42 48 / .2), 0 14px 28px -10px rgb(var(--ev-accent) / .6); }
+.btn-secondary { background: rgb(var(--ev-surface)); color: rgb(var(--ev-ink)); box-shadow: inset 0 0 0 1px rgb(var(--ev-line-strong) / .7); }
+.btn-secondary:hover { background: rgb(var(--ev-surface-subtle)); box-shadow: inset 0 0 0 1px rgb(var(--ev-line-strong)); }
+.btn-ghost { color: rgb(var(--ev-ink-2)); padding: 0 14px; }
+.btn-ghost:hover { color: rgb(var(--ev-ink)); background: rgb(var(--ev-surface-sunken) / .7); }
+.lp-ink .btn-primary { background: rgb(var(--lp-ink-text)); color: rgb(var(--lp-ink-bg)); box-shadow: 0 1px 0 rgb(255 255 255 / .3) inset, 0 12px 32px -12px rgb(var(--lp-ink-accent) / .55); }
+.lp-ink .btn-primary:hover { background: #fff; }
+.lp-ink .btn-secondary { background: rgb(255 255 255 / .04); color: rgb(var(--lp-ink-text)); box-shadow: inset 0 0 0 1px rgb(var(--lp-ink-line) / .18); }
+.lp-ink .btn-secondary:hover { background: rgb(255 255 255 / .08); }
+/* The trailing arrow sits in its own key, flush to the button's inner edge. */
+.btn-key {
+  display: grid; place-items: center; width: 36px; height: 36px; border-radius: 6px;
+  background: rgb(255 255 255 / .14);
+  transition: transform var(--lp-dur-panel) var(--lp-ease), background-color var(--lp-dur-micro);
+}
+.btn-secondary .btn-key { background: rgb(var(--ev-surface-sunken)); }
+.lp-ink .btn-primary .btn-key { background: rgb(var(--lp-ink-bg) / .08); }
+.btn:hover .btn-key { transform: translateX(2px); }
+.btn-key svg { width: 16px; height: 16px; }
+.btn-sm { --btn-h: 40px; font-size: .9375rem; padding: 0 16px; border-radius: var(--ev-radius-control); }
+.btn-block { width: 100%; }
+.cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.cta-note { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px; font-size: .875rem; color: rgb(var(--ev-ink-2)); }
+.cta-note span { display: inline-flex; align-items: center; gap: 6px; }
+.cta-note svg { width: 15px; height: 15px; color: rgb(var(--ev-positive)); flex: none; }
+.lp-ink .cta-note { color: rgb(var(--lp-ink-text-2)); }
+.lp-ink .cta-note svg { color: rgb(var(--lp-ink-accent)); }
+@media (max-width: 520px) {
+  .cta-row .btn { width: 100%; }
+}
