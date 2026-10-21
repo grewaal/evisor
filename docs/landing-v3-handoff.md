@@ -1,10 +1,10 @@
 # Evisor landing v3: handoff
 
-_v3 replaced v2 on evisor.app on 21 Oct 2026. Working branch: `claude/affectionate-mendel-7acz8b`. Strategy and copy are in `docs/landing-v3-copy.md`._
+_v3 replaced v2 on evisor.app on 21 Oct 2026, around 10:35 UTC. `main` was fast-forwarded from `7ed622d` (v2) to `e427008` (v3), which triggered GitHub Pages run 39585612061. Working branch: `claude/affectionate-mendel-7acz8b`. Strategy and copy are in `docs/landing-v3-copy.md`._
 
 ## Roll back (if ever needed)
 
-- **Back to v2:** `git revert --no-edit <v2-head>..main && git push origin main`. `<v2-head>` is `7ed622d`, the commit that was live before v3. This adds new commits and keeps history intact.
+- **Back to v2:** `git revert --no-edit 7ed622d..main && git push origin main`. `7ed622d` is the commit that was live before v3. This adds new commits and keeps history intact.
 - **Older versions stay online, unlinked and `noindex`:**
   - v2 at `/archive/landing-v2-2026-10/`. It still loads `/assets/v2/*`, so never delete that folder.
   - v1 at `/archive/landing-v1-2026-10/`.
