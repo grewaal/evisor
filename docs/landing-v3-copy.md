@@ -84,16 +84,16 @@ What they feel, in order of intensity:
 ### Hero (default, `angle` absent or `find`)
 
 - **Kicker:** For bookkeepers who love the books and dread the hunt
-- **H1:** Find your next clients.¹ Know your number.² Get it signed.³
-- **Sub:** Evisor shows you real local businesses that fit the clients you want, works out what to charge from your own rates, and gets the engagement letter signed on your client's phone. One place, from first hello to signed.
+- **H1:** Find your next clients.¹ Know what to charge.² Get it signed.³ (The note numbers are footnote-style superscripts that link to Notes 1–3. They are drawn by CSS, so the H1 text stays clean for search and screen readers.)
+- **Sub:** Evisor gives you real local businesses that fit, a fee checked against your own floor, and engagement letters clients sign on their phone.
 - **CTA:** Start free · See how it works
 - **Under the CTA:** Free plan with no time limit. No card. Sign up with Google or email.
-- **Coverage line:** Find Clients is live in Colorado, New York and Oregon. Pricing, proposals and signing work everywhere. _Check your state_
-- **Note chain** (illustrative, labelled as such):
-  1. **Find:** Cedar Ridge Auto Care, auto repair, Lakewood CO. Why it's here: in your area, matches a client type you want; email, phone and website on record. **Revealed.**
+- **Coverage note:** Find Clients is live in Colorado, New York and Oregon. Pricing, proposals and e-signature aren’t limited to these states. _Check your state_
+- **Note chain** (illustrative, labelled as such). All three cards show at once; only the reveal, fee, floor check, signature and stamp animate (about 2.8 s, once).
+  1. **Find:** Harbor Lane Dental Studio, Strong fit · contactable, Beaverton OR. Why it's here: in your area, an industry you said you want, and a published contact route. Phone, Website, **Revealed.**
   2. **Price:** Suggested monthly fee **$1,180**/mo. ✓ **Clears your floor.** Essential $890 · Standard $1,180 · Premium $1,540.
-  3. **Sign:** Engagement letter, Monthly bookkeeping. Signed by Dana Whitfield on her phone. ✓ **Signed**.
-- **Caption:** One client, start to finish. Screens from Evisor, details illustrative.
+  3. **Sign:** Engagement letter, monthly bookkeeping. Maya Ortiz, Harbor Lane Dental, on a phone. ✓ **Signed**.
+- **Caption:** One client, start to finish, with an illustrative business and figures.
 
 ### Hero angle variants (`?angle=`)
 
@@ -133,11 +133,11 @@ What they feel, in order of intensity:
 ### Note 1: Find your next clients
 
 - **Their question:** "Where do I even find clients?"
-- **H2:** Ten businesses worth a call beat a hundred names.
+- **H2:** Ten businesses worth a conversation beat a hundred cold names.
 - **Lead:** Pick your area and the kinds of clients you want. Evisor shows the real local businesses that fit, why each one is on your list, how you could reach them, and what isn't known yet. You decide who's worth a conversation before you spend a thing.
 - **Workbench:** interactive, from v2. "Click a business, then Reveal."
 - **Three promises:**
-  - **No padding.** When an area is quiet, the list ends sooner. Evisor doesn't recycle duplicates to fill it.
+  - **No recycled duplicates.** When an area is quiet, the list ends sooner. Evisor doesn't recycle duplicates to fill it.
   - **No bait-and-switch.** No silent jump to a bigger area, and no businesses swapped in from another state.
   - **Nothing sent in your name.** You decide who to contact and what to say. Evisor never contacts a business for you.
 - **Lead sites vs Evisor:**
@@ -157,7 +157,7 @@ What they feel, in order of intensity:
 
 - **Their question:** "What do I even charge?"
 - **H2:** The costliest mistake in your practice isn't in anyone's books.
-- **Lead:** It's in your quote. A bookkeeper on AccountingWEB quoted a builder five hours a quarter. The work took sixteen. Most underquotes are quieter: $50 or $100 a month, repeated every month the client stays.
+- **Lead:** It's in your quote. A bookkeeper on AccountingWEB once quoted five hours a quarter. After a software migration, the work took sixteen. Others are quieter: $50 or $100 a month, repeated every month the client stays.
 - **Calculator:**
   - Inputs: "Clients you'll price this year" (1–40, default 10) and "Underquoted by" ($50 / $100 / $200 a month).
   - **Output:** "**$12,000 a year**, gone. 10 clients, each $100 a month under."
@@ -267,10 +267,63 @@ Use one landing URL per ad angle so the first line the visitor reads repeats the
 | Angle | Landing URL | Ad headline ideas | Best audience |
 |---|---|---|---|
 | Find (default) | `evisor.app/?angle=find&area=US-CO` | "Find bookkeeping clients near you" / "Real local businesses, and why each fits" | Geo-target CO, NY, OR only |
-| Referrals | `evisor.app/?angle=referrals` | "Tired of waiting on referrals?" / "Stop waiting on word of mouth" | Bookkeepers anywhere in the US |
-| Pricing | `evisor.app/?angle=pricing` | "What should you charge for bookkeeping?" / "Never guess a bookkeeping fee again" | Everywhere; high search intent |
-| Signing | `evisor.app/?angle=signing` | "Engagement letters clients sign on their phone" | Everywhere |
-| New | `evisor.app/?angle=new` | "Starting a bookkeeping business?" | Course grads, new LLCs |
-| Lead sites | `evisor.app/?angle=leads` | "Done paying for bookkeeping leads?" | Competitor-intent searches |
+| Referrals | `evisor.app/?angle=referrals` | "Tired of waiting on referrals?" / "Stop waiting on word of mouth" | CO, NY, OR only (it sells Find Clients); add `&area=` |
+| Pricing | `evisor.app/?angle=pricing` | "What should you charge for bookkeeping?" / "Stop guessing your bookkeeping fees" | Every state; high search intent |
+| Signing | `evisor.app/?angle=signing` | "Engagement letters clients sign on their phone" | Every state |
+| Book | `evisor.app/?angle=book` | "Raise your bookkeeping fees in one pass" | Practices with 10+ clients, every state |
+| New | `evisor.app/?angle=new` | "Starting a bookkeeping business?" | Course grads, new LLCs; best in CO, NY, OR |
+| Lead sites | `evisor.app/?angle=leads` | "Done paying for bookkeeping leads?" | Competitor-intent searches in CO, NY, OR |
 
 `?area=US-XX` makes the coverage line local. For example, `area=US-CO` reads "Find Clients is live in Colorado." Add `utm_*` parameters as usual; they pass through to signup.
+
+---
+
+## 7. Review round (21 Oct): what changed after the fact-check and the critic
+
+**Fact-check fixes (app source checked at `evisorapp@fe38545`):**
+- The post-signing overlay now shows the client's real screen: "All parties have signed! Thank you, Maya Ortiz. A signed copy has been sent to…".
+- "Unlock returned" now applies only when a *promised route isn't delivered*. It no longer covers any route that later fails.
+- "Work everywhere" became "aren't limited to these states".
+- The New Zealand line says pricing uses AU, UK, US or CA benchmarks.
+- **UK and Ireland time-zone personalisation is removed.** The app's jurisdiction policy marks the UK and EEA as temporarily limited for country-specific promotion. Founder's call to restore it.
+- `?angle=new` no longer implies branding on Free.
+- The AccountingWEB anecdote matches the source: a migration, and no builder.
+- The coverage waitlist is called "the coverage update list". Nothing promises an "it's open" email.
+- "No padding" became "No recycled duplicates".
+- Export and import limits are noted.
+- The mock's market clock is removed.
+
+**Critic fixes:**
+- **Message match beyond the headline.** Each angle now also sets:
+  - which chapter sits directly under the hero (the DOM moves, so tab order matches)
+  - the secondary CTA target
+  - the phone dock text
+- **Visitors outside covered states** (`?area=US-XX` not live, or an AU, CA or NZ time zone) get the `elsewhere` hero. It leads with pricing and signing, and only falls back to that if the ad's angle depended on Find Clients:
+
+  | Kicker | H1 |
+  |---|---|
+  | For bookkeepers who'd rather do the books than sell them | Know what to charge. Get it signed on their phone. |
+
+- **New `book` angle** for practices with 10 or more clients: "Review your whole book. Raise fees in one pass." It leads with the renewals chapter.
+- **"Know your number" became "Know what to charge".** "Know your number" read like the bookkeeper's cliché about clients' numbers.
+- **Note device clarified:**
+  - footnote-style superscripts that link to their notes
+  - chapter labels read "Note 1", "Note 2" and "Note 3"
+  - the step numbers in Note 2 are gone
+- **New "Not sure what to say? Start like this."** An example first message with [brackets], clearly labelled as one to adapt; Evisor doesn't write or send it. It answers the fear of selling.
+- **Pricing:** "Which one is you?" now sits above the plans, and the reveal cost is anchored ("from about 25¢ each on Starter").
+- **New FAQ:** "I don't know what my rates should be yet". It covers the experience level and the published wage benchmark.
+- **Layout bugs fixed:**
+  - the sticky "asking" heading no longer overlaps the closing line
+  - leftover v2 tile placement removed
+  - no cursor glow
+- **Above the fold:** tighter hero spacing, and the product chain shows on the first screen on desktop and phone.
+- **Phones:**
+  - only one "Start free" at a time (the nav button hides while the dock shows)
+  - the dock hides at the footer
+  - bigger mock text
+  - "Look before you pay" merged into the coverage card
+- **Not changed, and why:**
+  - **The founder's name and photo** aren't known, and I won't invent them. This is the biggest open trust lever.
+  - **US forum threads:** Reddit and Intuit's community were blocked or unconfirmable from this environment. The six titles shown are verified; swap in US ones once confirmed.
+  - **"We take four practices a month"** is carried over from the live v1 site. Keep it only if the limit is real.

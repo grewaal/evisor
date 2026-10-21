@@ -13,7 +13,6 @@
   var root = doc.documentElement;
   var params = new URLSearchParams(location.search);
   var reduceMotion = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var finePointer = window.matchMedia && matchMedia('(hover: hover) and (pointer: fine)').matches;
   var hasIO = 'IntersectionObserver' in window;
 
   function $(sel, ctx) { return (ctx || doc).querySelector(sel); }
@@ -21,6 +20,20 @@
   function money(n) { return (C.currency && C.currency.symbol || '$') + Number(n).toLocaleString('en-US'); }
   function once(fn) { var done = false; return function () { if (!done) { done = true; fn.apply(this, arguments); } }; }
   function store(key, val) { try { if (val === undefined) return localStorage.getItem(key); localStorage.setItem(key, val); } catch (e) { return null; } }
+
+  /* ------------------------------------------------------------------
+     Chapter order: an ad angle (or a visitor where Find Clients isn't live)
+     leads with its own chapter right under the hero. The inline script in
+     index.html sets html[data-focus]; the DOM moves, so tab order matches.
+     ------------------------------------------------------------------ */
+  var focus = root.getAttribute('data-focus') || 'find';
+  (function reorder() {
+    var orders = { quote: ['quote', 'sign', 'asking', 'find'], sign: ['sign', 'quote', 'asking', 'find'], after: ['after', 'sign', 'quote', 'asking', 'find'] };
+    var list = orders[focus], hero = $('main > .hero');
+    if (!list || !hero) return;
+    var ref = hero;
+    list.forEach(function (id) { var el = doc.getElementById(id); if (el) { ref.after(el); ref = el; } });
+  })();
 
   /* ------------------------------------------------------------------
      In-page links. Sections far below the fold skip layout until needed
@@ -519,7 +532,7 @@
     if (!el || !el.classList.contains('is-armed')) return;
     var big = $('[data-count]', el);
     function countUp() {
-      var to = Number(big.getAttribute('data-count')), t0 = null, dur = 800;
+      var to = Number(big.getAttribute('data-count')), t0 = null, dur = 750;
       big.textContent = money(0);
       setTimeout(function () {
         requestAnimationFrame(function step(ts) {
@@ -528,7 +541,7 @@
           big.textContent = money(k < 1 ? Math.round(to * e / 10) * 10 : to);
           if (k < 1) requestAnimationFrame(step);
         });
-      }, 1100);
+      }, 450);
     }
     function play() { el.classList.add('is-play'); if (big) countUp(); }
     if (!hasIO) { play(); return; }
@@ -698,10 +711,14 @@
     var link = $('a', el);
     // Appears once the visitor is past Note 1 (they have seen the product),
     // and steps aside wherever the page already shows its own CTA.
-    var state = { past: false, pricing: false, final: false, contact: false };
+    var state = { past: false, pricing: false, final: false, contact: false, footer: false };
+    var DOCK = { find: 'Find your next clients.', quote: 'Know what to charge.', sign: 'Get it signed on their phone.', after: 'Raise fees in one pass.' };
+    var txt = $('[data-dock-txt]', el);
+    if (txt && DOCK[focus]) txt.textContent = DOCK[focus];
     var update = function () {
-      var on = state.past && !state.pricing && !state.final && !state.contact;
+      var on = state.past && !state.pricing && !state.final && !state.contact && !state.footer;
       el.classList.toggle('is-on', on);
+      root.classList.toggle('dock-on', on);
       el.setAttribute('aria-hidden', on ? 'false' : 'true');
       if (link) link.tabIndex = on ? 0 : -1;
     };
@@ -709,11 +726,11 @@
       var t = $(sel); if (!t) return;
       new IntersectionObserver(function (entries) { entries.forEach(function (en) { state[key] = en.isIntersecting; update(); }); }).observe(t);
     };
-    var journeyEl = $('#find');
+    var journeyEl = doc.getElementById(focus) || $('#find');
     if (journeyEl) new IntersectionObserver(function (entries) {
       entries.forEach(function (en) { state.past = !en.isIntersecting && en.boundingClientRect.top < 0; update(); });
     }).observe(journeyEl);
-    watch('#pricing', 'pricing'); watch('#start-now', 'final'); watch('#contact', 'contact');
+    watch('#pricing', 'pricing'); watch('#start-now', 'final'); watch('#contact', 'contact'); watch('.footer', 'footer');
   })();
 
   /* ------------------------------------------------------------------
@@ -778,21 +795,4 @@
     });
   })();
 
-  if (finePointer && !reduceMotion) {
-    $$('[data-spot]').forEach(function (t) {
-      t.addEventListener('pointermove', function (e) {
-        var r = t.getBoundingClientRect();
-        t.style.setProperty('--mx', (e.clientX - r.left) + 'px');
-        t.style.setProperty('--my', (e.clientY - r.top) + 'px');
-      });
-    });
-    $$('[data-magnetic]').forEach(function (b) {
-      b.addEventListener('pointermove', function (e) {
-        var r = b.getBoundingClientRect();
-        var x = ((e.clientX - r.left) / r.width - 0.5) * 6, y = ((e.clientY - r.top) / r.height - 0.5) * 6;
-        b.style.transform = 'translate(' + x.toFixed(1) + 'px,' + y.toFixed(1) + 'px)';
-      });
-      b.addEventListener('pointerleave', function () { b.style.transform = ''; });
-    });
-  }
 })();

@@ -23,13 +23,13 @@ python3 -m http.server 8080        # from the repo root
 | http://localhost:8080/?angle=referrals | Ad variant. The others are `pricing`, `signing`, `new` and `leads`. |
 | http://localhost:8080/?area=US-CO | Coverage line for a live state ("Find Clients is live in Colorado.") |
 | http://localhost:8080/?area=US-TX | Coverage line for a state that isn't live yet |
-| http://localhost:8080/?area=GB | Coverage line for a non-US visitor. `AU`, `CA`, `NZ` and `IE` work too. Without `?area`, the visitor's time zone picks this. |
+| http://localhost:8080/?area=AU | Coverage note and hero for a non-US visitor (`CA`, `NZ` too). Without `?area`, an Australian, Canadian or NZ time zone picks this. UK and Ireland are deliberately not personalised while the app's jurisdiction policy marks them temporarily limited. |
 | http://localhost:8080/?proof=placeholder | The testimonial layout with clearly marked placeholders (only works on localhost) |
 | http://localhost:8080/archive/landing-v2-2026-10/ | v2, for comparison |
 
 ## The idea, in one paragraph
 
-The headline makes three claims: **Find your next clients. Know your number. Get it signed.** Each claim carries a note marker (1, 2, 3), the way a set of accounts points to its notes. The page then backs each claim with the real product:
+The headline makes three claims: **Find your next clients. Know what to charge. Get it signed.** Each claim carries a note marker (1, 2, 3), the way a set of accounts points to its notes. The page then backs each claim with the real product:
 
 | Note | Section | What it shows |
 |---|---|---|
@@ -46,18 +46,21 @@ Send each ad to the URL whose first line repeats the ad's promise. The swap happ
 | Angle | URL | Headline the visitor sees | Use it for |
 |---|---|---|---|
 | default | `evisor.app/` | Find your next clients. Know your number. Get it signed. | Brand and general traffic |
-| `referrals` | `evisor.app/?angle=referrals` | Stop waiting on referrals. Start choosing your clients. | "Tired of waiting on referrals?" ads |
+| `referrals` | `evisor.app/?angle=referrals` | Stop waiting on referrals. Start choosing your clients. | "Tired of waiting on referrals?" ads in CO, NY, OR |
+| `book` | `evisor.app/?angle=book` | Review your whole book. Raise fees in one pass. | Practices with 10+ clients, any state (leads with renewals, a Practice feature) |
 | `pricing` | `evisor.app/?angle=pricing` | Know what to charge before they ask. | "What should I charge for bookkeeping?" searches. Works in every state. |
 | `signing` | `evisor.app/?angle=signing` | Send it today. They sign it on their phone. | Engagement-letter and e-signature searches. Works in every state. |
 | `new` | `evisor.app/?angle=new` | Look established from your very first client. | New bookkeepers and course graduates |
 | `leads` | `evisor.app/?angle=leads` | No bidding wars. No per-lead fees. No guessing why. | People searching for lead sites or their alternatives |
 
 **Rules of thumb:**
-- Geo-target Find Clients ads ("find bookkeeping clients near you") to Colorado, New York and Oregon only, and add `&area=US-CO` (or `US-NY`, `US-OR`) so the coverage line names their state.
+- Geo-target Find Clients ads (the default, `referrals`, `new` and `leads`) to Colorado, New York and Oregon only. Add `&area=US-CO` (or `US-NY`, `US-OR`) so the coverage note names their state.
 - Everywhere else, lead with `pricing` or `signing`. Those work in every state today, and the page tells non-covered visitors plainly that Find Clients isn't there yet.
 - Keep `utm_*` on every ad URL. Signup links forward them to `my.evisor.app/register`.
 
-**To edit an angle:** change the inline script directly after the hero in `index.html` (search for `referrals:`). Each entry is `[kicker, [headline lines], subhead]`. Keep every claim to what the product does today.
+**To edit an angle:** change the inline script inside the hero in `index.html` (search for `referrals:`). Each entry is `[kicker, [headline lines], subhead, chapter to lead with]`. The chapter is one of `find`, `quote`, `sign` or `after`; `landing.js` moves it directly under the hero and points "See it in action" and the phone dock at it. Keep every claim to what the product does today.
+
+**Visitors where Find Clients isn't live** (`?area=US-TX`, or an AU, CA or NZ time zone) automatically get the `elsewhere` hero ("Know what to charge. Get it signed on their phone."), unless the ad chose `pricing`, `signing` or `book`.
 
 ## What's where
 
@@ -95,7 +98,7 @@ Send each ad to the URL whose first line repeats the ad's promise. The swap happ
 
 ### Find Clients coverage (three places)
 1. `coverage.live` in `config.js`. This drives the checker and every "Colorado, New York and Oregon" list.
-2. `data-live` on the hero's `[data-cov-note]` in `index.html`, in the form `US-CO:Colorado,US-NY:New York,US-OR:Oregon`. That copy runs before first paint, without `config.js`.
+2. `data-live` on the hero `<section>` in `index.html`, in the form `US-CO:Colorado,US-NY:New York,US-OR:Oregon`. That copy runs before first paint, without `config.js`.
 3. The static text "Colorado, New York and Oregon" in `index.html` and in the JSON-LD FAQ in `<head>`.
 
 ### Forum thread titles
@@ -130,7 +133,7 @@ Every event carries `angle` when the visitor arrived on an ad variant.
 
 | Event | Parameters |
 |---|---|
-| `landing_context` | `angle`, `area`. Sent once on load, when either is set. |
+| `landing_context` | `angle` (including `elsewhere`), `area`. Sent once on load, when either is set. |
 | `cta_click` | `cta_id` (see below), `plan`, `billing`, `link_url` |
 | `coverage_check` | `area`, `status` (`live` / `not_yet`) |
 | `demo_interaction` | `demo` (`find`), `action` (`select` / `reveal`) |
@@ -150,6 +153,25 @@ Every event carries `angle` when the visitor arrived on an ad variant.
 - `cta_click` by `angle`
 - the share of visitors who use the sign demo or the underquote calculator, and their signup rate
 - `coverage_check` areas: these tell you which state to open next
+
+## Verified (21 Oct 2026, final v3 source)
+
+**Lighthouse** (served with gzip, as GitHub Pages does):
+
+| | Performance | Accessibility | Best Practices | SEO | LCP | TBT | CLS |
+|---|---|---|---|---|---|---|---|
+| Mobile | 100 | 100 | 100 | 100 | 1.5 s | 30–70 ms | 0 |
+| Desktop | 100 | 100 | 100 | 100 | 0.4 s | 0 ms | 0 |
+
+**Other checks:**
+- **axe-core** (WCAG 2.0/2.1/2.2 A and AA, plus best practice): 0 violations at 390, 768 and 1440 px. That holds on the default page and on `?angle=pricing&area=US-TX`.
+- **Overflow:** none at 360, 390, 768, 1440 or 1920 px.
+- **Anchors:** every nav and menu link lands exactly under the nav, on desktop and on phones.
+- **Keyboard:** logical tab order with a visible focus ring. The workbench mock is skipped; the chain cards and every control are reachable.
+- **Reduced motion:** the chain shows its final state, and nothing animates until the visitor acts.
+- **Angles:** every `?angle=` and `?area=` combination renders the right headline, chapter order, secondary link and dock text, with no console errors.
+- **Independent fact-check** against the app source: every finding is applied (see `docs/landing-v3-copy.md` §7).
+- **Independent design and conversion critique:** every finding is applied except the three listed there.
 
 ## Known limitations
 

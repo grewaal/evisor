@@ -130,7 +130,7 @@ window.EVISOR_CONFIG = {
 
   /* Find Clients coverage. `live` drives the coverage checker and every
      "Colorado, New York and Oregon" list on the page. Add an area here when it
-     opens, AND add it to data-live on the hero's [data-cov-note] in index.html
+     opens, AND add it to data-live on the hero <section> in index.html
      (that copy runs before first paint, without this file). */
   coverage: {
     live: [
