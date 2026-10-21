@@ -15,7 +15,7 @@ The standalone copy pass, written and edited before layout. Every factual line w
 
 | | Eyebrow | H1 | Subhead |
 |---|---|---|---|
-| **A (ship)** | For independent bookkeepers | **Find your next clients. See the evidence first.** | Evisor shows you real businesses near you: why each one fits, how to reach them, and what isn't known yet. When one says yes, you price it, propose it and get the engagement letter signed in the same place. |
+| **A (ship)** | For independent bookkeepers | **Find your next clients. See the evidence first.** | Evisor shows you real businesses near you — why each one fits, how to reach them, and what isn’t known yet. When one says yes, you price it, propose it and get the letter signed in one place. |
 | B | For independent bookkeepers | **Stop waiting on referrals. Start with businesses worth a conversation.** | Real businesses near you, with the case for each one laid out, including the gaps. Then price, propose and sign them without leaving Evisor. |
 | C | For independent bookkeepers | **From "who do I even contact?" to a signed engagement letter.** | Evisor finds businesses near you, shows the evidence on each one, and carries every yes through pricing, proposal, e-signature, onboarding and renewal. |
 
@@ -142,7 +142,7 @@ The standalone copy pass, written and edited before layout. Every factual line w
 1. **Minute 1 · Create your account.** Email and password, or Google. Then pick where to begin: find clients, price a job, or send a letter.
 2. **Minute 3 · See who's near you.** Set your area and the clients you want. Browse the businesses that match, names masked, before you spend a cent. *(In covered areas.)*
 3. **Minute 8 · Set your rates.** Enter your target and floor rates. Price a sample client and see the three options you'd present.
-4. **Minute 20 · Send your first letter.** Start from a template, add your details and send it for signature. A real client, papered properly, for free.
+4. **Minute 20 · Send your first letter.** Write your engagement letter, add your details and send it for signature. A real client, papered properly — for free.
 
 ---
 
@@ -234,7 +234,7 @@ The standalone copy pass, written and edited before layout. Every factual line w
 | Find Clients | Masked preview near you | 75 reveals a month | Up to 250 reveals a month (fair use) | 300 reveals per seat a month, shared |
 | Clients | 3 | 10 | 40 | Unlimited |
 | Documents | 3 proposals + 3 letters | 30 proposals + 30 letters a month | 120 proposals + 120 letters a month | Unlimited |
-| Highlights | Pricing calculator with floor check · e-signature with co-signers · templates | Your branding, no Evisor footer · know when clients open documents · payment links · client-ready quote PDF → proposal | Letter fills itself from the accepted proposal · renewals & book review · scheduled follow-ups · quick charges · premium templates · analytics · lead CSV export | 3 seats included · shared client book · roles & approvals before sending · firm dashboard · shared templates · lock branding and price floors |
+| Highlights | Pricing calculator with floor check · e-signature on letters, with co-signers | Your branding, no Evisor footer · know when clients open documents · payment links · client-ready quote PDF → proposal | Letter fills itself from the accepted proposal · renewals & book review · scheduled follow-ups · quick charges · premium templates · analytics · lead CSV export | 3 seats included · shared client book · roles & approvals before sending · firm dashboard · shared templates · lock branding and price floors |
 | CTA | Start free | Start with Starter | Start with Practice | Start with Firm |
 
 **Notes**
@@ -285,10 +285,10 @@ The standalone copy pass, written and edited before layout. Every factual line w
    - A list hands you names. Evisor shows why each business is in front of you, what's known, what isn't, and which details are old or conflicting. It won't pad a quiet area with weaker records.
    - There are no credits and no bidding against other bookkeepers for someone's quote request.
 7. **I'm brand new. Is this too much for me?**
-   - It's built for exactly that moment.
+   - It’s built for exactly that moment.
      - The pricing calculator works out a fee from your own rates.
-     - Engagement letter templates give you a professional starting point.
-   - If you get stuck in your first week, we'll build your first proposal with you on a call.
+     - You can send a real engagement letter for signature on the free plan.
+   - If you get stuck in your first week, we’ll build your first proposal with you on a call.
 8. **I already have clients. Can I bring them across?**
    - Yes. Import your client list from a spreadsheet (name, email, business).
    - Then paper them properly with engagement letters. On Practice, renewals come round each year.
