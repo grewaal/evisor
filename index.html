@@ -162,7 +162,7 @@
       </div>
       <aside class="cov-note" aria-label="Where Find Clients is live" data-cov-note data-live="US-CO:Colorado,US-NY:New York,US-OR:Oregon">
         <p class="cov-note-h"><svg aria-hidden="true"><use href="#i-pin"/></svg><span data-cov-h>Find Clients is live in <span data-coverage-list>Colorado, New York and Oregon</span>.</span></p>
-        <p data-cov-b>Pricing, proposals and e-signature work everywhere.</p>
+        <p data-cov-b>Pricing, proposals and e-signature aren’t limited to these states.</p>
         <a href="#coverage" data-cta="hero_coverage">Check your state</a>
       </aside>
     </div>
@@ -170,18 +170,18 @@
 referrals:['For bookkeepers tired of waiting on word of mouth',['Stop waiting on referrals.','Start choosing your clients.'],'Evisor shows you real local businesses that fit the clients you want, and why each one is on your list. When one says yes, you price it, propose it and get the letter signed in the same place.'],
 pricing:['For bookkeepers who freeze at “what do you charge?”',['Know what to charge','before they ask.'],'Set your target and floor rates once. Describe the job and Evisor suggests a monthly fee with three options to present, and checks with you before you quote below your floor. Then the proposal and the letter go out from the same place.'],
 signing:['For bookkeepers done with print, sign and scan',['Send it today.','They sign it on their phone.'],'A proposal in your branding, then an engagement letter your client signs with a finger. No login, no app. Not signed after two days? Evisor sends the reminder, then one more.'],
-'new':['For bookkeepers starting their own practice',['Look established','from your very first client.'],'Find real businesses near you, price the work from your own rates, and send a branded proposal and engagement letter your client signs on their phone. Free to start, no card.'],
-leads:['For bookkeepers burned by lead sites',['No bidding wars.','No per-lead fees.','No guessing why.'],'Evisor shows you real local businesses that fit the clients you want, with the reasons and the gaps on every one. Reveals come with your plan, and if a promised contact route fails, the unlock comes back.']},v=V[a];
+'new':['For bookkeepers starting their own practice',['Look established','from your very first client.'],'Find real businesses near you, price the work from your own rates, and send a proposal and engagement letter your client signs on their phone. Start free, no card; add your logo from Starter.'],
+leads:['For bookkeepers burned by lead sites',['No bidding wars.','No per-lead fees.','No guessing why.'],'Evisor shows you real local businesses that fit the clients you want, with the reasons and the gaps on every one. Reveals come with your plan, and if a promised contact route isn\u2019t delivered, the unlock comes back.']},v=V[a];
 if(v){d.documentElement.setAttribute('data-angle',a);d.querySelector('[data-hero-kicker]').textContent=v[0];var h=d.querySelector('[data-hero-h1]');h.textContent='';v[1].forEach(function(t){var s=d.createElement('span');s.className='ln';s.textContent=t;h.appendChild(s);h.appendChild(d.createTextNode(' '))});d.querySelector('[data-hero-sub]').textContent=v[2]}
 var n=d.querySelector('[data-cov-note]');if(!n)return;var live={};n.getAttribute('data-live').split(',').forEach(function(p){p=p.split(':');live[p[0]]=p[1]});
 var S='AL:Alabama,AK:Alaska,AZ:Arizona,AR:Arkansas,CA:California,CO:Colorado,CT:Connecticut,DE:Delaware,DC:the District of Columbia,FL:Florida,GA:Georgia,HI:Hawaii,ID:Idaho,IL:Illinois,IN:Indiana,IA:Iowa,KS:Kansas,KY:Kentucky,LA:Louisiana,ME:Maine,MD:Maryland,MA:Massachusetts,MI:Michigan,MN:Minnesota,MS:Mississippi,MO:Missouri,MT:Montana,NE:Nebraska,NV:Nevada,NH:New Hampshire,NJ:New Jersey,NM:New Mexico,NY:New York,NC:North Carolina,ND:North Dakota,OH:Ohio,OK:Oklahoma,OR:Oregon,PA:Pennsylvania,RI:Rhode Island,SC:South Carolina,SD:South Dakota,TN:Tennessee,TX:Texas,UT:Utah,VT:Vermont,VA:Virginia,WA:Washington,WV:West Virginia,WI:Wisconsin,WY:Wyoming',st={};S.split(',').forEach(function(p){p=p.split(':');st['US-'+p[0]]=p[1]});
 var ar=(q.get('area')||'').toUpperCase(),tz='';try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||''}catch(e){}
-var C={GB:'the UK',IE:'Ireland',AU:'Australia',CA:'Canada',NZ:'New Zealand'},c=C[ar]?ar:'';
-if(!ar&&tz){if(/^Europe\/(London|Belfast)$/.test(tz))c='GB';else if(tz==='Europe/Dublin')c='IE';else if(/^Australia\//.test(tz))c='AU';else if(/^Pacific\/(Auckland|Chatham)$/.test(tz))c='NZ';else if(/^America\/(Toronto|Vancouver|Edmonton|Winnipeg|Halifax|St_Johns|Regina|Moncton|Whitehorse|Yellowknife|Iqaluit)$/.test(tz))c='CA'}
+var C={AU:'Australia',CA:'Canada',NZ:'New Zealand'},c=C[ar]?ar:'';
+if(!ar&&tz){if(/^Australia\//.test(tz))c='AU';else if(/^Pacific\/(Auckland|Chatham)$/.test(tz))c='NZ';else if(/^America\/(Toronto|Vancouver|Edmonton|Winnipeg|Halifax|St_Johns|Regina|Moncton|Whitehorse|Yellowknife|Iqaluit)$/.test(tz))c='CA'}
 var H=n.querySelector('[data-cov-h]'),B=n.querySelector('[data-cov-b]');
 if(live[ar]){H.textContent='Find Clients is live in '+live[ar]+'.';B.textContent='Browse the businesses near you free, with names masked until you choose to reveal one.';n.setAttribute('data-area',ar)}
 else if(st[ar]){H.textContent='Find Clients isn’t in '+st[ar]+' yet.';B.textContent='It’s opening state by state. Pricing, proposals and e-signature work in '+st[ar]+' today.';n.setAttribute('data-area',ar)}
-else if(c){H.textContent='Find Clients covers parts of the US for now.';B.textContent='Pricing, proposals and engagement letters work in '+C[c]+' today'+(c==='IE'?'.':', with local wording in your letters.');n.setAttribute('data-area',c)}})();</script>
+else if(c){H.textContent='Find Clients covers parts of the US for now.';B.textContent=c==='NZ'?'Proposals and engagement letters work in New Zealand today, with local wording in your letters. Pricing uses Australian, UK, US or Canadian benchmarks.':'Pricing, proposals and engagement letters work in '+C[c]+' today, with local wording in your letters.';n.setAttribute('data-area',c)}})();</script>
 
     <!-- The note chain: one illustrative client, from found to signed. -->
     <div class="chain" data-chain>
@@ -212,7 +212,7 @@ else if(c){H.textContent='Find Clients covers parts of the US for now.';B.textCo
       </article>
     </div>
 <script>/* Arm the chain before first paint so it can play once in view. If landing.js never runs, show the final state. */(function(){var c=document.querySelector('[data-chain]');if(!c||!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;c.classList.add('is-armed');setTimeout(function(){if(!window.__evLanding)c.classList.remove('is-armed')},4000)})();</script>
-    <p class="chain-caption">One client, start to finish. Screens from Evisor, with an illustrative business and figures.</p>
+    <p class="chain-caption">One client, start to finish, with an illustrative business and figures.</p>
   </div>
 </section>
 
@@ -275,7 +275,6 @@ else if(c){H.textContent='Find Clients covers parts of the US for now.';B.textCo
                   </div>
                   <div class="mk-tabs">
                     <span class="is-on">Lead feed</span><span>Pipeline <i>3</i></span>
-                    <span class="mk-clock"><i></i>10:42 AM MT · 12:42 PM your time</span>
                   </div>
                   <div class="mk-split">
                     <div class="mk-queue">
@@ -314,14 +313,14 @@ else if(c){H.textContent='Find Clients covers parts of the US for now.';B.textCo
         </div>
       </div>
       <div class="note note-a" aria-hidden="true"><span class="note-tick"><svg><use href="#i-check"/></svg></span><span><b>Why it’s here</b>on every business</span></div>
-      <div class="note note-b" aria-hidden="true"><span class="note-tick"><svg><use href="#i-renew"/></svg></span><span><b>Unlock returned</b>if a promised route fails</span></div>
+      <div class="note note-b" aria-hidden="true"><span class="note-tick"><svg><use href="#i-renew"/></svg></span><span><b>Unlock returned</b>if a promised route isn’t delivered</span></div>
       <figcaption class="wb-caption">Find Clients in Evisor, with illustrative businesses. <span class="wb-try">Click a business, then Reveal.</span></figcaption>
     </figure>
 
     <div class="promises">
       <article class="pr-item">
         <span class="pr-i" aria-hidden="true"><svg><use href="#i-list"/></svg></span>
-        <h3 class="h4">No padding.</h3>
+        <h3 class="h4">No recycled duplicates.</h3>
         <p>When an area is quiet, the list ends sooner. Evisor doesn’t recycle duplicates to fill it.</p>
       </article>
       <article class="pr-item">
@@ -345,7 +344,7 @@ else if(c){H.textContent='Find Clients covers parts of the US for now.';B.textCo
             <tr><th scope="row">How you pay</th><td data-label="Lead sites">Per lead, even when it goes nowhere</td><td class="vs-ev" data-label="Evisor">Reveals come with your plan</td></tr>
             <tr><th scope="row">Who else gets it</th><td data-label="Lead sites">Often several firms, racing to reply</td><td class="vs-ev" data-label="Evisor">Nobody’s bidding. These businesses haven’t asked for quotes.</td></tr>
             <tr><th scope="row">What you see first</th><td data-label="Lead sites">A name and a request</td><td class="vs-ev" data-label="Evisor">Why it fits, the contact routes on record, and what’s unknown</td></tr>
-            <tr><th scope="row">If a contact route fails</th><td data-label="Lead sites">Depends on the site’s refund rules</td><td class="vs-ev" data-label="Evisor">The unlock comes back</td></tr>
+            <tr><th scope="row">If a promised route isn’t delivered</th><td data-label="Lead sites">Depends on the site’s refund rules</td><td class="vs-ev" data-label="Evisor">The unlock comes back</td></tr>
             <tr><th scope="row">Has the business asked for help?</th><td data-label="Lead sites">Yes, that’s the point</td><td class="vs-ev vs-honest" data-label="Evisor">No. You start the conversation.</td></tr>
           </tbody>
         </table>
@@ -365,7 +364,7 @@ else if(c){H.textContent='Find Clients covers parts of the US for now.';B.textCo
           </div>
         </form>
         <div class="coverage-result" data-coverage-result aria-live="polite"></div>
-        <p class="coverage-live">Live today: <strong data-coverage-list>Colorado, New York and Oregon</strong>. Opening state by state. Pricing, proposals and e-signature work everywhere.</p>
+        <p class="coverage-live">Live today: <strong data-coverage-list>Colorado, New York and Oregon</strong>. Opening state by state. Pricing, proposals and e-signature aren’t limited to these states.</p>
       </div>
     </div>
 
@@ -387,7 +386,7 @@ else if(c){H.textContent='Find Clients covers parts of the US for now.';B.textCo
     <header class="ch-head">
       <p class="ch-ask"><span class="ch-n" aria-hidden="true">2</span>“What do I even charge?”</p>
       <h2 id="quote-title" class="h2">The costliest mistake in your practice isn’t in anyone’s books.</h2>
-      <p class="lead quote-story">It’s in your quote. A bookkeeper on AccountingWEB once quoted a builder five hours a quarter. The work took sixteen. Most underquotes are quieter: $50 or $100 a month, repeated every month the client stays.</p>
+      <p class="lead quote-story">It’s in your quote. A bookkeeper on AccountingWEB once quoted five hours a quarter. After a software migration, the work took sixteen. Others are quieter: $50 or $100 a month, repeated every month the client stays.</p>
     </header>
 
     <div class="quote-grid">
@@ -481,8 +480,8 @@ else if(c){H.textContent='Find Clients covers parts of the US for now.';B.textCo
               </div>
               <div class="sg-done" data-sign-done aria-hidden="true">
                 <span class="sg-done-i"><svg><use href="#i-check"/></svg></span>
-                <b>Signed</b>
-                <span>Northfield Bookkeeping has been notified, and a signed copy is on its way by email.</span>
+                <b>All parties have signed!</b>
+                <span>Thank you, Maya Ortiz. A signed copy has been sent to maya@harborlane.example.</span>
               </div>
             </div>
           </div>
@@ -518,7 +517,7 @@ else if(c){H.textContent='Find Clients covers parts of the US for now.';B.textCo
           <li><svg aria-hidden="true"><use href="#i-lock"/></svg><span><b>Signed means final.</b> Signed letters and accepted proposals can’t be edited afterwards. Changes happen in a new draft.</span></li>
           <li><svg aria-hidden="true"><use href="#i-key"/></svg><span><b>Encrypted where it matters.</b> Signatures and signed or accepted PDFs are encrypted, and each firm’s data is kept separate from every other firm’s.</span></li>
           <li><svg aria-hidden="true"><use href="#i-shield"/></svg><span><b>Two-factor sign-in.</b> Turn on an authenticator app and Evisor asks for a 6-digit code each time you sign in.</span></li>
-          <li><svg aria-hidden="true"><use href="#i-download"/></svg><span><b>Your records stay yours.</b> Export your data from Settings at any time.</span></li>
+          <li><svg aria-hidden="true"><use href="#i-download"/></svg><span><b>Your records stay yours.</b> Export your data from Settings, up to once a day.</span></li>
         </ul>
       </div>
     </div>
@@ -605,12 +604,12 @@ else if(c){H.textContent='Find Clients covers parts of the US for now.';B.textCo
         <div class="brand-swatches" role="group" aria-label="Try a brand color"><button type="button" aria-pressed="true" style="--c:#2f5d50" data-swatch="#2f5d50"><span class="sr-only">Green</span></button><button type="button" aria-pressed="false" style="--c:#7a3b2e" data-swatch="#7a3b2e"><span class="sr-only">Rust</span></button><button type="button" aria-pressed="false" style="--c:#1f4e79" data-swatch="#1f4e79"><span class="sr-only">Navy</span></button><button type="button" aria-pressed="false" style="--c:#5b4a8b" data-swatch="#5b4a8b"><span class="sr-only">Plum</span></button></div>
         <div class="brand-page" aria-hidden="true" data-brand-page><span class="bp-mast"><span class="bp-logo">NB</span>Northfield Bookkeeping</span><span class="bp-line"></span><span class="bp-btn">Accept proposal</span></div>
         <h3 class="h4">Your brand, not ours</h3>
-        <p>On paid plans, your logo and color on every client page, and no Evisor footer.</p>
+        <p>Your color on every client page, on every plan. On paid plans, your logo too, and no Evisor footer.</p>
       </article>
       <article class="tile tile-import" data-spot>
         <div class="csv" aria-hidden="true"><span>Name</span><span>Email</span><span>Business</span></div>
         <h3 class="h4">Bring your current clients</h3>
-        <p>Import your client list from a spreadsheet, then paper everyone properly.</p>
+        <p>Import your client list from a spreadsheet and paper them properly. How many clients you can add depends on your plan.</p>
       </article>
       <article class="tile tile-juris" data-spot>
         <div class="juris" aria-hidden="true"><span>US</span><span>UK</span><span>AU</span><span>CA</span><span>NZ</span></div>
@@ -643,7 +642,7 @@ else if(c){H.textContent='Find Clients covers parts of the US for now.';B.textCo
         <h3 class="h3">Not a fit if you…</h3>
         <ul>
           <li><svg aria-hidden="true"><use href="#i-x"/></svg><span>want someone to do the outreach for you. <span>Evisor never contacts a business in your name.</span></span></li>
-          <li><svg aria-hidden="true"><use href="#i-x"/></svg><span>need Find Clients outside <span data-coverage-list>Colorado, New York and Oregon</span> today. <span>Everything else works wherever you are.</span></span></li>
+          <li><svg aria-hidden="true"><use href="#i-x"/></svg><span>need Find Clients outside <span data-coverage-list>Colorado, New York and Oregon</span> today. <span>Everything else in Evisor isn’t limited to them.</span></span></li>
           <li><svg aria-hidden="true"><use href="#i-x"/></svg><span>want a promised number of new clients. <span>Nobody honest can promise that.</span></span></li>
           <li><svg aria-hidden="true"><use href="#i-x"/></svg><span>need tasks, time tracking or workflows. <span>Keep your current tool alongside Evisor.</span></span></li>
         </ul>
@@ -710,8 +709,8 @@ else if(c){H.textContent='Find Clients covers parts of the US for now.';B.textCo
     <ul class="factstrip risk" aria-label="What you're not risking">
       <li><svg aria-hidden="true"><use href="#i-card"/></svg>No card to start</li>
       <li><svg aria-hidden="true"><use href="#i-today"/></svg>Cancel any time</li>
-      <li><svg aria-hidden="true"><use href="#i-renew"/></svg>Unlock returned if a promised route fails</li>
-      <li><svg aria-hidden="true"><use href="#i-download"/></svg>Export your data any time</li>
+      <li><svg aria-hidden="true"><use href="#i-renew"/></svg>Unlock returned if a promised route isn’t delivered</li>
+      <li><svg aria-hidden="true"><use href="#i-download"/></svg>Export your data from Settings</li>
     </ul>
 
     <div class="pricing-tools">
@@ -777,8 +776,8 @@ else if(c){H.textContent='Find Clients covers parts of the US for now.';B.textCo
     <div class="faq-list">
       <details class="faq" data-faq-id="free"><summary><span>What do I get on the free plan?</span><svg aria-hidden="true"><use href="#i-plus"/></svg></summary><div class="faq-a"><p>Everything you need to set up and paper a real client: a names-masked preview of businesses near you (in covered states), the pricing calculator with your floor check, 3 clients, 3 proposals, and 3 engagement letters with e-signature and co-signers. No card, no time limit. Revealing a business’s name and contact details starts on Starter.</p></div></details>
       <details class="faq" data-faq-id="clients"><summary><span>Will these businesses actually become clients?</span><svg aria-hidden="true"><use href="#i-plus"/></svg></summary><div class="faq-a"><p>We won’t quote a close rate. We can’t measure one honestly yet, and an invented number is worse than none. What we stand behind: the businesses are real listings in your area, each one shows why it’s there and what isn’t known, and when one says “send me something”, you can have a priced, branded proposal in front of them the same day. Finding clients still takes conversations. Evisor makes sure you start the right ones, and don’t lose one to a slow quote.</p></div></details>
-      <details class="faq" data-faq-id="list"><summary><span>Isn’t this just another lead list?</span><svg aria-hidden="true"><use href="#i-plus"/></svg></summary><div class="faq-a"><p>A list hands you names. Evisor shows why each business is in front of you, which contact routes are on record, what isn’t known, and which details are old or conflicting. It won’t pad a quiet area or quietly widen your search. Find Clients is built on open business-listing data from the Overture Maps Foundation; what you’re paying for is the matching, the case for each business, the unlock that comes back if a promised route fails, and everything after the yes. Other Evisor users near you may see the same businesses, but nobody is bidding on a quote request. You start the conversation, on your terms.</p></div></details>
-      <details class="faq" data-faq-id="coverage"><summary><span>Which areas does Find Clients cover?</span><svg aria-hidden="true"><use href="#i-plus"/></svg></summary><div class="faq-a"><p>Today: <span data-coverage-list>Colorado, New York and Oregon</span>. We’re opening state by state. Everything else in Evisor (pricing, proposals, engagement letters, e-signature, onboarding and renewals) works wherever you are. If your state isn’t live yet, start free and use <em>Notify me when this place is live</em> in Find Clients to hear when it opens.</p></div></details>
+      <details class="faq" data-faq-id="list"><summary><span>Isn’t this just another lead list?</span><svg aria-hidden="true"><use href="#i-plus"/></svg></summary><div class="faq-a"><p>A list hands you names. Evisor shows why each business is in front of you, which contact routes are on record, what isn’t known, and which details are old or conflicting. It won’t recycle duplicates or quietly widen your search to fill a quiet area. Find Clients is built on open business-listing data from the Overture Maps Foundation; what you’re paying for is the matching, the case for each business, the unlock that comes back if a promised route isn’t delivered, and everything after the yes. Other Evisor users near you may see the same businesses, but nobody is bidding on a quote request. You start the conversation, on your terms.</p></div></details>
+      <details class="faq" data-faq-id="coverage"><summary><span>Which areas does Find Clients cover?</span><svg aria-hidden="true"><use href="#i-plus"/></svg></summary><div class="faq-a"><p>Today: <span data-coverage-list>Colorado, New York and Oregon</span>. We’re opening state by state. Everything else in Evisor (pricing, proposals, engagement letters, e-signature, onboarding and renewals) isn’t limited to these states. If your state isn’t live yet, start free and use <em>Notify me when this place is live</em> in Find Clients to join the coverage update list.</p></div></details>
       <details class="faq" data-faq-id="contact"><summary><span>Does Evisor contact businesses, or write my outreach?</span><svg aria-hidden="true"><use href="#i-plus"/></svg></summary><div class="faq-a"><p>No. You decide who to contact, what to say and how: from your own email, by phone or in person, so the relationship is yours from the first sentence. You’re the sender, so following the rules where you work is up to you (in the US, for example, CAN-SPAM for email). If you’d like help, Practice Build includes your outreach, written in your voice.</p></div></details>
       <details class="faq" data-faq-id="new"><summary><span>I’m brand new. Is this too much for me?</span><svg aria-hidden="true"><use href="#i-plus"/></svg></summary><div class="faq-a"><p>It’s built for exactly that moment. The pricing calculator works out a fee from your own rates, and you can send a real engagement letter for signature on the free plan. If you get stuck in your first week, we’ll build your first proposal with you on a call.</p></div></details>
       <details class="faq" data-faq-id="existing"><summary><span>I already have clients and use QuickBooks or Xero. Does it fit?</span><svg aria-hidden="true"><use href="#i-plus"/></svg></summary><div class="faq-a"><p>Yes. Evisor sits alongside your bookkeeping software; the books stay where they are. Import your client list from a spreadsheet (name, email, business), paper everyone properly with engagement letters, and on Practice each letter comes up for renewal so you can review your whole book in one pass.</p></div></details>

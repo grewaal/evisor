@@ -502,7 +502,7 @@
       out.className = 'coverage-result ' + (live ? 'is-live' : 'is-not');
       out.innerHTML = live
         ? '<p class="cov-status">Live in ' + where + '</p><p>Find Clients is live where you work. Start free to browse the businesses near you; names stay masked until you choose to reveal one.</p><a class="btn btn-primary" href="' + registerUrl(null) + '" data-cta="coverage_live">Start free</a>'
-        : '<p class="cov-status">Not yet in ' + where + '</p><p>Find Clients is live in ' + listNames(coverage) + ' and opening state by state. If you work remotely, you can browse the live states from anywhere. Everything else in Evisor works where you are today: pricing, proposals, engagement letters, e-signature, onboarding and renewals. Start free, then use <em>Notify me when this place is live</em> in Find Clients to hear when it opens.</p><a class="btn btn-primary" href="' + registerUrl(null) + '" data-cta="coverage_not_yet">Start free</a>';
+        : '<p class="cov-status">Not yet in ' + where + '</p><p>Find Clients is live in ' + listNames(coverage) + ' and opening state by state. If you work remotely, you can browse the live states from anywhere. Pricing, proposals, engagement letters and e-signature aren’t tied to Find Clients coverage, so you can start with those today. Then use <em>Notify me when this place is live</em> in Find Clients to join the coverage update list.</p><a class="btn btn-primary" href="' + registerUrl(null) + '" data-cta="coverage_not_yet">Start free</a>';
       track('coverage_check', { area: code, status: live ? 'live' : 'not_yet' });
     }
     form.addEventListener('submit', function (e) { e.preventDefault(); show(); });
