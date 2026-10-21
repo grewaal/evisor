@@ -255,3 +255,37 @@ Traffic is likely too low for statistically clean A/B tests: at a few thousand v
 6. **No trial and no refunds.** The page leans on "Free, no time limit" as the honest risk reversal. If you ever add a trial or guarantee, the config has slots for it.
 7. **Public repo.** This doc and the handoff live in a public repository. `_config.yml` keeps `docs/` off the published site, but they are readable on GitHub. Move them to a private repo if that matters.
 8. **Open question:** do you want a "Notify me when my area opens" capture on the landing itself (email to `hello@`), or only the in-app notify after free signup (current build)?
+
+---
+
+## 12. Art direction — "Paper & Ink"
+
+**Idea.** The app is a "Paper Workbench": luminous paper in a warm-grey frame, ink-blue actions, charcoal type. The landing page is the same desk under better light. It borrows the craft of the people it's for: ledger rules, tick marks, a reconciliation, a signature certificate. Nothing generic, nothing "AI".
+
+- **Mood:** calm, exact, quietly confident. A well-kept set of books, not a startup launch.
+- **Lighting:** paper sections are evenly lit. Two **ink bands** (Find Clients evidence and the final CTA) are the same ink-blue taken down to night (hsl 220° 48% 10%), with one soft accent "lamp" glow behind the product. Contrast comes from rhythm (paper → ink → paper → ink), not from colour noise.
+- **Materials:**
+  - Product frames are a sheet of paper set in a tray: 6 px bezel, concentric radii 20/14, the app's own 1 px line and a diffuse ink-tinted shadow.
+  - Faint ledger rules sit behind the headline and in the ink bands.
+  - A 2% paper grain appears on desktop only.
+  - No stock imagery or illustrations. The product is the picture, built in code with the app's real UI strings.
+- **Colour:**
+  - The app tokens, 1:1: canvas `#f7f7f4`, paper `#fff`, ink `#242a32`, accent `#284b87`, accent-soft `#edf2fb`, line `#dcdedc`, plus the semantic families.
+  - Landing-only `--lp-*` tokens are derived from those (ink band, lifted accent `#8fb0ec` for dark).
+  - One accent. A deep green appears only as an example *firm's* brand colour inside client-facing mockups, which shows the real branding feature.
+- **Type:**
+  - DM Sans Variable with optical sizing: the same face and version as the app.
+  - Display 56–84 px at weight 640 with −0.042 em tracking; H2 32–52 px.
+  - Body 17 px / 1.6; lead 17–20 px; meta 13–14 px; tabular numerals for money.
+  - Eyebrows: 12 px caps, +0.14 em, with a hairline rule.
+- **Grid:** a 1200 px content measure with 16–32 px fluid gutters. The hero is an editorial split (headline 7 / action 5) over a full-width product stage. Elsewhere: asymmetric 12-column bento, sticky 5/7 splits for the evidence and journey stories, and single columns under 760 px.
+- **Components:**
+  - Buttons keep the app's 8 px radius with a nested arrow "key".
+  - Chips and toggles are pills, as the app's status chips are.
+  - Cards use 10/14 px radii, as in the app.
+- **Motion:**
+  - The app's curve family (cubic-bezier(.22,1,.36,1); 140 ms micro, 220–460 ms panels).
+  - Reveals rise 18 px over 640 ms with 70 ms sibling stagger.
+  - Motion explains rather than decorates: a business is revealed, evidence is highlighted, a client accepts, a signature draws, a checklist ticks, a renewal fee changes.
+  - Nothing loops forever except two slow 7–8 s note floats; the headline never animates (it is the LCP).
+  - Under `prefers-reduced-motion` everything is static and fully visible.

@@ -305,7 +305,7 @@ main > section:not(.hero) { content-visibility: auto; contain-intrinsic-size: au
 .hero .cta-note { margin-top: 16px; }
 @media (min-width: 1024px) {
   .hero-top { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); column-gap: clamp(40px, 5vw, 80px); align-items: end; }
-  .hero .display { font-size: clamp(3.5rem, 1.6rem + 3.3vw, 5.25rem); }
+  .hero .display { font-size: clamp(3.4rem, 1.6rem + 3.3vw, 4.55rem); }
   .hero-act { padding-bottom: 6px; }
 }
 .hero-stage { margin-top: clamp(36px, 5vw, 56px); }
@@ -1103,6 +1103,12 @@ html.cc-open .dock { display: none; }
   .frame { border-radius: 16px; padding: 4px; }
   .frame-core { border-radius: 12px; }
   .hero-caption { padding-inline: calc(var(--lp-gutter) - 6px); }
+}
+
+/* ---------- Tablet: drop the rail so the workbench stays readable ---------- */
+@media (min-width: 760px) and (max-width: 1023px) {
+  .mk-canvas-hero { --mk-w: 760; }
+  .mk-canvas-hero .mk-rail, .mk-canvas-hero .mk-clock { display: none; }
 }
 
 /* ---------- Mocks below 760px: the app's own mobile layout (one column, detail full-screen) ---------- */

@@ -349,6 +349,7 @@
         entries.forEach(function (en) { var cv = en.target.querySelector('[data-mk-canvas]'); if (cv) apply(cv, en.contentRect.width); });
       });
       canvases.forEach(function (cv) { ro.observe(cv.parentElement); });
+      ['(max-width: 759px)', '(max-width: 1023px)'].forEach(function (q) { window.matchMedia(q).addEventListener('change', function () { canvases.forEach(function (cv) { apply(cv, cv.parentElement.clientWidth); }); }); });
     } else {
       var all = function () { canvases.forEach(function (cv) { apply(cv, cv.parentElement.clientWidth); }); };
       all(); window.addEventListener('resize', all);
